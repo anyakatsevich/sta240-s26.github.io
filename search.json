@@ -132,6 +132,17 @@
     ]
   },
   {
+    "objectID": "labs/lab1.html",
+    "href": "labs/lab1.html",
+    "title": "Lab 1",
+    "section": "",
+    "text": "Section 1\nHere is some written text.\n\nflips &lt;- sample(c(\"H\", \"T\"), size = 30, replace = TRUE)\nflips\n\n [1] \"H\" \"H\" \"H\" \"T\" \"T\" \"H\" \"T\" \"T\" \"T\" \"H\" \"H\" \"H\" \"H\" \"H\" \"H\" \"H\" \"T\" \"T\" \"H\"\n[20] \"H\" \"H\" \"H\" \"T\" \"H\" \"H\" \"H\" \"H\" \"H\" \"T\" \"H\"",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
     "objectID": "syllabus/syllabus-policies.html",
     "href": "syllabus/syllabus-policies.html",
     "title": "Policies",
