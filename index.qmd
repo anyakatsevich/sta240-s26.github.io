@@ -19,7 +19,7 @@ library(googlesheets4)
 library(gt)
 library(tidyverse)
 gs4_deauth()
-d <- read_sheet("https://docs.google.com/spreadsheets/d/17Y62ApGA6bcazxFS-9KsARs77A2v9m_rQ8tSHPXa4bk/edit?usp=sharing", sheet = "240")
+d <- read_sheet("https://docs.google.com/spreadsheets/d/17Y62ApGA6bcazxFS-9KsARs77A2v9m_rQ8tSHPXa4bk/edit?usp=sharing")
 prepare_cutoff_date <- as.Date("2026-05-01")
 ```
 
