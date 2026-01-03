@@ -436,22 +436,22 @@
     ]
   },
   {
-    "objectID": "syllabus/syllabus_assignments.html#problem-sets-30",
-    "href": "syllabus/syllabus_assignments.html#problem-sets-30",
+    "objectID": "syllabus/syllabus_assignments.html#problem-sets-21",
+    "href": "syllabus/syllabus_assignments.html#problem-sets-21",
     "title": "Assignments and grading",
-    "section": "Problem Sets (30%)",
-    "text": "Problem Sets (30%)\nMathematics is like everything else in life; if you practice, you improve. As such, the problem sets are really the heart of the course. They will mostly consist of pencil-and-paper math problems, but sometimes you will be asked to do some coding. You may compose you solutions however you like (scan or photograph written work, LaTeX, Quarto, handwriting capture on a tablet, whatever) so long as you ultimately upload a single .pdf file to Gradescope.\n\n\n\n\n\n\nGrace\n\n\n\nYour lowest problem set score will be dropped at the end of the semester.",
+    "section": "Problem Sets (21%)",
+    "text": "Problem Sets (21%)\nMathematics is like everything else in life; if you practice, you improve. As such, the problem sets are really the heart of the course. They will mostly consist of pencil-and-paper math problems, but sometimes you will be asked to do some coding. You may compose you solutions however you like (scan or photograph written work, LaTeX, Quarto, handwriting capture on a tablet, whatever) so long as you ultimately upload a single .pdf file to Gradescope.\n\n\n\n\n\n\nGrace\n\n\n\nYour lowest problem set score will be dropped at the end of the semester.",
     "crumbs": [
       "Syllabus",
       "Assignments and grading"
     ]
   },
   {
-    "objectID": "syllabus/syllabus_assignments.html#exams-20-each",
-    "href": "syllabus/syllabus_assignments.html#exams-20-each",
+    "objectID": "syllabus/syllabus_assignments.html#exams-23-each",
+    "href": "syllabus/syllabus_assignments.html#exams-23-each",
     "title": "Assignments and grading",
-    "section": "Exams (20% each)",
-    "text": "Exams (20% each)\nThere will be three exams. The dates, times, and locations are firm, so mark your calendar now:\n\nMidterm 1: Thursday October 9 during your lab;\nMidterm 2: Thursday November 13 during your lab;\nFinal: Friday December 12 from 9 AM - 12 PM in Old Chem 116.\n\nThese will be old school, pencil-and-paper, in-class exams. You are allowed only two resources:\n\na “dumb” calculator (no wi-fi). You will not actually need it, but if you want it as a security blanket, be my guest;\nboth sides of one 8.5” x 11” sheet of notes, prepared by you and you alone. You can create it however you wish: handwritten, on a computer, etc.\n\nIf you seek testing accommodations, make sure the Student Disability Access Office sends me a letter, and then please make your appointments in the Testing Center as soon as possible.\n\n\n\n\n\n\nGrace\n\n\n\nIf you do better on the final exam than you did on one of the midterms, we will replace your lowest midterm exam score with your final exam score.\n\n\n\n\n\n\n\n\nNo make-up exams\n\n\n\nIf you are absent from one of the midterms for whatever reason, there will not be a make-up. Pursuant to the above policy, we will simply replace the missed midterm score with the final exam score. If you miss the final exam, you get a zero unless you have a Dean’s Excuse.",
+    "section": "Exams (23% each)",
+    "text": "Exams (23% each)\nThere will be three exams. The dates, times, and locations are firm, so mark your calendar now:\n\nMidterm 1: Wednesday February 18 during lecture;\nMidterm 2: Wednesday April 1 during lecture;\nFinal: Monday April 27 from 9 AM - 12 PM in Old Chem 116.\n\nThese will be old school, pencil-and-paper, in-class exams. You are allowed only one resource:\n\nboth sides of one 8.5” x 11” sheet of notes, prepared by you and you alone. It must be handwritten directly onto the piece of paper (not handwritten on a tablet)\n\nIf you seek testing accommodations, make sure the Student Disability Access Office sends me a letter, and then please make your appointments in the Testing Center as soon as possible.\n\n\n\n\n\n\nGrace\n\n\n\nIf you do better on the final exam than you did on one of the midterms, we will replace your lowest midterm exam score with your final exam score.\n\n\n\n\n\n\n\n\nNo make-up exams\n\n\n\nIf you are absent from one of the midterms for whatever reason, there will not be a make-up. Pursuant to the above policy, we will simply replace the missed midterm score with the final exam score. If you miss the final exam, you get a zero unless you have a Dean’s Excuse.",
     "crumbs": [
       "Syllabus",
       "Assignments and grading"
@@ -550,7 +550,7 @@
     "href": "syllabus/syllabus_overview.html#meetings",
     "title": "Course overview",
     "section": "Meetings",
-    "text": "Meetings\n\n\n\n\n\n\n\n\n\nMeeting\nLocation\nTime\nStaff\n\n\n\n\nLectures\nOld Chem 116\nMoWe 3:05 PM - 4:20 PM\nJohn\n\n\nLab 01\nPerkins LINK 087 (Classroom 3)\nTh 1:25 PM - 2:40 PM\nAurora\n\n\nLab 02\nPerkins LINK 087 (Classroom 3)\nTh 3:05 PM - 4:20 PM\nAurora",
+    "text": "Meetings\n\n\n\n\n\n\n\n\n\nMeeting\nLocation\nTime\nStaff\n\n\n\n\nLectures\nOld Chem 116\nMoWe 10:05 AM - 11:20 AM\nAnya\n\n\nLab 01\nOld Chem 201\nTh 1:25 PM - 2:40 PM\nGwen\n\n\nLab 02\nSocial Sciences 105\nTh 3:05 PM - 4:20 PM\nFederico",
     "crumbs": [
       "Syllabus",
       "Overview"
@@ -3871,7 +3871,7 @@
     "href": "syllabus/syllabus_policies.html#use-of-outside-resources-including-ai",
     "title": "Policies",
     "section": "Use of outside resources, including AI",
-    "text": "Use of outside resources, including AI\nThere are at least two reasons you might seek outside resources:\n\n✅ Extra practice or alternative instruction: Go crazy. Knock yourself out. Have a ball. The internet is saturated with good (and horrible) resources for learning this material, so if you find something that really resonates with you, have at it;\n❌ Doing the problems for you: If you find a solution online, or ask a language model to generate one, and you copy it down and submit it as your own work, that is plagiarism. If we detect it, you will earn a zero for that part of your write-up.\n\n“Using ChatGPT to complete assignments is like bringing a forklift into the weight room; you will never improve your cognitive fitness that way.” Furthermore, 60% of your final course grade is determined by your performance on old school, no-tech exams. As such, outsourcing all of your thinking to an AI will probably end in humiliating disaster. To avoid this, I suggest you abstain from using language models to do the problems for you.",
+    "text": "Use of outside resources, including AI\nThere are at least two reasons you might seek outside resources:\n\n✅ Extra practice or alternative instruction: Go crazy. Knock yourself out. Have a ball. The internet is saturated with good (and horrible) resources for learning this material, so if you find something that really resonates with you, have at it;\n❌ Doing the problems for you: If you find a solution online, or ask a language model to generate one, and you copy it down and submit it as your own work, that is plagiarism. If we detect it, you will earn a zero for that part of your write-up.\n\n“Using ChatGPT to complete assignments is like bringing a forklift into the weight room; you will never improve your cognitive fitness that way.” Furthermore, 69% of your final course grade is determined by your performance on old school, no-tech exams. As such, outsourcing all of your thinking to an AI will probably end in humiliating disaster. To avoid this, I suggest you abstain from using language models to do the problems for you.",
     "crumbs": [
       "Syllabus",
       "Policies"
@@ -3882,7 +3882,7 @@
     "href": "syllabus/syllabus_policies.html#communication",
     "title": "Policies",
     "section": "Communication",
-    "text": "Communication\nIf you wish to ask content-related questions in writing, please do not do so via e-mail. Instead, please use the course discussion forum Ed Discussion. That way all members of the teaching team can see your question, and all students can benefit from the ensuing discussion. You are also encouraged to answer one another’s questions.\nIf you have questions about personal matters that may not be appropriate for the public course forum (e.g. illness, accommodations, etc), then please e-mail the instructor directly (john.zito@duke.edu).\n\n\n\n\n\n\nNote\n\n\n\nYou can ask questions anonymously on Ed. The teaching team will still know your identity, but your peers will not.",
+    "text": "Communication\nIf you wish to ask content-related questions in writing, please do not do so via e-mail. Instead, please use the course discussion forum Ed Discussion. That way all members of the teaching team can see your question, and all students can benefit from the ensuing discussion. You are also encouraged to answer one another’s questions.\nIf you have questions about personal matters that may not be appropriate for the public course forum (e.g. illness, accommodations, etc), then please e-mail the instructor directly (anya.katsevich@duke.edu).\n\n\n\n\n\n\nNote\n\n\n\nYou can ask questions anonymously on Ed. The teaching team will still know your identity, but your peers will not.",
     "crumbs": [
       "Syllabus",
       "Policies"
@@ -3893,7 +3893,7 @@
     "href": "syllabus/syllabus_policies.html#late-work-and-extensions",
     "title": "Policies",
     "section": "Late work and extensions",
-    "text": "Late work and extensions\nNo late work will be accepted unless you request an extension in advance by e-mailing the instructor directly (john.zito@duke.edu). All reasonable requests will be entertained, but extensions will not be long.",
+    "text": "Late work and extensions\nNo late work will be accepted unless you request an extension in advance by e-mailing the instructor directly (anya.katsevich@duke.edu). All reasonable requests will be entertained, but extensions will not be long.",
     "crumbs": [
       "Syllabus",
       "Policies"
@@ -3904,7 +3904,7 @@
     "href": "syllabus/syllabus_policies.html#regrade-requests",
     "title": "Policies",
     "section": "Regrade requests",
-    "text": "Regrade requests\nIf you receive a graded assignment back, and you believe that some part of it was graded incorrectly, you may dispute the grade by submitting a regrade request in Gradescope. JZ is the sole reviewer of these. Note the following:\n\nYou have one week after you receive a grade to submit a regrade request;\nYou should submit separate regrade requests for each question you wish to dispute, not a single catch-all request;\nRequests will be considered if there was an error in the grade calculation or if a correct answer was mistakenly marked as incorrect;\nRequests to dispute the number of points deducted for an incorrect response will not be considered;\nNo grades will be changed after the final exam has been administered on Friday December 12.",
+    "text": "Regrade requests\nIf you receive a graded assignment back, and you believe that some part of it was graded incorrectly, you may dispute the grade by submitting a regrade request in Gradescope. Note the following:\n\nYou have one week after you receive a grade to submit a regrade request;\nYou should submit separate regrade requests for each question you wish to dispute, not a single catch-all request;\nRequests will be considered if there was an error in the grade calculation or if a correct answer was mistakenly marked as incorrect;\nRequests to dispute the number of points deducted for an incorrect response will not be considered;\nNo grades will be changed after the final exam has been administered on Monday April 27.",
     "crumbs": [
       "Syllabus",
       "Policies"
@@ -3948,7 +3948,7 @@
     "href": "syllabus/syllabus_team.html",
     "title": "Teaching team",
     "section": "",
-    "text": "Mug\nName\nRole\nOffice Hours\n\n\n\n\n\nHu, Yuang\nTA\nMon 7:30 PM - 9:30 PM\nremote (Zoom link on Canvas)\n\n\n\nLiu, Aurora\nHead TA\nWed 4:30 PM - 5:30 PM\nOld Chem 203B\nThu 4:30 PM - 5:30 PM\nPerkins LINK 087 (Classroom 3)\n\n\n\nMa, Liane\nTA\nSun 10:00 AM - 12:00 PM\nremote (Zoom link on Canvas)\n\n\n\nZito, John\nInstructor\nTue 3:00 PM - 6:00 PM\nor by appointment\nOld Chem 207",
+    "text": "Mug\nName\nRole\nOffice Hours\n\n\n\n\n\nGwen Jacobson\nHead TA\nTime TBA\nLocation TBA\n\n\n\n\nFederico Lazzarini| TA | Time TBA  | | | Location TBA\n\n\n\n\n\nAnya Katsevich\nInstructor\nMon 3:00 PM - 4:00 PM,\nWed 3:00 PM - 4:00 PM\nOld Chem 216",
     "crumbs": [
       "Syllabus",
       "Teaching team"
