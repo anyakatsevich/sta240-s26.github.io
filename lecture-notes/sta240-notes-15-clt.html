@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Central limit theorem – STA 240 Spring 2026</title>
 <style>
@@ -27,14 +27,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d640c705e8c17715bca3574aa719063f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-24b5e6359d046001481a7c94baaab5c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-33b714e1d1349c2dcecd47d3d69c088b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <meta name="shinylive:serviceworker_dir" content="..">
 <script src="../site_libs/quarto-contrib/shinylive-0.9.1/shinylive/load-shinylive-sw.js" type="module"></script>
 <script src="../site_libs/quarto-contrib/shinylive-0.9.1/shinylive/run-python-blocks.js" type="module"></script>
@@ -76,7 +77,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -114,7 +115,7 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+      <img src="../img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none"><img src="../img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="quarto-navigation-tool px-1" aria-label="RStudio Containers"><i class="bi bi-code-square"></i></a>
     <a href="https://go.canvas.duke.edu/" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-megaphone"></i></a>
@@ -614,7 +615,7 @@ shinyApp(ui, server)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition: convergence in distribution
+<span class="screen-reader-only">Note</span>Definition: convergence in distribution
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -647,7 +648,7 @@ F_n(x)&amp;=P(Y_n\leq x)\\
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example: Student’s <span class="math inline">\(t\)</span> distribution
+<span class="screen-reader-only">Warning</span>Example: Student’s <span class="math inline">\(t\)</span> distribution
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -723,7 +724,7 @@ shinyApp(ui = ui, server = server)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example: position of a particle (PSET 6 #2)
+<span class="screen-reader-only">Warning</span>Example: position of a particle (PSET 6 #2)
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -807,7 +808,7 @@ shinyApp(ui = ui, server = server)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Continuity theorem
+<span class="screen-reader-only">Tip</span>Continuity theorem
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -838,7 +839,7 @@ M_n(t)&amp;=E(e^{tY_n})\\
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Central limit theorem (CLT)
+<span class="screen-reader-only">Tip</span>Central limit theorem (CLT)
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -993,7 +994,7 @@ M''(0)&amp;=E(X_1^2)=\text{var}(X_1)+E(X_1)^2=1+0=1 &amp;&amp; \text{assumption 
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Problem Set 0 strikes again!
+<span class="screen-reader-only">Important</span>Problem Set 0 strikes again!
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1009,7 +1010,7 @@ Problem Set 0 strikes again!
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition: Kolmogorov-Smirnov (KS) distance
+<span class="screen-reader-only">Note</span>Definition: Kolmogorov-Smirnov (KS) distance
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1056,7 +1057,7 @@ F_n(x)&amp;=P\left(Z_n\leq x\right)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Berry-Esseen theorem
+<span class="screen-reader-only">Tip</span>Berry-Esseen theorem
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1081,7 +1082,7 @@ E\left[\left|\frac{X_1-\mu}{\sigma}\right|^3\right]
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Reality check
+<span class="screen-reader-only">Important</span>Reality check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1150,13 +1151,14 @@ Reality check
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
