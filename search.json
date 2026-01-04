@@ -1417,7 +1417,7 @@
     "href": "problems/pset-0.html#submission",
     "title": "Problem Set 0",
     "section": "Submission",
-    "text": "Submission\nYou are free to compose your solutions for this problem set however you wish (scan or photograph written work, handwriting capture on a tablet device, LaTeX, Quarto, whatever) as long as the final product is a single PDF file. You must upload this to Gradescope and mark the pages associated with each problem.\nDo not forget to include the following:\n\nFor each problem, please acknowledge your collaborators;\nIf a problem required you to code something, please include both the code and the output. “Including the code” can be as crude as a screenshot, but you might also use Quarto to get a nice lil’ pdf that you can merge with the rest of your submission.",
+    "text": "Submission\nYou are free to compose your solutions for this problem set however you wish (scan or photograph written work, handwriting capture on a tablet device, LaTeX, Quarto, whatever) as long as the final product is a single PDF file. You must upload this to Gradescope and mark the pages associated with each problem.\nDo not forget to include the following:\n\nFor each problem, please acknowledge your collaborators;\nIf a problem required you to code something, please include both the code and the output. “Including the code” can be as crude as a screenshot, but you might also use Quarto to get a pdf that you can merge with the rest of your submission.",
     "crumbs": [
       "Problem Sets",
       "Problem Set 0"
@@ -1523,7 +1523,7 @@
     "href": "problems/pset-5.html#submission",
     "title": "Problem Set 5",
     "section": "Submission",
-    "text": "Submission\nYou are free to compose your solutions for this problem set however you wish (scan or photograph written work, handwriting capture on a tablet device, LaTeX, Quarto, whatever) as long as the final product is a single PDF file. You must upload this to Gradescope and mark the pages associated with each problem.\nDo not forget to include the following:\n\nFor each problem, please acknowledge your collaborators;\nIf a problem required you to code something, please include both the code and the output. “Including the code” can be as crude as a screenshot, but you might also use Quarto to get a nice lil’ pdf that you can merge with the rest of your submission."
+    "text": "Submission\nYou are free to compose your solutions for this problem set however you wish (scan or photograph written work, handwriting capture on a tablet device, LaTeX, Quarto, whatever) as long as the final product is a single PDF file. You must upload this to Gradescope and mark the pages associated with each problem.\nDo not forget to include the following:\n\nFor each problem, please acknowledge your collaborators;\nIf a problem required you to code something, please include both the code and the output. “Including the code” can be as crude as a screenshot, but you might also use Quarto to get a pdf that you can merge with the rest of your submission."
   },
   {
     "objectID": "problems/pset-6.html",
@@ -2475,7 +2475,7 @@
     "href": "problems/pset-7.html#submission",
     "title": "Problem Set 7",
     "section": "Submission",
-    "text": "Submission\nYou are free to compose your solutions for this problem set however you wish (scan or photograph written work, handwriting capture on a tablet device, LaTeX, Quarto, whatever) as long as the final product is a single PDF file. You must upload this to Gradescope and mark the pages associated with each problem.\nDo not forget to include the following:\n\nFor each problem, please acknowledge your collaborators;\nIf a problem required you to code something, please include both the code and the output. “Including the code” can be as crude as a screenshot, but you might also use Quarto to get a nice lil’ pdf that you can merge with the rest of your submission."
+    "text": "Submission\nYou are free to compose your solutions for this problem set however you wish (scan or photograph written work, handwriting capture on a tablet device, LaTeX, Quarto, whatever) as long as the final product is a single PDF file. You must upload this to Gradescope and mark the pages associated with each problem.\nDo not forget to include the following:\n\nFor each problem, please acknowledge your collaborators;\nIf a problem required you to code something, please include both the code and the output. “Including the code” can be as crude as a screenshot, but you might also use Quarto to get a pdf that you can merge with the rest of your submission."
   },
   {
     "objectID": "problems/bank/counting/bridge.html",
@@ -3098,7 +3098,7 @@
     "href": "problems/pset-1.html#submission",
     "title": "Problem Set 1",
     "section": "Submission",
-    "text": "Submission\nYou are free to compose your solutions for this problem set however you wish (scan or photograph written work, handwriting capture on a tablet device, LaTeX, Quarto, whatever) as long as the final product is a single PDF file. You must upload this to Gradescope and mark the pages associated with each problem.\nDo not forget to include the following:\n\nFor each problem, please acknowledge your collaborators;\nIf a problem required you to code something, please include both the code and the output. “Including the code” can be as crude as a screenshot, but you might also use Quarto to get a nice lil’ pdf that you can merge with the rest of your submission."
+    "text": "Submission\nYou are free to compose your solutions for this problem set however you wish (scan or photograph written work, handwriting capture on a tablet device, LaTeX, Quarto, whatever) as long as the final product is a single PDF file. You must upload this to Gradescope and mark the pages associated with each problem.\nDo not forget to include the following:\n\nFor each problem, please acknowledge your collaborators;\nIf a problem required you to code something, please include both the code and the output. “Including the code” can be as crude as a screenshot, but you might also use Quarto to get a pdf that you can merge with the rest of your submission."
   },
   {
     "objectID": "problems/exam-final.html",
@@ -3539,7 +3539,7 @@
     "href": "index.html",
     "title": "STA 240 Probability for Statistical Inference",
     "section": "",
-    "text": "Below is a prospective outline for the course. Due dates are firm, but topics may change with advanced notice.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nPREPARE\nTOPIC\nMATERIALS\nDUE\n\n\n\n1\nWed, Jan 7\n\n\n\n\n\n\n\nThu, Jan 8\n\nLab 0 (calculus review)\n\n\n\n\n2\nMon, Jan 12\n\nSet theory\n\n\nPset 0 @11:59 PM\n\n\n\nWed, Jan 14\n\nProbability spaces\n\n\n\n\n\nThu, Jan 15\n\nLab 1 (hello R)\n\nLab 1 @11:59 PM\n\n\n3\nMon, Jan 19\n\nMLK Day - No class\n\nPset 1 @11:59 PM\n\n\n\nWed, Jan 21\n\nCounting\n\n\n\n\n\nThu, Jan 22\n\nLab 2\n\nLab 2 @11:59 PM\n\n\n4\nMon, Jan 26\n\nCounting\n\n\n\n\n\nWed, Jan 28\n\nConditional probability\n\n\n\n\n\nThu, Jan 29\n\nLab 3\n\nLab 3 @11:59 PM\n\n\n\nSun, Feb 1\n\n\n\nPset 2 @11:59 PM\n\n\n5\nMon, Feb 2\n\nConditional probability\n\n\n\n\n\nWed, Feb 4\n\nRandom variables intro\n\n\n\n\n\nThu, Feb 5\n\nLab 4\n\nLab 4 @11:59 PM\n\n\n\nSun, Feb 8\n\n\n\nPset 3 @11:59 PM\n\n\n6\nMon, Feb 9\n\nDiscrete families\n\n\n\n\n\nWed, Feb 11\n\nExpected value\n\n\n\n\n\nThu, Feb 12\n\nMidterm 1 review\n\n\n\n\n\nSun, Feb 15\n\n\n\nPset 4 @11:59 PM\n\n\n7\nMon, Feb 16\n\nVariance\n\n\n\n\n\nWed, Feb 18\n\nMidterm 1\n\n\n\n\n\nThu, Feb 19\n\nLab 5\n\nLab 5 @11:59 PM\n\n\n8\nMon, Feb 23\n\nCdfs, continuous random vars\n\n\n\n\n\nWed, Feb 25\n\nAbsolute continuity\n\n\n\n\n\nThu, Feb 26\n\nLab 6\n\nLab 6 @11:59 PM\n\n\n9\nMon, Mar 2\n\nNormal, gamma\n\n\n\n\n\nWed, Mar 4\n\nMoments and quantiles\n\n\n\n\n\nThu, Mar 5\n\nLab 7\n\nLab 7 @11:59 PM\n\n\n10\nMon, Mar 9\n\nSpring Break - No classes\n\n\n\n\n11\nMon, Mar 16\n\nMGF\n\n\n\n\n\nWed, Mar 18\n\nJoint discrete r.v.’s\n\n\n\n\n\nThu, Mar 19\n\nLab 8\n\nLab 8 @11:59 PM\n\n\n\nSun, Mar 22\n\n\n\nPset 5 @11:59 PM\n\n\n12\nMon, Mar 23\n\nJoint continuous r.v.’s\n\n\n\n\n\nWed, Mar 25\n\nSums and averages\n\n\n\n\n\nThu, Mar 26\n\nMidterm 2 review\n\n\n\n\n\nSun, Mar 29\n\n\n\nPset 6 @11:59 PM\n\n\n13\nMon, Mar 30\n\nLimit theorems\n\n\n\n\n\nWed, Apr 1\n\nMidterm 2\n\n\n\n\n\nThu, Apr 2\n\nLab 9\n\nLab 9 @11:59 PM\n\n\n14\nMon, Apr 6\n\nWhat is statistics?\n\n\n\n\n\nWed, Apr 8\n\nWhat is statistics?\n\n\n\n\n\nThu, Apr 9\n\nLab 10\n\nLab 10 @11:59 PM\n\n\n15\nMon, Apr 13\n\nMaximum likelihood\n\n\n\n\n\nWed, Apr 15\n\nMaximum likelihood\n\n\n\n\n\nThu, Apr 16\n\nLab 11\n\nLab 11 @11:59 PM\n\n\n16\nMon, Apr 20\n\nBayesian inference\n\n\n\n\n\nWed, Apr 22\n\nBayesian inference\n\n\n\n\n\nSat, Apr 25\n\n\n\nPset 7 @11:59 PM\n\n\n17\nMon, Apr 27\n\nFinal exam (9am-12pm)\n\n\n\n\n\n\n\n\nExtra notes\nYou’re not responsible for any of this, but it’s extra stuff I had lying around that you might find interesting:\n\nAlternative notes on MLE, with more discussion of confidence intervals: set 1, set 2;\n“AP Statistics in 75 minutes.” After this class, we have all of the tools to derive the itchy formulas that we take for granted in AP Stats or STA 101.",
+    "text": "Below is a prospective outline for the course. Due dates are firm, but topics may change with advanced notice.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nPREPARE\nTOPIC\nMATERIALS\nDUE\n\n\n\n1\nWed, Jan 7\n\nIntroduction\n\n\n\n\n\nThu, Jan 8\n\nLab 0 (calculus review)\n\n\n\n\n2\nMon, Jan 12\n\nSet theory\n\n\nPset 0 @11:59 PM\n\n\n\nWed, Jan 14\n\nProbability spaces\n\n\n\n\n\nThu, Jan 15\n\nLab 1 (hello R)\n\nLab 1 @11:59 PM\n\n\n3\nMon, Jan 19\n\nMLK Day - No class\n\nPset 1 @11:59 PM\n\n\n\nWed, Jan 21\n\nCounting\n\n\n\n\n\nThu, Jan 22\n\nLab 2\n\nLab 2 @11:59 PM\n\n\n4\nMon, Jan 26\n\nCounting\n\n\n\n\n\nWed, Jan 28\n\nConditional probability\n\n\n\n\n\nThu, Jan 29\n\nLab 3\n\nLab 3 @11:59 PM\n\n\n\nSun, Feb 1\n\n\n\nPset 2 @11:59 PM\n\n\n5\nMon, Feb 2\n\nConditional probability\n\n\n\n\n\nWed, Feb 4\n\nRandom variables intro\n\n\n\n\n\nThu, Feb 5\n\nLab 4\n\nLab 4 @11:59 PM\n\n\n\nSun, Feb 8\n\n\n\nPset 3 @11:59 PM\n\n\n6\nMon, Feb 9\n\nDiscrete families\n\n\n\n\n\nWed, Feb 11\n\nExpected value\n\n\n\n\n\nThu, Feb 12\n\nMidterm 1 review\n\n\n\n\n\nSun, Feb 15\n\n\n\nPset 4 @11:59 PM\n\n\n7\nMon, Feb 16\n\nVariance\n\n\n\n\n\nWed, Feb 18\n\nMidterm 1\n\n\n\n\n\nThu, Feb 19\n\nLab 5\n\nLab 5 @11:59 PM\n\n\n8\nMon, Feb 23\n\nCdfs, continuous random vars\n\n\n\n\n\nWed, Feb 25\n\nAbsolute continuity\n\n\n\n\n\nThu, Feb 26\n\nLab 6\n\nLab 6 @11:59 PM\n\n\n9\nMon, Mar 2\n\nNormal, gamma\n\n\n\n\n\nWed, Mar 4\n\nMoments and quantiles\n\n\n\n\n\nThu, Mar 5\n\nLab 7\n\nLab 7 @11:59 PM\n\n\n10\nMon, Mar 9\n\nSpring Break - No classes\n\n\n\n\n11\nMon, Mar 16\n\nMGF\n\n\n\n\n\nWed, Mar 18\n\nJoint discrete r.v.’s\n\n\n\n\n\nThu, Mar 19\n\nLab 8\n\nLab 8 @11:59 PM\n\n\n\nSun, Mar 22\n\n\n\nPset 5 @11:59 PM\n\n\n12\nMon, Mar 23\n\nJoint continuous r.v.’s\n\n\n\n\n\nWed, Mar 25\n\nSums and averages\n\n\n\n\n\nThu, Mar 26\n\nMidterm 2 review\n\n\n\n\n\nSun, Mar 29\n\n\n\nPset 6 @11:59 PM\n\n\n13\nMon, Mar 30\n\nLimit theorems\n\n\n\n\n\nWed, Apr 1\n\nMidterm 2\n\n\n\n\n\nThu, Apr 2\n\nLab 9\n\nLab 9 @11:59 PM\n\n\n14\nMon, Apr 6\n\nWhat is statistics?\n\n\n\n\n\nWed, Apr 8\n\nWhat is statistics?\n\n\n\n\n\nThu, Apr 9\n\nLab 10\n\nLab 10 @11:59 PM\n\n\n15\nMon, Apr 13\n\nMaximum likelihood\n\n\n\n\n\nWed, Apr 15\n\nMaximum likelihood\n\n\n\n\n\nThu, Apr 16\n\nLab 11\n\nLab 11 @11:59 PM\n\n\n16\nMon, Apr 20\n\nBayesian inference\n\n\n\n\n\nWed, Apr 22\n\nBayesian inference\n\n\n\n\n\nSat, Apr 25\n\n\n\nPset 7 @11:59 PM\n\n\n17\nMon, Apr 27\n\nFinal exam (9am-12pm)",
     "crumbs": [
       "Syllabus",
       "Schedule"
@@ -4083,7 +4083,7 @@
     "text": "The function sample() lets us pick random values. This is very useful in probability, because it allows us to simulate experiments like coin flips, die rolls, or drawing cards.\nThe pattern is:\nsample(x, size = n, replace = FALSE)",
     "crumbs": [
       "R Helpers",
-      "`sample`"
+      "sample"
     ]
   },
   {
@@ -4094,7 +4094,7 @@
     "text": "Example: coin flip\nThis chooses either heads (H) or tails (T) at random:\n\nsample(c(\"H\", \"T\"), size = 1)\n\n[1] \"H\"",
     "crumbs": [
       "R Helpers",
-      "`sample`"
+      "sample"
     ]
   },
   {
@@ -4105,7 +4105,7 @@
     "text": "Example: die roll\nThis rolls a fair die twenty times:\n\nsample(1:6, size = 20, replace = TRUE)\n\n [1] 6 3 2 4 3 3 2 1 4 1 2 6 5 1 1 4 5 4 4 5\n\n\nWe need replace = TRUE here, because after rolling a die, the next roll can be the same number again.",
     "crumbs": [
       "R Helpers",
-      "`sample`"
+      "sample"
     ]
   },
   {
@@ -4116,7 +4116,7 @@
     "text": "Example: Spotify shuffle\nHere’s my playlist:\n\nplaylist &lt;- c(\"Ramble On\",\n              \"It's Raining Men\",\n              \"Tears\",\n              \"Tiptoe Through the Tulips\",\n              \"Gangsta's Paradise\",\n              \"Days of Wine and Roses\")\n\nThere are 6 songs, so if I generate a sample of size 6 without replacement, I will ultimately draw each song exactly once, but in a random order:\n\nsample(playlist, size = length(playlist), replace = FALSE)\n\n[1] \"Tears\"                     \"Tiptoe Through the Tulips\"\n[3] \"Gangsta's Paradise\"        \"Ramble On\"                \n[5] \"Days of Wine and Roses\"    \"It's Raining Men\"",
     "crumbs": [
       "R Helpers",
-      "`sample`"
+      "sample"
     ]
   },
   {
