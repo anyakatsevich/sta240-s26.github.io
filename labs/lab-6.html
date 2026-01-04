@@ -511,15 +511,15 @@ window.Quarto = {
   
 
 
-</header><p>In this lab you will get some basic practice with the tools <code>R</code> provides for working with special families of (absolutely) continuous random variables. Fortunately, these are the same tools you saw for discrete random variables in <a href="https://sta240-f25.github.io/labs/lab-5.html">Lab 5</a>: the <code>p-</code>, <code>d-</code>, <code>r-</code> functions.</p>
+</header><p>In this lab you will get some basic practice with the tools <code>R</code> provides for working with special families of (absolutely) continuous random variables. Fortunately, these are the same tools you saw for discrete random variables in <a href="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-5.html">Lab 5</a>: the <code>p-</code>, <code>d-</code>, <code>r-</code> functions.</p>
 <section id="the-normal-distribution" class="level1"><h1>The normal distribution</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/producers.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></p>
 </figure>
 </div>
 <p>Imagine you are a theater producer. Your most recent smash hit was the musical <em>Quiet!</em>, a light, frothy adaptation of <a href="https://en.wikipedia.org/wiki/All_Quiet_on_the_Western_Front"><em>All Quiet on the Western Front</em></a>. Your next project is a co-production with the Duke University Department of Statistical Science. It’s called <em>Tidy!</em>, and it features such rollicking numbers as “<code>pivot</code> the Night Away” and “<code>facet_wrap</code>ped in Your Love.”</p>
-<p>Let <span class="math inline">\(X\)</span> represent the return-on-investment (ROI) for this new musical, which you can think of as ROI = (GAIN - INVESTMENT) / INVESTMENT. As I learned from <a href="https://sta240-f25.github.io/readings/detsky-gutekunst-kopac-2025-significance.pdf">this recent article</a> in <em>Significance</em> magazine, investing in musicals is a risky business. You could make a killing, or you could lose your shirt. If <span class="math inline">\(X=0\)</span>, you broke even. If <span class="math inline">\(X&gt;0\)</span> you made money, and you have a hit if <span class="math inline">\(X\)</span> is huge. If <span class="math inline">\(X&lt;0\)</span> you lost money, and if you used any <em>debt</em> or <em>leverage</em> in your financing, then <span class="math inline">\(X\)</span> could be arbitrarily large in the wrong direction. All of these are possible. Furthermore, <span class="math inline">\(X\)</span> is a proportion of money, and its value is uncertain. As such, it may be appropriate to model <span class="math inline">\(X\)</span> as a continuous random variable that can take on any value in <span class="math inline">\(\mathbb{R}\)</span>.</p>
-<p>By far the most famous model for such a variable is the <strong>normal distribution</strong>. Its density is the familiar <em>bell curve</em>, which you can play around with in this <a href="https://sta240-f25.github.io/distributions/continuous-normal.html">explainer</a>. In what follows, imagine that <span class="math inline">\(X\sim\text{N}(\mu,\,\sigma^2)\)</span>, and historical experience tells us that returns are 0.1 (10%) on average with a standard deviation of 0.3.</p>
+<p>Let <span class="math inline">\(X\)</span> represent the return-on-investment (ROI) for this new musical, which you can think of as ROI = (GAIN - INVESTMENT) / INVESTMENT. As I learned from <a href="https://anyakatsevich.github.io/sta240-s26.github.io/readings/detsky-gutekunst-kopac-2025-significance.pdf">this recent article</a> in <em>Significance</em> magazine, investing in musicals is a risky business. You could make a killing, or you could lose your shirt. If <span class="math inline">\(X=0\)</span>, you broke even. If <span class="math inline">\(X&gt;0\)</span> you made money, and you have a hit if <span class="math inline">\(X\)</span> is huge. If <span class="math inline">\(X&lt;0\)</span> you lost money, and if you used any <em>debt</em> or <em>leverage</em> in your financing, then <span class="math inline">\(X\)</span> could be arbitrarily large in the wrong direction. All of these are possible. Furthermore, <span class="math inline">\(X\)</span> is a proportion of money, and its value is uncertain. As such, it may be appropriate to model <span class="math inline">\(X\)</span> as a continuous random variable that can take on any value in <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p>By far the most famous model for such a variable is the <strong>normal distribution</strong>. Its density is the familiar <em>bell curve</em>, which you can play around with in this <a href="https://anyakatsevich.github.io/sta240-s26.github.io/distributions/continuous-normal.html">explainer</a>. In what follows, imagine that <span class="math inline">\(X\sim\text{N}(\mu,\,\sigma^2)\)</span>, and historical experience tells us that returns are 0.1 (10%) on average with a standard deviation of 0.3.</p>
 <section id="task-1" class="level2"><h2 class="anchored" data-anchor-id="task-1">Task 1</h2>
 <p>What is the probability that <span class="math inline">\(X\)</span> will be exactly equal to 0.377?</p>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -616,7 +616,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To ensure that your numbers are reproducible and you get the same results every time you render your document, <a href="https://sta240-f25.github.io/explainers/rng-seed.html">set a random number seed</a> of your choosing.</p>
+<p>To ensure that your numbers are reproducible and you get the same results every time you render your document, <a href="https://anyakatsevich.github.io/sta240-s26.github.io/explainers/rng-seed.html">set a random number seed</a> of your choosing.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -681,7 +681,7 @@ window.Quarto = {
 </div>
 </div>
 </section></section><section id="the-gamma-distribution" class="level1"><h1>The gamma distribution</h1>
-<div id="fig-planking" class="quarto-float quarto-figure quarto-figure-center anchored" width="50%" data-fig-align="center">
+<div id="fig-planking" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="50%">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-planking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/stupid-planking.jpg" id="fig-planking" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:50.0%">
 </div>
@@ -700,7 +700,7 @@ f(x)
 0 &amp; x&lt;0.
 \end{cases}
 \]</span></p>
-<p>A random variable possessing this distribution is denoted <span class="math inline">\(X\sim\text{Gamma}(\alpha,\,\beta)\)</span>, and the parameters <span class="math inline">\(\alpha&gt;0\)</span> and <span class="math inline">\(\beta&gt;0\)</span> are called the <em>shape</em> and the <em>rate.</em> Once we have the appropriate tools, we will derive that <span class="math inline">\(E(X)=\alpha/\beta\)</span> and <span class="math inline">\(\text{var}(X)=\alpha/\beta^2\)</span>, but for now you can just take these as facts. Our webpage has an <a href="https://sta240-f25.github.io/distributions/continuous-gamma.html">explainer</a> with more.</p>
+<p>A random variable possessing this distribution is denoted <span class="math inline">\(X\sim\text{Gamma}(\alpha,\,\beta)\)</span>, and the parameters <span class="math inline">\(\alpha&gt;0\)</span> and <span class="math inline">\(\beta&gt;0\)</span> are called the <em>shape</em> and the <em>rate.</em> Once we have the appropriate tools, we will derive that <span class="math inline">\(E(X)=\alpha/\beta\)</span> and <span class="math inline">\(\text{var}(X)=\alpha/\beta^2\)</span>, but for now you can just take these as facts. Our webpage has an <a href="https://anyakatsevich.github.io/sta240-s26.github.io/distributions/continuous-gamma.html">explainer</a> with more.</p>
 <section id="task-6" class="level2"><h2 class="anchored" data-anchor-id="task-6">Task 6</h2>
 <p>The actuaries at your insurance company know that historically, monthly claims are about $10,000 on average, with a standard deviation of $2,000. If we want to use the model <span class="math inline">\(X\sim\text{Gamma}(\alpha,\,\beta)\)</span>, how should we set <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> so that <span class="math inline">\(X\)</span> has the correct location and spread?</p>
 <div class="callout callout-style-default callout-warning callout-titled">

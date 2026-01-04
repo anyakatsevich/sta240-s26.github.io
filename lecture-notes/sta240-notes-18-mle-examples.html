@@ -487,14 +487,14 @@ window.Quarto = {
 </header>
 
 
-<p>Below are two complete, worked examples of maximum likelihood problems. You also have the solutions to <a href="https://sta240-f25.github.io/labs/lab-10.html">Lab 10</a>. The final exam will feature a problem with exactly the same format as these three examples, so study them carefully. The steps are as follows:</p>
+<p>Below are two complete, worked examples of maximum likelihood problems. You also have the solutions to <a href="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-10.html">Lab 10</a>. The final exam will feature a problem with exactly the same format as these three examples, so study them carefully. The steps are as follows:</p>
 <ol type="1">
 <li>Compute the (log-)likelihood function;</li>
 <li>Compute the maximum likelihood estimator;</li>
 <li>Derive the <em>exact</em> sampling distribution of the estimator;</li>
 <li>Derive the mean-squared-error (MSE) of the estimator and identify its statistical properties (biased? consistent?).</li>
 </ol>
-<p>Step 1 requires you to be fluent with algebraic manipulations from pre-calculus, especially your log and exponent properties. Step 2 requires you to be fluent in your derivative rules. Step 3 requires you to to be fluent with <a href="https://sta240-f25.github.io/labs/lab-7.html">change-of-variables</a> and <a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-14-sums-and-averages.pdf">sums and averages</a> of iid random variables. As such, these problems synthesize a lot of the technical skills that you will need in future statistical theory courses. Furthermore, the steps are cumulative. You can’t do Step 3 correctly if you muck up Steps 1 and 2. So, to ace the final, you need to get your arms around the entire process.</p>
+<p>Step 1 requires you to be fluent with algebraic manipulations from pre-calculus, especially your log and exponent properties. Step 2 requires you to be fluent in your derivative rules. Step 3 requires you to to be fluent with <a href="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-7.html">change-of-variables</a> and <a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-14-sums-and-averages.pdf">sums and averages</a> of iid random variables. As such, these problems synthesize a lot of the technical skills that you will need in future statistical theory courses. Furthermore, the steps are cumulative. You can’t do Step 3 correctly if you muck up Steps 1 and 2. So, to ace the final, you need to get your arms around the entire process.</p>
 <section id="example-exponential-distribution" class="level1">
 <h1>Example: exponential distribution</h1>
 <p>Consider</p>
@@ -564,7 +564,7 @@ n\ln \theta
 <p><span class="math display">\[
 \hat{\theta}_n=\frac{n}{\sum\limits_{i=1}^nX_i}=\frac{1}{\bar{X}_n}.
 \]</span></p>
-<p>This is a random variable because it depends on the <span class="math inline">\(X_i\)</span>, which are random. We know that <span class="math inline">\(X_i\overset{\text{iid}}{\sim}\text{Gamma}(1,\,\theta)\)</span> and so we know from <a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-14-sums-and-averages.pdf">lecture</a> that <span class="math inline">\(\bar{X}_n\sim\text{Gamma}(n,\,n\theta)\)</span>. Consequently, the distribution of <span class="math inline">\(\hat{\theta}_n=1/\bar{X}_n\)</span> is <a href="https://sta240-f25.github.io/distributions/continuous-inverse-gamma.html"><em>inverse gamma</em></a>, which you derived on <a href="https://sta240-f25.github.io/problems/pset-6.html#problem-6">Problem Set 6 #6d</a>.</p>
+<p>This is a random variable because it depends on the <span class="math inline">\(X_i\)</span>, which are random. We know that <span class="math inline">\(X_i\overset{\text{iid}}{\sim}\text{Gamma}(1,\,\theta)\)</span> and so we know from <a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-14-sums-and-averages.pdf">lecture</a> that <span class="math inline">\(\bar{X}_n\sim\text{Gamma}(n,\,n\theta)\)</span>. Consequently, the distribution of <span class="math inline">\(\hat{\theta}_n=1/\bar{X}_n\)</span> is <a href="https://anyakatsevich.github.io/sta240-s26.github.io/distributions/continuous-inverse-gamma.html"><em>inverse gamma</em></a>, which you derived on <a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-6.html#problem-6">Problem Set 6 #6d</a>.</p>
 <p>Since the exact sampling distribution of the estimator is <span class="math inline">\(\hat{\theta}_n\sim\text{IG}(n,\,n\theta)\)</span>, we know that the mean and variance are</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -609,7 +609,7 @@ E(\hat{\theta}_n)-\theta
 <p><span class="math display">\[
 f(x;\,\theta)=\theta(x+1)^{-(\theta+1)},\quad x&gt;0.
 \]</span></p>
-<p>This is a special case of the family you studied on <a href="https://sta240-f25.github.io/problems/pset-6.html#problem-1">Problem Set 6 #1</a>, and you also worked with it on Midterm 2.</p>
+<p>This is a special case of the family you studied on <a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-6.html#problem-1">Problem Set 6 #1</a>, and you also worked with it on Midterm 2.</p>
 <p>The likelihood function is</p>
 <p><span class="math display">\[
 \begin{aligned}

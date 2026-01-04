@@ -747,7 +747,7 @@ shinyApp(ui, server)</a></code></pre>
 <p><span class="math display">\[
 \hat{\theta}_n=\underset{\theta}{\arg\max}\,L(\theta;\,X_{1:n})=\underset{\theta}{\arg\max}\,\prod_{i=1}^nf(X_i;\,\theta).
 \]</span></p>
-<p>In the app above you can perform the maximization by eye, but in general we do it mathematically. In other words, we reduce the problem of estimation to a Calc 1 problem: take the derivative, set it equal to zero, solve for the critical points, classify them using the second derivative test, all that jazz. See <a href="https://sta240-f25.github.io/math/differentiation.html#optimization">here</a> if you want a refresher on how that goes.</p>
+<p>In the app above you can perform the maximization by eye, but in general we do it mathematically. In other words, we reduce the problem of estimation to a Calc 1 problem: take the derivative, set it equal to zero, solve for the critical points, classify them using the second derivative test, all that jazz. See <a href="https://anyakatsevich.github.io/sta240-s26.github.io/math/differentiation.html#optimization">here</a> if you want a refresher on how that goes.</p>
 <p>On a technical level, it is important to recognize that maximizing the likelihood function will give you the same result as maximizing the log-likelihood function because the natural-log is an order-preserving function:</p>
 <p><span class="math display">\[
 \ell(\theta;\,X_{1:n})=\ln L(\theta;\,X_{1:n})=\ln\prod_{i=1}^nf(X_i;\,\theta)=\sum\limits_{i=1}^n\ln f(X_i;\,\theta).
