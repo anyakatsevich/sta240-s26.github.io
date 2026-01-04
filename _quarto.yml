@@ -94,7 +94,7 @@ website:
             text: Gamma function
           - href: math/massage-and-squint.qmd
             text: Massage and squint
-      - section: "`R` Helpers"
+      - section: "R Helpers"
         contents:
           - href: explainers/setup.qmd
             text: Getting started

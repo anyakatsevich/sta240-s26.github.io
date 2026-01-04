@@ -12,3 +12,4 @@
 /lecture-notes/.quarto
 /math/.quarto
 /labs/.quarto
+**/*.quarto_ipynb

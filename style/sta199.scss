@@ -79,3 +79,17 @@ div.sourceCode pre.sourceCode {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Make sidebar section headers white even when they are not links (e.g., empty sections) */
+.sidebar a.sidebar-item-text,
+.sidebar span.sidebar-item-text,
+.sidebar .sidebar-item-text {
+  color: #fff !important;
+}
+
+/* Optional: keep it white on hover/focus as well */
+.sidebar a.sidebar-item-text:hover,
+.sidebar a.sidebar-item-text:focus,
+.sidebar a.sidebar-item-text:visited {
+  color: #fff !important;
+}
