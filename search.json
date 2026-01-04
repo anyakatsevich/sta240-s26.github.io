@@ -255,7 +255,7 @@
     "section": "",
     "text": "Functions in R are often vectorized. For example:\n\nexp(2)\n\n[1] 7.389056\n\n\nI give it one number, and it returns one number. If instead, I supply a vector, I get this:\n\nexp(c(-3, 0.001, 2, 5, 600, 1, 0))\n\n[1]  4.978707e-02  1.001001e+00  7.389056e+00  1.484132e+02 3.773020e+260\n[6]  2.718282e+00  1.000000e+00\n\n\nSo when I supply a regular ol’ number as an argument, the exp function returns a number. When I supply a vector, it returns a vector; the exp function knows to act entry-wise and give me back a vector with the output of each entry-wise computation. In other words, I didn’t have to write a loop to manually do this. The function is vectorized, so it effectively runs the loop for me.\nSo consider for instance the set of numbers \\(A = \\{-100, -6, 0.001, \\pi, 30\\}\\), and this stupid function:\n\\[\nf(x) = \\ln^2\\left|\\frac{2x}{1-\\sin(x)}\\right|.\n\\]\nIf I wanted to compute the value of \\(f\\) for each of the arguments in \\(A\\), I could write a loop that goes entry-by-entry through \\(A\\) and applies the function \\(f\\) to it. But in R, because arithmetic operations are vectorized, I can do this:\n\nA = c(-100, -6, 0.001, pi, 30)\n\nlog( abs( (2 * A) / ( 1 - sin(A) ) ) ) ^ 2 \n\n[1] 36.051349  7.910714 38.608919  3.377792 11.609009\n\n\nDumb!\nAll of the basic arithmetic operations are vectorized like this:\n\nc(1, 2, 3) + 2\n\n[1] 3 4 5\n\n\n\nc(1, 2, 3) + c(1, 2, 3)\n\n[1] 2 4 6\n\n\n\nfloor(c(4, 5.1, 6.9))\n\n[1] 4 5 6",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Vectorization"
     ]
   },
@@ -266,7 +266,7 @@
     "section": "",
     "text": "If you have a vector of numbers in R, there are many basic commands you can use to compute summary statistics. To illustrate, here is a vector of random numbers:\n\nset.seed(20)\nx &lt;- rnorm(100)\n\nOf course, these commands are useful no matter where the numbers came from:\n\nsum(x) # the total of the numbers\n\n[1] 0.4908104\n\nmean(x) # the average of the numbers\n\n[1] 0.004908104\n\nvar(x) # the variance\n\n[1] 0.9799034\n\nsd(x) # the standard deviation\n\n[1] 0.9899007\n\nmedian(x) # the median\n\n[1] -0.02486056\n\nmax(x) # the biggest number\n\n[1] 2.208443\n\nmin(x) # the smallest number\n\n[1] -2.889718",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Summary statistics"
     ]
   },
@@ -277,7 +277,7 @@
     "section": "",
     "text": "Statistical computing software like R can generate (pseudo)random numbers, like this:\n\nsample(c(1, 2, 3, 4, 5, 6), 5, replace = TRUE)\n\n[1] 1 4 1 2 5\n\n\nOr this:\n\nrbinom(5, 50, 0.3)\n\n[1] 20 16 16 10 12\n\n\nOr this:\n\nrnorm(5)\n\n[1] -0.928567035 -0.294720447 -0.005767173  2.404653389  0.763593461\n\n\nLook pretty random to me. This allows us to perform simulations, which is an important part of the modern statistician’s toolkit. Having said that, when you’re working with computer-generated random numbers, you want your work to be reproducible so that other people can check it. This means that you want to set a random number seed before you do a simulation. This ensures that the stream of random numbers in your simulation is the same every time, and someone else could run your code and get the exact same results that you did.\nSetting a seed looks like this:\n\nset.seed(8675309)\n\nrnorm(5)\n\n[1] -0.9965824  0.7218241 -0.6172088  2.0293916  1.0654161\n\n\nEvery time you run that code, you will get the same numbers:\n\nset.seed(8675309)\n\nrnorm(5)\n\n[1] -0.9965824  0.7218241 -0.6172088  2.0293916  1.0654161\n\n\nSo, if you ever write a code chunk that generates random numbers (eg. using the sample function or one of the r- functions), you should begin the code chunk by setting a random number seed so that you get the same results every time you run your stuff. The syntax as you saw above is set.seed(INTEGER). Sometimes we will tell you what number to use. Other times (and once you exit the course), you can put whatever you want. It doesn’t really matter. If you require inspiration, try these:\n\n1\n20\n988\n24601\n362436\n525600\n8675309\n8005882300",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Setting a seed"
     ]
   },
@@ -288,7 +288,7 @@
     "section": "",
     "text": "LaTeX is a software system for typesetting documents with a bunch of math in them1. It is fully integrated into Quarto, so you can do all of your writing and coding and plotting and math-ing in one place. Pretty neat. We’ll just show you a few things to get you going, but if you want to use the entire system for realz, you should make an Overleaf account and start playing.",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Typing math"
     ]
   },
@@ -299,7 +299,7 @@
     "section": "Inline math goes between single dollar signs",
     "text": "Inline math goes between single dollar signs\n\n\n\n\n\n\n\nGoal\ninclude an equation in the middle of a sentence\n\n\nWhat you type in the .qmd file\nThe function $h(x)=\\ln x^2$ is my favorite\n\n\nHow it will look when you render\nThe function \\(h(x)=\\ln x^2\\) is my favorite.",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Typing math"
     ]
   },
@@ -310,7 +310,7 @@
     "section": "A math block goes between double dollar signs",
     "text": "A math block goes between double dollar signs\nSay you want a whole bunch of math set off on a new line, in between your paragraphs, like this:\n\\[\nf(x)=\\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\exp\\left(-\\frac{1}{2}\\frac{(x-\\mu)^2}{\\sigma^2}\\right).\n\\]\nIn that case, you put this into your source .qmd file:\n\n$$\nf(x)=\\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\exp\\left(-\\frac{1}{2}\\frac{(x-\\mu)^2}{\\sigma^2}\\right).\n$$\n\nWhen you render, you’ll get the pretty math. Notice some of the commands we used:\n\n\n\\exp for \\(\\exp\\);\n\n\\sqrt{2} for the square root \\(\\sqrt{2}\\);\n\n\\frac{1}{2} to get a fraction \\(\\frac{1}{2}\\);\n\n(x-\\mu)^2 to get an exponent \\((x-\\mu)^2\\);\n\n\\mu, \\sigma, \\pi for the Greek letters \\(\\mu\\), \\(\\sigma\\), and \\(\\pi\\);\nand so on.\n\n\n\n\n\n\n\nTipMath commands in LaTeX\n\n\n\nHere is a bank of common LaTeX commands. You won’t use most of them. Alternatively, Detexify is a very useful site where you can draw a symbol and it will tell you what the LaTeX command is for it.",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Typing math"
     ]
   },
@@ -321,7 +321,7 @@
     "section": "Lining equations up",
     "text": "Lining equations up\nIf you are typesetting a sequence of equalities, you should do it inside an aligned environment so that the equal signs are all lined up nice.\nIf you type this:\n\n$$\n\\begin{aligned}\nx(x+1)(x-1) &= (x^2+x)(x-1)\\\\\n&=x^3-x^2+x^2-x\\\\\n&=x^3-x.\n\\end{aligned}\n$$\n\nYou will get this:\n\\[\n\\begin{aligned}\nx(x+1)(x-1) &= (x^2+x)(x-1)\\\\\n&=x^3-x^2+x^2-x\\\\\n&=x^3-x.\n\\end{aligned}\n\\]\nThe \\\\ introduces a line break, and the & in each equation tells it where to line things up.",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Typing math"
     ]
   },
@@ -332,7 +332,7 @@
     "section": "Footnotes",
     "text": "Footnotes\n\nThere is no consensus on how to pronounce “LaTeX.” JZ says “lah-tech.” Some folks say “lay-tech.” Some even say “lay-techs,” just like a latex glove. But we all agree that the emphasis is on the first syllable. Perhaps I’ll award 2.56 bonus points if you invent a new way to pronounce it. But probably not.↩︎",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Typing math"
     ]
   },
@@ -343,7 +343,7 @@
     "section": "",
     "text": "Sometimes we want our code to make a decision: do one thing if a condition is true, and something else if it’s false. In R, the tool for this is if ... else. The pattern looks like this:\n\nif (condition) {\n  do_something\n} else {\n  do_something_else\n}\n\nSuppose we roll a six-sided die:\n\nroll &lt;- sample(1:6, size = 1)\nroll\n\n[1] 2\n\n\nWe might want to check whether the outcome is “big” (4, 5, or 6) or “small” (1, 2, or 3). Here’s how we can use if else to do that:\n\nif (roll &gt;= 4) {\n  result &lt;- \"Big\"\n} else {\n  result &lt;- \"Small\"\n}\n\nresult\n\n[1] \"Small\"\n\n\nLet’s unpack:\n\nFirst, sample(1:6, size = 1) chooses a random number from 1 to 6;\nThen the if else checks: if the roll is 4 or higher, we call it “Big.” Otherwise, we call it “Small.”\n\nThis is how you can make simple decisions in R code.\nLogical conditions\nIn the condition of if, you can use logical comparisons. Here are the most common ones:\n\n\n\n\n\n\n\nOperator\nMeaning\nExample\n\n\n\n==\nequal to\n\nx == 3 is TRUE if x is 3\n\n\n!=\nnot equal to\n\nx != 3 is TRUE if x is not 3\n\n\n&lt;\nless than\n\nx &lt; 5 is TRUE if x is less than 5\n\n\n&lt;=\nless than or equal\nx &lt;= 5\n\n\n&gt;\ngreater than\nx &gt; 10\n\n\n&gt;=\ngreater than or equal\nx &gt;= 10\n\n\n&\nAND (both conditions true)\nx &gt; 0 & x &lt; 5\n\n\n|\nOR (at least one true)\nx &lt; 0 | x &gt; 10\n\n\n!\nNOT (negates a condition)\n!(x == 3)\n\n\n%in%\nelement of a vector\n\nx %in% c(1,2,3) is TRUE if x is 1, 2, or 3\n\n\n\nHere they are in action:\n\nx &lt;- 4\nx &gt; 3       \n\n[1] TRUE\n\nx &lt; 3       \n\n[1] FALSE\n\nx &gt;= 3 & x &lt;= 5   \n\n[1] TRUE\n\nx &lt; 3 | x &gt; 5     \n\n[1] FALSE\n\n!(x == 4)   \n\n[1] FALSE\n\n\nHere is how these might be deployed in the context of if-else:\n\nif (x &gt; 0 & x %% 2 == 0) {\n  result &lt;- \"Positive even\"\n} else {\n  result &lt;- \"Other\"\n}\nresult\n\n[1] \"Positive even\"",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "if-else and logic"
     ]
   },
@@ -354,7 +354,7 @@
     "section": "",
     "text": "Quarto is a technical publishing system that allows you to write documents where text, math, code, and the output of that code are seamlessly integrated in a reproducible way. Quarto is baller. I had never used it before coming to Duke, and now I am low-key obsessed. You will mainly use Quarto for the lab write-ups in this class, but if you wish to use it for your problem set solutions as well, be my guest!\nBelow is a very brief primer to get you started. If you took STA 101 or STA 199, you have already used Quarto extensively and can probably skip this. If you wish to go deeper and become a Quarto power user, what are you waiting for?",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Quarto"
     ]
   },
@@ -365,7 +365,7 @@
     "section": "Quick start",
     "text": "Quick start\nHere is a screenshot of my RStudio container:\n\n\n\n\n\nIn the upper left, I have the editor open, and I’m working on a .qmd file. This is just a text file with a special format. When I’m done editing, I hit the Render button (circled in red), and if there are no errors, a nice .pdf file is produced in the Viewer tab in the bottom right.\nThat’s pretty much the whole ballgame:\n\nEdit the .qmd file → hit Render → get a .pdf\n\nAlright, so what goes in the .qmd file?\n\nAt the top, in between ---, you have the document’s metadata: title, author, date, and so forth. We are not going to get fancy with it, but there are loads of settings you can play with;\nYou can write text the same as you would in Google Docs or Microsoft Word. Quarto syntax is based on markdown, and you can learn about the formatting options here;\nThe grey block beginning with ```{r} and ending with ``` is called a code chunk. Chunks of code go in there. In the rendered document, the code will be nicely formatted and stylized amidst the text;\nWhen you render, the code in your code chunks is actually executed, and the output is included in the final document. This is super convenient for producing tables and figures;\nYou can also include nicely formatted equations and math notation in your Quarto documents. See here for details.",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Quarto"
     ]
   },
@@ -376,7 +376,7 @@
     "section": "",
     "text": "A for loop is a way to repeat the same steps several times. It’s useful when we want to do something over and over again, like simulate a random experiment.\nThe pattern looks like this:\nfor (i in 1:N) {\n  do_something\n}",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "for loops"
     ]
   },
@@ -387,7 +387,7 @@
     "section": "Example: Counting sixes in 100 dice rolls",
     "text": "Example: Counting sixes in 100 dice rolls\n\nsix_count &lt;- 0  # start a counter\n\nfor (i in 1:100) {\n  roll &lt;- sample(1:6, size = 1)\n  if (roll == 6) {\n    six_count &lt;- six_count + 1\n  }\n}\n\nsix_count\n\n[1] 16\n\n\n\nThe loop goes through i = 1, 2, ..., 100.\n\nEach time, it rolls a die and checks if it’s a six.\n\nIf it is, it increments six_count by 1.\n\nAt the end, six_count is the total number of sixes rolled in 100 trials.",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "for loops"
     ]
   },
@@ -398,7 +398,7 @@
     "section": "Example: plotting many lines",
     "text": "Example: plotting many lines\nIn this explainer, we saw how to use the curve function to plot lines. If you want a plot with many lines, you can just call the curve function many times with the add = TRUE argument to layer things. In that explainer, we just hard-coded the multiple calls to curve. A for loop can clean that up:\n\ncurve(1*x^2, from = -5, to = 5, n = 500, col = \"red\", ylab = \"\")\n\nfor(a in 2:25){\n  curve(a*x^2, from = -5, to = 5, n = 500, ylab = \"\", add = TRUE)\n}\n\n\n\n\n\n\n\nThat code plots the function \\(ax^2\\) every value of \\(a=1,\\,2,\\,3,\\,...,\\,25\\). Instead of writing 25 calls to the curve function, I consolidate with a loop.",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "for loops"
     ]
   },
@@ -409,7 +409,7 @@
     "section": "",
     "text": "To visualize the distribution of a set of numbers, you can plot a histogram. If you keep studying statistics, you will learn that a histogram is a statistical estimator of a probability density function. Neat!\nAnyway, this is super simple in R. Here is a vector of random numbers:\n\nset.seed(1)\nx &lt;- rgamma(5000, shape = 2, rate = 1)\n\nTo plot a histogram, use the hist command:\n\nhist(x, breaks = \"Scott\", freq = FALSE,\n     main = \"My histogram\",\n     xlab = \"x values\",\n     ylab = \"density\", \n     col = \"lightblue\", \n     border = \"white\")\n\n\n\n\n\n\n\nThe hist command has many arguments, and you can read the documentation for more detail. Apart from the cosmetic stuff controlling the labeling and the color, there are three main arguments to think about:\n\nthe first argument is obviously the vector of numbers whose distribution you want to visualize;\n\nbreaks determines the size of the bins (ie how many bars the histogram has). You can play around with different options, but I always set breaks = \"Scott\" because David Scott was one of my professors in graduate school and he knows his shit. So we pour one out for David and set breaks = \"Scott\";\nif you set freq = TRUE, the height of the bars will correspond to the count of how many values fall into the bin. freq = FALSE renormalizes the bar heights so that the area under the histogram is literally one, and the histogram can be directly compared with a density, which we will often do.\n\n\nhist(x, breaks = \"Scott\", freq = FALSE)\ncurve(dgamma(x, 2, 1), from = min(x), to = max(x), n = 1000, \n      col = \"red\", lwd = 3, add = TRUE)",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Histograms"
     ]
   },
@@ -3539,7 +3539,7 @@
     "href": "index.html",
     "title": "STA 240 Probability for Statistical Inference",
     "section": "",
-    "text": "Below is a prospective outline for the course. Due dates are firm, but topics may change with advanced notice.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nPREPARE\nTOPIC\nMATERIALS\nDUE\n\n\n\n1\nWed, Jan 7\n\n\n\n\n\n\n\nThu, Jan 8\n\nLab 0 (calculus review)\n\n\n\n\n2\nMon, Jan 12\n\nSet theory\n\n\nPset 0 @11:59 PM\n\n\n\nWed, Jan 14\n\nProbability spaces\n\n\n\n\n\nThu, Jan 15\n\nLab 1 (hello R)\n\nLab 1 @11:59 PM\n\n\n3\nMon, Jan 19\n\nMLK Day - No class\n\nPset 1 @11:59 PM\n\n\n\nWed, Jan 21\n\nCounting\n\n\n\n\n\nThu, Jan 22\n\n\n\nLab 2 @11:59 PM\n\n\n4\nMon, Jan 26\n\nCounting\n\n\n\n\n\nWed, Jan 28\n\nConditional probability\n\n\n\n\n\nThu, Jan 29\n\n\n\nLab 3 @11:59 PM\n\n\n\nSun, Feb 1\n\n\n\nPset 2 @11:59 PM\n\n\n5\nMon, Feb 2\n\nConditional probability\n\n\n\n\n\nWed, Feb 4\n\nRandom variables intro\n\n\n\n\n\nThu, Feb 5\n\n\n\nLab 4 @11:59 PM\n\n\n\nSun, Feb 8\n\n\n\nPset 3 @11:59 PM\n\n\n6\nMon, Feb 9\n\nDiscrete families\n\n\n\n\n\nWed, Feb 11\n\nExpected value\n\n\n\n\n\nThu, Feb 12\n\nMidterm 1 review\n\n\n\n\n\nSun, Feb 15\n\n\n\nPset 4 @11:59 PM\n\n\n7\nMon, Feb 16\n\nVariance\n\n\n\n\n\nWed, Feb 18\n\nMidterm 1\n\n\n\n\n\nThu, Feb 19\n\n\n\nLab 5 @11:59 PM\n\n\n8\nMon, Feb 23\n\nCdfs, continuous random vars\n\n\n\n\n\nWed, Feb 25\n\nAbsolute continuity\n\n\n\n\n\nThu, Feb 26\n\n\n\nLab 6 @11:59 PM\n\n\n9\nMon, Mar 2\n\nNormal, gamma\n\n\n\n\n\nWed, Mar 4\n\nMoments and quantiles\n\n\n\n\n\nThu, Mar 5\n\nLab 7 (transformations)\n\nLab 7 @11:59 PM\n\n\n10\nMon, Mar 9\n\nSpring Break - No classes\n\n\n\n\n11\nMon, Mar 16\n\nMGF\n\n\n\n\n\nWed, Mar 18\n\nJoint discrete r.v.’s\n\n\n\n\n\nThu, Mar 19\n\n\n\nLab 8 @11:59 PM\n\n\n\nSun, Mar 22\n\n\n\nPset 5 @11:59 PM\n\n\n12\nMon, Mar 23\n\nJoint continuous r.v.’s\n\n\n\n\n\nWed, Mar 25\n\nSums and averages\n\n\n\n\n\nThu, Mar 26\n\nMidterm 2 review\n\n\n\n\n\nSun, Mar 29\n\n\n\nPset 6 @11:59 PM\n\n\n13\nMon, Mar 30\n\nLimit theorems\n\n\n\n\n\nWed, Apr 1\n\nMidterm 2\n\n\n\n\n\nThu, Apr 2\n\n\n\nLab 9 @11:59 PM\n\n\n14\nMon, Apr 6\n\nWhat is statistics?\n\n\n\n\n\nWed, Apr 8\n\nWhat is statistics?\n\n\n\n\n\nThu, Apr 9\n\n\n\nLab 10 @11:59 PM\n\n\n15\nMon, Apr 13\n\nMaximum likelihood\n\n\n\n\n\nWed, Apr 15\n\nMaximum likelihood\n\n\n\n\n\nThu, Apr 16\n\n\n\nLab 11 @11:59 PM\n\n\n16\nMon, Apr 20\n\nBayesian inference\n\n\n\n\n\nWed, Apr 22\n\nBayesian inference\n\n\n\n\n\nSat, Apr 25\n\n\n\nPset 7 @11:59 PM\n\n\n17\nMon, Apr 27\n\nFinal exam (9am-12pm)\n\n\n\n\n\n\n\n\nExtra notes\nYou’re not responsible for any of this, but it’s extra stuff I had lying around that you might find interesting:\n\nAlternative notes on MLE, with more discussion of confidence intervals: set 1, set 2;\n“AP Statistics in 75 minutes.” After this class, we have all of the tools to derive the itchy formulas that we take for granted in AP Stats or STA 101.",
+    "text": "Below is a prospective outline for the course. Due dates are firm, but topics may change with advanced notice.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nPREPARE\nTOPIC\nMATERIALS\nDUE\n\n\n\n1\nWed, Jan 7\n\n\n\n\n\n\n\nThu, Jan 8\n\nLab 0 (calculus review)\n\n\n\n\n2\nMon, Jan 12\n\nSet theory\n\n\nPset 0 @11:59 PM\n\n\n\nWed, Jan 14\n\nProbability spaces\n\n\n\n\n\nThu, Jan 15\n\nLab 1 (hello R)\n\nLab 1 @11:59 PM\n\n\n3\nMon, Jan 19\n\nMLK Day - No class\n\nPset 1 @11:59 PM\n\n\n\nWed, Jan 21\n\nCounting\n\n\n\n\n\nThu, Jan 22\n\nLab 2\n\nLab 2 @11:59 PM\n\n\n4\nMon, Jan 26\n\nCounting\n\n\n\n\n\nWed, Jan 28\n\nConditional probability\n\n\n\n\n\nThu, Jan 29\n\nLab 3\n\nLab 3 @11:59 PM\n\n\n\nSun, Feb 1\n\n\n\nPset 2 @11:59 PM\n\n\n5\nMon, Feb 2\n\nConditional probability\n\n\n\n\n\nWed, Feb 4\n\nRandom variables intro\n\n\n\n\n\nThu, Feb 5\n\nLab 4\n\nLab 4 @11:59 PM\n\n\n\nSun, Feb 8\n\n\n\nPset 3 @11:59 PM\n\n\n6\nMon, Feb 9\n\nDiscrete families\n\n\n\n\n\nWed, Feb 11\n\nExpected value\n\n\n\n\n\nThu, Feb 12\n\nMidterm 1 review\n\n\n\n\n\nSun, Feb 15\n\n\n\nPset 4 @11:59 PM\n\n\n7\nMon, Feb 16\n\nVariance\n\n\n\n\n\nWed, Feb 18\n\nMidterm 1\n\n\n\n\n\nThu, Feb 19\n\nLab 5\n\nLab 5 @11:59 PM\n\n\n8\nMon, Feb 23\n\nCdfs, continuous random vars\n\n\n\n\n\nWed, Feb 25\n\nAbsolute continuity\n\n\n\n\n\nThu, Feb 26\n\nLab 6\n\nLab 6 @11:59 PM\n\n\n9\nMon, Mar 2\n\nNormal, gamma\n\n\n\n\n\nWed, Mar 4\n\nMoments and quantiles\n\n\n\n\n\nThu, Mar 5\n\nLab 7\n\nLab 7 @11:59 PM\n\n\n10\nMon, Mar 9\n\nSpring Break - No classes\n\n\n\n\n11\nMon, Mar 16\n\nMGF\n\n\n\n\n\nWed, Mar 18\n\nJoint discrete r.v.’s\n\n\n\n\n\nThu, Mar 19\n\nLab 8\n\nLab 8 @11:59 PM\n\n\n\nSun, Mar 22\n\n\n\nPset 5 @11:59 PM\n\n\n12\nMon, Mar 23\n\nJoint continuous r.v.’s\n\n\n\n\n\nWed, Mar 25\n\nSums and averages\n\n\n\n\n\nThu, Mar 26\n\nMidterm 2 review\n\n\n\n\n\nSun, Mar 29\n\n\n\nPset 6 @11:59 PM\n\n\n13\nMon, Mar 30\n\nLimit theorems\n\n\n\n\n\nWed, Apr 1\n\nMidterm 2\n\n\n\n\n\nThu, Apr 2\n\nLab 9\n\nLab 9 @11:59 PM\n\n\n14\nMon, Apr 6\n\nWhat is statistics?\n\n\n\n\n\nWed, Apr 8\n\nWhat is statistics?\n\n\n\n\n\nThu, Apr 9\n\nLab 10\n\nLab 10 @11:59 PM\n\n\n15\nMon, Apr 13\n\nMaximum likelihood\n\n\n\n\n\nWed, Apr 15\n\nMaximum likelihood\n\n\n\n\n\nThu, Apr 16\n\nLab 11\n\nLab 11 @11:59 PM\n\n\n16\nMon, Apr 20\n\nBayesian inference\n\n\n\n\n\nWed, Apr 22\n\nBayesian inference\n\n\n\n\n\nSat, Apr 25\n\n\n\nPset 7 @11:59 PM\n\n\n17\nMon, Apr 27\n\nFinal exam (9am-12pm)\n\n\n\n\n\n\n\n\nExtra notes\nYou’re not responsible for any of this, but it’s extra stuff I had lying around that you might find interesting:\n\nAlternative notes on MLE, with more discussion of confidence intervals: set 1, set 2;\n“AP Statistics in 75 minutes.” After this class, we have all of the tools to derive the itchy formulas that we take for granted in AP Stats or STA 101.",
     "crumbs": [
       "Syllabus",
       "Schedule"
@@ -3961,7 +3961,7 @@
     "section": "",
     "text": "R provides basic commands that compute probabilities for our special families of distributions:\nEach family has its own commands, but the pattern is the same.",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Computing probabilities"
     ]
   },
@@ -3972,7 +3972,7 @@
     "section": "Evaluating the PMF",
     "text": "Evaluating the PMF\nTo evaluate the PMF \\(P(X=x)\\), you use a d- command:\n\ndbinom(x, size, prob)\ndgeom(x, prob)\ndpois(x, lambda)\n\nFor example:\n\n# P(X = 0)\ndbinom(0, 5, 0.5)       \n\n[1] 0.03125\n\n# P(X = 1)\ndbinom(1, 5, 0.5)\n\n[1] 0.15625\n\n# P(X = 0 or X = 1)\ndbinom(c(0, 1), 5, 0.5)\n\n[1] 0.03125 0.15625\n\n# Add up every probability\nsum(dbinom(0:5, 5, 0.2))\n\n[1] 1\n\n# P(0 &lt;= Z &lt;- 6)\ndpois(0:6, 5)\n\n[1] 0.006737947 0.033689735 0.084224337 0.140373896 0.175467370 0.175467370\n[7] 0.146222808\n\n\nNotice that these d- commands are vectorized.",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Computing probabilities"
     ]
   },
@@ -3983,7 +3983,7 @@
     "section": "Evaluating the CDF",
     "text": "Evaluating the CDF\nTo evaluate the CDF \\(F(q) = P(X\\leq q)\\), you use a p- command:\n\npbinom(q, size, prob)\npgeom(q, prob)\nppois(q, lambda)\n\nNotice right away that the p- commands and d- commands are consistent with one another:\n\n# P(X &lt;= 2)\npbinom(2, 5, 0.3)\n\n[1] 0.83692\n\n# P(X = 0) + P(X = 1) + P(X = 2)\nsum(dbinom(0:2, 5, 0.3))\n\n[1] 0.83692",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Computing probabilities"
     ]
   },
@@ -3994,7 +3994,7 @@
     "section": "",
     "text": "R is a programming language, like Python, C++, Java, Julia, etc. RStudio is an IDE (integrated development environment) that allows you to interacts with R in a convenient way. So if R is the engine, RStudio is the dashboard.\nWhen you launch RStudio, you see something like this:\n\n\n\n\n\nThere are four panes:\n\n(bottom left) this is the console. It’s a command line where you can type input and get output. At the very least, you can use R as an overgrown calculator;\n(top left) this is the editor. If you are writing a bunch of code you want to save for later (like on your labs), you can edit the text file here;\n(top right) this is the environment. It’s a list of all the data and variables you have loaded;\n(bottom right) this panel is multipurpose. Depending on the tab you select, it can display the file directory, the plot you created, the documentation, or your rendered pdf.",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "The lay of the land"
     ]
   },
@@ -4005,7 +4005,7 @@
     "section": "",
     "text": "You can use the curve function to plot a line graph of a function. If that function were \\(f(x) = x^2\\) for example, you would type this:\n\ncurve(x^2, from = -5, to = 5, n = 500, col = \"red\", ylab = \"f(x)\")\n\n\n\n\n\n\n\nThis function takes many arguments.\n\nthe first argument is a formula for the function you want to graph. The curve command implicitly assumes that x is the argument, and everything else is constant;\n\nfrom and to give the bounds of the \\(x\\)-axis;\nThis command is basically evaluating the function at many points and connecting the dots. n specifies how many dots. Too few, and the picture would look all cattywampus:\n\n\ncurve(x^2, from = -5, to = 5, n = 5)\n\n\n\n\n\n\n\nIf you want multiple lines on one graph, you can call curve multiple times, and include the add argument in all but the first call:\n\ncurve(1*x^2, from = -5, to = 5, n = 500, col = \"red\", ylab = \"\")\ncurve(2*x^2, from = -5, to = 5, n = 500, col = \"blue\", ylab = \"\", add = TRUE)\ncurve(3*x^2, from = -5, to = 5, n = 500, col = \"darkgreen\", ylab = \"\", add = TRUE)\nlegend(\"bottomleft\", c(\"a = 1\", \"a = 2\", \"a = 3\"), \n       col = c(\"red\", \"blue\", \"darkgreen\"), lty = 1, bty = \"n\")",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Plotting lines"
     ]
   },
@@ -4016,7 +4016,7 @@
     "section": "",
     "text": "Consider two vectors of the same length:\n\nx &lt;- c(0.3, 0.57, -0.11, -0.26, -0.77, pi, 4, 1, 1, 5)\ny &lt;- c(9, 4, 1, 8, 4, 1, 5, 7, 2, 0)\n\nIf you want to create a scatter plot of the (x, y) pairs, you can use the plot command:\n\nplot(x, y, pch = 19)\n\n\n\n\n\n\n\nIf you wanted, for example, to plot the PMF of the binomial distribution, then your x vector has every value in the range, and your y vector has all of the individual probabilities:\n\nn &lt;- 20\np &lt;- 0.5\nx &lt;- 0:n\npmf &lt;- dbinom(x, n, p)\nplot(x, pmf, pch = 19)\n\n\n\n\n\n\n\nNotice that we made use of the fact that the dbinom command is vectorized in its first argument; if you give it a vector with multiple values, it returns a vector with the probabilities for each one.",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Plotting points"
     ]
   },
@@ -4027,7 +4027,7 @@
     "section": "",
     "text": "A vector in R is just an ordered set of values that have the same type. The easiest way to create one is to manually list out the values, separated by commas, inside c():\n\nmyvec &lt;- c(pi, 5, 3.6, 2, 9, 6000) \nmyvec\n\n[1]    3.141593    5.000000    3.600000    2.000000    9.000000 6000.000000\n\n\nIf you want to list out all of the integers between some min and max, you can use this shortcut:\n\n5:15\n\n [1]  5  6  7  8  9 10 11 12 13 14 15\n\n\nMore generally, if you want a vector of evenly spaced numbers between a min and a max, do this:\n\na &lt;- seq(0, 1, length.out = 11) \na\n\n [1] 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0\n\n\nIf you want to create a “blank” vector that just has zeros in it, here you go:\n\nz &lt;- numeric(10)\nz\n\n [1] 0 0 0 0 0 0 0 0 0 0\n\n\nIn all of those cases, our vector contained numbers, but there is nothing special about numbers. Here is a vector where each value is a string (a piece of text):\n\npoetry &lt;- c(\"Mary\", \"had\", \"a\", \"little\", \"chainsaw\")\npoetry\n\n[1] \"Mary\"     \"had\"      \"a\"        \"little\"   \"chainsaw\"\n\n\nIf you have two vectors and you want to combine them into one, you can just use the c() command again. The “c” stands for “concatenate.” You’re concatenating, or joining, the vectors end-to-end:\n\nmore &lt;- c(\"whose\", \"chain\", \"was\", \"red\", \"as\")\n\nmasterpiece &lt;- c(poetry, more)\nmasterpiece\n\n [1] \"Mary\"     \"had\"      \"a\"        \"little\"   \"chainsaw\" \"whose\"   \n [7] \"chain\"    \"was\"      \"red\"      \"as\"",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Vectors"
     ]
   },
@@ -4038,7 +4038,7 @@
     "section": "",
     "text": "Using R for the calculator is like buying a plane ticket to get free peanuts. But I have done my taxes in R, so…\n\n2 + 2 # addition\n\n[1] 4\n\n5 - 2 # subtraction\n\n[1] 3\n\n0.5 * 6 # multiplication\n\n[1] 3\n\n3 / 4 # division\n\n[1] 0.75\n\nsqrt(2) # square root\n\n[1] 1.414214\n\n4 ^ 2 # exponent\n\n[1] 16\n\nexp(4.9) # base-e exponent\n\n[1] 134.2898\n\nlog(7) # natural log\n\n[1] 1.94591\n\nabs(-6) # absolute value\n\n[1] 6\n\nceiling(4.6) # round up\n\n[1] 5\n\nfloor(4.6) # round down\n\n[1] 4\n\nfactorial(4) # n! = n x (n-1) x ... x 2 x 1\n\n[1] 24\n\nchoose(8, 3) # binomial coefficient (we'll get there)\n\n[1] 56",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Basic math"
     ]
   },
@@ -4049,7 +4049,7 @@
     "section": "",
     "text": "The path of least resistance to using R in this class is to reserve a container from the Duke Container Manager. It’s hosted in the cloud, and it has all of the software you will ever need for this class.\n\nGo here: https://cmgr.oit.duke.edu/containers. You may have to log in with your NetID at some point;\n(The first time you do this, you look for STA240 under “Reservations available” on the righthand side, and click “reserve STA240”. After you do that once, STA240 will appear under “My reservations” on the lefthand side forever more)\nClick STA240 under “My reservations”;\nLogin;\nStart. It may take a while, but then RStudio should launch in your browser.",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Getting started"
     ]
   },
@@ -4060,7 +4060,7 @@
     "section": "",
     "text": "The path of least resistance to using R in this class is to reserve a container from the Duke Container Manager. It’s hosted in the cloud, and it has all of the software you will ever need for this class.\n\nGo here: https://cmgr.oit.duke.edu/containers. You may have to log in with your NetID at some point;\n(The first time you do this, you look for STA240 under “Reservations available” on the righthand side, and click “reserve STA240”. After you do that once, STA240 will appear under “My reservations” on the lefthand side forever more)\nClick STA240 under “My reservations”;\nLogin;\nStart. It may take a while, but then RStudio should launch in your browser.",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Getting started"
     ]
   },
@@ -4071,7 +4071,7 @@
     "section": "Option 2: download it yourself",
     "text": "Option 2: download it yourself\nOf course, you won’t have containers after you graduate, so maybe it’s a good idea to hike up your big girl pants and actually install something. It’s pretty easy:\n\nDownload R: https://cran.r-project.org\nDownload RStudio: https://posit.co/download/rstudio-desktop/\n(optional) Install tinytex: https://yihui.org/tinytex/",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "Getting started"
     ]
   },
@@ -4082,7 +4082,7 @@
     "section": "",
     "text": "The function sample() lets us pick random values. This is very useful in probability, because it allows us to simulate experiments like coin flips, die rolls, or drawing cards.\nThe pattern is:\nsample(x, size = n, replace = FALSE)",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "`sample`"
     ]
   },
@@ -4093,7 +4093,7 @@
     "section": "Example: coin flip",
     "text": "Example: coin flip\nThis chooses either heads (H) or tails (T) at random:\n\nsample(c(\"H\", \"T\"), size = 1)\n\n[1] \"H\"",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "`sample`"
     ]
   },
@@ -4104,7 +4104,7 @@
     "section": "Example: die roll",
     "text": "Example: die roll\nThis rolls a fair die twenty times:\n\nsample(1:6, size = 20, replace = TRUE)\n\n [1] 6 3 2 4 3 3 2 1 4 1 2 6 5 1 1 4 5 4 4 5\n\n\nWe need replace = TRUE here, because after rolling a die, the next roll can be the same number again.",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "`sample`"
     ]
   },
@@ -4115,7 +4115,7 @@
     "section": "Example: Spotify shuffle",
     "text": "Example: Spotify shuffle\nHere’s my playlist:\n\nplaylist &lt;- c(\"Ramble On\",\n              \"It's Raining Men\",\n              \"Tears\",\n              \"Tiptoe Through the Tulips\",\n              \"Gangsta's Paradise\",\n              \"Days of Wine and Roses\")\n\nThere are 6 songs, so if I generate a sample of size 6 without replacement, I will ultimately draw each song exactly once, but in a random order:\n\nsample(playlist, size = length(playlist), replace = FALSE)\n\n[1] \"Tears\"                     \"Tiptoe Through the Tulips\"\n[3] \"Gangsta's Paradise\"        \"Ramble On\"                \n[5] \"Days of Wine and Roses\"    \"It's Raining Men\"",
     "crumbs": [
-      "`R` Helpers",
+      "R Helpers",
       "`sample`"
     ]
   },
