@@ -480,14 +480,14 @@
     "href": "slides/2025-08-25-welcome.html#teaching-team",
     "title": "Welcome to STA 240!",
     "section": "Teaching Team",
-    "text": "Teaching Team\n\n\n\n\n\n\n\n\nMug\nName\nRole\nOffice Hours\n\n\n\n\nHu, Yuang\nTA\nMon 7:30 PM - 9:30 PM\n\n\n\nLiu, Aurora\nHead TA\nWeTh 4:30 pm - 5:30 pm\n\n\n\nMa, Liane\nTA\nSun 10:00 am - 12:00 pm\n\n\n\nZito, John\nInstructor\nTue 3:00 pm - 6:00 pm"
+    "text": "Teaching Team\n\n\n\n\n\n\n\n\n\nMug\nName\nRole\nOffice Hours\n\n\n\n\n\nHu, Yuang\nTA\nMon 7:30 PM - 9:30 PM\n\n\n\nLiu, Aurora\nHead TA\nWeTh 4:30 pm - 5:30 pm\n\n\n\nMa, Liane\nTA\nSun 10:00 am - 12:00 pm\n\n\n\nZito, John\nInstructor\nTue 3:00 pm - 6:00 pm"
   },
   {
     "objectID": "slides/2025-08-25-welcome.html#statistical-science-majors-union",
     "href": "slides/2025-08-25-welcome.html#statistical-science-majors-union",
     "title": "Welcome to STA 240!",
     "section": "Statistical Science Majors Union",
-    "text": "Statistical Science Majors Union\n\n\n\n\nWelcome First-Years Event!\n\n9/4 at 7 PM\nEast Duke 108\n\nGBM #1 & Research Panel\n\n9/18 7 PM\nOld Chem 116\n\n\n\n\n\n\n\n    listserv\n\n\n\n\n\n    DukeGroups"
+    "text": "Statistical Science Majors Union\n\n\n\n\nWelcome First-Years Event!\n\n9/4 at 7 PM\nEast Duke 108\n\nGBM #1 & Research Panel\n\n9/18 7 PM\nOld Chem 116\n\n\n\n\n\n\n    listserv\n\n\n\n\n    DukeGroups"
   },
   {
     "objectID": "slides/2025-08-25-welcome.html#example-the-birthday-problem",
@@ -508,7 +508,7 @@
     "href": "slides/2025-08-25-welcome.html#example-the-birthday-problem-1",
     "title": "Welcome to STA 240!",
     "section": "Example: the birthday problem",
-    "text": "Example: the birthday problem\n\n\nno. of attendees (k)\nProb(at least one bday match)\n\n\n\n1\n0%\n\n\n4\n1.6%\n\n\n16\n28%\n\n\n23\n50.7%\n\n\n40\n89%\n\n\n56\n98%\n\n\n60\n99.4\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n366\n100.0%\n\n\n\nKey words: binomial coefficient, pigeonhole principle"
+    "text": "Example: the birthday problem\n\n\n\nno. of attendees (k)\nProb(at least one bday match)\n\n\n\n\n1\n0%\n\n\n4\n1.6%\n\n\n16\n28%\n\n\n23\n50.7%\n\n\n40\n89%\n\n\n56\n98%\n\n\n60\n99.4\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n366\n100.0%\n\n\n\nKey words: binomial coefficient, pigeonhole principle"
   },
   {
     "objectID": "slides/2025-08-25-welcome.html#example-the-birthday-problem-2",
@@ -529,14 +529,14 @@
     "href": "slides/2025-08-25-welcome.html#any-matches-today",
     "title": "Welcome to STA 240!",
     "section": "Any matches today?",
-    "text": "Any matches today?\n\n\n\n\n\nbirthday\ncount\n\n\n\n05-25\n2\n\n\n01-02\n1\n\n\n01-03\n1\n\n\n01-05\n1\n\n\n01-06\n1\n\n\n01-11\n1\n\n\n01-25\n1\n\n\n02-02\n1\n\n\n02-11\n1\n\n\n03-01\n1\n\n\n03-02\n1\n\n\n03-31\n1\n\n\n04-03\n1\n\n\n04-11\n1\n\n\n04-21\n1\n\n\n05-09\n1\n\n\n05-15\n1\n\n\n05-30\n1\n\n\n06-08\n1\n\n\n06-20\n1\n\n\n06-25\n1\n\n\n07-06\n1\n\n\n07-08\n1\n\n\n08-30\n1\n\n\n09-06\n1\n\n\n09-22\n1\n\n\n09-30\n1\n\n\n11-01\n1\n\n\n11-07\n1\n\n\n11-10\n1\n\n\n11-21\n1\n\n\n11-23\n1\n\n\n12-01\n1\n\n\n12-11\n1"
+    "text": "Any matches today?\n\n\n\n\n\n\nbirthday\ncount\n\n\n\n\n05-25\n2\n\n\n01-02\n1\n\n\n01-03\n1\n\n\n01-05\n1\n\n\n01-06\n1\n\n\n01-11\n1\n\n\n01-25\n1\n\n\n02-02\n1\n\n\n02-11\n1\n\n\n03-01\n1\n\n\n03-02\n1\n\n\n03-31\n1\n\n\n04-03\n1\n\n\n04-11\n1\n\n\n04-21\n1\n\n\n05-09\n1\n\n\n05-15\n1\n\n\n05-30\n1\n\n\n06-08\n1\n\n\n06-20\n1\n\n\n06-25\n1\n\n\n07-06\n1\n\n\n07-08\n1\n\n\n08-30\n1\n\n\n09-06\n1\n\n\n09-22\n1\n\n\n09-30\n1\n\n\n11-01\n1\n\n\n11-07\n1\n\n\n11-10\n1\n\n\n11-21\n1\n\n\n11-23\n1\n\n\n12-01\n1\n\n\n12-11\n1"
   },
   {
     "objectID": "slides/2025-08-25-welcome.html#example-the-monty-hall-problem",
     "href": "slides/2025-08-25-welcome.html#example-the-monty-hall-problem",
     "title": "Welcome to STA 240!",
     "section": "Example: the Monty Hall problem",
-    "text": "Example: the Monty Hall problem\nLet’s play: https://montyhall.io/\n\n\n\n\n\n\n\n\n\n\n\nVery counterintuitive\n\n\nMost people start out thinking that the two doors are equally likely to contain the prize, so switching doesn’t matter. In fact, you have a 2/3 chance of winning if you switch."
+    "text": "Example: the Monty Hall problem\nLet’s play: https://montyhall.io/\n\n\n\n\n\n\n\n\n\n\n\n\nVery counterintuitive\n\n\nMost people start out thinking that the two doors are equally likely to contain the prize, so switching doesn’t matter. In fact, you have a 2/3 chance of winning if you switch."
   },
   {
     "objectID": "slides/2025-08-25-welcome.html#you-people",
@@ -550,21 +550,21 @@
     "href": "slides/2025-08-25-welcome.html#example-which-is-truly-random",
     "title": "Welcome to STA 240!",
     "section": "Example: which is “truly” random?",
-    "text": "Example: which is “truly” random?\n\n\n\n\n\n\n\n\n\n27 of you said Left is pure random;\n8 of you said Right is pure random."
+    "text": "Example: which is “truly” random?\n\n\n\n\n\n\n\n\n\n\n27 of you said Left is pure random;\n8 of you said Right is pure random."
   },
   {
     "objectID": "slides/2025-08-25-welcome.html#example-which-is-truly-random-1",
     "href": "slides/2025-08-25-welcome.html#example-which-is-truly-random-1",
     "title": "Welcome to STA 240!",
     "section": "Example: which is “truly” random?",
-    "text": "Example: which is “truly” random?\n\n\n\n\n\n\n\n\n\nLeft: uniform random scatter;\nRight: points manipulated to “repel” each other (no clumps)."
+    "text": "Example: which is “truly” random?\n\n\n\n\n\n\n\n\n\n\nLeft: uniform random scatter;\nRight: points manipulated to “repel” each other (no clumps)."
   },
   {
     "objectID": "slides/2025-08-25-welcome.html#this-is-why-spotify-shuffle-stinks",
     "href": "slides/2025-08-25-welcome.html#this-is-why-spotify-shuffle-stinks",
     "title": "Welcome to STA 240!",
     "section": "This is why Spotify shuffle stinks",
-    "text": "This is why Spotify shuffle stinks\n\n\n\nIt used to be a pure random shuffle;\nThen people complained that it didn’t feel random to them:\n\nstreaks of the same artist in a row;\nclumps of the same genre, etc;\n\n\nNow they do lord-only-knows-what."
+    "text": "This is why Spotify shuffle stinks\n\n\n\nIt used to be a pure random shuffle;\nThen people complained that it didn’t feel random to them:\n\nstreaks of the same artist in a row;\nclumps of the same genre, etc;\n\nNow they do lord-only-knows-what."
   },
   {
     "objectID": "slides/2025-08-25-welcome.html#example-the-wisdom-of-crowds",
@@ -620,7 +620,7 @@
     "href": "slides/2025-08-25-welcome.html#sir-roy-meadow-1933--",
     "title": "Welcome to STA 240!",
     "section": "Sir Roy Meadow (1933 - )",
-    "text": "Sir Roy Meadow (1933 - )\n\n\n\nPediatrician specializing in “Munchausen syndrome by proxy;”\nGave erroneous “expert” testimony that there is a “1 in 73,000,000” chance of two SIDS deaths in the same family;\n\nfirst, that’s not true;\nsecond, so what?\n\n\n1999: Clark convicted."
+    "text": "Sir Roy Meadow (1933 - )\n\n\n\nPediatrician specializing in “Munchausen syndrome by proxy;”\nGave erroneous “expert” testimony that there is a “1 in 73,000,000” chance of two SIDS deaths in the same family;\n\nfirst, that’s not true;\nsecond, so what?\n\n1999: Clark convicted."
   },
   {
     "objectID": "slides/2025-08-25-welcome.html#a-sad-story",
@@ -662,7 +662,7 @@
     "href": "slides/2025-08-25-welcome.html#example-the-mathematics-of-insurance-1",
     "title": "Welcome to STA 240!",
     "section": "Example: the mathematics of insurance",
-    "text": "Example: the mathematics of insurance\n\n\n\nNurse practitioner\nIT Manager\nPhysician Assistant\nFinancial Manager\nSoftware Developer\nInformation Security Analyst\nHealth Services Manager\nData Scientist\nSpeech-Language Pathologist\nActuary\n\n\n\n\n\n\n\nFuture prospects (30%)\nWage potential (25%)\nEmployment (20%)\nJob safety/stability (15%)\nWork-life balance (10%)"
+    "text": "Example: the mathematics of insurance\n\n\n\nNurse practitioner\nIT Manager\nPhysician Assistant\nFinancial Manager\nSoftware Developer\nInformation Security Analyst\nHealth Services Manager\nData Scientist\nSpeech-Language Pathologist\nActuary\n\n\n\n\n\n\n\n\nFuture prospects (30%)\nWage potential (25%)\nEmployment (20%)\nJob safety/stability (15%)\nWork-life balance (10%)"
   },
   {
     "objectID": "slides/2025-08-25-welcome.html#probably-isnt-boring-these-days",
@@ -676,7 +676,7 @@
     "href": "slides/2025-08-25-welcome.html#example-whence-evolution",
     "title": "Welcome to STA 240!",
     "section": "Example: whence evolution?",
-    "text": "Example: whence evolution?\n\n\nHella simplified:\n\n\nMutation: random errors during DNA replication and repair;\n\nGenetic drift: chance events shift allele frequencies in the population;\n\nNatural selection: randomness generates options; selection chooses among them, producing evolution."
+    "text": "Example: whence evolution?\n\n\nHella simplified:\n\nMutation: random errors during DNA replication and repair;\nGenetic drift: chance events shift allele frequencies in the population;\nNatural selection: randomness generates options; selection chooses among them, producing evolution."
   },
   {
     "objectID": "slides/2025-08-25-welcome.html#example-quantum-mechanics",
@@ -718,21 +718,21 @@
     "href": "slides/2025-08-25-welcome.html#why-study-mathematical-probstat",
     "title": "Welcome to STA 240!",
     "section": "Why study mathematical probstat?",
-    "text": "Why study mathematical probstat?\n\n\nIt’s necessary.\n\nHumans suck at thinking about this stuff.\n\n\n\nIt’s useful.\n\nIt makes studying other things so much easier.\n\n\n\nIt’s beautiful.\n\nThis is the main reason, honestly.\n\n\n\n\nSound good?"
+    "text": "Why study mathematical probstat?\n\nIt’s necessary.\n\nHumans suck at thinking about this stuff.\n\nIt’s useful.\n\nIt makes studying other things so much easier.\n\nIt’s beautiful.\n\nThis is the main reason, honestly.\n\n\n\nSound good?"
   },
   {
     "objectID": "slides/2025-08-25-welcome.html#bookmark-the-course-page",
     "href": "slides/2025-08-25-welcome.html#bookmark-the-course-page",
     "title": "Welcome to STA 240!",
     "section": "Bookmark the course page!",
-    "text": "Bookmark the course page!\n\n\n\n\n\nhttps://anyakatsevich.github.io/sta240-s26.github.io/"
+    "text": "Bookmark the course page!\n\n\n\n\n    \n\nhttps://anyakatsevich.github.io/sta240-s26.github.io/"
   },
   {
     "objectID": "slides/2025-08-25-welcome.html#final-grade-breakdown",
     "href": "slides/2025-08-25-welcome.html#final-grade-breakdown",
     "title": "Welcome to STA 240!",
     "section": "Final grade breakdown",
-    "text": "Final grade breakdown\nYour final course grade will be calculated as follows:\n\n\nCategory\nPercentage\n\n\n\nLabs\n10%\n\n\nProblem Sets\n30%\n\n\nMidterm Exam 1\n20%\n\n\nMidterm Exam 2\n20%\n\n\nFinal exam\n20%\n\n\n\n\n\n\n\n\n\nWarning\n\n\nThe final letter grade will be based on the usual thresholds, which will not change and will be applied exactly. So no curve and no rounding."
+    "text": "Final grade breakdown\nYour final course grade will be calculated as follows:\n\n\n\nCategory\nPercentage\n\n\n\n\nLabs\n10%\n\n\nProblem Sets\n30%\n\n\nMidterm Exam 1\n20%\n\n\nMidterm Exam 2\n20%\n\n\nFinal exam\n20%\n\n\n\n\n\n\n\n\n\nWarning\n\n\nThe final letter grade will be based on the usual thresholds, which will not change and will be applied exactly. So no curve and no rounding."
   },
   {
     "objectID": "slides/2025-08-25-welcome.html#sowheres-the-wiggle-room",
@@ -760,7 +760,7 @@
     "href": "slides/2025-08-25-welcome.html#exams-20-each",
     "title": "Welcome to STA 240!",
     "section": "Exams (20% each)",
-    "text": "Exams (20% each)\nTraditional, in-class, written exams:\n\n\nMidterm 1: Thursday October 9 in your lab;\n\nMidterm 2: Thursday November 13 in your lab;\n\nFinal Exam: Friday December 12.\n\n\nYou are allowed only two resources:\n\nA “dumb” calculator (no wi-fi), which you won’t need;\nBoth sides of one 8.5” x 11” note sheet created by you.\n\n\n\n\n\n\n\n\n\nIf you need testing accommodations…\n\n\nMake sure I get an SDAO letter, and make your appointments in the Testing Center now."
+    "text": "Exams (20% each)\nTraditional, in-class, written exams:\n\nMidterm 1: Thursday October 9 in your lab;\nMidterm 2: Thursday November 13 in your lab;\nFinal Exam: Friday December 12.\n\n\nYou are allowed only two resources:\n\nA “dumb” calculator (no wi-fi), which you won’t need;\nBoth sides of one 8.5” x 11” note sheet created by you.\n\n\n\n\n\n\n\n\n\nIf you need testing accommodations…\n\n\nMake sure I get an SDAO letter, and make your appointments in the Testing Center now."
   },
   {
     "objectID": "slides/2025-08-25-welcome.html#attendance",
@@ -844,7 +844,7 @@
     "href": "slides/2025-08-25-welcome.html#probability-and-statistics",
     "title": "Welcome to STA 240!",
     "section": "Probability and statistics",
-    "text": "Probability and statistics\n\n\n\n\n\n\n\n\n\n\n\n\nProbability\nForward problem\nDeductive\nReasons from rules to consequences\n\n\nStatistics\nInverse problem\nInductive\nObserve consequences, and infer rules"
+    "text": "Probability and statistics\n\n\n\n\n\n\n\n\n\n\n\n\n\nProbability\nForward problem\nDeductive\nReasons from rules to consequences\n\n\nStatistics\nInverse problem\nInductive\nObserve consequences, and infer rules"
   },
   {
     "objectID": "slides/2025-08-25-welcome.html#forward-problem-versus-inverse-problem",
@@ -872,7 +872,7 @@
     "href": "slides/2025-08-25-welcome.html#the-philosophy-of-probability",
     "title": "Welcome to STA 240!",
     "section": "The philosophy of probability",
-    "text": "The philosophy of probability\n\nTwo common interpretive perspectives:\n\n\nFrequentist: probability describes the long run frequency of repeatable events;\n\nSubjective: probability describes an observer’s subjective experience of uncertainty. AKA: their “degrees of belief.”\n\n\n\n\n\n\n\n\n\nYou need both perspectives.\n\n\nLike the wave-particle duality of light, both are true and useful, but their coexistence can be tense and uneasy. We just have to learn to live with that.\n\n\n\n\n\n\n\n\n\n\n\nThe math doesn’t care which you prefer.\n\n\nRegardless your interpretation, the mathematics of probability is the same."
+    "text": "The philosophy of probability\n\nTwo common interpretive perspectives:\n\nFrequentist: probability describes the long run frequency of repeatable events;\nSubjective: probability describes an observer’s subjective experience of uncertainty. AKA: their “degrees of belief.”\n\n\n\n\n\n\n\n\n\nYou need both perspectives.\n\n\nLike the wave-particle duality of light, both are true and useful, but their coexistence can be tense and uneasy. We just have to learn to live with that.\n\n\n\n\n\n\n\n\n\n\n\nThe math doesn’t care which you prefer.\n\n\nRegardless your interpretation, the mathematics of probability is the same."
   },
   {
     "objectID": "math/logexp.html",
@@ -3447,7 +3447,7 @@
     "href": "index.html",
     "title": "STA 240 Probability for Statistical Inference",
     "section": "",
-    "text": "Below is a prospective outline for the course. Due dates are firm, but topics may change with advanced notice.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nPREPARE\nTOPIC\nMATERIALS\nDUE\n\n\n\n1\nWed, Jan 7\n\nIntroduction\n\n\n\n\n\nThu, Jan 8\n\nLab 0 (calculus review)\n\n\n\n\n2\nMon, Jan 12\n\nSet theory\n\n\nPset 0 @11:59 PM\n\n\n\nWed, Jan 14\n\nProbability spaces\n\n\n\n\n\nThu, Jan 15\n\nLab 1 (hello R)\n\nLab 1 @11:59 PM\n\n\n3\nMon, Jan 19\n\nMLK Day - No class\n\nPset 1 @11:59 PM\n\n\n\nWed, Jan 21\n\nCounting\n\n\n\n\n\nThu, Jan 22\n\nLab 2\n\nLab 2 @11:59 PM\n\n\n4\nMon, Jan 26\n\nCounting\n\n\n\n\n\nWed, Jan 28\n\nConditional probability\n\n\n\n\n\nThu, Jan 29\n\nLab 3\n\nLab 3 @11:59 PM\n\n\n\nSun, Feb 1\n\n\n\nPset 2 @11:59 PM\n\n\n5\nMon, Feb 2\n\nConditional probability\n\n\n\n\n\nWed, Feb 4\n\nRandom variables intro\n\n\n\n\n\nThu, Feb 5\n\nLab 4\n\nLab 4 @11:59 PM\n\n\n\nSun, Feb 8\n\n\n\nPset 3 @11:59 PM\n\n\n6\nMon, Feb 9\n\nDiscrete families\n\n\n\n\n\nWed, Feb 11\n\nExpected value\n\n\n\n\n\nThu, Feb 12\n\nMidterm 1 review\n\n\n\n\n\nSun, Feb 15\n\n\n\nPset 4 @11:59 PM\n\n\n7\nMon, Feb 16\n\nVariance\n\n\n\n\n\nWed, Feb 18\n\nMidterm 1\n\n\n\n\n\nThu, Feb 19\n\nLab 5\n\nLab 5 @11:59 PM\n\n\n8\nMon, Feb 23\n\nCdfs, continuous random vars\n\n\n\n\n\nWed, Feb 25\n\nAbsolute continuity\n\n\n\n\n\nThu, Feb 26\n\nLab 6\n\nLab 6 @11:59 PM\n\n\n9\nMon, Mar 2\n\nNormal, gamma\n\n\n\n\n\nWed, Mar 4\n\nMoments and quantiles\n\n\n\n\n\nThu, Mar 5\n\nLab 7\n\nLab 7 @11:59 PM\n\n\n10\nMon, Mar 9\n\nSpring Break - No classes\n\n\n\n\n11\nMon, Mar 16\n\nMGF\n\n\n\n\n\nWed, Mar 18\n\nJoint discrete r.v.’s\n\n\n\n\n\nThu, Mar 19\n\nLab 8\n\nLab 8 @11:59 PM\n\n\n\nSun, Mar 22\n\n\n\nPset 5 @11:59 PM\n\n\n12\nMon, Mar 23\n\nJoint continuous r.v.’s\n\n\n\n\n\nWed, Mar 25\n\nSums and averages\n\n\n\n\n\nThu, Mar 26\n\nMidterm 2 review\n\n\n\n\n\nSun, Mar 29\n\n\n\nPset 6 @11:59 PM\n\n\n13\nMon, Mar 30\n\nLimit theorems\n\n\n\n\n\nWed, Apr 1\n\nMidterm 2\n\n\n\n\n\nThu, Apr 2\n\nLab 9\n\nLab 9 @11:59 PM\n\n\n14\nMon, Apr 6\n\nWhat is statistics?\n\n\n\n\n\nWed, Apr 8\n\nWhat is statistics?\n\n\n\n\n\nThu, Apr 9\n\nLab 10\n\nLab 10 @11:59 PM\n\n\n15\nMon, Apr 13\n\nMaximum likelihood\n\n\n\n\n\nWed, Apr 15\n\nMaximum likelihood\n\n\n\n\n\nThu, Apr 16\n\nLab 11\n\nLab 11 @11:59 PM\n\n\n16\nMon, Apr 20\n\nBayesian inference\n\n\n\n\n\nWed, Apr 22\n\nBayesian inference\n\n\n\n\n\nSat, Apr 25\n\n\n\nPset 7 @11:59 PM\n\n\n17\nMon, Apr 27\n\nFinal exam (9am-12pm)",
+    "text": "Below is a prospective outline for the course. Due dates are firm, but topics may change with advanced notice.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nPREPARE\nTOPIC\nMATERIALS\nDUE\n\n\n\n1\nWed, Jan 7\nDS: 1.1 - 1.2\nIntroduction\n\n\n\n\n\nThu, Jan 8\n\nLab 0 (calculus review)\n\n\n\n\n2\nMon, Jan 12\nDS: 1.3 - 1.4\nSet theory\n\n\n\n\n\nWed, Jan 14\n\nProbability spaces\n\n\n\n\n\nThu, Jan 15\n\nLab 1 (hello R)\n\nLab 1 @11:59 PM\n\n\n\nSun, Jan 18\n\n\n\n\nPset 0 @11:59 PM\n\n\n3\nMon, Jan 19\n\nMLK Day - No class\n\n\n\n\n\nWed, Jan 21\n\nCounting\n\n\n\n\n\nThu, Jan 22\n\nLab 2\n\nLab 2 @11:59 PM\n\n\n\nSun, Jan 25\n\n\n\nPset 1 @11:59 PM\n\n\n4\nMon, Jan 26\n\nCounting\n\n\n\n\n\nWed, Jan 28\n\nConditional probability\n\n\n\n\n\nThu, Jan 29\n\nLab 3\n\nLab 3 @11:59 PM\n\n\n\nSun, Feb 1\n\n\n\nPset 2 @11:59 PM\n\n\n5\nMon, Feb 2\n\nConditional probability\n\n\n\n\n\nWed, Feb 4\n\nRandom variables intro\n\n\n\n\n\nThu, Feb 5\n\nLab 4\n\nLab 4 @11:59 PM\n\n\n\nSun, Feb 8\n\n\n\nPset 3 @11:59 PM\n\n\n6\nMon, Feb 9\n\nDiscrete families\n\n\n\n\n\nWed, Feb 11\n\nExpected value\n\n\n\n\n\nThu, Feb 12\n\nMidterm 1 review\n\n\n\n\n\nSun, Feb 15\n\n\n\nPset 4 @11:59 PM\n\n\n7\nMon, Feb 16\n\nVariance\n\n\n\n\n\nWed, Feb 18\n\nMidterm 1\n\n\n\n\n\nThu, Feb 19\n\nLab 5\n\nLab 5 @11:59 PM\n\n\n8\nMon, Feb 23\n\nCdfs, continuous random vars\n\n\n\n\n\nWed, Feb 25\n\nAbsolute continuity\n\n\n\n\n\nThu, Feb 26\n\nLab 6\n\nLab 6 @11:59 PM\n\n\n9\nMon, Mar 2\n\nNormal, gamma\n\n\n\n\n\nWed, Mar 4\n\nMoments and quantiles\n\n\n\n\n\nThu, Mar 5\n\nLab 7\n\nLab 7 @11:59 PM\n\n\n10\nMon, Mar 9\n\nSpring Break - No classes\n\n\n\n\n11\nMon, Mar 16\n\nMGF\n\n\n\n\n\nWed, Mar 18\n\nJoint discrete r.v.’s\n\n\n\n\n\nThu, Mar 19\n\nLab 8\n\nLab 8 @11:59 PM\n\n\n\nSun, Mar 22\n\n\n\nPset 5 @11:59 PM\n\n\n12\nMon, Mar 23\n\nJoint continuous r.v.’s\n\n\n\n\n\nWed, Mar 25\n\nSums and averages\n\n\n\n\n\nThu, Mar 26\n\nMidterm 2 review\n\n\n\n\n\nSun, Mar 29\n\n\n\nPset 6 @11:59 PM\n\n\n13\nMon, Mar 30\n\nLimit theorems\n\n\n\n\n\nWed, Apr 1\n\nMidterm 2\n\n\n\n\n\nThu, Apr 2\n\nLab 9\n\nLab 9 @11:59 PM\n\n\n14\nMon, Apr 6\n\nWhat is statistics?\n\n\n\n\n\nWed, Apr 8\n\nWhat is statistics?\n\n\n\n\n\nThu, Apr 9\n\nLab 10\n\nLab 10 @11:59 PM\n\n\n15\nMon, Apr 13\n\nMaximum likelihood\n\n\n\n\n\nWed, Apr 15\n\nMaximum likelihood\n\n\n\n\n\nThu, Apr 16\n\nLab 11\n\nLab 11 @11:59 PM\n\n\n16\nMon, Apr 20\n\nBayesian inference\n\n\n\n\n\nWed, Apr 22\n\nBayesian inference\n\n\n\n\n\nSat, Apr 25\n\n\n\nPset 7 @11:59 PM\n\n\n17\nMon, Apr 27\n\nFinal exam (9am-12pm)",
     "crumbs": [
       "Syllabus",
       "Schedule"
