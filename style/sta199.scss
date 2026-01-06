@@ -94,17 +94,18 @@ div.sourceCode pre.sourceCode {
   color: #fff !important;
 }
 
-#quarto-sidebar .sidebar-tools a,
-#quarto-sidebar .sidebar-tools a i,
-#quarto-sidebar .sidebar-tools a svg {
+/* Make the sidebar tool icons/links white (and not translucent) */
+#quarto-sidebar .sidebar-tools .sidebar-tool,
+#quarto-sidebar .sidebar-tools .sidebar-tool i,
+#quarto-sidebar .sidebar-tools .sidebar-tool svg {
   color: #ffffff !important;
   fill: #ffffff !important;   /* for svg icons */
+  opacity: 1 !important;
 }
 
-/* Hover state */
-#quarto-sidebar .sidebar-tools a:hover,
-#quarto-sidebar .sidebar-tools a:hover i,
-#quarto-sidebar .sidebar-tools a:hover svg {
+#quarto-sidebar .sidebar-tools .sidebar-tool:hover,
+#quarto-sidebar .sidebar-tools .sidebar-tool:hover i,
+#quarto-sidebar .sidebar-tools .sidebar-tool:hover svg {
   color: rgba(255, 255, 255, 0.80) !important;
   fill: rgba(255, 255, 255, 0.80) !important;
 }
