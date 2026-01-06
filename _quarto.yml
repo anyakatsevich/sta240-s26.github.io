@@ -1,5 +1,12 @@
 project:
   type: website
+  render:
+  - index.qmd
+  - syllabus/**.qmd
+  - problems/**.qmd
+  - explainers/**.qmd
+  - math/**.qmd
+
   resources:
     - readings/dawid-clark-statement.pdf
     - readings/westreich-iliinsky-2014-aje.pdf
