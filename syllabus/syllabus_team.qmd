@@ -7,11 +7,11 @@ editor:
 +---------------------------+------------------+---------------+---------------------------------+
 | Mug                       | Name             | Role          | Office Hours                    |
 +===========================+==================+===============+=================================+
-| ![](images/gj.jpg){.circ} |Gwen Jacobson     | Head TA       | **Time TBA**\                   |
-|                           |                  |               | Location TBA\                   |
+| ![](images/gj.jpg){.circ} |Gwen Jacobson     | Head TA       | **Fri 1:00 PM - 2:00 PM, 5:00 PM - 6:00 PM **\                   |
+|                           |                  |               | Old Chem 203B \                   |
 +---------------------------+------------------+---------------+---------------------------------+
-| ![](images/fl.jpg){.circ} |Federico Lazzarini| TA            | **Time TBA**\                   |
-|                           |                  |               | Location TBA                    |
+| ![](images/fl.jpg){.circ} |Federico Lazzarini| TA            | **Tue, Thu 5:00 PM - 6:00 PM **\                   |
+|                           |                  |               | Old Chem 203B                    |
 +---------------------------+------------------+---------------+---------------------------------+
 | ![](images/ak.jpg){.circ} |Anya Katsevich    |Instructor     |**Mon, Wed 3:00 PM - 4:00 PM,**\ |
 |                           |                  |               | Old Chem 216                    |
