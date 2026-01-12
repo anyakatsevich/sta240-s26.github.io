@@ -1,6 +1,6 @@
 ---
-title: "Lab 1"
-subtitle: Due Thursday September 4 at 11:59 PM
+title: "Lab 1: hello R"
+subtitle: Due Thursday January 15 at 11:59 PM
 editor: 
   mode: source
 ---
@@ -62,7 +62,7 @@ Do you see why?
 
 # Task 2 (we do it)
 
-Imagine you roll two *fair* dice. What is the probability that the sum of the two numbers you roll is even? To approximate this, work together with Aurora to complete the following steps:
+Imagine you roll two *fair* dice. What is the probability that the sum of the two numbers you roll is even? To approximate this, work together with the TA to complete the following steps:
 
 - Use a `for` loop to repeat the experiment 1,000 times:  
    - Roll two dice using `sample()`;  
@@ -117,11 +117,11 @@ Now, imagine that a five-card hand is randomly dealt to you from a well-shuffled
 There are many correct ways to do this, but you might find the [`any`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/any.html) function helpful.
 :::
 
-::: {.callout-warning collapse="true"}
-## Solution
 
 ```{r}
 #| label: task-3-cards
+#| eval: false
+#| echo: false
 
 set.seed(8675309)
 
@@ -138,9 +138,6 @@ for (i in 1:5000) {
 
 mean(outcomes)
 ```
-
-:::
-
 
 
 [^1]: The wise among us know that these are pronounced STAAAWANOWA and STAAAWANANA, respectively.
