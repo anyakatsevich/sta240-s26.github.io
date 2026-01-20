@@ -134,11 +134,11 @@ There are many correct ways to do this, but you might find the [`any`](https://s
 ```
 :::
 
+::: {.callout-warning collapse="true"}
+## Solution
 
 ```{r}
 #| label: task-3-cards
-#| eval: false
-#| echo: false
 
 set.seed(8675309)
 
@@ -156,6 +156,7 @@ for (i in 1:5000) {
 mean(outcomes)
 ```
 
+:::
 
 [^1]: The wise among us know that these are pronounced STAAAWANOWA and STAAAWANANA, respectively.
 
