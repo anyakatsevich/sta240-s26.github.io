@@ -1,6 +1,6 @@
 ---
 title: "Lab 2"
-subtitle: Due Thursday September 11 at 11:59 PM
+subtitle: Due Thursday January 22 at 11:59 PM
 editor: 
   mode: source
 ---
