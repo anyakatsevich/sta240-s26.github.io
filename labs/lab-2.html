@@ -687,62 +687,6 @@ Figure&nbsp;1: 8 safe rooks
 <pre><code>[1] "6" "4" "6" "4" "1" "6" "7" "6"</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">board</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/outer.html">outer</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">8</span><span class="op">]</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">8</span>, <span class="va">paste0</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">2025</span><span class="op">)</span></span>
-<span><span class="va">nsim</span> <span class="op">&lt;-</span> <span class="fl">100000</span></span>
-<span><span class="va">count_safe</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
-<span></span>
-<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">nsim</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">rooks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">board</span>, <span class="fl">8</span><span class="op">)</span></span>
-<span>  </span>
-<span>  <span class="co"># split into rows (numbers) and cols (letters)</span></span>
-<span>  <span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/substr.html">substring</a></span><span class="op">(</span><span class="va">rooks</span>, <span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span> <span class="co"># row = the number part</span></span>
-<span>  <span class="va">c</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/substr.html">substring</a></span><span class="op">(</span><span class="va">rooks</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span> <span class="co"># col = the letter part</span></span>
-<span>  </span>
-<span>  <span class="co"># safe if all 8 rows are different AND all 8 cols are different</span></span>
-<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">r</span><span class="op">)</span><span class="op">)</span> <span class="op">==</span> <span class="fl">8</span> <span class="op">&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">c</span><span class="op">)</span><span class="op">)</span> <span class="op">==</span> <span class="fl">8</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="va">count_safe</span> <span class="op">&lt;-</span> <span class="va">count_safe</span> <span class="op">+</span> <span class="fl">1</span></span>
-<span>  <span class="op">}</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="va">count_safe</span> <span class="op">/</span> <span class="va">nsim</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1e-05</code></pre>
-</div>
-</div>
-<ul>
-<li>Recall that rooks can move up and down or side-to-side, but not diagonally. In order to be safe from one another, two rooks therefore need to occupy different rows <em>and</em> columns of the board. For the eight rooks to be mutually safe, they all must be in different columns and different rows from one another;</li>
-<li>There are <span class="math inline">\(n=8\cdot 8=64\)</span> squares on the board, and we are selecting <span class="math inline">\(k=8\)</span> of them at which to place the rooks. The rooks are identical, so <strong>order doesn’t matter</strong>, and it’s <strong>without replacement</strong> since the squares need to be distinct, and so the total number of possible outcomes is <span class="math inline">\(\#(S)=\binom{64}{8}\)</span>;</li>
-<li>The event <span class="math inline">\(A\)</span> we care about is “the rooks are safe from one another,” and this can happen <span class="math inline">\(\#(A)=8!\)</span> ways.</li>
-<li>We know that a safe placement will have every row and column occupied by exactly one rook, so let us imagine building up a safe placement row-wise, starting from the bottom and working upward. There are 8 ways to place a single rook on the bottom row. No other rooks can go there, so we move to the next row. There are only 7 ways to place the next rook in the next row, because we must avoid the column occupied by the first rook. Similarly, there are only 6 ways to place the next rook in the next row, because we must avoid the two columns occupied by the first two rooks. And so on. As a consequence of the counting principle, where we regard each row as an experiment, we see that <span class="math inline">\(\#(A)=8\times7\times6\times\cdots\times2\times1=8!\)</span>.</li>
-<li>So</li>
-</ul>
-<p><span class="math display">\[
-P(A)=\frac{\#(A)}{\#(S)}=\frac{8!}{\binom{64}{8}}\approx0.0000091095.
-\]</span>.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Special.html">factorial</a></span><span class="op">(</span><span class="fl">8</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/Special.html">choose</a></span><span class="op">(</span><span class="fl">64</span>, <span class="fl">8</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 9.109465e-06</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
 
 
 </section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
