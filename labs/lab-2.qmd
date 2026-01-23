@@ -248,21 +248,16 @@ count_safe / nsim
 
 ```
 
-```{r}
-#| label: task-3-rooks-explanation
-#| eval: true
-#| echo: true
 
-# - Recall that rooks can move up and down or side-to-side, but not diagonally. In order to be safe from one another, two rooks therefore need to occupy different rows *and* columns of the board. For the eight rooks to be mutually safe, they all must be in different columns and different rows from one another;
-# - There are $n=8\cdot 8=64$ squares on the board, and we are selecting $k=8$ of them at which to place the rooks. The rooks are identical, so **order doesn't matter**, and it's **without replacement** since the squares need to be distinct, and so the total number of possible outcomes is $\#(S)=\binom{64}{8}$;
-# - The event $A$ we care about is "the rooks are safe from one another," and this can happen $\#(A)=8!$ ways.
-# - We know that a safe placement will have every row and column occupied by exactly one rook, so let us imagine building up a safe placement row-wise, starting from the bottom and working upward. There are 8 ways to place a single rook on the bottom row. No other rooks can go there, so we move to the next row. There are only 7 ways to place the next rook in the next row, because we must avoid the column occupied by the first rook. Similarly, there are only 6 ways to place the next rook in the next row, because we must avoid the two columns occupied by the first two rooks. And so on. As a consequence of the counting principle, where we regard each row as an experiment, we see that $\#(A)=8\times7\times6\times\cdots\times2\times1=8!$. 
-# - So 
-# 
-# $$
-# P(A)=\frac{\#(A)}{\#(S)}=\frac{8!}{\binom{64}{8}}\approx0.0000091095.
-# $$.
-```
+- Recall that rooks can move up and down or side-to-side, but not diagonally. In order to be safe from one another, two rooks therefore need to occupy different rows *and* columns of the board. For the eight rooks to be mutually safe, they all must be in different columns and different rows from one another;
+- There are $n=8\cdot 8=64$ squares on the board, and we are selecting $k=8$ of them at which to place the rooks. The rooks are identical, so **order doesn't matter**, and it's **without replacement** since the squares need to be distinct, and so the total number of possible outcomes is $\#(S)=\binom{64}{8}$;
+- The event $A$ we care about is "the rooks are safe from one another," and this can happen $\#(A)=8!$ ways.
+- We know that a safe placement will have every row and column occupied by exactly one rook, so let us imagine building up a safe placement row-wise, starting from the bottom and working upward. There are 8 ways to place a single rook on the bottom row. No other rooks can go there, so we move to the next row. There are only 7 ways to place the next rook in the next row, because we must avoid the column occupied by the first rook. Similarly, there are only 6 ways to place the next rook in the next row, because we must avoid the two columns occupied by the first two rooks. And so on. As a consequence of the counting principle, where we regard each row as an experiment, we see that $\#(A)=8\times7\times6\times\cdots\times2\times1=8!$. 
+- So 
+ 
+$$
+P(A)=\frac{\#(A)}{\#(S)}=\frac{8!}{\binom{64}{8}}\approx0.0000091095.
+$$.
 
 ```{r}
 #| label: task-3-rooks-eval
@@ -271,5 +266,7 @@ count_safe / nsim
 
  factorial(8) / choose(64, 8)
 ```
+
+:::
 
 [^1]: The proportion will converge to the true probability by the *law of large numbers*, which we will study later in the course.
