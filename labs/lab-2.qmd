@@ -215,7 +215,7 @@ substring(random_position, 1, 1)
 substring(random_position, 2, 2)
 ```
 
-
+**IMPORTANT:** Run your simulation **at least 500,000** times -- the probability of the event is rather small.
 ::: {.callout-warning collapse="true"}
 ## Solution
 
