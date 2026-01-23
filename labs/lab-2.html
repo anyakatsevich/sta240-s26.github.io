@@ -725,28 +725,27 @@ Figure&nbsp;1: 8 safe rooks
 <pre><code>[1] 1e-05</code></pre>
 </div>
 </div>
+<ul>
+<li>Recall that rooks can move up and down or side-to-side, but not diagonally. In order to be safe from one another, two rooks therefore need to occupy different rows <em>and</em> columns of the board. For the eight rooks to be mutually safe, they all must be in different columns and different rows from one another;</li>
+<li>There are <span class="math inline">\(n=8\cdot 8=64\)</span> squares on the board, and we are selecting <span class="math inline">\(k=8\)</span> of them at which to place the rooks. The rooks are identical, so <strong>order doesn’t matter</strong>, and it’s <strong>without replacement</strong> since the squares need to be distinct, and so the total number of possible outcomes is <span class="math inline">\(\#(S)=\binom{64}{8}\)</span>;</li>
+<li>The event <span class="math inline">\(A\)</span> we care about is “the rooks are safe from one another,” and this can happen <span class="math inline">\(\#(A)=8!\)</span> ways.</li>
+<li>We know that a safe placement will have every row and column occupied by exactly one rook, so let us imagine building up a safe placement row-wise, starting from the bottom and working upward. There are 8 ways to place a single rook on the bottom row. No other rooks can go there, so we move to the next row. There are only 7 ways to place the next rook in the next row, because we must avoid the column occupied by the first rook. Similarly, there are only 6 ways to place the next rook in the next row, because we must avoid the two columns occupied by the first two rooks. And so on. As a consequence of the counting principle, where we regard each row as an experiment, we see that <span class="math inline">\(\#(A)=8\times7\times6\times\cdots\times2\times1=8!\)</span>.</li>
+<li>So</li>
+</ul>
+<p><span class="math display">\[
+P(A)=\frac{\#(A)}{\#(S)}=\frac{8!}{\binom{64}{8}}\approx0.0000091095.
+\]</span>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># - Recall that rooks can move up and down or side-to-side, but not diagonally. In order to be safe from one another, two rooks therefore need to occupy different rows *and* columns of the board. For the eight rooks to be mutually safe, they all must be in different columns and different rows from one another;</span></span>
-<span><span class="co"># - There are $n=8\cdot 8=64$ squares on the board, and we are selecting $k=8$ of them at which to place the rooks. The rooks are identical, so **order doesn't matter**, and it's **without replacement** since the squares need to be distinct, and so the total number of possible outcomes is $\#(S)=\binom{64}{8}$;</span></span>
-<span><span class="co"># - The event $A$ we care about is "the rooks are safe from one another," and this can happen $\#(A)=8!$ ways.</span></span>
-<span><span class="co"># - We know that a safe placement will have every row and column occupied by exactly one rook, so let us imagine building up a safe placement row-wise, starting from the bottom and working upward. There are 8 ways to place a single rook on the bottom row. No other rooks can go there, so we move to the next row. There are only 7 ways to place the next rook in the next row, because we must avoid the column occupied by the first rook. Similarly, there are only 6 ways to place the next rook in the next row, because we must avoid the two columns occupied by the first two rooks. And so on. As a consequence of the counting principle, where we regard each row as an experiment, we see that $\#(A)=8\times7\times6\times\cdots\times2\times1=8!$. </span></span>
-<span><span class="co"># - So </span></span>
-<span><span class="co"># </span></span>
-<span><span class="co"># $$</span></span>
-<span><span class="co"># P(A)=\frac{\#(A)}{\#(S)}=\frac{8!}{\binom{64}{8}}\approx0.0000091095.</span></span>
-<span><span class="co"># $$.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span> <span class="fu"><a href="https://rdrr.io/r/base/Special.html">factorial</a></span><span class="op">(</span><span class="fl">8</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/Special.html">choose</a></span><span class="op">(</span><span class="fl">64</span>, <span class="fl">8</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span> <span class="fu"><a href="https://rdrr.io/r/base/Special.html">factorial</a></span><span class="op">(</span><span class="fl">8</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/Special.html">choose</a></span><span class="op">(</span><span class="fl">64</span>, <span class="fl">8</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 9.109465e-06</code></pre>
 </div>
 </div>
+</div>
+</div>
+</div>
 
 
-</div>
-</div>
-</div>
 </section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 <ol>
 <li id="fn1"><p>The proportion will converge to the true probability by the <em>law of large numbers</em>, which we will study later in the course.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
