@@ -215,12 +215,15 @@ substring(random_position, 1, 1)
 substring(random_position, 2, 2)
 ```
 
-
 **IMPORTANT:** Run your simulation **at least 500,000** times -- the probability of the event is rather small.
+
+::: {.callout-warning collapse="true"}
+## Solution
+
 ```{r}
 #| label: task-3-rooks
-#| eval: false
-#| echo: false
+#| eval: true
+#| echo: true
 
 board <- outer(letters[1:8], 1:8, paste0)
 
@@ -247,8 +250,8 @@ count_safe / nsim
 
 ```{r}
 #| label: task-3-rooks-explanation
-#| eval: false
-#| echo: false
+#| eval: true
+#| echo: true
 
 # - Recall that rooks can move up and down or side-to-side, but not diagonally. In order to be safe from one another, two rooks therefore need to occupy different rows *and* columns of the board. For the eight rooks to be mutually safe, they all must be in different columns and different rows from one another;
 # - There are $n=8\cdot 8=64$ squares on the board, and we are selecting $k=8$ of them at which to place the rooks. The rooks are identical, so **order doesn't matter**, and it's **without replacement** since the squares need to be distinct, and so the total number of possible outcomes is $\#(S)=\binom{64}{8}$;
@@ -263,10 +266,10 @@ count_safe / nsim
 
 ```{r}
 #| label: task-3-rooks-eval
-#| eval: false
-#| echo: false
+#| eval: true
+#| echo: true
 
-# factorial(8) / choose(64, 8)
+ factorial(8) / choose(64, 8)
 ```
 
 [^1]: The proportion will converge to the true probability by the *law of large numbers*, which we will study later in the course.
