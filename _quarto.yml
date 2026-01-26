@@ -2,7 +2,7 @@ project:
   type: website
   render:
   - index.qmd
-  - syllabus/**.qmd
+  - syllabus/**.qmdg
   - problems/pset-0.qmd
   - problems/pset-1.qmd
   - problems/pset-2.qmd
