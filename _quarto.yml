@@ -5,6 +5,7 @@ project:
   - syllabus/**.qmd
   - problems/pset-0.qmd
   - problems/pset-1.qmd
+  - problems/pset-2.qmd
   - lab-notes/**.pdf
   - labs/lab-1.qmd
   - labs/lab-2.qmd
@@ -168,8 +169,8 @@ website:
             text: Problem Set 0
           - href: problems/pset-1.qmd
             text: Problem Set 1
-          # - href: problems/pset-2.qmd
-          #   text: Problem Set 2
+          - href: problems/pset-2.qmd
+            text: Problem Set 2
           # - href: problems/pset-3.qmd
           #   text: Problem Set 3
           # - href: problems/pset-4.qmd
