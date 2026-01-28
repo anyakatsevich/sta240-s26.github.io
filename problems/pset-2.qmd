@@ -1,6 +1,6 @@
 ---
 title: "Problem Set 2"
-subtitle: Due Friday September 19 at 5PM
+subtitle: Due Sunday, February 1 at 11:59PM
 draft: false
 editor: 
   mode: source
@@ -10,7 +10,7 @@ editor:
 
 As with Problem Set 1, this problem set asks you to prove new results about how probability measures behave. You are being evaluated on your reasoning and the fluency with which you make use of set theory, the probability axioms, and the various rules we've seen (complement, inclusion/exclusion, etc). Please be thorough and explain all of the steps in your logic. 
 
-As I mentioned [here](https://edstem.org/us/courses/80868/discussion/6946234?answer=16178072), the lecture notes on set theory and the probability rules provide a model for how the proofs should look. If you emulate the structure, level of detail, and amount of discussion featured in those examples, you should be good.
+The lecture notes on set theory and the probability rules provide a model for how the proofs should look. If you emulate the structure, level of detail, and amount of discussion featured in those examples, you should be good.
 
 ## Problem 0
 
@@ -18,41 +18,37 @@ As I mentioned [here](https://edstem.org/us/courses/80868/discussion/6946234?ans
 
 ## Problem 1
 
-{{< include bank/conceptual/lousy-forecasting.qmd >}}
+{{< include bank/basic-rules/intersection-bound.qmd >}}
 
 ## Problem 2
 
-{{< include bank/basic-rules/intersection-bound.qmd >}}
+{{< include bank/basic-rules/union-bound.qmd >}}
 
 ## Problem 3
 
-{{< include bank/basic-rules/union-bound.qmd >}}
+{{< include bank/counting/license-plates.qmd >}}
 
 ## Problem 4
 
-{{< include bank/counting/license-plates.qmd >}}
+{{< include bank/counting/20-balls-4-colors.qmd >}}
 
 ## Problem 5
 
-{{< include bank/counting/20-balls-4-colors.qmd >}}
+{{< include bank/counting/exactly-two-suits.qmd >}}
 
 ## Problem 6
 
-{{< include bank/counting/exactly-two-suits.qmd >}}
+{{< include bank/counting/random-inner-product.qmd >}}
 
 ## Problem 7
 
-{{< include bank/counting/random-inner-product.qmd >}}
+{{< include bank/counting/spotify-shuffle.qmd >}}
 
 ## Problem 8
 
-{{< include bank/counting/spotify-shuffle.qmd >}}
-
-## Problem 9
-
 {{< include bank/conditional-probability/target-practice.qmd >}}
 
-## Problem 10
+## Problem 9
 
 {{< include bank/conditional-probability/independent-complements.qmd >}}
 

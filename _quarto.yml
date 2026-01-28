@@ -2,9 +2,10 @@ project:
   type: website
   render:
   - index.qmd
-  - syllabus/**.qmd
+  - syllabus/**.qmdg
   - problems/pset-0.qmd
   - problems/pset-1.qmd
+  - problems/pset-2.qmd
   - lab-notes/**.pdf
   - labs/lab-1.qmd
   - labs/lab-2.qmd
@@ -20,7 +21,7 @@ project:
     - readings/meng-2023-nejsds.pdf
     - readings/detsky-gutekunst-kopac-2025-significance.pdf
     - lecture-notes/lecture3.pdf
-    - lecture-notes/lecture4.pdf
+    - lecture-notes/lecture4and5-counting.pdf
     - lecture-notes/sta240-notes-00-set-theory.pdf
     - lecture-notes/sta240-notes-01-probability-spaces.pdf
     - lecture-notes/sta240-notes-02-counting-theory.pdf
@@ -168,8 +169,8 @@ website:
             text: Problem Set 0
           - href: problems/pset-1.qmd
             text: Problem Set 1
-          # - href: problems/pset-2.qmd
-          #   text: Problem Set 2
+          - href: problems/pset-2.qmd
+            text: Problem Set 2
           # - href: problems/pset-3.qmd
           #   text: Problem Set 3
           # - href: problems/pset-4.qmd
