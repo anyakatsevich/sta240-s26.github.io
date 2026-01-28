@@ -90,7 +90,7 @@ window.Quarto = {
 };
 </script>
 <meta property="og:title" content="Problem Set 2 – STA 240 Spring 2026">
-<meta property="og:description" content="Due Sunday, February 1 at 11:59PM">
+<meta property="og:description" content="Due Sunday February 1 at 11:59PM">
 <meta property="og:image" content="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2_files/figure-html/unnamed-chunk-1-1.png">
 <meta property="og:site_name" content="STA 240 Spring 2026">
 <meta property="og:image:height" content="672">
@@ -413,7 +413,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problems/pset-0.html">Problem Sets</a></li><li class="breadcrumb-item"><a href="../problems/pset-2.html">Problem Set 2</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">Problem Set 2</h1>
-<p class="subtitle lead">Due Sunday, February 1 at 11:59PM</p>
+<p class="subtitle lead">Due Sunday February 1 at 11:59PM</p>
 </div>
 
 
@@ -440,13 +440,14 @@ window.Quarto = {
 </section><section id="problem-2" class="level2"><h2 class="anchored" data-anchor-id="problem-2">Problem 2</h2>
 <p>Let <span class="math inline">\(A_1,\,A_2,\,A_3,\,...\subseteq S\)</span> be an infinite sequence of possibly overlapping events in some probability space. Based on this arbitrary sequence, define a new sequence of events that starts with <span class="math inline">\(B_1 = A_1\)</span> and then has <span class="math inline">\(B_i=A_i\cap \left(\bigcup_{j=1}^{i-1}A_j\right)^c\)</span> for all <span class="math inline">\(i&gt;1\)</span>.</p>
 <ol type="a">
+<li><p>In order to build some intuition as to what’s going on here, consider the following special case <strong>for this part only</strong>: the <span class="math inline">\(A_{i}\)</span> are <em>increasing</em> and <em>nested</em> (i.e., <span class="math inline">\(A_{1} \subseteq A_{2} \subseteq A_{3} \subseteq \dots\)</span>). For this case, draw two Venn diagrams: one illustrating the <span class="math inline">\(\left\{A_{i}\right\}\)</span> and one illustrating the corresponding <span class="math inline">\(\left\{B_{i}\right\}\)</span>.</p></li>
 <li><p>Show that the <span class="math inline">\(B_i\)</span> are pairwise disjoint.</p></li>
 <li><p>Show that</p></li>
 </ol>
 <p><span class="math display">\[
 \bigcup_{i=1}^\infty A_i=\bigcup_{i=1}^\infty B_i.
 \]</span></p>
-<ol start="3" type="a">
+<ol start="4" type="a">
 <li>Use the previous parts to show that</li>
 </ol>
 <p><span class="math display">\[
