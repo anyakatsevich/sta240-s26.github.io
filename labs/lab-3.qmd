@@ -1,10 +1,23 @@
 ---
 title: "Lab 3"
-subtitle: Due Thursday September 18 at 11:59 PM
+subtitle: Due Thursday January 29 at 11:59 PM
 draft: false
 editor: 
   mode: source
 ---
+
+## Task 0 (important!)
+
+In order to do next week's lab, regardless of whether you're using the containers or your local RStudio, you will need to install the `kgrams` package. Copy the following code into your console and run it:
+
+```{r}
+#| eval: false
+install.packages("kgrams")
+```
+
+Let the teaching team know if you have any difficulties with the installation, so we can help troubleshoot before the lab!
+
+# Lab 3 for real
 
 ::: callout-note
 This assignment was adapted from: 
@@ -33,7 +46,7 @@ $$
 \end{align*}
 $$
 
-## Task 1
+## Task 1 (you try it, we discuss)
 
 Before you read anything else below, try to solve the puzzler yourself. What do you come up with?
 
@@ -44,7 +57,7 @@ Obviously you will struggle to come up with anything, and a lot depends on how y
 
 :::
 
-## Task 2
+## Task 2 (you try it, we discuss)
 
 Explain the correct way to solve this problem. Exactly what probability are we asked to compute, and what formula should we apply to do it? Does the prompt actually provide enough information to ultimately get the job done?
 
@@ -72,7 +85,7 @@ Unfortunately, the show doesn't tell us $f_-$, so you cannot actually compute th
 
 :::
 
-## Task 3
+## Task 3 (you try it, we discuss)
 
 Beneath the fold is the solution that the hosts ultimately revealed.
 
@@ -98,7 +111,7 @@ $$
 
 :::
 
-## Task 4
+## Task 4 (we do it)
 
 Explain two things:
 
@@ -138,18 +151,17 @@ Two types of errors are possible in a situation like this: treating a disease th
 
 :::
 
-## Task 5
+## Task 5 (you do it)
 
 So, the show's answer, while wrong, could still be potentially useful upper bound on the true probability. Neat! But how wrong is it, even? To get a sense of this, [use `R`](https://anyakatsevich.github.io/sta240-s26.github.io/explainers/lineplot.html) to create some line plots with the prevalence $p\in[0,\, 1]$ on the horizontal axis and the true and approximate probabilities for different values of $f_-$ and $f_+$ on the vertical axis. Mix-and-match $f_-,\, f_+\in\{0.1,\, 0.2\}$, and comment on the difference between the two curves.
 
-
-::: {.callout-warning collapse="true"}
-## Solution
 
 ```{r}
 #| code-fold: true
 #| fig-width: 6
 #| fig-asp: 1
+#| echo: false
+#| eval: false
 FPR = c(0.1, 0.2)
 FNR = c(0.1, 0.2)
 par(mfrow = c(2, 2))
@@ -176,6 +188,9 @@ for (i in 1:2){
 }
 ```
 
-When the prevalence is low (ie rare disease) the Car Talk curve is a very close upper bound on the true probability. For higher prevalence, the Car Talk curve is no longer an upper bound, and the curves get farther apart.
+```{r}
+#| echo: false
+#| eval: false
+#When the prevalence is low (ie rare disease) the Car Talk curve is a very close upper bound on the true probability. For higher prevalence, the Car Talk curve is no longer an upper bound, and the curves get farther apart.
+```
 
-:::
