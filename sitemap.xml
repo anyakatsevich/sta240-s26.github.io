@@ -2,122 +2,126 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/math/series.html</loc>
-    <lastmod>2025-12-09T20:23:59.792Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.195Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/math/logexp.html</loc>
-    <lastmod>2025-12-09T20:23:59.792Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.198Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/math/integration.html</loc>
-    <lastmod>2026-01-12T17:21:33.757Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.198Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/math/gamma-function.html</loc>
-    <lastmod>2026-01-12T17:21:33.757Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.196Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/explainers/vectors.html</loc>
-    <lastmod>2025-12-09T20:23:59.724Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.209Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/explainers/summary-statistics.html</loc>
-    <lastmod>2025-12-09T20:23:59.724Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.211Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/explainers/sample.html</loc>
-    <lastmod>2025-12-09T20:23:59.724Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.212Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/explainers/quarto.html</loc>
-    <lastmod>2026-01-12T17:21:33.752Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.207Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/explainers/plot.html</loc>
-    <lastmod>2026-01-12T17:21:33.752Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.208Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/explainers/loops.html</loc>
-    <lastmod>2026-01-12T17:21:33.752Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.206Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/explainers/latex.html</loc>
-    <lastmod>2025-12-09T20:23:59.723Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.209Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/explainers/histogram.html</loc>
-    <lastmod>2025-12-09T20:23:59.720Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.205Z</lastmod>
   </url>
   <url>
-    <loc>https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-2.html</loc>
-    <lastmod>2026-01-28T16:36:17.100Z</lastmod>
-  </url>
-  <url>
-    <loc>https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html</loc>
-    <lastmod>2026-01-28T18:06:42.358Z</lastmod>
-  </url>
-  <url>
-    <loc>https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-0.html</loc>
-    <lastmod>2026-01-12T17:21:33.759Z</lastmod>
-  </url>
-  <url>
-    <loc>https://anyakatsevich.github.io/sta240-s26.github.io/index.html</loc>
-    <lastmod>2026-01-12T17:21:33.753Z</lastmod>
-  </url>
-  <url>
-    <loc>https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-1.html</loc>
-    <lastmod>2026-01-21T16:36:19.995Z</lastmod>
+    <loc>https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-3.html</loc>
+    <lastmod>2026-01-29T01:37:11.439Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-1.html</loc>
-    <lastmod>2026-01-21T16:36:19.995Z</lastmod>
+    <lastmod>2026-01-23T02:35:32.528Z</lastmod>
+  </url>
+  <url>
+    <loc>https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-1.html</loc>
+    <lastmod>2026-01-15T02:39:23.340Z</lastmod>
+  </url>
+  <url>
+    <loc>https://anyakatsevich.github.io/sta240-s26.github.io/index.html</loc>
+    <lastmod>2026-01-09T15:11:15.393Z</lastmod>
+  </url>
+  <url>
+    <loc>https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-0.html</loc>
+    <lastmod>2026-01-09T14:48:42.513Z</lastmod>
+  </url>
+  <url>
+    <loc>https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html</loc>
+    <lastmod>2026-01-29T01:37:11.440Z</lastmod>
+  </url>
+  <url>
+    <loc>https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-2.html</loc>
+    <lastmod>2026-01-23T14:07:13.159Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/explainers/hello-rstudio.html</loc>
-    <lastmod>2026-01-12T17:21:33.752Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.206Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/explainers/if-else.html</loc>
-    <lastmod>2025-12-09T20:23:59.720Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.208Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/explainers/lineplot.html</loc>
-    <lastmod>2025-12-09T20:23:59.723Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.207Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/explainers/math.html</loc>
-    <lastmod>2025-12-09T20:23:59.723Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.210Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/explainers/probabilities.html</loc>
-    <lastmod>2026-01-12T17:21:33.752Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.205Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/explainers/rng-seed.html</loc>
-    <lastmod>2025-12-09T20:23:59.723Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.210Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/explainers/setup.html</loc>
-    <lastmod>2025-12-09T20:23:59.724Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.211Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/explainers/vectorization.html</loc>
-    <lastmod>2026-01-12T17:21:33.753Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.212Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/math/differentiation.html</loc>
-    <lastmod>2025-12-09T20:23:59.790Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.196Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/math/greeks.html</loc>
-    <lastmod>2025-12-09T20:23:59.790Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.195Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/math/limits.html</loc>
-    <lastmod>2025-12-09T20:23:59.792Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.197Z</lastmod>
   </url>
   <url>
     <loc>https://anyakatsevich.github.io/sta240-s26.github.io/math/massage-and-squint.html</loc>
-    <lastmod>2026-01-12T17:21:33.757Z</lastmod>
+    <lastmod>2026-01-04T16:12:08.194Z</lastmod>
   </url>
 </urlset>
