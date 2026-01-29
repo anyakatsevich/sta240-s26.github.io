@@ -9,6 +9,7 @@ project:
   - lab-notes/**.pdf
   - labs/lab-1.qmd
   - labs/lab-2.qmd
+  - labs/lab-3.qmd
   - explainers/**.qmd
   - math/**.qmd
 
@@ -187,8 +188,8 @@ website:
              text: Lab 1
            - href: labs/lab-2.qmd
              text: Lab 2
-          # - href: labs/lab-3.qmd
-          #   text: Lab 3
+           - href: labs/lab-3.qmd
+             text: Lab 3
           # - href: labs/lab-4.qmd
           #   text: Lab 4
           # - href: labs/lab-5.qmd
