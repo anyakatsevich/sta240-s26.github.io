@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Setting a random number seed – STA 240 Spring 2026</title>
+<title>Problem Set 3 – STA 240 Spring 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,41 +17,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -60,8 +25,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../explainers/probabilities.html" rel="next">
-<link href="../explainers/vectorization.html" rel="prev">
+<link href="../labs/lab-1.html" rel="next">
+<link href="../problems/pset-2.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -98,10 +63,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<meta property="og:title" content="Setting a random number seed – STA 240 Spring 2026">
-<meta property="og:description" content="Homepage for STA 240 Probability for Statistical Inference">
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+<meta property="og:title" content="Problem Set 3 – STA 240 Spring 2026">
+<meta property="og:description" content="Due Sunday February 8 at 11:59PM">
+<meta property="og:image" content="https://anyakatsevich.github.io/sta240-s26.github.io/problems/images/dart-board.png">
 <meta property="og:site_name" content="STA 240 Spring 2026">
+<meta property="og:image:height" content="471">
+<meta property="og:image:width" content="479">
 </head>
 <body class="nav-sidebar docked quarto-light">
 
@@ -110,7 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../explainers/setup.html">R Helpers</a></li><li class="breadcrumb-item"><a href="../explainers/rng-seed.html">Setting a seed</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problems/pset-0.html">Problem Sets</a></li><li class="breadcrumb-item"><a href="../problems/pset-3.html">Problem Set 3</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -238,13 +231,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">R Helpers</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../explainers/setup.html" class="sidebar-item-text sidebar-link">
@@ -313,7 +306,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../explainers/rng-seed.html" class="sidebar-item-text sidebar-link active">
+  <a href="../explainers/rng-seed.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setting a seed</span></a>
   </div>
 </li>
@@ -345,13 +338,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Problem Sets</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset-0.html" class="sidebar-item-text sidebar-link">
@@ -372,7 +365,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../problems/pset-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../problems/pset-3.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Problem Set 3</span></a>
   </div>
 </li>
@@ -411,12 +404,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#problem-0" id="toc-problem-0" class="nav-link active" data-scroll-target="#problem-0">Problem 0</a></li>
+  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1">Problem 1</a></li>
+  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2</a></li>
+  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3">Problem 3</a></li>
+  <li><a href="#problem-4" id="toc-problem-4" class="nav-link" data-scroll-target="#problem-4">Problem 4</a></li>
+  <li><a href="#problem-5" id="toc-problem-5" class="nav-link" data-scroll-target="#problem-5">Problem 5</a></li>
+  <li><a href="#problem-6" id="toc-problem-6" class="nav-link" data-scroll-target="#problem-6">Problem 6</a></li>
+  <li><a href="#problem-7" id="toc-problem-7" class="nav-link" data-scroll-target="#problem-7">Problem 7</a></li>
+  <li><a href="#problem-8" id="toc-problem-8" class="nav-link" data-scroll-target="#problem-8">Problem 8</a></li>
+  <li><a href="#problem-9" id="toc-problem-9" class="nav-link" data-scroll-target="#problem-9">Problem 9</a></li>
+  <li><a href="#problem-10" id="toc-problem-10" class="nav-link" data-scroll-target="#problem-10">Problem 10</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../explainers/setup.html">R Helpers</a></li><li class="breadcrumb-item"><a href="../explainers/rng-seed.html">Setting a seed</a></li></ol></nav><div class="quarto-title">
-<h1 class="title">Setting a random number seed</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problems/pset-0.html">Problem Sets</a></li><li class="breadcrumb-item"><a href="../problems/pset-3.html">Problem Set 3</a></li></ol></nav><div class="quarto-title">
+<h1 class="title">Problem Set 3</h1>
+<p class="subtitle lead">Due Sunday February 8 at 11:59PM</p>
 </div>
 
 
@@ -430,61 +439,207 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>Statistical computing software like <code>R</code> can generate (pseudo)random numbers, like this:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span><span class="op">)</span>, <span class="fl">5</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1 4 1 2 5</code></pre>
-</div>
-</div>
-<p>Or this:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">50</span>, <span class="fl">0.3</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 20 16 16 10 12</code></pre>
-</div>
-</div>
-<p>Or this:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.928567035 -0.294720447 -0.005767173  2.404653389  0.763593461</code></pre>
-</div>
-</div>
-<p>Look pretty random to me. This allows us to perform simulations, which is an important part of the modern statistician’s toolkit. Having said that, when you’re working with computer-generated random numbers, you want your work to be reproducible so that other people can check it. This means that you want to set a random number seed before you do a simulation. This ensures that the stream of random numbers in your simulation is the same every time, and someone else could run your code and get the exact same results that you did.</p>
-<p>Setting a seed looks like this:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">8675309</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.9965824  0.7218241 -0.6172088  2.0293916  1.0654161</code></pre>
-</div>
-</div>
-<p>Every time you run that code, you will get the same numbers:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">8675309</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.9965824  0.7218241 -0.6172088  2.0293916  1.0654161</code></pre>
-</div>
-</div>
-<p>So, if you ever write a code chunk that generates random numbers (eg. using the <code>sample</code> function or one of the <code>r-</code> functions), you should begin the code chunk by setting a random number seed so that you get the same results every time you run your stuff. The syntax as you saw above is <code>set.seed(INTEGER)</code>. Sometimes we will tell you what number to use. Other times (and once you exit the course), you can put whatever you want. It doesn’t really matter. If you require inspiration, try these:</p>
+</header><section id="problem-0" class="level2"><h2 class="anchored" data-anchor-id="problem-0">Problem 0</h2>
+<p>Recommend some music for us to listen to while we grade this.</p>
+</section><section id="problem-1" class="level2"><h2 class="anchored" data-anchor-id="problem-1">Problem 1</h2>
+<p>Here are some short readings about <a href="https://anyakatsevich.github.io/sta240-s26.github.io/slides/2025-08-25-welcome.html#/sally-clark-1964---2007">the case of Sally Clark and Roy Meadow</a>, as well as something called the <em>prosecutor’s fallacy</em>:</p>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=OiBIXa_-7Vo">1</a></li>
-<li><a href="https://www.youtube.com/watch?v=pf8yHr4rHaY"><code>20</code></a></li>
-<li><a href="https://www.youtube.com/watch?v=MHFuaaGpGKQ"><code>988</code></a></li>
-<li><code>24601</code></li>
-<li><a href="https://youtu.be/HhPu6GEoad8?feature=shared"><code>362436</code></a></li>
-<li><code>525600</code></li>
-<li><a href="https://www.youtube.com/watch?v=6WTdTwcmxyo"><code>8675309</code></a></li>
-<li><a href="https://www.youtube.com/watch?v=uwJQQux0TF0"><code>8005882300</code></a></li>
+<li>Grimes (2023): “<a href="https://www.scientificamerican.com/article/bad-science-and-bad-statistics-in-the-courtroom-convict-innocent-people/?utm_source=chatgpt.com">Bad Science and Bad Statistics in the Courtroom Convict Innocent People</a>,” <em>Scientific American</em>;</li>
+<li>Carriquiry (2018): “<a href="https://forensicstats.org/blog/2018/02/16/misuse-statistics-courtroom-sally-clark-case/?utm_source=chatgpt.com">Misuse of statistics in the courtroom: the Sally Clark case</a>,” CSAFE;</li>
+<li>Westreich &amp; Iliinsky (2014): “<a href="https://anyakatsevich.github.io/sta240-s26.github.io/readings/westreich-iliinsky-2014-aje.pdf">Epidemiology visualized: the prosecutor’s fallacy</a>,” <em>American Journal of Epidemiology</em>;</li>
+<li>
+<a href="https://en.wikipedia.org/wiki/Philip_Dawid">AP Dawid</a>’s <a href="https://anyakatsevich.github.io/sta240-s26.github.io/readings/dawid-clark-statement.pdf">statement</a> during the Clark appeal.</li>
+</ul>
+<p>Please do the following:</p>
+<ol type="a">
+<li>Read the articles;</li>
+<li>Using the ideas of conditional probability and independence that we have studied, write a paragraph or two describing what the prosecutor’s fallacy is and how it applies to the Clark case;</li>
+<li>If you were an attorney for the defense and had the chance to cross-examine Roy Meadow, what would you ask him about his statistical testimony? What are the most incisive questions you could ask? How would you ensure that the cross-examination would “land” with the members of the jury, who most likely know absolutely nothing about probability and statistics?</li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Please don’t break my heart
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I’m not asking you to read <em>Moby-Dick</em> here.</p>
+</div>
+</div>
+</section><section id="problem-2" class="level2"><h2 class="anchored" data-anchor-id="problem-2">Problem 2</h2>
+<p>Poker dice is played by simultaneously rolling five dice. The dice are fair, six-sided, and <em>distinct</em> (imagine that each one is a different color). Find the probabilities of the following dice rolls:</p>
+<ol type="a">
+<li>five different numbers;</li>
+<li>three of a kind (three dice show the same number, while the other two dice are singles);</li>
+<li>full house (three dice show the same number, while the other two show a separate pair).</li>
+</ol></section><section id="problem-3" class="level2"><h2 class="anchored" data-anchor-id="problem-3">Problem 3</h2>
+<p>Consider selecting <span class="math inline">\(k\)</span> from <span class="math inline">\(n\)</span> with replacement but ignoring order.</p>
+<ol type="a">
+<li>Let’s take the specific case of <span class="math inline">\(k=2\)</span> and <span class="math inline">\(n=4\)</span>. List out all possible ways you can select <span class="math inline">\(k=2\)</span> items from <span class="math inline">\(\{1, 2, 3, 4\}\)</span> in such a scenario.</li>
+<li>Let <span class="math inline">\(x_i\)</span> be the number of times that element <span class="math inline">\(\{i\}\)</span> is selected, for each <span class="math inline">\(i = 1,\,2,\,3,\, 4\)</span>. For each combination identified in (a), show that it satisfies the following equation:</li>
+</ol>
+<p><span class="math display">\[x_1 + x_2 + x_3 + x_4 = 2, \quad x_1, x_2, x_3, x_4 \in \{0, 1, 2\}.\]</span></p>
+<ol start="3" type="a">
+<li>State an analogous equation to part b for general <span class="math inline">\(n\)</span> and <span class="math inline">\(k\)</span>. Use this to show that the number of ways you can select <span class="math inline">\(k\)</span> from <span class="math inline">\(n\)</span> with replacement and ignoring order is</li>
+</ol>
+<p><span class="math display">\[
+\binom{n+k-1}{k}=\frac{(n+k-1)!}{k!(n-1)!}.
+\]</span></p>
+</section><section id="problem-4" class="level2"><h2 class="anchored" data-anchor-id="problem-4">Problem 4</h2>
+<p>Let <span class="math inline">\(S\)</span> be a sample space with probability measure <span class="math inline">\(P\)</span>, and let <span class="math inline">\(B\subseteq S\)</span> be some event with <span class="math inline">\(P(B)&gt;0\)</span>. Show that the function <span class="math inline">\(G(A)=P(A\,|\, B)\)</span> is a <em>new</em> probability measure on <span class="math inline">\(S\)</span>. That is, show that <span class="math inline">\(G\)</span> satisfies the axioms:</p>
+<ol type="a">
+<li>total measure 1;</li>
+<li>nonnegativity;</li>
+<li>countable additivity.</li>
+</ol></section><section id="problem-5" class="level2"><h2 class="anchored" data-anchor-id="problem-5">Problem 5</h2>
+<p>We studied disease testing in class, and in our stylized example, a patient had only two attributes: their true disease status <span class="math inline">\(D\)</span> and their test result <span class="math inline">\(T\)</span>. In reality of course, patients have many more relevant attributes: genetics, prior medical history, lifestyle, charm and good looks, etc. So in an attempt to be slightly more realistic, we shall extend our little model to include a third attribute: whether or not you have symptoms <span class="math inline">\(S\)</span>.</p>
+<p><a href="#tbl-disease" class="quarto-xref">Table&nbsp;1</a> enumerates all of the possible states of the world together with their individual probabilities. These numbers come from a small COVID-19 study of undergraduates in Fall 2020. The test in question is an antigen test. Patients’ “true” disease status was determined by a PCR test that we assume is hella accurate.</p>
+<div class="center-table">
+<div id="tbl-disease" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[25, 25, 25, 25]">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-disease-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Some COVID-19 numbers. Source: <a href="https://www.cdc.gov/mmwr/volumes/69/wr/mm695152a3.htm">CDC</a>
+</figcaption><div aria-describedby="tbl-disease-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead><tr class="header">
+<th><span class="math inline">\(D\)</span></th>
+<th><span class="math inline">\(S\)</span></th>
+<th><span class="math inline">\(T\)</span></th>
+<th><span class="math inline">\(P(D\cap S\cap T)\)</span></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>0.7650</td>
+</tr>
+<tr class="even">
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>0.0128</td>
+</tr>
+<tr class="odd">
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>0.1685</td>
+</tr>
+<tr class="even">
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>0.0018</td>
+</tr>
+<tr class="odd">
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>0.0091</td>
+</tr>
+<tr class="even">
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>0.0064</td>
+</tr>
+<tr class="odd">
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>0.0073</td>
+</tr>
+<tr class="even">
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>0.0291</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+<ol type="a">
+<li><p>What is the overall disease prevalence?</p></li>
+<li><p>What is the sensitivity of the test?</p></li>
+<li><p>What is the specificity of the test?</p></li>
+<li><p>Imagine you develop symptoms. So you visit <a href="https://youtu.be/Bg36PU96U0w?si=3rmlqIYRpsXbAH1L">Dr.&nbsp;Vinnie Boombatz</a> to get tested, and the test comes back positive. Given everything we now know about you, what is the probability that you are truly infected?</p></li>
+<li><p>What is the overall probability that the test is wrong?</p></li>
+</ol></section><section id="problem-6" class="level2"><h2 class="anchored" data-anchor-id="problem-6">Problem 6</h2>
+<div id="fig-dart" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="40%">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-dart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/dart-board.png" id="fig-dart" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-dart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption></figure>
+</div>
+<p>Jerry Lewis is throwing darts at the board pictured in <a href="#fig-dart" class="quarto-xref">Figure&nbsp;1</a>. It has the following properties:</p>
+<ul>
+<li>The board has radius <span class="math inline">\(r\)</span>;</li>
+<li>The board is partitioned into five rings, each with the same “thickness” <span class="math inline">\(r/5\)</span>;</li>
+<li>The board is mounted on a wall of area <span class="math inline">\(A\)</span>.</li>
+</ul>
+<p>Jerry is not very skilled. His dart is guaranteed to reach the wall and stick someplace, but beyond that, the probability that it lands in any given region is just proportional to that region’s area.</p>
+<p><strong>Task</strong>: Derive a general formula for the <em>conditional</em> probability that a dart lands in ring <span class="math inline">\(i\)</span> given that it hits the board and not the wall. Your formula should be a function of <span class="math inline">\(i=1,\,2,\,3,\,4,\,5\)</span>. Check that these probabilities are nonnegative and sum to one.</p>
+</section><section id="problem-7" class="level2"><h2 class="anchored" data-anchor-id="problem-7">Problem 7</h2>
+<p>An encryption algorithm generates a seed value <span class="math inline">\(z\)</span> in the following way:</p>
+<ul>
+<li><p>A binary operator is chosen at random from <span class="math inline">\(\{+,\,\cdot\}\)</span>;</p></li>
+<li><p>Two <em>distinct</em> numbers <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are chosen at random from the set <span class="math inline">\(\{1,\,2,\,...,\,9\}\)</span> and the binary operation chosen above acts on <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> to produce <span class="math inline">\(z\)</span>.</p></li>
+</ul>
+<ol type="a">
+<li>What is the probability that <span class="math inline">\(z\)</span> is an even number?</li>
+<li>You notice that the algorithm generates an even <span class="math inline">\(z\)</span> value. Given this, what is the probability that the <span class="math inline">\(+\)</span> operator was used to generate it?</li>
+</ol></section><section id="problem-8" class="level2"><h2 class="anchored" data-anchor-id="problem-8">Problem 8</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/circuit.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+<p>The figure above displays a circuit. Switch <span class="math inline">\(S_i\)</span> closes with probability <span class="math inline">\(p_i\)</span>, and the switches close independently of one another. What is the probability that electricity can flow from <span class="math inline">\(A\)</span> to <span class="math inline">\(G\)</span>?</p>
+</section><section id="problem-9" class="level2"><h2 class="anchored" data-anchor-id="problem-9">Problem 9</h2>
+<p>Two balls are chosen randomly from an urn containing 8 green, 4 black, and 2 orange balls. Suppose that we win $2 for each black ball selected, we lose $1 for each green ball selected, and we earn nothing for each orange ball selected. Let <span class="math inline">\(X\)</span> denote our winnings.</p>
+<ol type="a">
+<li><p>Make a table with the possible values of <span class="math inline">\(X\)</span> and the probabilities of each value.</p></li>
+<li><p>Sketch the pmf of <span class="math inline">\(X\)</span>.</p></li>
+<li><p>Sketch the cdf of <span class="math inline">\(X\)</span>.</p></li>
+<li><p>Compute the expected value of <span class="math inline">\(X\)</span>.</p></li>
+</ol></section><section id="problem-10" class="level2"><h2 class="anchored" data-anchor-id="problem-10">Problem 10</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/morpheus.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p>I dreamed last night I got on the boat to heaven<br>And by some chance I had brought my dice along</p>
+<p><a href="https://youtu.be/6-ICTHg4Pw8?si=tNaFiMrkv4I5txKl"><em>Guys and Dolls</em></a></p>
+</blockquote>
+<p>Alas. You settle in for what you think will be a good night’s beauty sleep, and you end up having one of those awful dreams where you must take a test you haven’t studied for. It’s a multiple choice test, each question has five options with only one correct answer, there are fifty questions in total, and each is worth one point. The god Morpheus has kindly seen fit to leave a fair, five-sided die in your dream pocket, and so your dream self decides to do the only thing you can do: use the die to answer each of the exam questions completely at random.</p>
+<ol type="a">
+<li>Let <span class="math inline">\(X\)</span> be the number of questions you answer correctly. What is the distribution of <span class="math inline">\(X\)</span>?</li>
+<li>Plot the probability mass function of <span class="math inline">\(X\)</span>;</li>
+<li>What is the expected number of questions you will answer correctly?</li>
+<li>What is the probability that you get at least a C- on the exam?</li>
+</ol></section><section id="submission" class="level2"><h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<p>You are free to compose your solutions for this problem set however you wish (scan or photograph written work, handwriting capture on a tablet device, LaTeX, Quarto, whatever) as long as the final product is a single PDF file. You must upload this to <a href="https://www.gradescope.com/courses/1195780">Gradescope</a> and mark the pages associated with each problem.</p>
+<p>Do not forget to include the following:</p>
+<ul>
+<li>For each problem, please <a href="https://anyakatsevich.github.io/sta240-s26.github.io/syllabus/syllabus_policies.html#collaboration">acknowledge your collaborators</a>;</li>
+<li>If a problem required you to code something, please include both the code and the output. “Including the code” can be as crude as a screenshot, but you might also use <a href="https://anyakatsevich.github.io/sta240-s26.github.io/explainers/quarto.html">Quarto</a> to get a pdf that you can merge with the rest of your submission.</li>
 </ul>
 
 
-
-</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -884,13 +1039,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../explainers/vectorization.html" class="pagination-link" aria-label="Vectorization">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Vectorization</span>
+      <a href="../problems/pset-2.html" class="pagination-link" aria-label="Problem Set 2">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Problem Set 2</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../explainers/probabilities.html" class="pagination-link" aria-label="Computing probabilities">
-        <span class="nav-page-text">Computing probabilities</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../labs/lab-1.html" class="pagination-link" aria-label="Lab 1">
+        <span class="nav-page-text">Lab 1</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
