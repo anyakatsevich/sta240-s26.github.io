@@ -155,13 +155,14 @@ Two types of errors are possible in a situation like this: treating a disease th
 
 So, the show's answer, while wrong, could still be potentially useful upper bound on the true probability. Neat! But how wrong is it, even? To get a sense of this, [use `R`](https://anyakatsevich.github.io/sta240-s26.github.io/explainers/lineplot.html) to create some line plots with the prevalence $p\in[0,\, 1]$ on the horizontal axis and the true and approximate probabilities for different values of $f_-$ and $f_+$ on the vertical axis. Mix-and-match $f_-,\, f_+\in\{0.1,\, 0.2\}$, and comment on the difference between the two curves.
 
+::: {.callout-warning collapse="true"}
+
+## Solution
 
 ```{r}
 #| code-fold: true
 #| fig-width: 6
 #| fig-asp: 1
-#| echo: false
-#| eval: false
 FPR = c(0.1, 0.2)
 FNR = c(0.1, 0.2)
 par(mfrow = c(2, 2))
@@ -188,9 +189,6 @@ for (i in 1:2){
 }
 ```
 
-```{r}
-#| echo: false
-#| eval: false
-#When the prevalence is low (ie rare disease) the Car Talk curve is a very close upper bound on the true probability. For higher prevalence, the Car Talk curve is no longer an upper bound, and the curves get farther apart.
-```
+When the prevalence is low (ie rare disease) the Car Talk curve is a very close upper bound on the true probability. For higher prevalence, the Car Talk curve is no longer an upper bound, and the curves get farther apart.
 
+:::

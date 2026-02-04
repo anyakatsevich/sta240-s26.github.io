@@ -1,11 +1,22 @@
 ---
 title: "Lab 4 - How does ChatGPT generate the next word?"
-subtitle: Due Thursday September 25 at 11:59 PM
+subtitle: Due Thursday February 5 at 11:59 PM
 format: html
 draft: false
 editor: 
   mode: source
 ---
+
+## Task 0 (important!)
+
+In order to do this week's lab, regardless of whether you're using the containers or your local RStudio, you will need to install the `kgrams` package. Copy the following code into your console and run it:
+
+```{r}
+#| eval: false
+install.packages("kgrams")
+```
+
+# Lab 4 for real
 
 If you've ever asked [ChatGPT](https://chatgpt.com/) a question, you may have noticed something; it generates its response one word at a time right before your eyes:
 
@@ -99,7 +110,7 @@ context <- "now fair hippolyta"
 
 Hippolyta is Queen of the Amazons in the play. Let's see if our model can spit game.
 
-## Task 1
+## Task 1 (we do it)
 
 We have provided you with a pre-trained language model `kn`, a vector `midsummer_words` containing the 3,063 unique words in the play, and a function `next_word_probs`:
 
@@ -161,7 +172,7 @@ get_prob <- function(word, context = "the", model = kn){
 }
 
 change_temperature <- function(probs, temperature){
-  new_probs <- probs ^ (1/temperature)
+  new_probs <- (probs/max(probs)) ^ (1/temperature) # for numerical stability
   new_probs <- new_probs / sum(new_probs)
   return(new_probs)
 }
@@ -180,30 +191,45 @@ tail(cond_dist)
 
 So, given the context, the set of possible words, and the model, it returns a table (a *data frame*) listing out all the words together with their *conditional probabilities* given the context.
 
-Run this function and use the output together with the `sample` function to simulate a new word.
+Run this function and use the output together with the `sample` function to simulate a new word. **Print out that new word.**
 
-## Task 2
+::: {.callout-warning collapse="false"}
+## Important
+Make sure you (a) set a seed and (b) run the previous two code chunks (including the masked one on the template) before trying to use any commands that they use/reference.
+:::
 
-Use the `paste` function to append the word you simulated in Task 1 to the end of `context`. Then, starting from this updated context, go back to the beginning, generate a new conditional distribution, and use it to simulate a new word.
+## Task 2 (we do it)
 
-## Task 3
+Use the `paste` function to append the word you simulated in Task 1 to the end of `context`. Then, starting from this updated context, go back to the beginning, generate a new conditional distribution, and use it to simulate a new word. **Print out that new word.**
 
-Write a for loop that iterates the process in Tasks 1 and 2 in order to add **six** new words to the context.
+## Task 3 (we do it)
+
+Write a for loop that iterates the process in Tasks 1 and 2 in order to add **six** new words to the context. **Print out the new context (with the six additional words).**
 
 ::: callout-note
 ## This might be a tad slow.
-The function `next_word_probs` is doing a lot of work under the hood, so in the upcoming tasks, do not be alarmed if it takes a few seconds to run. 
+The function `next_word_probs` is doing a lot of work under the hood, so in the upcoming tasks, do not be alarmed if it takes a few seconds/minutes to run. 
 :::
 
-## Task 4
+## Task 4 (you do it)
 
-Rerun your code five times to generate five different responses. How many of them would you consider *approximately* coherent?
+Rerun your code five times to generate five different responses. **Print each one out.** How many of them would you consider *approximately* coherent?
 
-## Task 5
+::: {.callout-warning collapse="false"}
+## Patience vs. time
+Given the even more frequently repeated calls of `next_word_probs`, this may take a while. When you go to render the PDF, this part will take a few minutes. While it should take no longer than ten minutes under our suggestions, don't let this rendering time take over your life. **Fewer than five reruns is fine.**
+:::
+
+## Task 5 (you do it)
 
 Now that you have the basic code, play around with different starting contexts besides "now fair hippolyta." Bear in mind that our world is small here. We've trained the model on a single, old text, so if you want coherent responses, you should probably give it something in the ballpark of what it has seen before. I doubt "which banger slaps hardest my dude" will yield anything meaningful (though feel free to try!). For inspiration, [here](https://shakespeare.mit.edu/midsummer/full.html) is the full text of the original play.
 
-## Task 6
+::: {.callout-warning collapse="false"}
+## Patience vs. time
+Again, you don't have to try ten different starting contexts. **Two or three will be fine.**
+:::
+
+## Task 6 (you do it)
 
 Up to now we've been worrying a lot about individual words, but individual words don't create meaning. It's how those words interact across phrases and sentences and paragraphs. Unfortunately, we do not have methods for inducing a probability distribution over the set of all possible sentences, or the set of all possible thoughts. But in a sense, language models are attempting to *approximate* such a thing. And on the evidence to date, maybe they succeed sometimes. Anyway, how do we go from a method that gets things right on the word level to a method that gets things right on the sentence level? Well, therein lies the art of the engineers that work on these things, and one method they have found helpful is called *temperature sampling*.
 
@@ -220,6 +246,11 @@ The function `next_word_probs` that we gave you has a fourth argument `temp` whe
 ::: callout-tip
 ## Think about it
 As you increase the temperature and $t\to\infty$, what does that do to the probabilities?
+:::
+
+::: {.callout-warning collapse="false"}
+## Patience vs. time
+Once more, **just a couple temperatures will be fine.**
 :::
 
 ## Task 7 (optional)
