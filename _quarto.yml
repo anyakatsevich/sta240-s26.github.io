@@ -11,6 +11,7 @@ project:
   - labs/lab-1.qmd
   - labs/lab-2.qmd
   - labs/lab-3.qmd
+  - labs/lab-4.qmd
   - explainers/**.qmd
   - math/**.qmd
 
@@ -193,8 +194,8 @@ website:
              text: Lab 2
            - href: labs/lab-3.qmd
              text: Lab 3
-          # - href: labs/lab-4.qmd
-          #   text: Lab 4
+           - href: labs/lab-4.qmd
+             text: Lab 4
           # - href: labs/lab-5.qmd
           #   text: Lab 5
           # - href: labs/lab-6.qmd
