@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Problem Set 2 – STA 240 Spring 2026</title>
+<title>Lab 4 - How does ChatGPT generate the next word? – STA 240 Spring 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,6 +17,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -25,8 +60,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../problems/pset-3.html" rel="next">
-<link href="../problems/pset-1.html" rel="prev">
+<link href="../labs/lab-3.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -89,12 +123,10 @@ window.Quarto = {
   typesetMath
 };
 </script>
-<meta property="og:title" content="Problem Set 2 – STA 240 Spring 2026">
-<meta property="og:description" content="Due Sunday February 1 at 11:59PM">
-<meta property="og:image" content="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2_files/figure-html/unnamed-chunk-1-1.png">
+<meta property="og:title" content="Lab 4 - How does ChatGPT generate the next word? – STA 240 Spring 2026">
+<meta property="og:description" content="Due Thursday February 5 at 11:59 PM">
+<meta property="og:image" content="https://anyakatsevich.github.io/sta240-s26.github.io/labs/images/chatgpt.gif">
 <meta property="og:site_name" content="STA 240 Spring 2026">
-<meta property="og:image:height" content="672">
-<meta property="og:image:width" content="1344">
 </head>
 <body class="nav-sidebar docked quarto-light">
 
@@ -103,7 +135,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problems/pset-0.html">Problem Sets</a></li><li class="breadcrumb-item"><a href="../problems/pset-2.html">Problem Set 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-4.html">Lab 4</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -338,13 +370,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Problem Sets</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset-0.html" class="sidebar-item-text sidebar-link">
@@ -359,7 +391,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../problems/pset-2.html" class="sidebar-item-text sidebar-link active">
+  <a href="../problems/pset-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Set 2</span></a>
   </div>
 </li>
@@ -373,13 +405,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Labs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../labs/lab-1.html" class="sidebar-item-text sidebar-link">
@@ -400,7 +432,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/lab-4.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/lab-4.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Lab 4</span></a>
   </div>
 </li>
@@ -414,24 +446,27 @@ window.Quarto = {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#before-you-start" id="toc-before-you-start" class="nav-link active" data-scroll-target="#before-you-start">Before you start</a></li>
-  <li><a href="#problem-0" id="toc-problem-0" class="nav-link" data-scroll-target="#problem-0">Problem 0</a></li>
-  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1">Problem 1</a></li>
-  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2</a></li>
-  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3">Problem 3</a></li>
-  <li><a href="#problem-4" id="toc-problem-4" class="nav-link" data-scroll-target="#problem-4">Problem 4</a></li>
-  <li><a href="#problem-5" id="toc-problem-5" class="nav-link" data-scroll-target="#problem-5">Problem 5</a></li>
-  <li><a href="#problem-6" id="toc-problem-6" class="nav-link" data-scroll-target="#problem-6">Problem 6</a></li>
-  <li><a href="#problem-7" id="toc-problem-7" class="nav-link" data-scroll-target="#problem-7">Problem 7</a></li>
-  <li><a href="#problem-8" id="toc-problem-8" class="nav-link" data-scroll-target="#problem-8">Problem 8</a></li>
-  <li><a href="#problem-9" id="toc-problem-9" class="nav-link" data-scroll-target="#problem-9">Problem 9</a></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+<li><a href="#task-0-important" id="toc-task-0-important" class="nav-link active" data-scroll-target="#task-0-important">Task 0 (important!)</a></li>
+  <li><a href="#lab-4-for-real" id="toc-lab-4-for-real" class="nav-link" data-scroll-target="#lab-4-for-real">Lab 4 for real</a></li>
+  <li>
+<a href="#babys-first-language-model" id="toc-babys-first-language-model" class="nav-link" data-scroll-target="#babys-first-language-model">Baby’s first language model</a>
+  <ul class="collapse">
+<li><a href="#task-1-we-do-it" id="toc-task-1-we-do-it" class="nav-link" data-scroll-target="#task-1-we-do-it">Task 1 (we do it)</a></li>
+  <li><a href="#task-2-we-do-it" id="toc-task-2-we-do-it" class="nav-link" data-scroll-target="#task-2-we-do-it">Task 2 (we do it)</a></li>
+  <li><a href="#task-3-we-do-it" id="toc-task-3-we-do-it" class="nav-link" data-scroll-target="#task-3-we-do-it">Task 3 (we do it)</a></li>
+  <li><a href="#task-4-you-do-it" id="toc-task-4-you-do-it" class="nav-link" data-scroll-target="#task-4-you-do-it">Task 4 (you do it)</a></li>
+  <li><a href="#task-5-you-do-it" id="toc-task-5-you-do-it" class="nav-link" data-scroll-target="#task-5-you-do-it">Task 5 (you do it)</a></li>
+  <li><a href="#task-6-you-do-it" id="toc-task-6-you-do-it" class="nav-link" data-scroll-target="#task-6-you-do-it">Task 6 (you do it)</a></li>
+  <li><a href="#task-7-optional" id="toc-task-7-optional" class="nav-link" data-scroll-target="#task-7-optional">Task 7 (optional)</a></li>
+  </ul>
+</li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problems/pset-0.html">Problem Sets</a></li><li class="breadcrumb-item"><a href="../problems/pset-2.html">Problem Set 2</a></li></ol></nav><div class="quarto-title">
-<h1 class="title">Problem Set 2</h1>
-<p class="subtitle lead">Due Sunday February 1 at 11:59PM</p>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-4.html">Lab 4</a></li></ol></nav><div class="quarto-title">
+<h1 class="title">Lab 4 - How does ChatGPT generate the next word?</h1>
+<p class="subtitle lead">Due Thursday February 5 at 11:59 PM</p>
 </div>
 
 
@@ -445,103 +480,352 @@ window.Quarto = {
   
 
 
-</header><section id="before-you-start" class="level2"><h2 class="anchored" data-anchor-id="before-you-start">Before you start</h2>
-<p>As with Problem Set 1, this problem set asks you to prove new results about how probability measures behave. You are being evaluated on your reasoning and the fluency with which you make use of set theory, the probability axioms, and the various rules we’ve seen (complement, inclusion/exclusion, etc). Please be thorough and explain all of the steps in your logic.</p>
-<p>The lecture notes on set theory and the probability rules provide a model for how the proofs should look. If you emulate the structure, level of detail, and amount of discussion featured in those examples, you should be good.</p>
-</section><section id="problem-0" class="level2"><h2 class="anchored" data-anchor-id="problem-0">Problem 0</h2>
-<p>Recommend some music for us to listen to while we grade this.</p>
-</section><section id="problem-1" class="level2"><h2 class="anchored" data-anchor-id="problem-1">Problem 1</h2>
-<p>Let <span class="math inline">\(A,\,B\subseteq S\)</span> be any pair of events in a sample space <span class="math inline">\(S\)</span>, and show that</p>
-<p><span class="math display">\[
-\max\{0,\,P(A)+P(B)-1\}\leq P(A\cap B)\leq\min\{P(A),\,P(B)\}.
-\]</span></p>
-</section><section id="problem-2" class="level2"><h2 class="anchored" data-anchor-id="problem-2">Problem 2</h2>
-<p>Let <span class="math inline">\(A_1,\,A_2,\,A_3,\,...\subseteq S\)</span> be an infinite sequence of possibly overlapping events in some probability space. Based on this arbitrary sequence, define a new sequence of events that starts with <span class="math inline">\(B_1 = A_1\)</span> and then has <span class="math inline">\(B_i=A_i\cap \left(\bigcup_{j=1}^{i-1}A_j\right)^c\)</span> for all <span class="math inline">\(i&gt;1\)</span>.</p>
-<ol type="a">
-<li><p>In order to build some intuition as to what’s going on here, consider the following special case <strong>for this part only</strong>: the <span class="math inline">\(A_{i}\)</span> are <em>increasing</em> and <em>nested</em> (i.e., <span class="math inline">\(A_{1} \subseteq A_{2} \subseteq A_{3} \subseteq \dots\)</span>). For this case, draw two Venn diagrams: one illustrating the <span class="math inline">\(\left\{A_{i}\right\}\)</span> and one illustrating the corresponding <span class="math inline">\(\left\{B_{i}\right\}\)</span>.</p></li>
-<li><p>Show that the <span class="math inline">\(B_i\)</span> are pairwise disjoint.</p></li>
-<li><p>Show that</p></li>
-</ol>
-<p><span class="math display">\[
-\bigcup_{i=1}^\infty A_i=\bigcup_{i=1}^\infty B_i.
-\]</span></p>
-<ol start="4" type="a">
-<li>Use the previous parts to show that</li>
-</ol>
-<p><span class="math display">\[
-P\left(\bigcup_{i=1}^\infty A_i\right)\leq\sum\limits_{i=1}^\infty P(A_i).
-\]</span></p>
-</section><section id="problem-3" class="level2"><h2 class="anchored" data-anchor-id="problem-3">Problem 3</h2>
-<p>Suppose NC license plates are issued at random, each having three letters followed by 4 digits. The current distribution of plates includes all those on which the first letter is either H or J.</p>
-<ol type="a">
-<li>What is the probability that you will get JET-5375? What about HAT-8007?</li>
-<li>What is the probability that you get a plate where the three letters are the same and the four digits are the same?</li>
-</ol></section><section id="problem-4" class="level2"><h2 class="anchored" data-anchor-id="problem-4">Problem 4</h2>
-<p>A box contains 20 balls, 5 each of colors cyan, magenta, yellow and black. Answer the following for an experiment where 10 balls are selected at random without replacement from the box. What is the probability that:</p>
-<ol type="a">
-<li>More than two colors are missing from the selection?</li>
-<li>Magenta and yellow are missing from the selection?</li>
-<li>Exactly two colors are missing from the selection?</li>
-<li>Only the color cyan is missing from the selection?</li>
-<li>Exactly one color is missing from the selection?</li>
-<li>At least one color will be missing from the selection?</li>
-<li>No colors are missing from the selection?</li>
-</ol></section><section id="problem-5" class="level2"><h2 class="anchored" data-anchor-id="problem-5">Problem 5</h2>
-<p>A five-card hand is randomly dealt to you from a well-shuffled deck of 52 standard playing cards. What is the probability that your hand contains exactly two suits?</p>
-</section><section id="problem-6" class="level2"><h2 class="anchored" data-anchor-id="problem-6">Problem 6</h2>
-<p>Let <span class="math inline">\(B_{10}\)</span> be the set of all length-10 binary strings. So for example, (1, 0, 0, 1, 0, 1, 1, 1, 0, 1) is an element of the set <span class="math inline">\(B_{10}\)</span>. Now, consider that we randomly draw two strings from the set <span class="math inline">\(B_{10}\)</span> with replacement:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\mathbf{a}
-&amp;=
-(a_1,\,a_2,\,a_3,\,...,\,a_{10})\in B_{10}\\
-\mathbf{b}
-&amp;=
-(b_1,\,b_2,\,b_3,\,...,\,b_{10})\in B_{10}.
-\end{aligned}
-\]</span></p>
-<p>If we multiply the entries and add</p>
-<p><span class="math display">\[
-X=a_1b_1+a_2b_2+\cdots +a_{10}b_{10},
-\]</span></p>
-<p>what is the probability that the sum <span class="math inline">\(X\)</span> is equal to <span class="math inline">\(k\)</span>, for each <span class="math inline">\(k=0,\,1,\,2,\,3,\,...,\,10\)</span>?</p>
-<ol type="a">
-<li>Derive a generic formula for <span class="math inline">\(P(X=k)\)</span> that is a function of <span class="math inline">\(k\)</span>, but then plug into your formula and produce an <span class="math inline">\(11\times 2\)</span> table listing the actual decimal numbers for each <span class="math inline">\(k\)</span>;</li>
-<li>Write a lil’ program in <code>R</code> that simulates 10,000 random trials of this phenomenon. Tally up the number of times you get each value of <span class="math inline">\(k\)</span>, and compare the empirical proportions to the actual probabilities in part a. In a large enough number of trials, they should be close by the <em>law of large numbers</em>, which we will study in a month or two.</li>
-</ol></section><section id="problem-7" class="level2"><h2 class="anchored" data-anchor-id="problem-7">Problem 7</h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OdLyKETk5o0?si=lhObAYK_8fRjltLi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p>As you may have noticed, Spotify shuffle is not a <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">perfectly random shuffle</a>. If you have a playlist with <span class="math inline">\(n\)</span> songs, Spotify’s shuffle algorithm definitely does not make all <span class="math inline">\(n!\)</span> permutations equally likely. Why not? Because people don’t actually want that. Spotify used to implement a pure random shuffle, but users complained that it was too <em>patternful.</em> For better or worse, the human brain is wired to detect meaningless patterns in random noise. For instance, the picture on the left is a “truly” random scatter of points; the one on the right is manipulated so the points don’t “clump”:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
+</header><section id="task-0-important" class="level2"><h2 class="anchored" data-anchor-id="task-0-important">Task 0 (important!)</h2>
+<p>In order to do this week’s lab, regardless of whether you’re using the containers or your local RStudio, you will need to install the <code>kgrams</code> package. Copy the following code into your console and run it:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"kgrams"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section><section id="lab-4-for-real" class="level1"><h1>Lab 4 for real</h1>
+<p>If you’ve ever asked <a href="https://chatgpt.com/">ChatGPT</a> a question, you may have noticed something; it generates its response one word at a time right before your eyes:</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="pset-2_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+<figure class="figure"><p><img src="images/chatgpt.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
 </figure>
 </div>
+<p>What exactly is it doing? Well, <a href="https://chatgpt.com/share/677ef289-9564-8008-a662-9f8c2cfb04fc">ask it</a>! If you do, the explanation will go something like this…</p>
+<p>ChatGPT is an example of a <em>large language model</em> (LLM). Under the hood, there’s this fancy pants deep neural network machine learning mumbo jumbo that has been trained on a massive corpus of documents (books, newspaper articles, academic publications, reddit, all of Wikipedia, etc). When you ask it a question like “What color is the apple?”, the model asks itself “<em>conditional</em> on the text you just gave me, what is the likely next word?” Based on the text it was trained on and the underlying ML model, ChatGPT constructs a <em>conditional probability distribution</em> over the set of “next words” and simulates from it, like with the <code>sample</code> function. The new word that it simulates gets added to the end of the text you provided, and it repeats the process over again: given where we are <em>now</em>, what is the next word likely to be? And on and on…</p>
+<p>So say you ask it “What color is the apple?” Based on that, the model constructs a probability distribution for <span class="math inline">\(P(\text{next word}\,|\,\texttt{"What color is the apple?"})\)</span>. The sample space <span class="math inline">\(S\)</span> here is (basically) the set of all words that the model has seen. That set could be pretty big, but nevertheless it is finite, so we just need to list out all of the possible words together with their individual probabilities:</p>
+<div class="center-table">
+<table class="caption-top table">
+<thead><tr class="header">
+<th>Next word</th>
+<th>Conditional probability</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>red</td>
+<td>0.1</td>
+</tr>
+<tr class="even">
+<td>the</td>
+<td>0.2</td>
+</tr>
+<tr class="odd">
+<td>apple</td>
+<td>0.08</td>
+</tr>
+<tr class="even">
+<td>amphibian</td>
+<td>0.01</td>
+</tr>
+<tr class="odd">
+<td>green</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td>Zito</td>
+<td>0.00</td>
+</tr>
+<tr class="odd">
+<td>is</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td><em>etc</em></td>
+<td><em>etc</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Once this is constructed, the model simulates from the distribution. You could imagine that the code might look something like <code>sample(words, size = 1, prob = conditional_probs)</code>. So say that happens and the next word we simulate is “the.” That gets added to the end, and now we want to know <span class="math inline">\(P(\text{next word}\,|\,\texttt{"What color is the apple? the"})\)</span>. So we query the underlying model, and it constructs a new distribution on words, conditional on this revised context:</p>
+<div class="center-table">
+<table class="caption-top table">
+<thead><tr class="header">
+<th>Next word</th>
+<th>Conditional probability</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>red</td>
+<td>0.09</td>
+</tr>
+<tr class="even">
+<td>the</td>
+<td>0.001</td>
+</tr>
+<tr class="odd">
+<td>apple</td>
+<td>0.21</td>
+</tr>
+<tr class="even">
+<td>amphibian</td>
+<td>0.01</td>
+</tr>
+<tr class="odd">
+<td>green</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td>Zito</td>
+<td>0.00</td>
+</tr>
+<tr class="odd">
+<td>is</td>
+<td>0.04</td>
+</tr>
+<tr class="even">
+<td><em>etc</em></td>
+<td><em>etc</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Notice that the information we are conditioning on has changed, so the probabilities change. Based on the new probabilities, we simulate the next word. Let’s say it ends up being “apple.” So we add that to the end, and ask the model to construct a new distribution for <span class="math inline">\(P(\text{next word}\,|\,\texttt{"What color is the apple? the apple"})\)</span>:</p>
+<div class="center-table">
+<table class="caption-top table">
+<thead><tr class="header">
+<th>Next word</th>
+<th>Conditional probability</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>red</td>
+<td>0.07</td>
+</tr>
+<tr class="even">
+<td>the</td>
+<td>0.001</td>
+</tr>
+<tr class="odd">
+<td>apple</td>
+<td>0.00</td>
+</tr>
+<tr class="even">
+<td>amphibian</td>
+<td>0.01</td>
+</tr>
+<tr class="odd">
+<td>green</td>
+<td>0.09</td>
+</tr>
+<tr class="even">
+<td>Zito</td>
+<td>0.00</td>
+</tr>
+<tr class="odd">
+<td>is</td>
+<td>0.5</td>
+</tr>
+<tr class="even">
+<td><em>etc</em></td>
+<td><em>etc</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Now we simulate “is,” add that to the end, and query the model for <span class="math inline">\(P(\text{next word}\,|\,\texttt{"What color is the apple? the apple is"})\)</span>:</p>
+<div class="center-table">
+<table class="caption-top table">
+<thead><tr class="header">
+<th>Next word</th>
+<th>Conditional probability</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>red</td>
+<td>0.35</td>
+</tr>
+<tr class="even">
+<td>the</td>
+<td>0.001</td>
+</tr>
+<tr class="odd">
+<td>apple</td>
+<td>0.001</td>
+</tr>
+<tr class="even">
+<td>amphibian</td>
+<td>0.002</td>
+</tr>
+<tr class="odd">
+<td>green</td>
+<td>0.2</td>
+</tr>
+<tr class="even">
+<td>Zito</td>
+<td>0.00</td>
+</tr>
+<tr class="odd">
+<td>is</td>
+<td>0.01</td>
+</tr>
+<tr class="even">
+<td><em>etc</em></td>
+<td><em>etc</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>We see at this point that “red” is the most likely next word, but we are not searching the table for the most likely next word and slavishly returning it. We are simulating. So there’s a 35% chance we’ll come up with “red,” but also a non-trivial possibility that we’ll come up with “green.” You will notice that if you ask ChatGPT the exact same question multiple times (literally the identical text prompt), it returns different answers. That is because of this element of randomness.</p>
+<p>Obviously, the elephant in the room in the above discussion is “where did the probabilities come from?” This is the magic, such as it is, of LLMs. In order to implement this scheme, we need to be able to construct a conditional probability distribution on words given <em>any</em> context. So no matter if you give it “What color is the apple” or “Explain string theory like I’m a genius” or “Why did my wife leave me” or “que se passe t’il,” it needs to come up with a meaningful and useful distribution for the next word, and it has to repeat this thousands if not millions of times. There are so many possibilities that it’s kind of bonkers to expect to be able to do this, but with enough data and computing power and a big enough model, apparently we can pull it off, at least some of the time.</p>
+<p>So, the question of “where did the probabilities come from?” is sadly beyond the scope of our course. However, the question of “what do you do with the probabilities once you have them?” is perfectly accessible to us, even at this early stage, so let’s have some fun.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Before you start
 </div>
 </div>
-<p>When you survey people that don’t know any better, they often <em>feel</em> like the second picture is “more random” than the first because it lacks clumps, but this is a misunderstanding. A truly random playlist shuffle will often have clumps: clumps of artists, clumps of genres, etc. So when people <em>say</em> that they want “random,” what they really mean is just “variety” in some vague sense, and this is what Spotify shuffle tries to deliver.</p>
-<ol type="a">
-<li>Imagine your playlist of <span class="math inline">\(n\geq 3\)</span> unique tracks contains <span class="math inline">\(2\leq k\leq \lceil n/2\rceil\)</span> songs by the same artist. What is the probability that a random permutation of the tracks will contain at least one streak of songs by that artist? A streak is two or more of their songs in a row;</li>
-<li>
-<a href="https://open.spotify.com/playlist/1iFmLHToftfdYVq9FUpoKI?si=0bbd0df395ad4628">This</a> is my “upbeat chill” playlist. It contains <span class="math inline">\(n = 15\)</span> songs. There are 12 artists with one song apiece and Childish Gambino has <span class="math inline">\(k=3\)</span> songs. Shuffle this playlist at least twenty times<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and compute the proportion of the time the shuffle contained a “Childish Gambino streak.” Using the previous part, compare this empirical proportion to the theoretical probability that would prevail if the shuffle was truly random.</li>
-</ol></section><section id="problem-8" class="level2"><h2 class="anchored" data-anchor-id="problem-8">Problem 8</h2>
-<p>Pearl Bailey and Elaine Stritch go target shooting. Suppose that each of Pearl’s shots hits a wooden duck target with probability <span class="math inline">\(p_1\)</span>, while each shot of Elaine’s hits it with probability <span class="math inline">\(p_2\)</span>, independent of Pearl. Suppose that they shoot simultaneously at the same target. If the wooden duck is knocked over (indicating that it was hit), what is the probability that both shots hit the duck?</p>
-</section><section id="problem-9" class="level2"><h2 class="anchored" data-anchor-id="problem-9">Problem 9</h2>
-<p>If we know that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent events, show that their complements <span class="math inline">\(A^c\)</span> and <span class="math inline">\(B^c\)</span> are also independent events.</p>
-</section><section id="submission" class="level2"><h2 class="anchored" data-anchor-id="submission">Submission</h2>
-<p>You are free to compose your solutions for this problem set however you wish (scan or photograph written work, handwriting capture on a tablet device, LaTeX, Quarto, whatever) as long as the final product is a single PDF file. You must upload this to <a href="https://www.gradescope.com/courses/1195780">Gradescope</a> and mark the pages associated with each problem.</p>
-<p>Do not forget to include the following:</p>
+<div class="callout-body-container callout-body">
+<p>Read the explainer on <a href="https://anyakatsevich.github.io/sta240-s26.github.io/explainers/rng-seed.html">random number seeds</a>, and use them in your lab write-up today.</p>
+</div>
+</div>
+</section><section id="babys-first-language-model" class="level1"><h1>Baby’s first language model</h1>
+<p>The <a href="https://en.wikipedia.org/wiki/Word_n-gram_language_model"><span class="math inline">\(k\)</span>-gram language model</a> is I guess what you’d call a “small language model.” Next to ChatGPT, it looks prehistoric. But it is simple and can be comfortably run on a laptop. We have trained this SLM on a single document: the text of Shakespeare’s <em>A Midsummer Night’s Dream</em>. Given the pre-trained model we are handing you, we ask that you implement the recursive scheme above in order to generate a text response, the same way ChatGPT does.</p>
+<p>In all cases, the starting <code>context</code> is</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">context</span> <span class="op">&lt;-</span> <span class="st">"now fair hippolyta"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Hippolyta is Queen of the Amazons in the play. Let’s see if our model can spit game.</p>
+<section id="task-1-we-do-it" class="level2"><h2 class="anchored" data-anchor-id="task-1-we-do-it">Task 1 (we do it)</h2>
+<p>We have provided you with a pre-trained language model <code>kn</code>, a vector <code>midsummer_words</code> containing the 3,063 unique words in the play, and a function <code>next_word_probs</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cond_dist</span> <span class="op">&lt;-</span> <span class="fu">next_word_probs</span><span class="op">(</span><span class="va">context</span>, <span class="va">midsummer_words</span>, <span class="va">kn</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">cond_dist</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         words         prob
+3058  unearned 3.375323e-05
+3059    'scape 3.375323e-05
+3060 serpent's 3.375323e-05
+3061    amends 6.751470e-05
+3062      liar 3.375323e-05
+3063   restore 3.375323e-05</code></pre>
+</div>
+</div>
+<p>So, given the context, the set of possible words, and the model, it returns a table (a <em>data frame</em>) listing out all the words together with their <em>conditional probabilities</em> given the context.</p>
+<p>Run this function and use the output together with the <code>sample</code> function to simulate a new word. <strong>Print out that new word.</strong></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Important
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Make sure you (a) set a seed and (b) run the previous two code chunks (including the masked one on the template) before trying to use any commands that they use/reference.</p>
+</div>
+</div>
+</div>
+</section><section id="task-2-we-do-it" class="level2"><h2 class="anchored" data-anchor-id="task-2-we-do-it">Task 2 (we do it)</h2>
+<p>Use the <code>paste</code> function to append the word you simulated in Task 1 to the end of <code>context</code>. Then, starting from this updated context, go back to the beginning, generate a new conditional distribution, and use it to simulate a new word. <strong>Print out that new word.</strong></p>
+</section><section id="task-3-we-do-it" class="level2"><h2 class="anchored" data-anchor-id="task-3-we-do-it">Task 3 (we do it)</h2>
+<p>Write a for loop that iterates the process in Tasks 1 and 2 in order to add <strong>six</strong> new words to the context. <strong>Print out the new context (with the six additional words).</strong></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>This might be a tad slow.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The function <code>next_word_probs</code> is doing a lot of work under the hood, so in the upcoming tasks, do not be alarmed if it takes a few seconds/minutes to run.</p>
+</div>
+</div>
+</section><section id="task-4-you-do-it" class="level2"><h2 class="anchored" data-anchor-id="task-4-you-do-it">Task 4 (you do it)</h2>
+<p>Rerun your code five times to generate five different responses. <strong>Print each one out.</strong> How many of them would you consider <em>approximately</em> coherent?</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Patience vs.&nbsp;time
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Given the even more frequently repeated calls of <code>next_word_probs</code>, this may take a while. When you go to render the PDF, this part will take a few minutes. While it should take no longer than ten minutes under our suggestions, don’t let this rendering time take over your life. <strong>Fewer than five reruns is fine.</strong></p>
+</div>
+</div>
+</div>
+</section><section id="task-5-you-do-it" class="level2"><h2 class="anchored" data-anchor-id="task-5-you-do-it">Task 5 (you do it)</h2>
+<p>Now that you have the basic code, play around with different starting contexts besides “now fair hippolyta.” Bear in mind that our world is small here. We’ve trained the model on a single, old text, so if you want coherent responses, you should probably give it something in the ballpark of what it has seen before. I doubt “which banger slaps hardest my dude” will yield anything meaningful (though feel free to try!). For inspiration, <a href="https://shakespeare.mit.edu/midsummer/full.html">here</a> is the full text of the original play.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Patience vs.&nbsp;time
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Again, you don’t have to try ten different starting contexts. <strong>Two or three will be fine.</strong></p>
+</div>
+</div>
+</div>
+</section><section id="task-6-you-do-it" class="level2"><h2 class="anchored" data-anchor-id="task-6-you-do-it">Task 6 (you do it)</h2>
+<p>Up to now we’ve been worrying a lot about individual words, but individual words don’t create meaning. It’s how those words interact across phrases and sentences and paragraphs. Unfortunately, we do not have methods for inducing a probability distribution over the set of all possible sentences, or the set of all possible thoughts. But in a sense, language models are attempting to <em>approximate</em> such a thing. And on the evidence to date, maybe they succeed sometimes. Anyway, how do we go from a method that gets things right on the word level to a method that gets things right on the sentence level? Well, therein lies the art of the engineers that work on these things, and one method they have found helpful is called <em>temperature sampling</em>.</p>
+<p>So far, given the current context, the model returns a (conditional) probability <span class="math inline">\(p(i)\)</span> for each word <span class="math inline">\(i\in \text{corpus}\)</span>. So far we’ve used these probabilities unmodified. With temperature sampling, before we draw the next word, we first adjust the probabilities based on a user-defined tuning parameter <span class="math inline">\(t&gt;0\)</span> called the <em>temperature</em>:</p>
+<p><span class="math display">\[
+p_t(i) = \frac{p(i)^{1/t}}{\sum\limits_{j\in\text{corpus}}p(j)^{1/t}},\quad i\in\text{corpus}.
+\]</span></p>
+<p>If <span class="math inline">\(t=1\)</span>, we’re back to the original probabilities: <span class="math inline">\(p_1(i)=p(i)\)</span>. Otherwise, to quote the <span class="math inline">\(k\)</span>-grams people, “higher and lower temperatures make the original probability distribution smoother and rougher, respectively. By making a physical analogy, we can think of less probable words as states with higher energies, and the effect of higher (lower) temperatures is to make more (less) likely to excite these high energy states.” Why do people do this? To the best of my knowledge, it is no deeper than “it seems to work well.” In practice, adjusting the temperature seems to have a macro effect on the overall character of the <em>sentences</em>.</p>
+<p>The function <code>next_word_probs</code> that we gave you has a fourth argument <code>temp</code> where you can give it a number and it will give you the <em>tempered</em> probabilities. Play around with big and small values, and report any effect that it has on the overall quality of the sentences.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Think about it
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As you increase the temperature and <span class="math inline">\(t\to\infty\)</span>, what does that do to the probabilities?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Patience vs.&nbsp;time
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Once more, <strong>just a couple temperatures will be fine.</strong></p>
+</div>
+</div>
+</div>
+</section><section id="task-7-optional" class="level2"><h2 class="anchored" data-anchor-id="task-7-optional">Task 7 (optional)</h2>
+<p>Code temperature sampling yourself. Take the probabilities that <code>probs &lt;- next_word_probs(...)</code> gives you when <code>temp = 1.0</code>, and then use basic <code>R</code> commands to apply the formula above and compute a vector <code>temp_probs</code> with the revised numbers for <code>temp = 0.5</code>. Check that your numbers agree with the ones that our function <code>next_word_probs</code> gives when you supply <code>0.5</code> as the fourth argument.</p>
+</section></section><section id="further-reading" class="level1"><h1>Further reading</h1>
+<p>If you’re interested in this stuff…</p>
 <ul>
-<li>For each problem, please <a href="https://anyakatsevich.github.io/sta240-s26.github.io/syllabus/syllabus_policies.html#collaboration">acknowledge your collaborators</a>;</li>
-<li>If a problem required you to code something, please include both the code and the output. “Including the code” can be as crude as a screenshot, but you might also use <a href="https://anyakatsevich.github.io/sta240-s26.github.io/explainers/quarto.html">Quarto</a> to get a pdf that you can merge with the rest of your submission.</li>
+<li>The guy who created WolframAlpha has a nice <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">primer</a>;</li>
+<li>People seemed to like <a href="https://youtu.be/zjkBMFhNj_g?feature=shared">this video</a> when it made the rounds a few years back;</li>
+<li>“<a href="https://arxiv.org/abs/2502.17814">An overview of large language models for statisticians</a>,” by several heavy-hitting ML researchers;</li>
+<li>“<a href="https://arxiv.org/abs/2505.19145">Do large language models (really) need statistical foundations?</a>,” by Weijie Su;</li>
+<li>
+<a href="https://cran.r-project.org/web/packages/kgrams/vignettes/kgrams.html">This</a> is the <code>R</code> package that we used for this lab. The LLMs of today are light years ahead of the simple <span class="math inline">\(k\)</span>-grams model, but some concepts are timeless: tokenization, temperature sampling, etc. Whether your language model is large or small, these things are in play. So if you play around with the <span class="math inline">\(k\)</span>-grams model, it could serve as a nice sandbox for getting familiar with those foundational concepts.</li>
 </ul>
 
 
-</section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-<ol>
-<li id="fn1"><p>If you don’t have a Spotify account, collaborate with a classmate who does and please acknowledge them.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -941,14 +1225,11 @@ X=a_1b_1+a_2b_2+\cdots +a_{10}b_{10},
     }
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../problems/pset-1.html" class="pagination-link" aria-label="Problem Set 1">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Problem Set 1</span>
+      <a href="../labs/lab-3.html" class="pagination-link" aria-label="Lab 3">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 3</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../problems/pset-3.html" class="pagination-link" aria-label="Problem Set 3">
-        <span class="nav-page-text">Problem Set 3</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
