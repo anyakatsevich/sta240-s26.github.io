@@ -125,7 +125,10 @@ window.Quarto = {
 </script>
 <meta property="og:title" content="Lab 3 – STA 240 Spring 2026">
 <meta property="og:description" content="Due Thursday January 29 at 11:59 PM">
+<meta property="og:image" content="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-3_files/figure-html/unnamed-chunk-2-1.png">
 <meta property="og:site_name" content="STA 240 Spring 2026">
+<meta property="og:image:height" content="1152">
+<meta property="og:image:width" content="1152">
 </head>
 <body class="nav-sidebar docked quarto-light">
 
@@ -644,6 +647,54 @@ P(D=+\,|\, T = +)
 </div>
 </section><section id="task-5-you-do-it" class="level2"><h2 class="anchored" data-anchor-id="task-5-you-do-it">Task 5 (you do it)</h2>
 <p>So, the show’s answer, while wrong, could still be potentially useful upper bound on the true probability. Neat! But how wrong is it, even? To get a sense of this, <a href="https://anyakatsevich.github.io/sta240-s26.github.io/explainers/lineplot.html">use <code>R</code></a> to create some line plots with the prevalence <span class="math inline">\(p\in[0,\, 1]\)</span> on the horizontal axis and the true and approximate probabilities for different values of <span class="math inline">\(f_-\)</span> and <span class="math inline">\(f_+\)</span> on the vertical axis. Mix-and-match <span class="math inline">\(f_-,\, f_+\in\{0.1,\, 0.2\}\)</span>, and comment on the difference between the two curves.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">FPR</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">0.2</span><span class="op">)</span></span>
+<span><span class="va">FNR</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="fl">0.2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="kw">for</span> <span class="op">(</span><span class="va">j</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="va">f_plus</span> <span class="op">=</span> <span class="va">FPR</span><span class="op">[</span><span class="va">i</span><span class="op">]</span></span>
+<span>    <span class="va">f_minus</span> <span class="op">=</span> <span class="va">FNR</span><span class="op">[</span><span class="va">j</span><span class="op">]</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="va">x</span> <span class="op">/</span> <span class="op">(</span><span class="va">x</span> <span class="op">+</span> <span class="va">f_plus</span><span class="op">)</span>,</span>
+<span>          col <span class="op">=</span> <span class="st">"blue"</span>,</span>
+<span>          xlab <span class="op">=</span> <span class="st">"p"</span>, </span>
+<span>          ylab <span class="op">=</span> <span class="st">""</span>, </span>
+<span>          xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,</span>
+<span>          ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,</span>
+<span>          main <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"FNR = "</span>, <span class="va">f_minus</span>, <span class="st">"; FPR = "</span>, <span class="va">f_plus</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="va">x</span> <span class="op">/</span> <span class="op">(</span><span class="va">x</span> <span class="op">+</span> <span class="va">f_plus</span> <span class="op">*</span> <span class="op">(</span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">x</span><span class="op">)</span> <span class="op">/</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">f_minus</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>          col <span class="op">=</span> <span class="st">"red"</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/graphics/legend.html">legend</a></span><span class="op">(</span><span class="st">"bottomright"</span>,</span>
+<span>           <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"True Probability"</span>, <span class="st">"Car Talk Answer"</span><span class="op">)</span>,</span>
+<span>           col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"blue"</span><span class="op">)</span>,</span>
+<span>           bty <span class="op">=</span> <span class="st">"n"</span>,</span>
+<span>           lty <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span></span>
+<span>           <span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details><div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="lab-3_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>When the prevalence is low (ie rare disease) the Car Talk curve is a very close upper bound on the true probability. For higher prevalence, the Car Talk curve is no longer an upper bound, and the curves get farther apart.</p>
+</div>
+</div>
+</div>
 
 
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
