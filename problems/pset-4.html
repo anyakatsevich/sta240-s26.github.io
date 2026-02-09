@@ -90,7 +90,7 @@ window.Quarto = {
 };
 </script>
 <meta property="og:title" content="Problem Set 4 – STA 240 Spring 2026">
-<meta property="og:description" content="Due Sunday February 15 at 11:59PM">
+<meta property="og:description" content="Due Sunday, February 15 at 11:59PM">
 <meta property="og:site_name" content="STA 240 Spring 2026">
 </head>
 <body class="nav-sidebar docked quarto-light">
@@ -462,7 +462,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problems/pset-0.html">Problem Sets</a></li><li class="breadcrumb-item"><a href="../problems/pset-4.html">Problem Set 4</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">Problem Set 4</h1>
-<p class="subtitle lead">Due Sunday February 15 at 11:59PM</p>
+<p class="subtitle lead">Due Sunday, February 15 at 11:59PM</p>
 </div>
 
 
@@ -522,8 +522,8 @@ P(A \cap B \mid C) = P(A \mid C)P(B \mid C).
 <ol type="a">
 <li>What are the range and the pmf of the random variable <span class="math inline">\(X\)</span>?</li>
 <li>For what values of <span class="math inline">\(X\)</span> does removing <span class="math inline">\(k\)</span> ballots reverse the outcome of the election?</li>
-<li>Based on your answers to the previous parts, what is the probability that the election result is reversed when the <span class="math inline">\(k\)</span> bad ballots are removed? Give a general formula for this probability, and then compute the probability for each of the real elections listed in <strong>?@tbl-elections</strong>;</li>
-<li>The random variable <span class="math inline">\(X\)</span> that you derived in the first part can be approximated by <span class="math inline">\(\text{Binom}(k,\,1/2)\)</span>. Explain why this approximation might be “good enough,” and verify that it’s not too bad by computing the <em>approximate</em> probability of reversal for the elections in <strong>?@tbl-elections</strong>. Compare the approximate probabilities to the actual ones from the previous part; <!--e.  Let's say that we consider the probability of reversal "too big" if it is greater than 5%. Create a plot in `R` like @fig-elections with the following features:
+<li>Based on your answers to the previous parts, what is the probability that the election result is reversed when the <span class="math inline">\(k\)</span> bad ballots are removed? Give a general formula for this probability, and then compute the probability for each of the real elections listed in <a href="#tbl-elections" class="quarto-xref">Table&nbsp;1</a>;</li>
+<li>The random variable <span class="math inline">\(X\)</span> that you derived in the first part can be approximated by <span class="math inline">\(\text{Binom}(k,\,1/2)\)</span>. Explain why this approximation might be “good enough,” and verify that it’s not too bad by computing the <em>approximate</em> probability of reversal for the elections in <a href="#tbl-elections" class="quarto-xref">Table&nbsp;1</a>. Compare the approximate probabilities to the actual ones from the previous part; <!--e.  Let's say that we consider the probability of reversal "too big" if it is greater than 5%. Create a plot in `R` like @fig-elections with the following features:
     -   the margin of victory $a-b$ on the horizontal axis;
     -   the number of bad ballots $k$ on the vertical axis;
     -   scatterplot where each point represents an election in @tbl-elections, with the points colored according to the decision that was made in the case;
@@ -534,64 +534,11 @@ f.  Write a few pithy paragraphs commenting on the following:
     -   How do you think a court should handle a legitimate election challenge? What are their responsibilities to the electorate, and what should they prioritize? Should they err on the side of upholding or voiding results? Should they think probabilistically? Should they consult this model, or one like it?-->
 </li>
 </ol>
+<div id="tbl-elections" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-elections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Close elections
+</figcaption><div aria-describedby="tbl-elections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<caption>Close elections {#tbl-elections} <!--
-
-::: {.cell layout-align="center"}
-
-```{.r .cell-code  code-fold="true"}
-elections <- data.frame(
-  election = c("Ippolito", "Santucci", "DeMartini", "Maine", "Ann Arbor", "Brunswick", "Washington"),
-  a = c(1422, 58076, 2656, 1193, 10660, 2390, 1373357),
-  b = c(1405, 57981, 2594, 1060, 10659, 2383, 1373228),
-  k = c(101, 448, 136, 208, 20, 16, 1439),
-  decision = c("void", "void", "upheld", "void", "void", "upheld", "upheld"),
-  col = c("red", "red", "blue", "red", "red", "blue", "blue")
-)
-
-reversal_prob_binom <- function(a, b, k){
-  cutoff = ceiling(0.5 * (k + a - b))
-  1 - pbinom(cutoff - 1, k, 1/2)
-}
-
-margin_grid <- 0:150
-k_grid <- 0:450
-n_points <- length(margin_grid) * length(k_grid)
-
-grid <- data.frame(
-  margin = numeric(n_points),
-  k = numeric(n_points),
-  color = rep("lightblue", n_points)
-)
-
-row <- 0
-
-for(x in margin_grid){
-  for(y in k_grid){
-    row <- row + 1
-    grid[row, 1] <- x
-    grid[row, 2] <- y
-    if(reversal_prob_binom(1 + x, 1, y) >= 0.05){
-      grid[row, 3] <- "pink"
-    }
-  }
-}
-
-plot(grid$margin, grid$k, col = grid$color, 
-     pch = 19, cex = 0.2,
-     xlab = "margin of victory (a - b)", 
-     ylab = "number of invalid ballots (k)",
-     main = "Approximate probability of election reversal")
-points(elections$a - elections$b, elections$k, 
-       pch = 19, col = elections$col)
-legend(-7, 450, "> 0.05", text.col = "salmon", bty = "n", cex = 1.5)
-legend(115, 450, "< 0.05", text.col = "blue", bty = "n", cex = 1.5)
-legend(125, 85, c("Voided", "Upheld"), pch = 19, col = c("red", "blue"), bty = "n")
-```
-:::
-
--->
-</caption>
 <colgroup>
 <col style="width: 12%">
 <col style="width: 12%">
@@ -684,7 +631,67 @@ legend(125, 85, c("Voided", "Upheld"), pch = 19, col = c("red", "blue"), bty = "
 <td>upheld</td>
 </tr>
 </tbody>
-</table></section><section id="problem-6" class="level2"><h2 class="anchored" data-anchor-id="problem-6">Problem 6</h2>
+</table>
+</div>
+</figure>
+</div>
+<!--
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code  code-fold="true"}
+elections <- data.frame(
+  election = c("Ippolito", "Santucci", "DeMartini", "Maine", "Ann Arbor", "Brunswick", "Washington"),
+  a = c(1422, 58076, 2656, 1193, 10660, 2390, 1373357),
+  b = c(1405, 57981, 2594, 1060, 10659, 2383, 1373228),
+  k = c(101, 448, 136, 208, 20, 16, 1439),
+  decision = c("void", "void", "upheld", "void", "void", "upheld", "upheld"),
+  col = c("red", "red", "blue", "red", "red", "blue", "blue")
+)
+
+reversal_prob_binom <- function(a, b, k){
+  cutoff = ceiling(0.5 * (k + a - b))
+  1 - pbinom(cutoff - 1, k, 1/2)
+}
+
+margin_grid <- 0:150
+k_grid <- 0:450
+n_points <- length(margin_grid) * length(k_grid)
+
+grid <- data.frame(
+  margin = numeric(n_points),
+  k = numeric(n_points),
+  color = rep("lightblue", n_points)
+)
+
+row <- 0
+
+for(x in margin_grid){
+  for(y in k_grid){
+    row <- row + 1
+    grid[row, 1] <- x
+    grid[row, 2] <- y
+    if(reversal_prob_binom(1 + x, 1, y) >= 0.05){
+      grid[row, 3] <- "pink"
+    }
+  }
+}
+
+plot(grid$margin, grid$k, col = grid$color, 
+     pch = 19, cex = 0.2,
+     xlab = "margin of victory (a - b)", 
+     ylab = "number of invalid ballots (k)",
+     main = "Approximate probability of election reversal")
+points(elections$a - elections$b, elections$k, 
+       pch = 19, col = elections$col)
+legend(-7, 450, "> 0.05", text.col = "salmon", bty = "n", cex = 1.5)
+legend(115, 450, "< 0.05", text.col = "blue", bty = "n", cex = 1.5)
+legend(125, 85, c("Voided", "Upheld"), pch = 19, col = c("red", "blue"), bty = "n")
+```
+:::
+
+-->
+</section><section id="problem-6" class="level2"><h2 class="anchored" data-anchor-id="problem-6">Problem 6</h2>
 <p>Forty-nine members of the Cleveland Orchestra string section wish to compare their birthdays. Assume that no one has February 29th and that all birthdays are independent.</p>
 <ol type="a">
 <li>What is the expected number of pairs of people with the same birthday?</li>
