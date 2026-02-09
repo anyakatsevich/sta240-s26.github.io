@@ -151,14 +151,14 @@ website:
             text: Histograms
       - section: "Distribution Families"
         contents:
-           - href: distributions/discrete-binomial.qmd
-             text: Binomial
-           - href: distributions/discrete-geometric.qmd
-             text: Geometric
+          - href: distributions/discrete-binomial.qmd
+            text: Binomial
+          - href: distributions/discrete-geometric.qmd
+            text: Geometric
       #     - href: distributions/discrete-hypergeometric.qmd
       #       text: Hypergeometric
-           - href: distributions/discrete-poisson.qmd
-             text: Poisson
+          - href: distributions/discrete-poisson.qmd
+            text: Poisson
       #     - href: distributions/continuous-uniform.qmd
       #       text: Continuous uniform
       #     - href: distributions/continuous-normal.qmd
