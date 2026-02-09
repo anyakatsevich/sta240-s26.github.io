@@ -8,7 +8,7 @@ a.  What are the range and the pmf of the random variable $X$?
 b.  For what values of $X$ does removing $k$ ballots reverse the outcome of the election?
 c.  Based on your answers to the previous parts, what is the probability that the election result is reversed when the $k$ bad ballots are removed? Give a general formula for this probability, and then compute the probability for each of the real elections listed in @tbl-elections;
 d.  The random variable $X$ that you derived in the first part can be approximated by $\text{Binom}(k,\,1/2)$. Explain why this approximation might be "good enough," and verify that it's not too bad by computing the *approximate* probability of reversal for the elections in @tbl-elections. Compare the approximate probabilities to the actual ones from the previous part;
-e.  Let's say that we consider the probability of reversal "too big" if it is greater than 5%. Create a plot in `R` like @fig-elections with the following features:
+<!--e.  Let's say that we consider the probability of reversal "too big" if it is greater than 5%. Create a plot in `R` like @fig-elections with the following features:
     -   the margin of victory $a-b$ on the horizontal axis;
     -   the number of bad ballots $k$ on the vertical axis;
     -   scatterplot where each point represents an election in @tbl-elections, with the points colored according to the decision that was made in the case;
@@ -16,7 +16,7 @@ e.  Let's say that we consider the probability of reversal "too big" if it is gr
 f.  Write a few pithy paragraphs commenting on the following:
     -   the assumptions of our lil' model. Do you think they are innocuous? What might you change, and how?
     -   the match or lack thereof between our model and the decisions that were actually made in the real cases;
-    -   How do you think a court should handle a legitimate election challenge? What are their responsibilities to the electorate, and what should they prioritize? Should they err on the side of upholding or voiding results? Should they think probabilistically? Should they consult this model, or one like it?
+    -   How do you think a court should handle a legitimate election challenge? What are their responsibilities to the electorate, and what should they prioritize? Should they err on the side of upholding or voiding results? Should they think probabilistically? Should they consult this model, or one like it?-->
 
 | election | year | win | loss | total | margin | invalid | decision |
 |---------|---------|---------|---------|---------|---------|---------|---------|
@@ -34,6 +34,7 @@ f.  Write a few pithy paragraphs commenting on the following:
 #| code-fold: true
 #| fig-align: center
 #| label: fig-elections
+#| eval: false
 
 elections <- data.frame(
   election = c("Ippolito", "Santucci", "DeMartini", "Maine", "Ann Arbor", "Brunswick", "Washington"),

@@ -14,5 +14,5 @@ b.  What is the pmf of $Y = 2X-3$?
 c.  What is the mean of $Y$?
 d.  What is the pmf of $W = X^2$?
 e.  What is the mean of $W$?
-f.  What is the conditional pmf of $X$ given $X \neq 0$?
-g.  What is the conditional mean of $X$ given $X \neq 0$?
+<!--f.  What is the conditional pmf of $X$ given $X \neq 0$?
+g.  What is the conditional mean of $X$ given $X \neq 0$?-->

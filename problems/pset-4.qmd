@@ -1,6 +1,6 @@
 ---
 title: "Problem Set 4"
-subtitle: Due Sunday October 5 at 5PM
+subtitle: Due Sunday February 15 at 11:59PM
 draft: false
 editor: 
   mode: source
@@ -12,41 +12,37 @@ editor:
 
 ## Problem 1
 
-{{< include bank/conceptual/exam-review.qmd >}}
+{{< include bank/conditional-probability/conditional-inequality.qmd >}}
 
 ## Problem 2
 
-{{< include bank/conditional-probability/conditional-inequality.qmd >}}
+{{< include bank/conditional-probability/conditional-independence.qmd >}}
 
 ## Problem 3
 
-{{< include bank/conditional-probability/conditional-independence.qmd >}}
+{{< include bank/random-variables-discrete/bdj-rv.qmd >}}
 
 ## Problem 4
 
-{{< include bank/random-variables-discrete/bdj-rv.qmd >}}
+{{< include bank/random-variables-discrete/gandalf-test.qmd >}}
 
 ## Problem 5
 
-{{< include bank/random-variables-discrete/gandalf-test.qmd >}}
+{{< include bank/random-variables-discrete/contested-election.qmd >}}
 
 ## Problem 6
 
-{{< include bank/random-variables-discrete/contested-election.qmd >}}
+{{< include bank/random-variables-discrete/binomial-birthdays.qmd >}}
 
 ## Problem 7
 
-{{< include bank/random-variables-discrete/binomial-birthdays.qmd >}}
+{{< include bank/random-variables-discrete/waiting-for-five-or-seven.qmd >}}
 
 ## Problem 8
 
-{{< include bank/random-variables-discrete/waiting-for-five-or-seven.qmd >}}
-
-## Problem 9
-
 {{< include bank/random-variables-discrete/mak-rv.qmd >}}
 
-## Problem 10
+## Problem 9
 
 {{< include bank/random-variables-discrete/binomial-lotus.qmd >}}
 
