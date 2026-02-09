@@ -9,6 +9,7 @@ project:
   - problems/pset-3.qmd
   - problems/pset-4.qmd
   - lab-notes/**.pdf
+  - distributions/**.qmd
   - labs/lab-1.qmd
   - labs/lab-2.qmd
   - labs/lab-3.qmd
