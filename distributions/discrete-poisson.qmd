@@ -1,0 +1,244 @@
+---
+title: "Poisson distribution"
+format: html
+filters:
+  - shinylive
+---
+
+The Poisson distribution can be used to model the number of random arrivals in a given window of time: 
+
+- how many claims an insurance company receives in a month;
+- how many emails you receive in an hour;
+- how many "likes" you receive on a dating app in a day.
+
+The distribution is governed by one parameter $\lambda>0$ which is called the **rate**.
+
+## Basic properties
+
+|  |        |
+|------|--------------------|
+| **Notation** | $X\sim\text{Poisson}(\lambda)$  |
+| **Range** | $\mathbb{N}=\{0,\,1,\,2,\,3,\,4,\,...\}$ |
+| **Parameter space** | $\lambda>0$ |
+| **PMF** | $P(X=k)=e^{-\lambda}\frac{\lambda^k}{k!}$ |
+| **MGF** | $M(t)=\exp(\lambda(e^t-1))$, $t\in\mathbb{R}$ |
+| **Expectation** | $\lambda$ |
+| **Variance** | $\lambda$ |
+
+## `R` commands
+
+[Here](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Poisson.html) is the documentation for the suite of commands that let you work with the Poisson distribution in `R`:
+
+```{r}
+#| eval: false
+dpois(x, lambda) # PMF: P(X = x)
+ppois(q, lambda) # CDF: F(q) = P(X <= q)
+qpois(p, lambda) # quantile function (inverse CDF)
+rpois(n, lambda) # random numbers
+```
+
+## Play around!
+
+As $\lambda$ grows, the distribution shifts to the right and gets wider, which makes sense since $\lambda$ acts as both the mean and variance. Furthermore, the shape of the PMF becomes more bell-like as $\lambda$ gets big. This is not an accident.
+
+
+```{shinylive-r}
+#| standalone: true
+#| viewerHeight: 500
+
+library(shiny)
+
+discrete_pmf <- function(x, p, xlim = c(min(x) - 1, max(x) + 1), label = "", add_mean = FALSE){
+  plot(x, p,
+       pch = 19,
+       cex = 0.5,
+       xlab = "",
+       ylab = "",
+       main = "",
+       ylim = c(0, 0.4),
+       yaxs = "i",
+       yaxt = "n",
+       xlim = xlim,
+       xaxt = "n",
+       bty = "n"
+  )
+  segments(x,
+           rep(0, length(x) + 1),
+           x1 = x,
+           y1 = p,
+           lwd = 3
+  )
+  axis(1, at = floor(xlim[1]):ceiling(xlim[2]), cex.axis = 1)
+  axis(2, at = seq(0, 1, length.out = 11), las = 1, cex.axis = 1.5)
+  legend("topright", label, bty = "n", cex = 3)
+  if(add_mean == TRUE){
+    mtext("E(X)", side = 1, at = sum(x * p), col = "red", line = 2)
+  }
+}
+
+discrete_cdf <- function(x, p, xlim = c(min(x) - 1, max(x) + 1), label = ""){
+  closeddot = cumsum(p)
+  opencircle = c(0, closeddot[1:length(x)-1])
+  plot(x, closeddot, pch = 19, cex = 0.5,
+       ylim = c(0, 1),
+       ylab = "", main = "", xlab = "",
+       yaxt = "n",
+       xlim = xlim,
+       xaxt = "n",
+       #yaxs = "i", 
+       bty = "n")
+  points(x, opencircle, cex = 0.5)
+  segments(c(xlim[1], x), c(0, closeddot), c(x, xlim[2]), c(0, closeddot), lwd = 1)
+  axis(1, at = floor(xlim[1]):ceiling(xlim[2]), cex.axis = 1)
+  axis(2, at = seq(0, 1, length.out = 11), las = 1, cex.axis = 1.5)
+  legend("bottomright", label, bty = "n", cex = 3)
+}
+
+# Define UI for application that draws a histogram
+ui <- fluidPage(
+  
+  # Application title
+  titlePanel("Poisson distribution CDF and PMF"),
+  
+  # Sidebar with a slider input for number of bins 
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("lambda",
+                  "Rate (λ):",
+                  min = 0,
+                  max = 100,
+                  value = 1,
+                  step = 0.1)
+    ),
+    
+    # Show a plot of the generated distribution
+    mainPanel(
+      plotOutput("distPlot")
+    )
+  )
+)
+
+# Define server logic required to draw a histogram
+server <- function(input, output) {
+  
+  output$distPlot <- renderPlot({
+    
+    lambda <- input$lambda
+    n <- 100
+
+    par(mfrow = c(2, 1), mar = c(4, 4, 2, 2))
+    
+    discrete_cdf(0:n, dpois(0:n, lambda))
+    discrete_pmf(0:n, dpois(0:n, lambda), add_mean = FALSE)
+    mtext("E(X)", side = 1, at = lambda, col = "red", line = 2)
+  })
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+```
+
+## Derivations
+
+::: {.callout-note collapse="true"}
+## The mean (via the definition)
+
+Massage and squint until you recognize the Taylor series of $e^x$:
+
+$$
+    \begin{align*}
+    E(X)
+    &=
+\sum\limits_{n=0}^\infty nP(X=n)
+    \\
+    &=
+    \sum\limits_{n=0}^\infty 
+    n
+    \frac{\lambda^n}{n!}e^{-\lambda}
+    \\
+    &=
+    e^{-\lambda}
+    \sum\limits_{n=0}^\infty 
+    n
+    \frac{\lambda^n}{n!}
+    &&
+    \text{Pull out constant}
+    \\
+    &=
+    e^{-\lambda}
+    \sum\limits_{n=1}^\infty 
+    n
+    \frac{\lambda^n}{n!}
+    &&
+    n=0\text{ term is equal to 0}
+    \\
+    &=
+    e^{-\lambda}
+    \sum\limits_{n=1}^\infty 
+    \frac{\lambda^n}{(n-1)!}
+    &&
+    n\text{ cancels}
+    \\
+    &=
+    \lambda e^{-\lambda}
+    \sum\limits_{n=1}^\infty 
+    \frac{\lambda^{n-1}}{(n-1)!}
+    &&
+    \text{Pull out }\lambda
+    \\
+    &=
+    \lambda e^{-\lambda}
+    \sum\limits_{j=0}^\infty 
+    \frac{\lambda^{j}}{j!}
+    &&
+    \text{Reindex}
+    \\
+    &=
+    \lambda e^{-\lambda}
+    e^\lambda
+    &&
+    \text{Recall Taylor series: } e^x=\sum\limits_{k=0}^\infty \frac{x^k}{k!}\,\forall\,x\in\mathbb{R}
+    \\
+    &=
+    \lambda
+    .
+\end{align*}
+$$
+:::
+
+::: {.callout-tip collapse="true"}
+## The moment-generating function
+Massage and squint until you recognize the Taylor series of $e^x$:
+
+$$
+\begin{aligned}
+M(t)&=E[e^{tX}]\\
+&=\sum\limits_{k=0}^\infty e^{tk}\frac{\lambda^k}{k!}e^{-\lambda}\\
+&=\sum\limits_{k=0}^\infty \left(e^{t}\right)^k\frac{\lambda^k}{k!}e^{-\lambda}\\
+&=\sum\limits_{k=0}^\infty \frac{\left(\lambda e^{t}\right)^k}{k!}e^{-\lambda}\\
+&=e^{-\lambda}\sum\limits_{k=0}^\infty \frac{\left(\lambda e^{t}\right)^k}{k!}\\
+&=e^{-\lambda}e^{\lambda e^t}\\
+&=e^{\lambda e^t-\lambda}.
+\end{aligned}
+$$
+
+This works for any $t\in\mathbb{R}$.
+:::
+
+::: {.callout-note collapse="true"}
+## The mean and variance (via the MGF)
+Use the chain rule, product rule, etc to compute the first two derivatives of the MGF, and then plug in zero:
+
+$$
+\begin{aligned}
+M'(t)&=\lambda e^t\exp(\lambda e^t-\lambda)\\
+M''(t)&=(\lambda e^t)^2\exp(\lambda e^t-\lambda)+\lambda e^t\exp(\lambda e^t-\lambda)\\
+\\
+E(X)=M'(0)&=\lambda\\
+E(X^2)=M''(0)&=\lambda^2+\lambda
+\end{aligned}
+$$
+
+So $E(X) = \lambda$ and $\text{var}(X) = E(X^2) - E(X)^2 = \lambda^2 + \lambda - \lambda^2 = \lambda$.
+:::
+
