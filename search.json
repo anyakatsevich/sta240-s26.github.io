@@ -546,160 +546,55 @@
     ]
   },
   {
-    "objectID": "distributions/discrete-hypergeometric.html",
-    "href": "distributions/discrete-hypergeometric.html",
-    "title": "Hypergeometric distribution",
+    "objectID": "distributions/discrete-geometric.html",
+    "href": "distributions/discrete-geometric.html",
+    "title": "Geometric distribution",
     "section": "",
-    "text": "Imagine we have a finite population containing \\(m\\) “success” cases and \\(n\\) “failure” cases, for a total population size of \\(m+n\\). If we sample \\(k\\) cases from the population without replacement, then a hypergeometric random variable counts the number of sampled cases that are a success.\nYou first met this distribution on Problem Set 4 when studying contested elections."
+    "text": "The geometric distribution is based on a (possibly infinite) sequence of independent and identically distributed binary trials, each with probability of success \\(p\\). There are two versions:",
+    "crumbs": [
+      "Distribution Families",
+      "Geometric"
+    ]
   },
   {
-    "objectID": "distributions/discrete-hypergeometric.html#basic-properties",
-    "href": "distributions/discrete-hypergeometric.html#basic-properties",
-    "title": "Hypergeometric distribution",
+    "objectID": "distributions/discrete-geometric.html#basic-properties",
+    "href": "distributions/discrete-geometric.html#basic-properties",
+    "title": "Geometric distribution",
     "section": "Basic properties",
-    "text": "Basic properties\n\n\nNotation\n\\(X\\sim\\text{HG}(m, n, k)\\)\n\n\nRange\n\\(\\{0,\\,1,\\,2,\\,3,\\,...,\\,k-1,\\,k\\}\\)\n\n\nPMF\n\\(P(X = x) = \\binom{m}{x} \\binom{n}{k-x}/\\binom{m+n}{k}\\)\n\n\nExpectation\n\\(km/(m+n)\\)"
+    "text": "Basic properties\nFor the first version of the distribution that we saw in lecture, the properties are:\n\n\nNotation\n\\(X\\sim\\text{Geom}(p)\\)\n\n\nRange\n\\(\\{1,\\,2,\\,3,\\,4,\\,...\\}\\)\n\n\nParameter space\n\\(p\\in[0,\\,1]\\)\n\n\nPMF\n\\(P(X=k)=(1-p)^{k-1}p\\)\n\n\nExpectation\n\\(1/p\\)\n\n\nVariance\n\\(\\frac{1-p}{p^2}\\)",
+    "crumbs": [
+      "Distribution Families",
+      "Geometric"
+    ]
   },
   {
-    "objectID": "distributions/discrete-hypergeometric.html#r-commands",
-    "href": "distributions/discrete-hypergeometric.html#r-commands",
-    "title": "Hypergeometric distribution",
+    "objectID": "distributions/discrete-geometric.html#r-commands",
+    "href": "distributions/discrete-geometric.html#r-commands",
+    "title": "Geometric distribution",
     "section": "\nR commands",
-    "text": "R commands\nHere is the documentation for the suite of commands that let you work with the hypergeometric distribution in R:\n\ndhyper(x, m, n, k)     # PMF: P(X = x)\nphyper(q, m, n, k)     # CDF: P(X &lt;= q)\nqhyper(p, m, n, k)     # quantile function (inverse CDF)\nrhyper(ndraw, m, n, k) # random numbers"
-  },
-  {
-    "objectID": "distributions/discrete-binomial.html",
-    "href": "distributions/discrete-binomial.html",
-    "title": "Binomial distribution",
-    "section": "",
-    "text": "The binomial distribution is our model for the total number of successes in \\(n\\) independent binary trials, each with identical probability of success \\(p\\in[0,\\,1]\\).",
+    "text": "R commands\nFor the second version of the distribution, R provides:\n\ndgeom(x, prob) # PMF: P(X = x)\npgeom(q, prob) # CDF: P(X &lt;= q)\nqgeom(p, prob) # quantile function (inverse CDF)\nrgeom(n, prob) # random numbers",
     "crumbs": [
       "Distribution Families",
-      "Binomial"
+      "Geometric"
     ]
   },
   {
-    "objectID": "distributions/discrete-binomial.html#basic-properties",
-    "href": "distributions/discrete-binomial.html#basic-properties",
-    "title": "Binomial distribution",
-    "section": "Basic properties",
-    "text": "Basic properties\n\n\nNotation\n\\(X\\sim\\text{Binom}(n,\\,p)\\)\n\n\nRange\n\\(\\{0,\\,1,\\,2,\\,...,\\,n-1,\\,n\\}\\)\n\n\nParameter space\n\\(p\\in[0,\\,1]\\)\n\n\nPMF\n\\(P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}\\)\n\n\nExpectation\n\\(np\\)\n\n\nVariance\n\\(np(1-p)\\)",
-    "crumbs": [
-      "Distribution Families",
-      "Binomial"
-    ]
-  },
-  {
-    "objectID": "distributions/discrete-binomial.html#r-commands",
-    "href": "distributions/discrete-binomial.html#r-commands",
-    "title": "Binomial distribution",
-    "section": "\nR commands",
-    "text": "R commands\nHere is the documentation for the suite of commands that let you work with the binomial distribution in R:\n\ndbinom(x, size, prob) # PMF: P(X = x)\npbinom(q, size, prob) # CDF: P(X &lt;= q)\nqbinom(p, size, prob) # quantile function (inverse CDF)\nrbinom(n, size, prob) # random numbers",
-    "crumbs": [
-      "Distribution Families",
-      "Binomial"
-    ]
-  },
-  {
-    "objectID": "distributions/discrete-binomial.html#play-around",
-    "href": "distributions/discrete-binomial.html#play-around",
-    "title": "Binomial distribution",
+    "objectID": "distributions/discrete-geometric.html#play-around",
+    "href": "distributions/discrete-geometric.html#play-around",
+    "title": "Geometric distribution",
     "section": "Play around!",
-    "text": "Play around!\nNotice that, for all values of \\(p\\in(0,\\,1)\\), the shape of the PMF becomes more like the bell curve as \\(n\\) grows:\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 500\n\nlibrary(shiny)\n\ndiscrete_pmf &lt;- function(x, p, xlim = c(min(x) - 1, max(x) + 1), label = \"\", add_mean = FALSE){\n  plot(x, p,\n       pch = 19,\n       cex = 1,\n       xlab = \"\",\n       ylab = \"\",\n       main = \"\",\n       ylim = c(0, 1.05 * max(p)),\n       yaxs = \"i\",\n       yaxt = \"n\",\n       xlim = xlim,\n       xaxt = \"n\",\n       bty = \"n\"\n  )\n  segments(x,\n           rep(0, length(x) + 1),\n           x1 = x,\n           y1 = p,\n           lwd = 3\n  )\n  axis(1, at = floor(xlim[1]):ceiling(xlim[2]), cex.axis = 1)\n  axis(2, at = seq(0, 1, length.out = 11), las = 1, cex.axis = 1.5)\n  legend(\"topright\", label, bty = \"n\", cex = 3)\n  if(add_mean == TRUE){\n    mtext(\"E(X)\", side = 1, at = sum(x * p), col = \"red\", line = 2)\n  }\n}\n\ndiscrete_cdf &lt;- function(x, p, xlim = c(min(x) - 1, max(x) + 1), label = \"\"){\n  closeddot = cumsum(p)\n  opencircle = c(0, closeddot[1:length(x)-1])\n  plot(x, closeddot, pch = 19, cex = 1,\n       ylim = c(0, 1),\n       ylab = \"\", main = \"\", xlab = \"\",\n       yaxt = \"n\",\n       xlim = xlim,\n       xaxt = \"n\",\n       #yaxs = \"i\", \n       bty = \"n\")\n  points(x, opencircle, cex = 1)\n  segments(c(xlim[1], x), c(0, closeddot), c(x, xlim[2]), c(0, closeddot), lwd = 1)\n  axis(1, at = floor(xlim[1]):ceiling(xlim[2]), cex.axis = 1)\n  axis(2, at = seq(0, 1, length.out = 11), las = 1, cex.axis = 1.5)\n  legend(\"bottomright\", label, bty = \"n\", cex = 3)\n}\n\n# Define UI for application that draws a histogram\nui &lt;- fluidPage(\n  \n  # Application title\n  titlePanel(\"Binomial distribution CDF and PMF\"),\n  \n  # Sidebar with a slider input for number of bins \n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"p\",\n                  \"Probability of success (p):\",\n                  min = 0,\n                  max = 1,\n                  value = 0.5,\n                  step = 0.01),\n      sliderInput(\"n\",\n                  \"Number of trials (n):\",\n                  min = 1,\n                  max = 100,\n                  value = 5,\n                  step = 1)\n    ),\n    \n    # Show a plot of the generated distribution\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n# Define server logic required to draw a histogram\nserver &lt;- function(input, output) {\n  \n  output$distPlot &lt;- renderPlot({\n    \n    p &lt;- input$p\n    n &lt;- input$n\n\n    par(mfrow = c(2, 1), mar = c(4, 4, 2, 2))\n    \n    discrete_cdf(0:n, dbinom(0:n, n, p))\n    discrete_pmf(0:n, dbinom(0:n, n, p), add_mean = TRUE)\n    \n  })\n}\n\n# Run the application \nshinyApp(ui = ui, server = server)",
+    "text": "Play around!\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 500\n\nlibrary(shiny)\n\ndiscrete_pmf &lt;- function(x, p, xlim = c(min(x) - 1, max(x) + 1), label = \"\", add_mean = FALSE){\n  plot(x, p,\n       pch = 19,\n       cex = 0.5,\n       xlab = \"\",\n       ylab = \"\",\n       main = \"\",\n       ylim = c(0, 0.4),\n       yaxs = \"i\",\n       yaxt = \"n\",\n       xlim = xlim,\n       xaxt = \"n\",\n       bty = \"n\"\n  )\n  segments(x,\n           rep(0, length(x) + 1),\n           x1 = x,\n           y1 = p,\n           lwd = 3\n  )\n  axis(1, at = floor(xlim[1]):ceiling(xlim[2]), cex.axis = 1)\n  axis(2, at = seq(0, 1, length.out = 11), las = 1, cex.axis = 1.5)\n  legend(\"topright\", label, bty = \"n\", cex = 3)\n  if(add_mean == TRUE){\n    mtext(\"E(X)\", side = 1, at = sum(x * p), col = \"red\", line = 2)\n  }\n}\n\ndiscrete_cdf &lt;- function(x, p, xlim = c(min(x) - 1, max(x) + 1), label = \"\"){\n  closeddot = cumsum(p)\n  opencircle = c(0, closeddot[1:length(x)-1])\n  plot(x, closeddot, pch = 19, cex = 0.5,\n       ylim = c(0, 1),\n       ylab = \"\", main = \"\", xlab = \"\",\n       yaxt = \"n\",\n       xlim = xlim,\n       xaxt = \"n\",\n       #yaxs = \"i\", \n       bty = \"n\")\n  points(x, opencircle, cex = 0.5)\n  segments(c(xlim[1], x), c(0, closeddot), c(x, xlim[2]), c(0, closeddot), lwd = 1)\n  axis(1, at = floor(xlim[1]):ceiling(xlim[2]), cex.axis = 1)\n  axis(2, at = seq(0, 1, length.out = 11), las = 1, cex.axis = 1.5)\n  legend(\"bottomright\", label, bty = \"n\", cex = 3)\n}\n\n# Define UI for application that draws a histogram\nui &lt;- fluidPage(\n  \n  # Application title\n  titlePanel(\"Geometric distribution CDF and PMF\"),\n  \n  # Sidebar with a slider input for number of bins \n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"p\",\n                  \"Probability of success (p):\",\n                  min = 0,\n                  max = 1,\n                  value = 0.5,\n                  step = 0.01)\n    ),\n    \n    # Show a plot of the generated distribution\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n# Define server logic required to draw a histogram\nserver &lt;- function(input, output) {\n  \n  output$distPlot &lt;- renderPlot({\n    \n    p &lt;- input$p\n    n &lt;- 30\n\n    par(mfrow = c(2, 1), mar = c(4, 4, 2, 2))\n    \n    discrete_cdf(1:n, dgeom(0:(n-1), p))\n    plot(1:n, dgeom(0:(n-1), p), type = \"h\",\n         #ylim = c(0, 1),\n        yaxs = \"i\",\n       yaxt = \"n\",\n       ylab = \"\",\n       xlim = c(0, n + 1),\n       xlab = \"\",\n       xaxt = \"n\",\n       bty = \"n\")\n    axis(1, at = 0:(n+1), cex.axis = 1)\n    axis(2, at = seq(0, 1, length.out = 11), las = 1, cex.axis = 1.5)\n    mtext(\"E(X)\", side = 1, at = 1 / p, col = \"red\", line = 2)\n  })\n}\n\n# Run the application \nshinyApp(ui = ui, server = server)",
     "crumbs": [
       "Distribution Families",
-      "Binomial"
+      "Geometric"
     ]
   },
   {
-    "objectID": "distributions/continuous-normal.html",
-    "href": "distributions/continuous-normal.html",
-    "title": "Normal distribution",
+    "objectID": "apps/disease-testing.html",
+    "href": "apps/disease-testing.html",
+    "title": "You tested positive. Now what?",
     "section": "",
-    "text": "I usually have a little blurb up here describing how the distribution arises or when you might use it, but the normal distribution is so central to probability and statistics that words fail. It shows up everywhere."
-  },
-  {
-    "objectID": "distributions/continuous-normal.html#basic-properties",
-    "href": "distributions/continuous-normal.html#basic-properties",
-    "title": "Normal distribution",
-    "section": "Basic properties",
-    "text": "Basic properties\n\n\n\n\n\n\n\nNotation\n\\(X\\sim\\text{N}(\\mu,\\,\\sigma^2)\\)\n\n\nRange\n\\(\\mathbb{R}=(-\\infty,\\,\\infty)\\)\n\n\nParameter space\n\\(\\begin{matrix}-\\infty&lt;\\mu&lt;\\infty\\\\\\sigma^2&gt;0\\end{matrix}\\)\n\n\nPDF\n\\(f(x)=\\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\exp\\left(-\\frac{1}{2}\\frac{(x-\\mu)^2}{\\sigma^2}\\right)\\)\n\n\nCDF\n\\(F(x)=\\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\int_{-\\infty}^x\\exp\\left(-\\frac{1}{2}\\frac{(t-\\mu)^2}{\\sigma^2}\\right)\\,\\text{d}t\\)\n\n\nMGF\n\n\\(M(t) = \\exp\\left(\\mu t+\\frac{\\sigma^2}{2}t^2\\right)\\), \\(t\\in\\mathbb{R}\\)\n\n\n\nExpectation\n\\(\\mu\\)\n\n\nVariance\n\\(\\sigma^2\\)\n\n\n\nFun facts:\n\nThis is also known as the Gaussian distribution;\nN(0, 1) is called the standard normal;\nThe density of the normal is the familiar bell curve;\nWe do not have a closed-form for the CDF. We can approximate it arbitrarily well in a computer, but we can’t actually simplify the integral and get a neat formula. Bummer!"
-  },
-  {
-    "objectID": "distributions/continuous-normal.html#r-commands",
-    "href": "distributions/continuous-normal.html#r-commands",
-    "title": "Normal distribution",
-    "section": "\nR commands",
-    "text": "R commands\nHere is the documentation for the suite of commands that let you work with the normal distribution in R:\n\ndnorm(x, mean = 0, sd = 1) # PDF\npnorm(q, mean = 0, sd = 1) # CDF: F(q) = P(X &lt;= q)\nqnorm(p, mean = 0, sd = 1) # quantile function (inverse CDF)\nrnorm(n, mean = 0, sd = 1) # random numbers\n\n\n\n\n\n\n\nImportantThe commands take the standard deviation, not the variance!\n\n\n\nYou will get burned by this at least once. I guarantee it. But please take note. If you want to compute \\(P(X\\leq -2.4)\\) for \\(X\\sim\\text{N}(4, 9)\\), you call pnorm(-2.4, 4, 3), because \\(\\text{sd}(X)=\\sqrt{\\text{var}(X)}=3\\)."
-  },
-  {
-    "objectID": "distributions/continuous-normal.html#play-around",
-    "href": "distributions/continuous-normal.html#play-around",
-    "title": "Normal distribution",
-    "section": "Play around!",
-    "text": "Play around!\nAs we have seen, the parameters \\(\\mu\\) and \\(\\sigma\\) have multiple interpretations. From a probabilistic point-of-view, they are the mean \\(\\mu=E(X)\\) and the standard deviation \\(\\sigma=\\sqrt{\\text{var}(X)}\\). From a purely geometric point-of-view, they control the shape of the density curve. \\(\\mu\\) is the location of the peak, and \\(\\sigma\\) controls how far the inflection points are from \\(\\mu\\). You worked that out on Problem Set 0.\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 700\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  titlePanel(\"Normal distribution CDF and PDF\"),\n  \n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"mu\", \"Mean (μ):\", \n                  min = -5, max = 5, value = 0, step = 0.1),\n      sliderInput(\"sigma\", \"Standard Deviation (σ):\", \n                  min = 0.5, max = 3, value = 1, step = 0.1)\n    ),\n    \n    mainPanel(\n      plotOutput(\"distPlot\", height = \"600px\")\n    )\n  )\n)\n\nserver &lt;- function(input, output) {\n  output$distPlot &lt;- renderPlot({\n    mu &lt;- input$mu\n    sigma &lt;- input$sigma\n    \n    # Fixed x range\n    x &lt;- seq(-10, 10, length.out = 1000)\n    \n    # Compute values\n    pdf_vals &lt;- dnorm(x, mean = mu, sd = sigma)\n    cdf_vals &lt;- pnorm(x, mean = mu, sd = sigma)\n    \n    # Inflection points at mu ± sigma\n    inflect_left &lt;- mu - sigma\n    inflect_right &lt;- mu + sigma\n    \n    # Fixed y limits\n    pdf_ylim &lt;- c(0, 0.8)\n    \n    par(mfrow = c(2, 1), mar = c(4, 4, 2, 1))\n    \n    # --- CDF Plot ---\n    plot(x, cdf_vals, type = \"l\", lwd = 2, col = \"blue\",\n         xlim = c(-10, 10), ylim = c(0, 1),\n         main = \"Cumulative Distribution Function (CDF)\",\n         xlab = \"\", ylab = \"F(x)\")\n    abline(h = c(0, 1), col = \"gray80\", lty = 2)\n    abline(v = mu, col = \"gray60\", lty = 3)\n    \n    # --- PDF Plot ---\n    plot(x, pdf_vals, type = \"l\", lwd = 2, col = \"darkred\",\n         xlim = c(-10, 10), ylim = pdf_ylim,\n         main = \"Probability Density Function (PDF)\",\n         xlab = \"x\", ylab = \"f(x)\")\n    \n    # Vertical lines at mean and inflection points\n    abline(v = mu, col = \"gray60\", lty = 3)\n    abline(v = c(inflect_left, inflect_right), col = \"gray70\", lty = 2)\n    \n    # Arrows showing sigma distance\n    y_arrow &lt;- 0.05\n    arrows(mu, y_arrow, inflect_right, y_arrow, code = 3, angle = 10, length = 0.1)\n    arrows(mu, y_arrow, inflect_left, y_arrow, code = 3, angle = 10, length = 0.1)\n    \n    # Label σ between mean and inflection points\n    text(mu + sigma / 2, y_arrow + 0.03, expression(sigma), cex = 1.1)\n    text(mu - sigma / 2, y_arrow + 0.03, expression(sigma), cex = 1.1)\n    \n    # Label μ in the margin below the x-axis\n    mtext(expression(mu), side = 1, line = 2.2, at = mu, cex = 1.2)\n  })\n}\n\nshinyApp(ui = ui, server = server)"
-  },
-  {
-    "objectID": "distributions/continuous-normal.html#derivations",
-    "href": "distributions/continuous-normal.html#derivations",
-    "title": "Normal distribution",
-    "section": "Derivations",
-    "text": "Derivations\n\n\n\n\n\n\nNoteMoment-generating function of N(0, 1)\n\n\n\n\n\n\\[\n\\begin{aligned}\nM(t)&=E[e^{tX}] && \\text{definition}\\\\\n&=\\int_{-\\infty}^\\infty e^{tx}\\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{1}{2}x^2}\\,\\textrm{d}x && \\text{LOTUS}\\\\\n&=\\int_{-\\infty}^\\infty\\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{1}{2}x^2+tx}\\,\\textrm{d}x && \\text{combine base-$e$ terms}\\\\\n&=\\int_{-\\infty}^\\infty\\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{1}{2}(x^2-2tx)}\\,\\textrm{d}x && \\text{factor out -1/2}\\\\\n&=\\int_{-\\infty}^\\infty\\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{1}{2}(x^2-2tx+t^2-t^2)}\\,\\textrm{d}x && \\text{add/subtract $t^2$}\\\\\n&=\\int_{-\\infty}^\\infty\\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{1}{2}[(x-t)^2-t^2]}\\,\\textrm{d}x && \\text{factor first three terms}\\\\\n&=\\int_{-\\infty}^\\infty\\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{1}{2}(x-t)^2+\\frac{1}{2}t^2}\\,\\textrm{d}x && \\text{distribute -1/2}\\\\\n&=\\int_{-\\infty}^\\infty\\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{1}{2}(x-t)^2}e^{\\frac{1}{2}t^2}\\,\\textrm{d}x\\\\\n&=e^{\\frac{1}{2}t^2}\\int_{-\\infty}^\\infty\\underbrace{\\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{1}{2}(x-t)^2}}_{\\textrm{N}(t,\\,1)\\text{ PDF}}\\,\\textrm{d}x&&\\text{pull constant out of integral}\\\\\n&=e^{\\frac{1}{2}t^2}\\cdot 1&&\\text{PDFs integrate to 1}\\\\\n&=e^{\\frac{1}{2}t^2}.\n\\end{aligned}\n\\]\nThis works for any \\(t\\in\\mathbb{R}\\)."
-  },
-  {
-    "objectID": "distributions/continuous-inverse-gamma.html",
-    "href": "distributions/continuous-inverse-gamma.html",
-    "title": "Inverse gamma distribution",
-    "section": "",
-    "text": "If \\(X\\sim\\text{Gamma}(\\alpha,\\,\\beta)\\), then the new random variable \\(Y=1/X\\) has the inverse gamma distribution. We denote this \\(Y\\sim\\text{IG}(\\alpha,\\,\\beta)\\). You derived this on Problem Set 6 #6d."
-  },
-  {
-    "objectID": "distributions/continuous-inverse-gamma.html#basic-properties",
-    "href": "distributions/continuous-inverse-gamma.html#basic-properties",
-    "title": "Inverse gamma distribution",
-    "section": "Basic properties",
-    "text": "Basic properties\n\n\n\n\n\n\n\nNotation\n\\(X\\sim\\text{IG}(\\alpha,\\,\\beta)\\)\n\n\nRange\n\\((0,\\,\\infty)\\)\n\n\nParameter space\n\\(\\alpha,\\,\\beta&gt;0\\)\n\n\nPDF\n\\(f(x)=\\begin{cases}\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}x^{-\\alpha-1}e^{-\\beta /x} &x&gt; 0\\\\0 & x\\leq0.\\end{cases}\\)\n\n\nExpectation\n\\(\\frac{\\beta}{\\alpha-1}\\) if \\(\\alpha&gt;1\\)\n\n\nVariance\n\\(\\frac{\\beta^2}{(\\alpha-1)^2(\\alpha-2)}\\) if \\(\\alpha&gt;2\\)"
-  },
-  {
-    "objectID": "distributions/continuous-inverse-gamma.html#derivations",
-    "href": "distributions/continuous-inverse-gamma.html#derivations",
-    "title": "Inverse gamma distribution",
-    "section": "Derivations",
-    "text": "Derivations\n\n\n\n\n\n\nTipDeriving the density from a change-of-variables\n\n\n\n\n\nLet \\(X\\sim\\text{Gamma}(\\alpha,\\,\\beta)\\) and consider \\(Y=1/X\\). So the forward transformation is \\(g(x) = 1/ x\\), and the inverse is \\(g^{-1}(y) = 1/ y\\). These are strictly decreasing, and they map positive numbers to positive numbers. So \\(\\text{Range}(Y)=(0,\\, \\infty)\\). Fix \\(y&gt;0\\). The change-of-variables formula says:\n\\[\n\\begin{aligned}\nf_Y(y) &= f_X \\left( g^{-1}(y) \\right) \\left| \\frac{d}{dy} g^{-1}(y) \\right| \\\\[6pt]\n&= \\frac{\\beta^\\alpha}{\\Gamma(\\alpha)} \\left( \\frac{1}{y} \\right)^{\\alpha-1} \\exp \\left(  \\frac{-\\beta}{y}  \\right)  \\left|-\\frac{1}{y^2}\\right| \\\\[6pt]\n&= \\frac{\\beta^\\alpha}{\\Gamma(\\alpha)} \\left( \\frac{1}{y} \\right)^{\\alpha-1} \\exp \\left(  \\frac{-\\beta}{y}  \\right)  \\frac{1}{y^2} \\\\[6pt]\n&= \\frac{\\beta^\\alpha}{\\Gamma(\\alpha)} \\left( \\frac{1}{y} \\right)^{\\alpha+1} \\exp \\left(  \\frac{-\\beta}{y}  \\right)   \\\\[6pt]\n&= \\frac{\\beta^\\alpha}{\\Gamma(\\alpha)} y^{-\\alpha-1} \\exp \\left(  \\frac{-\\beta}{y}  \\right),&& y&gt;0.\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\n\nNoteGeneral formula for the raw moments\n\n\n\n\n\nLet \\(X\\sim\\text{Gamma}(\\alpha,\\,\\beta)\\) and \\(Y=1/X\\sim\\text{IG}(\\alpha,\\,\\beta)\\). Furthermore, assume \\(\\alpha &gt; k\\) for some \\(k\\in\\mathbb{N}\\). Then the \\(k\\)th raw moment of the inverse gamma variate \\(Y\\) is\n\\[\n\\begin{aligned}\nE(Y^k)\n&=\nE\\left(\\frac{1}{X^k}\\right)\n\\\\\n&=\n\\int_0^\\infty\n\\frac{1}{x^k}\nf_X(x)\n\\,\\text{d}x\n\\\\\n&=\n\\int_0^\\infty\n\\frac{1}{x^k}\n\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}x^{\\alpha-1}e^{-\\beta x}\n\\,\\text{d}x\n\\\\\n&=\n\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}\n\\int_0^\\infty\n\\underbrace{x^{\\alpha-k-1}e^{-\\beta x}}_{\\text{kernel of Gamma}(\\alpha-k,\\,\\beta)}\n\\,\\text{d}x\n\\\\\n&=\n\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}\n\\frac{\\Gamma(\\alpha-k)}{\\beta^{\\alpha-k}}\n\\\\\n&=\n\\beta^k\\frac{\\Gamma(\\alpha-k)}{\\Gamma(\\alpha)}.\n\\end{aligned}\n\\]\nSo\n\\[\n\\begin{aligned}\nE(Y)\n&=\n\\beta\\frac{\\Gamma(\\alpha-1)}{\\Gamma(\\alpha)}=\\beta\\frac{\\Gamma(\\alpha-1)}{\\Gamma(\\alpha-1+1)}=\\beta\\frac{\\Gamma(\\alpha-1)}{(\\alpha-1)\\Gamma(\\alpha-1)}=\\frac{\\beta}{\\alpha-1}\n\\\\\n\\\\\nE(Y^2)\n&=\n\\beta^2\\frac{\\Gamma(\\alpha-2)}{\\Gamma(\\alpha)}\n\\\\\n&=\n\\beta^2\\frac{\\Gamma(\\alpha-2)}{\\Gamma(\\alpha-1+1)}\n\\\\\n&=\n\\beta^2\\frac{\\Gamma(\\alpha-2)}{(\\alpha-1)\\Gamma(\\alpha-1)}\n\\\\\n&=\n\\beta^2\\frac{\\Gamma(\\alpha-2)}{(\\alpha-1)\\Gamma(\\alpha-2+1)}\n\\\\\n&=\n\\beta^2\\frac{\\Gamma(\\alpha-2)}{(\\alpha-1)(\\alpha-2)\\Gamma(\\alpha-2)}\n\\\\\n&=\n\\frac{\\beta^2}{(\\alpha-1)(\\alpha-2)}\n\\\\\n\\\\\n\\text{var}(Y)\n&=\nE(Y^2)-E(Y)^2\n\\\\\n&=\n\\frac{\\beta^2}{(\\alpha-1)(\\alpha-2)}\n-\n\\frac{\\beta^2}{(\\alpha-1)^2}\n\\\\\n&=\n\\beta^2\n\\left[\n\\frac{1}{(\\alpha-1)(\\alpha-2)}\n-\n\\frac{1}{(\\alpha-1)^2}\n\\right]\n\\\\\n&=\n\\beta^2\n\\frac{\\alpha-1-(\\alpha-2)}{(\\alpha-1)^2(\\alpha-2)}\n\\\\\n&=\n\\beta^2\n\\frac{\\alpha-1-\\alpha+2}{(\\alpha-1)^2(\\alpha-2)}\n\\\\\n&=\n\\frac{\\beta^2}{(\\alpha-1)^2(\\alpha-2)}\n.\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "distributions/continuous-beta.html",
-    "href": "distributions/continuous-beta.html",
-    "title": "Beta distribution",
-    "section": "",
-    "text": "The beta distribution plays many roles in probability and statistics. One of them is as the conjugate prior for the Bernoulli and geometric distributions. These distributions have one parameter \\(p\\), the probability of success for some binary trial. You can pick a particular beta distribution to represent your beliefs about where the unknown \\(p\\) is likely to lie."
-  },
-  {
-    "objectID": "distributions/continuous-beta.html#basic-properties",
-    "href": "distributions/continuous-beta.html#basic-properties",
-    "title": "Beta distribution",
-    "section": "Basic properties",
-    "text": "Basic properties\nThe beta has bounded range, so all moments are finite. Sadly, we do not have closed-form expressions for the cdf or the mgf.\n\n\n\n\n\n\n\nNotation\n\\(X\\sim\\text{Beta}(\\alpha,\\,\\beta)\\)\n\n\nRange\n\\((0,\\,1)\\)\n\n\nParameter space\n\\(\\alpha,\\,\\beta&gt;0\\)\n\n\nPDF\n\\(f(x)=\\begin{cases}\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}x^{\\alpha-1}(1-x)^{\\beta-1} &0&lt;x&lt;1\\\\0 & \\text{else}.\\end{cases}\\)\n\n\nExpectation\n\\(\\frac{\\alpha}{\\alpha+\\beta}\\)\n\n\nVariance\n\\(\\frac{\\alpha\\beta}{(\\alpha+\\beta)^2(\\alpha+\\beta+1)}\\)\n\n\n\nEvery probability density is an integral identity in disguise, so we have that:\n\\[\n\\int_0^1\nx^{\\alpha-1}(1-x)^{\\beta-1}\n\\,\\text{d}x\n=\n\\frac{\\Gamma(\\alpha)\\Gamma(\\beta)}{\\Gamma(\\alpha+\\beta)}\n.\n\\]"
-  },
-  {
-    "objectID": "distributions/continuous-beta.html#r-commands",
-    "href": "distributions/continuous-beta.html#r-commands",
-    "title": "Beta distribution",
-    "section": "\nR commands",
-    "text": "R commands\nHere is the documentation for the suite of commands that let you work with the beta distribution in R:\n\ndbeta(x, shape1, shape2) # PDF\npbeta(q, shape1, shape2) # CDF: P(X &lt;= q)\nqbeta(p, shape1, shape2) # quantile function (inverse CDF)\nrbeta(n, shape1, shape2) # random numbers"
-  },
-  {
-    "objectID": "distributions/continuous-beta.html#play-around",
-    "href": "distributions/continuous-beta.html#play-around",
-    "title": "Beta distribution",
-    "section": "Play around!",
-    "text": "Play around!\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 700\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  titlePanel(\"Beta Distribution Viewer\"),\n  \n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"alpha\", \"Alpha (shape1):\",\n                  min = 0.5, max = 10, value = 2, step = 0.1),\n      sliderInput(\"beta\", \"Beta (shape2):\",\n                  min = 0.5, max = 10, value = 2, step = 0.1)\n    ),\n    \n    mainPanel(\n      plotOutput(\"betaPlot\", height = \"600px\")\n    )\n  )\n)\n\nserver &lt;- function(input, output, session) {\n  \n  output$betaPlot &lt;- renderPlot({\n    a &lt;- input$alpha\n    b &lt;- input$beta\n    x &lt;- seq(0, 1, length.out = 500)\n    \n    par(mfrow = c(2,1), mar = c(4,4,2,1))\n    \n    ## --- CDF ---\n    plot(x, pbeta(x, a, b), type = \"l\", lwd = 2,\n         xlab = \"\", ylab = \"CDF\", main = \"Beta CDF\",\n         ylim = c(0,1))\n    \n    ## --- PDF ---\n    plot(x, dbeta(x, a, b), type = \"l\", lwd = 2,\n         xlab = \"x\", ylab = \"PDF\", main = \"Beta PDF\",\n         ylim = c(0,7))   # fixed y-axis range\n  })\n}\n\nshinyApp(ui, server)"
-  },
-  {
-    "objectID": "distributions/continuous-beta.html#derivations",
-    "href": "distributions/continuous-beta.html#derivations",
-    "title": "Beta distribution",
-    "section": "Derivations",
-    "text": "Derivations\n\n\n\n\n\n\nTipMean\n\n\n\n\n\n\\[\n\\begin{aligned}\nE(X)\n&=\n\\int_0^1\nx\nf(x)\n\\,\\text{d}x\n\\\\\n&=\n\\int_0^1\nx\n\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}x^{\\alpha-1}(1-x)^{\\beta-1}\n\\,\\text{d}x\n\\\\\n&=\n\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}\n\\int_0^1\n\\underbrace{x^{\\alpha+1-1}(1-x)^{\\beta-1}}_{\\text{kernel of Beta}(\\alpha+1,\\,\\beta)}\n\\,\\text{d}x\n\\\\\n&=\n\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}\\frac{\\Gamma(\\alpha+1)\\Gamma(\\beta)}{\\Gamma(\\alpha+\\beta+1)}\n\\\\\n&=\n\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}\\frac{\\alpha\\Gamma(\\alpha)\\Gamma(\\beta)}{(\\alpha+\\beta)\\Gamma(\\alpha+\\beta)}\n\\\\\n&=\n\\frac{\\alpha}{\\alpha+\\beta}\n.\n\\end{aligned}\n\\]\nThis is classic “massage and squint.” We do a kernel-trick with the beta density, and we recall the properties of the gamma function from Problem Set 0."
+    "text": "Testing positive for a disease is not exactly good news, but how alarmed you should be ultimately depends on a few factors: the accuracy of the test and the overall rarity of the disease (the so-called base rate). Before you walk into the doctor’s office, the probability that you are sick is \\(P(D=+)\\), the prevalence. This is the unconditional (or marginal) probability that a random member of the population (ie you in that moment) is sick. After you test positive, the revised or conditional probability that you have the disease is given by Bayes’ theorem:\n\\[\n\\begin{aligned}\nP(D = +\\,|\\,T=+)\n&=\n\\frac{{\\color{blue}{P(T=+\\,|\\,D=+)}}{\\color{red}{P(D=+)}}}{P(T=+)}\n\\\\\n&=\n\\frac{{\\color{blue}{P(T=+\\,|\\,D=+)}}{\\color{red}{P(D=+)}}}{{\\color{blue}{P(T=+\\,|\\,D=+)}}{\\color{red}{P(D=+)}}+[1-{\\color{green}{P(T=-\\,|\\,D=-)}}][1-{\\color{red}{P(D=+)}}]}\n\\\\\n&=\n\\frac{{\\color{blue}{\\text{TPR}}}\\times{\\color{red}{\\text{PREV}}}}{{\\color{blue}{\\text{TPR}}}\\times{\\color{red}{\\text{PREV}}}+(1-{\\color{green}{\\text{TNR}}})(1-{\\color{red}{\\text{PREV}}})}.\n\\end{aligned}\n\\]\n\\(P(T=+\\,|\\,D=+)\\) is the true positive rate or sensitivity: the probability that a sick person is correctly diagnosed. \\(P(T=-\\,|\\,D=-)\\) is the true negative rate or specificity: the probability that a well person is correctly diagnosed. It is the nonlinear interaction of three numbers (prevalence, TPR, and TNR) that determines the revised likelihood that you have the disease. Two numbers interacting linearly is about all a regular human can handle off the dome, hence people are generally bad at reasoning about this stuff.\nThe application below visualizes the sample space for our simple model of disease testing. We have \\(D\\in\\{-,\\,+\\}\\) and \\(T\\in\\{-,\\,+\\}\\), and so there are four individual outcomes:\n\n\\(P(T = +\\cap D=+)=P(T=+\\,|\\,D=+)P(D=+)=\\text{TPR}\\times P(D=+)\\);\n\\(P(T = +\\cap D=-)=P(T=+\\,|\\,D=-)P(D=-)=\\text{FPR}\\times P(D=-)\\);\n\\(P(T = -\\cap D=-)=P(T=-\\,|\\,D=-)P(D=-)=\\text{TNR}\\times P(D=-)\\);\n\\(P(T = -\\cap D=+)=P(T=-\\,|\\,D=+)P(D=+)=\\text{FNR}\\times P(D=+)\\).\n\nThe application plots the \\([0,\\,1]\\times[0,\\,1]\\) unit square, partitioned into four rectangles representing the outcomes listed above. The area of each rectangle is equal to the probability of that outcome.\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 650\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  \n  # Application title\n  titlePanel(\"The sample space of a simple diagnostic test\"),\n  \n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"TPR\",\n                  \"Sensitivity (TPR):\",\n                  min = 0,\n                  max = 1,\n                  value = 0.5),\n      sliderInput(\"TNR\",\n                  \"Specificity (TNR):\",\n                  min = 0,\n                  max = 1,\n                  value = 0.5),\n      sliderInput(\"p\",\n                  \"Prevalence:\",\n                  min = 0,\n                  max = 1,\n                  value = 0.5)\n    ),\n    \n    mainPanel(\n      plotOutput(\"distPlot\"),\n      \n      # ---- Legend goes here ----\n      tags$div(\n        style = \"margin-top:20px;\",\n        tags$h4(\"Legend\"),\n        tags$div(style=\"display:flex; align-items:center; margin-bottom:5px;\",\n                 tags$div(style=\"width:20px; height:20px; background-color:rgba(255,0,0,0.25); margin-right:10px;\"),\n                 \"True Positive (T=+, D=+)\"\n        ),\n        tags$div(style=\"display:flex; align-items:center; margin-bottom:5px;\",\n                 tags$div(style=\"width:20px; height:20px; background-color:rgba(0,255,0,0.25); margin-right:10px;\"),\n                 \"False Negative (T=-, D=+)\"\n        ),\n        tags$div(style=\"display:flex; align-items:center; margin-bottom:5px;\",\n                 tags$div(style=\"width:20px; height:20px; background-color:rgba(0,0,255,0.25); margin-right:10px;\"),\n                 \"True Negative (T=-, D=-)\"\n        ),\n        tags$div(style=\"display:flex; align-items:center; margin-bottom:5px;\",\n                 tags$div(style=\"width:20px; height:20px; background-color:rgba(255,165,0,0.25); margin-right:10px;\"),\n                 \"False Positive (T=+, D=-)\"\n        )\n      )\n    )\n  )\n)\n\nserver &lt;- function(input, output) {\n  \n  output$distPlot &lt;- renderPlot({\n    \n    p &lt;- input$p\n    TNR &lt;-input$TNR\n    TPR &lt;- input$TPR\n    \n    FNR &lt;- 1 - TPR\n    FPR &lt;- 1 - TNR\n    \n    par(mar = c(8, 8, 1, 8))\n    \n    plot(0, col = \"white\", xlim = c(0, 1), ylim = c(0, 1),\n         xaxt = \"n\", yaxt = \"n\", bty = \"n\", xlab = \"\", ylab = \"\")\n    \n    polygon(c(0, p, p, 0), c(FNR, FNR, 1.0, 1.0), col = rgb(1, 0, 0, alpha = 0.25), border = NA)\n    polygon(c(0, p, p, 0), c(0, 0, FNR, FNR), col = rgb(0, 1, 0, alpha = 0.25), border = NA)\n    polygon(c(p, 1, 1, p), c(0, 0, TNR, TNR), col = rgb(0, 0, 1, alpha = 0.25), border = NA)\n    polygon(c(p, 1, 1, p), c(TNR, TNR, 1, 1), col = rgb(1, 0.647, 0, alpha = 0.25), border = NA)\n    \n    mtext(\"TNR\", side = 4, at = TNR / 2, las = 1)\n    mtext(\"FPR\", side = 4, at = (1 + TNR) / 2, las = 1)\n    \n    mtext(\"TPR\", side = 2, at = (1 + FNR) / 2, las = 1, line = 2)\n    mtext(\"FNR\", side = 2, at = FNR / 2, las = 1, line = 2)\n    \n    mtext(\"p(D = +)\", side = 1, at = p / 2, las = 1, line = 2)\n    mtext(\"p(D = -)\", side = 1, at = (1 + p) / 2, las = 1, line = 2)\n    \n    mtext(c(\"0\", \"1\"), side = 1, at = c(0, 1), las = 1)\n    mtext(c(\"0\", \"1\"), side = 2, at = c(0, 1), las = 1)\n  })\n}\n\nshinyApp(ui = ui, server = server)\n\n\nThe application below displays how testing positive shifts the probability of disease from \\(P(D=+)\\) to \\(P(D = +\\,|\\,T=+)\\). The size of the revision ultimately depends on how big \\(P(D=+)\\) was to begin with, and how good the test is (TPR and TNR). Play around with different values and see what happens:\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 500\n\nlibrary(shiny)\n\n# Define UI for application that draws a histogram\nui &lt;- fluidPage(\n\n    # Application title\n    titlePanel(\"What can a diagnostic test teach you?\"),\n\n    # Sidebar with a slider input for number of bins \n    sidebarLayout(\n        sidebarPanel(\n            sliderInput(\"TPR\",\n                        \"Sensitivity (TPR):\",\n                        min = 0,\n                        max = 1,\n                        value = 0.5),\n            sliderInput(\"TNR\",\n                        \"Specificity (TNR):\",\n                        min = 0,\n                        max = 1,\n                        value = 0.5)\n        ),\n\n        # Show a plot of the generated distribution\n        mainPanel(\n           plotOutput(\"distPlot\")\n        )\n    )\n)\n\n# Define server logic required to draw a histogram\nserver &lt;- function(input, output) {\n\n    output$distPlot &lt;- renderPlot({\n      TPR &lt;- input$TPR\n      TNR &lt;- input$TNR\n      P &lt;- seq(0, 1, length.out = 1000)\n      B &lt;- TPR * P / (TPR * P + (1 - TNR) * (1 - P))\n\n      # draw the histogram with the specified number of bins\n      par(mar = c(5, 5, 5, 0.5))\n      plot(P, B, type = \"l\", xlim = c(0, 1), ylim = c(0, 1),\n           xlab = \"P(D = +)\", ylab = \"P(D = + | T = +)\",\n           lwd = 2, cex.lab = 2,\n           panel.first = abline(a = 0, b = 1, lty = 2, lwd = 2, col = \"grey\"))\n    })\n}\n\n# Run the application \nshinyApp(ui = ui, server = server)"
   },
   {
     "objectID": "problems/pset-4.html",
@@ -1879,131 +1774,47 @@
     ]
   },
   {
-    "objectID": "distributions/continuous-binormal.html",
-    "href": "distributions/continuous-binormal.html",
-    "title": "Bivariate normal distribution",
+    "objectID": "distributions/discrete-binomial.html",
+    "href": "distributions/discrete-binomial.html",
+    "title": "Binomial distribution",
     "section": "",
-    "text": "\\[\n    \\begin{aligned}\n        f_{XY}(x, y)\n        =\n        &\\frac{1}{2\\pi\\sigma_x\\sigma_y\\sqrt{1-\\rho^2}}\n        \\\\\n        &\n        \\times\n        \\exp\\left(-\\frac{1}{2(1-\\rho^2)}\\left[\n        \\left(\\frac{x-\\mu_x}{\\sigma_x}\\right)^2\n        -\n        2\\rho\n        \\left(\\frac{x-\\mu_x}{\\sigma_x}\\right)\n        \\left(\\frac{y-\\mu_y}{\\sigma_y}\\right)\n        +\n        \\left(\\frac{y-\\mu_y}{\\sigma_y}\\right)^2\n        \\right]\\right),\n        \\\\\n        &\n        \\\\\n        &\n        (x, y)\\in\\mathbb{R}^2,\n    \\end{aligned}\n\\]\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 700\n\nfxy = function(x, y, mu, Sig, sd1, sd2, rho) {\n  \n  if(missing(mu)) mu=c(0,0)\n  \n  if(!missing(Sig)) {\n    sd1 = sqrt(Sig[1,1])\n    sd2 = sqrt(Sig[2,2])\n    if(Sig[1,2] != Sig[2,1]) {\n      print(\"Covariance matrix is not symmetric... Returning .\")\n      return(NULL)\n    }\n    rho = Sig[1,2]/(sd1*sd2)\n  }\n  else if(missing(rho) || missing(sd1) || missing(sd2)) {\n    sd1 = sd2 = 1\n    rho = 0\n  }\n  \n  Q = (x-mu[1])^2/sd1^2 + (y-mu[2])^2/sd2^2 -\n    2*rho*(x-mu[1])*(y-mu[2])/(sd1*sd2)\n  \n  1/(2*pi*sd1*sd2*sqrt(1-rho^2))*exp(-Q/(2*(1-rho^2)))\n}\n\n\n## Calls persp() with preferred arguments\npersp.plot = function(x, y, z, main=\"Bivariate Normal Density\",\n                      theta=30, phi=25, r=50, d=.1, expand=0.5, ltheta=90, lphi=180,\n                      shade=0.5, ticktype=\"simple\", nticks=5, col=\"lightgreen\", zlab=\"\", ...) {\n  \n  persp(x, y, z, main=main,\n        theta=theta, phi=phi, r=r, d=d, expand=expand, ltheta=ltheta,\n        lphi=lphi, shade=shade, ticktype=ticktype, nticks=nticks,\n        col=col, zlab=zlab, ...)\n}\n\n\n## Creates covariance matrix from sd.x, sd.y, and rho\ncalc.Sig = function(sd.x, sd.y, rho) {\n  \n  sig.xy = rho*sd.x*sd.y\n  matrix(c(sd.x^2, sig.xy, sig.xy, sd.y^2), nrow=2)\n}\n\n\n## Returns bivariate normal density for specified x-y grid\ndmvnorm = function(x, y, mu, Sig) {\n  \n  if(missing(mu)) mu = c(0,0)\n  if(missing(Sig)) Sig = diag(2)\n  \n  outer(x, y, fxy, mu, Sig)\n}\n\n\n## This is only the kernel of the bivariate Normal density\n## x is a 2x1 vector\nf = function(x, y, mu=c(0,0), sd.x=1, sd.y=1, rho=0) {\n  \n  #t(X-mu)%*%solve(Sig)%*%(X-mu)\n  mu.x = mu[1]\n  mu.y = mu[2]\n  A = (x-mu.x)^2/sd.x^2 + (y-mu.y)^2/sd.y^2\n  B = 2*rho/(sd.x*sd.y)*(x-mu.x)*(y-mu.y)\n  return((A-B)/(1-rho^2))\n}\n\n\n### End: Function definitions ###\n\n\n\n\nlibrary(shiny)\n\n# Define UI for application that draws a histogram\nui &lt;- fluidPage(\n  \n  # Application title\n  titlePanel(\"The bivariate normal density\"),\n  \n  # Sidebar with a slider input for number of bins \n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"sd.x\",\n                  \"X standard deviation:\",\n                  min = 0,\n                  max = 1,\n                  value = 0.5,\n                  step = 0.01),\n      sliderInput(\"sd.y\",\n                  \"Y standard deviation:\",\n                  min = 0,\n                  max = 1,\n                  value = 0.5,\n                  step = 0.01),\n      sliderInput(\"rho\",\n                  \"Correlation:\",\n                  min = -1,\n                  max = 1,\n                  value = 0,\n                  step = 0.01)\n    ),\n    \n    # Show a plot of the generated distribution\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n# Define server logic required to draw a histogram\nserver &lt;- function(input, output) {\n  \n  output$distPlot &lt;- renderPlot({\n    \n    ## Define sequence of parameter\n    \n    p.seq = c(.8, .9, .95, .99)\n    cont.lev = qchisq(p.seq, 2)\n    cont.lab = c(\"80%\", \"90%\", \"95%\", \"99%\")\n    \n    \n    ## Plotting starts here\n    \n    par(cex.lab=2)\n    par(cex.axis=1.75)\n    par(las=1)\n    par(mfrow=c(1,2))  # 1.5:1 aspect ratio\n    \n    sd.x = input$sd.x\n    sd.y = input$sd.y\n    rho = input$rho\n    N = 100\n    x = y = seq(-3.2,3.2,le=N)  # create x-y grid of size NxN\n    mu = c(0,0)\n    \n    \n    z = dmvnorm(x, y, mu, calc.Sig(sd.x, sd.y, rho))\n    persp.plot(x, y, z, main=\"\", col=\"lightblue\", border=NA, cex.lab=1.5,\n               axes=F)\n    \n    ## Contour Plot\n    z = outer(x, y, f, mu, sd.x, sd.y, rho)\n    contour(x, y, z, levels=cont.lev, cex.axis=1.4, labels=cont.lab,\n            xlab=\"x\", ylab=\"y\", cex.lab=1.5)\n    abline(v=0, h=0, lty=3, col=\"darkgrey\")\n    \n  })\n}\n\n# Run the application \nshinyApp(ui = ui, server = server)"
-  },
-  {
-    "objectID": "distributions/continuous-gamma.html",
-    "href": "distributions/continuous-gamma.html",
-    "title": "Gamma distribution",
-    "section": "",
-    "text": "The gamma distribution is a common choice for modeling continuous quantities that are non-negative: dollar amounts, waiting times, etc. It is governed by two positive parameters: the shape \\(\\alpha&gt;0\\) and the rate \\(\\beta&gt;0\\). Don’t worry about interpreting what those words mean. They’re just labels."
-  },
-  {
-    "objectID": "distributions/continuous-gamma.html#basic-properties",
-    "href": "distributions/continuous-gamma.html#basic-properties",
-    "title": "Gamma distribution",
-    "section": "Basic properties",
-    "text": "Basic properties\nThe gamma distribution gets its name because it is related to the so-called gamma function, which appears in the normalizing constant:\n\\[\n\\Gamma(\\alpha) = \\int_0^\\infty x^{\\alpha-1}e^{-x}\\,\\text{d}x.\n\\]\nWe have a lil’ math explainer where you can read more about it.\n\n\n\n\n\n\n\nNotation\n\\(X\\sim\\text{Gamma}(\\alpha,\\,\\beta)\\)\n\n\nRange\n\\([0,\\,\\infty)\\)\n\n\nParameter space\n\\(\\alpha,\\,\\beta&gt;0\\)\n\n\nPDF\n\\(f(x)=\\begin{cases}\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}x^{\\alpha-1}e^{-\\beta x} &x\\geq 0\\\\0 & x&lt;0.\\end{cases}\\)\n\n\nMGF\n\n\\(M(t)=\\left(\\frac{\\beta}{\\beta-t}\\right)^\\alpha\\), \\(t&lt;\\beta\\)\n\n\n\nExpectation\n\\(\\alpha/\\beta\\)\n\n\nVariance\n\\(\\alpha/\\beta^2\\)"
-  },
-  {
-    "objectID": "distributions/continuous-gamma.html#special-cases",
-    "href": "distributions/continuous-gamma.html#special-cases",
-    "title": "Gamma distribution",
-    "section": "Special cases",
-    "text": "Special cases\nParticular special cases of the gamma distribution get special nicknames:\n\nIf \\(X\\sim\\text{Gamma}(1,\\,\\beta)\\), then \\(X\\) has the exponential distribution, denoted \\(X\\sim\\text{Exp}(\\beta)\\) This special case is nice because we get closed-form expressions for the CDF and the quantile function:\n\n\\[\n\\begin{aligned}\nf(x)&=\\beta e^{-\\beta x}\\\\\nF(x)&=1-e^{-\\beta x}\\\\\nF^{-1}(p)&=-\\frac{\\ln(1-p)}{\\beta}.\n\\end{aligned}\n\\]\n\nIf \\(X\\sim\\text{Gamma}(\\nu/2,\\, 1/2)\\), then \\(X\\) has the chi-squared distribution, denoted \\(X\\sim\\chi^2_\\nu\\). In this context we call the parameter \\(\\nu&gt;0\\) the degrees of freedom of the chi-squared distribution.\nIf \\(X\\sim\\text{Gamma}(k,\\,\\beta)\\) for some integer \\(k\\), then \\(X\\) has the Erlang distribution, denoted \\(X\\sim\\text{Erlang}(k,\\, \\beta)\\)"
-  },
-  {
-    "objectID": "distributions/continuous-gamma.html#r-commands",
-    "href": "distributions/continuous-gamma.html#r-commands",
-    "title": "Gamma distribution",
-    "section": "\nR commands",
-    "text": "R commands\nHere is the documentation for the suite of commands that let you work with the gamma distribution in R:\n\ndgamma(x, shape, rate = 1) # PDF\npgamma(q, shape, rate = 1) # CDF: P(X &lt;= q)\nqgamma(p, shape, rate = 1) # quantile function (inverse CDF)\nrgamma(n, shape, rate = 1) # random numbers"
-  },
-  {
-    "objectID": "distributions/continuous-gamma.html#play-around",
-    "href": "distributions/continuous-gamma.html#play-around",
-    "title": "Gamma distribution",
-    "section": "Play around!",
-    "text": "Play around!\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 700\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  titlePanel(\"Gamma distribution CDF and PDF\"),\n  \n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"alpha\", \"Shape (α):\",\n                  min = 0.5, max = 5, value = 2, step = 0.1),\n      sliderInput(\"beta\", \"Rate (β):\",\n                  min = 0.2, max = 2, value = 0.5, step = 0.05),\n      hr(),\n      verbatimTextOutput(\"moments\")\n    ),\n    \n    mainPanel(\n      plotOutput(\"gammaPlot\", height = \"600px\")\n    )\n  )\n)\n\nserver &lt;- function(input, output) {\n  output$moments &lt;- renderText({\n    alpha &lt;- input$alpha\n    beta  &lt;- input$beta\n    mu &lt;- alpha / beta\n    sd &lt;- sqrt(alpha) / beta\n    paste0(\"E(X) = \", round(mu, 3),\n           \"\\nsd(X) = \", round(sd, 3))\n  })\n  \n  output$gammaPlot &lt;- renderPlot({\n    alpha &lt;- input$alpha\n    beta  &lt;- input$beta\n    \n    # Fixed plotting range\n    x_min &lt;- -2\n    x_max &lt;- 25\n    x &lt;- seq(x_min, x_max, length.out = 2000)\n    \n    # PDF and CDF\n    pdf_vals &lt;- ifelse(x &gt;= 0, dgamma(x, shape = alpha, rate = beta), 0)\n    cdf_vals &lt;- ifelse(x &gt;= 0, pgamma(x, shape = alpha, rate = beta), 0)\n    \n    mu &lt;- alpha / beta\n    \n    # Fixed y-limits\n    pdf_ylim &lt;- c(0, 0.8)\n    cdf_ylim &lt;- c(0, 1)\n    \n    par(mfrow = c(2, 1), mar = c(4, 4, 2, 1))\n    \n    # --- CDF ---\n    plot(x, cdf_vals, type = \"l\", lwd = 2, col = \"blue\",\n         xlim = c(x_min, x_max), ylim = cdf_ylim,\n         main = \"Cumulative Distribution Function (CDF)\",\n         xlab = \"\", ylab = \"F(x)\")\n    abline(h = c(0, 1), col = \"gray80\", lty = 2)\n    #abline(v = mu, col = \"gray60\", lty = 3)\n    \n    # --- PDF ---\n    plot(x, pdf_vals, type = \"l\", lwd = 2, col = \"darkred\",\n         xlim = c(x_min, x_max), ylim = pdf_ylim,\n         main = \"Probability Density Function (PDF)\",\n         xlab = \"x\", ylab = \"f(x)\")\n    #abline(v = mu, col = \"gray60\", lty = 3)\n    \n    # Label E(X) with mtext along x-axis\n    if (mu &gt;= x_min && mu &lt;= x_max) {\n      mtext(\"E(X)\",\n            side = 1, line = 2.2, at = mu, cex = 1.0)\n    }\n  })\n}\n\nshinyApp(ui = ui, server = server)"
-  },
-  {
-    "objectID": "distributions/continuous-gamma.html#derivations",
-    "href": "distributions/continuous-gamma.html#derivations",
-    "title": "Gamma distribution",
-    "section": "Derivations",
-    "text": "Derivations\n\n\n\n\n\n\nTipCDF, quantile function, and median of Gamma(1, \\(\\beta\\))\n\n\n\n\n\nLet \\(X\\sim\\text{Exp}(\\beta)\\), and recall that this means \\(X\\sim\\text{Gamma}(\\alpha=1,\\, \\beta)\\). So the pdf is \\(f_X(x)=\\beta\\exp(-\\beta x)\\) for \\(x&gt;0\\), and the cdf is\n\\[\n\\begin{aligned}\nF_X(x)\n&=\n\\int_0^x\\beta e^{-\\beta t}\\,\\text{d} t\n=\n[\n-e^{\\beta t}\n]_0^x\n=\n1-e^{-\\beta x},\\quad x&gt;0.\n\\end{aligned}\n\\]\nFor some \\(y\\in(0,\\, 1)\\), we see that\n\\[\n\\begin{align*}\ny&=1-e^{-\\beta x}\\\\\ne^{-y}&=1-y\\\\\n-\\beta x&=\\ln(1-y)\\\\\nx&=\\frac{-\\ln(1-y)}{\\beta},\n\\end{align*}\n\\]\nand so the quantile function is\n\\[\nF_X^{-1}(y)=-\\frac{\\ln(1-y)}{\\beta},\n\\]\nand the median of the exponential distribution is\n\\[\nF_X^{-1}(0.5)=-\\frac{\\ln(1-0.5)}{\\beta}=-\\frac{\\ln(0.5)}{\\beta}=\\frac{\\ln 2}{\\beta}.\n\\]\n\n\n\n\n\n\n\n\n\nNoteMoment-generating function\n\n\n\n\n\nThis is classic “massage and squint.” Let \\(t\\in(-\\infty,\\,\\beta)\\). Then\n\\[\n      \\begin{align*}\n          M_X(t)&=E\\left(e^{tX}\\right)\\\\\n          &=\\int_0^\\infty e^{tx}\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}x^{\\alpha-1}e^{-\\beta x}\\,\\text{d} x && \\text{LOTUS}\\\\\n          &=\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}\\int_0^\\infty x^{\\alpha-1}e^{tx}e^{-\\beta x}\\,\\text{d} x && \\text{pull out constant}\\\\\n          &=\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}\\int_0^\\infty x^{\\alpha-1}e^{tx-\\beta x}\\,\\text{d} x&& \\text{combine base-e terms}\\\\\n`         &=\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}\\int_0^\\infty x^{\\alpha-1}e^{(t-\\beta) x}\\,\\text{d} x&& \\text{factor out }x\\\\\n`         &=\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}\\int_0^\\infty x^{\\alpha-1}e^{-(\\beta-t) x}\\,\\text{d} x&& \\text{factor out -1}\\\\\n          &=\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}\\int_0^\\infty \\underbrace{x^{\\alpha-1}e^{-(\\beta-t)x}}_{\\text{kernel of Gamma}(\\alpha,\\,\\beta-t)}\\,\\text{d} x && \\text{recognize}\\\\\n          &=\\frac{\\beta^\\alpha}{{\\Gamma(\\alpha)}}\\frac{{\\Gamma(\\alpha)}}{(\\beta-t)^\\alpha}\\\\\n          &=\\left(\\frac{\\beta}{\\beta-t}\\right)^\\alpha.\n      \\end{align*}\n\\]\nIn order to invoke the gamma density kernel, we require that \\(t&lt;\\beta\\) so that the rate parameter of the implied gamma is positive."
-  },
-  {
-    "objectID": "distributions/continuous-uniform.html",
-    "href": "distributions/continuous-uniform.html",
-    "title": "Continuous uniform distribution",
-    "section": "",
-    "text": "If \\(X\\) is a continuous random quantity that is “equally likely” to take on any value in a bounded interval \\([a,\\, b]\\), then we can model it with the continuous uniform distribution."
-  },
-  {
-    "objectID": "distributions/continuous-uniform.html#basic-properties",
-    "href": "distributions/continuous-uniform.html#basic-properties",
-    "title": "Continuous uniform distribution",
-    "section": "Basic properties",
-    "text": "Basic properties\n\n\n\n\n\n\n\nNotation\n\\(X\\sim\\text{Unif}(a,\\,b)\\)\n\n\nRange\n\\([a,\\,b]\\)\n\n\nParameter space\n\\(-\\infty &lt; a &lt; b &lt; \\infty\\)\n\n\nPDF\n\\(f(x)=\\begin{cases}\\frac{1}{b-a} & a\\leq x\\leq b\\\\0&\\text{else}\\end{cases}\\)\n\n\nCDF\n\\(F(x)=\\begin{cases}0 & x &lt; a\\\\\\frac{x-a}{b-a} & a\\leq x\\leq b\\\\1&b&lt;x\\end{cases}\\)\n\n\nExpectation\n\\(\\frac{a+b}{2}\\)\n\n\nVariance\n\\((b-a)^2/12\\)\n\n\n\nFun facts:\n\nUnif(0, 1) is called the standard uniform distribution."
-  },
-  {
-    "objectID": "distributions/continuous-uniform.html#r-commands",
-    "href": "distributions/continuous-uniform.html#r-commands",
-    "title": "Continuous uniform distribution",
-    "section": "\nR commands",
-    "text": "R commands\nHere is the documentation for the suite of commands that let you work with the normal distribution in R:\n\ndunif(x, min, max) # PDF\npunif(q, min, max) # CDF: P(X &lt;= q)\nqunif(p, min, max) # quantile function\nrunif(n, min, max) # random numbers"
-  },
-  {
-    "objectID": "distributions/continuous-uniform.html#play-around",
-    "href": "distributions/continuous-uniform.html#play-around",
-    "title": "Continuous uniform distribution",
-    "section": "Play around!",
-    "text": "Play around!\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 600\n#| fig-asp: 1\n\nlibrary(shiny)\n\n# Define UI for application that draws a histogram\nui &lt;- fluidPage(\n  \n  # Application title\n  titlePanel(\"Uniform distribution CDF and PDF\"),\n  \n  # Sidebar with a slider input for number of bins \n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"a\",\n                  \"Lower bound (a):\",\n                  min = 0,\n                  max = 2,\n                  value = 1,\n                  step = 0.1),\n      sliderInput(\"b\",\n                  \"Upper bound (b):\",\n                  min = 3,\n                  max = 5,\n                  value = 4,\n                  step = 0.1)\n    ),\n    \n    # Show a plot of the generated distribution\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n# Define server logic required to draw a histogram\nserver &lt;- function(input, output) {\n  \n  output$distPlot &lt;- renderPlot({\n    \n    a &lt;- input$a\n    b &lt;- input$b\n\n    par(mfrow = c(2, 1), mar = c(4, 4, 2, 2))\n    \n    curve(punif(x, min = a, max = b), from = -1, to = 6, n = 1000,\n          ylab = \"\", col = \"red\", xlim = c(0, 5))\n    curve(0*x, from = -1, to = a, n = 1000, \n          ylim = c(0, 1), ylab = \"\", col = \"red\", xlim = c(0, 5))\n    curve(dunif(x, min = a, max = b), from = a, to = b, n = 1000, \n          ylim = c(0, 1), ylab = \"\", col = \"red\", add = TRUE)\n    curve(0*x, from = b, to = 6, n = 1000, \n          ylim = c(0, 1), ylab = \"\", col = \"red\", add = TRUE)\n  })\n}\n\n# Run the application \nshinyApp(ui = ui, server = server)"
-  },
-  {
-    "objectID": "distributions/continuous-uniform.html#derivations",
-    "href": "distributions/continuous-uniform.html#derivations",
-    "title": "Continuous uniform distribution",
-    "section": "Derivations",
-    "text": "Derivations\n\n\n\n\n\n\nNoteThe pdf integrates to 1\n\n\n\n\n\n\\[\n\\begin{aligned}\n    \\int_{-\\infty}^\\infty f_X(x)\\,\\text{d} x\n    &=\n    \\int_{-\\infty}^a f_X(x)\\,\\text{d} x\n    +\n    \\int_{a}^b f_X(x)\\,\\text{d} x\n    +\n    \\int_{b}^\\infty f_X(x)\\,\\text{d} x\n    \\\\\n    &=\n    {\\int_{-\\infty}^a 0\\,\\text{d} x}\n    +\n    \\int_{a}^b \\frac{1}{b-a}\\,\\text{d} x\n    +\n    {\\int_{b}^\\infty 0\\,\\text{d} x}\n    \\\\\n    &=\n    \\frac{1}{b-a}\\int_a^b1\\,\\text{d} x\n    \\\\\n    &=\n    \\frac{1}{b-a}\n    [x]_a^b\n    \\\\\n    &=\n    \\frac{1}{b-a}(b-a)\n    \\\\\n    &=\n    1\n    .\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\n\nTipThe CDF\n\n\n\n\n\nThe cdf is \\(F_X(x)=P(X\\leq x)=\\int_{-\\infty}^x f_X(t)\\,\\text{d} t\\). If \\(x&lt; a\\), then\n\\[\nF_X(x)=\\int_{-\\infty}^xf_X(t)\\,\\text{d} t=\\int_{-\\infty}^x0\\,\\text{d} t=0.\n\\]\nIf \\(a\\leq x\\leq b\\), then\n\\[\n\\begin{aligned}\n    F_X(x)\n    &=\n    \\int_{-\\infty}^xf_X(t)\\,\\text{d} t\n    \\\\\n    &=\n    \\int_{-\\infty}^af_X(t)\\,\\text{d} t\n    +\n    \\int_{a}^xf_X(t)\\,\\text{d} t\n    \\\\\n    &=\n    {\\int_{-\\infty}^a0\\,\\text{d} t}\n    +\n    \\int_{a}^x\\frac{1}{b-a}\\,\\text{d} t\n    \\\\\n    &=\n    \\frac{1}{b-a}[t]_a^x\n    \\\\\n    &=\n    \\frac{x-a}{b-a}\n    .\n\\end{aligned}\n\\]\nIf \\(b &lt; x\\), then\n\\[\n\\begin{aligned}\n    F_X(x)\n    &=\n    \\int_{-\\infty}^xf_X(t)\\,\\text{d} t\n    \\\\\n    &=\n    \\int_{-\\infty}^af_X(t)\\,\\text{d} t\n    +\n    \\int_{a}^bf_X(t)\\,\\text{d} t\n    +\n    \\int_{b}^xf_X(t)\\,\\text{d} t\n    \\\\\n        &=\n    {\\int_{-\\infty}^a0\\,\\text{d} t}\n    +\n    \\int_{a}^b\\frac{1}{b-a}\\,\\text{d} t\n    +\n    {\\int_{b}^x0\\,\\text{d} t}\n    \\\\\n    &=1.\n\\end{aligned}\n\\]\nSo the cdf of \\(X\\sim\\text{Unif}(a,\\, b)\\) is\n\\[\n    F_X(x)\n    =\n    \\begin{cases}\n        0 & x&lt;a \\\\\n        \\frac{x-a}{b-a} & a\\leq x\\leq b \\\\\n        1 & b&lt;x.\n    \\end{cases}\n\\]\n\n\n\n\n\n\n\n\n\nNoteThe mean\n\n\n\n\n\nThe expected value is the midpoint of the interval:\n\\[\n\\begin{align*}\n    E(X)\n    &=\n    \\int_{-\\infty}^\\infty\n    xf_X(x)\\,\\text{d} x\n    \\\\\n    &=\n    \\int_{-\\infty}^a\n    xf_X(x)\\,\\text{d} x\n    +\n    \\int_{a}^b\n    xf_X(x)\\,\\text{d} x\n    +\n    \\int_{b}^\\infty\n    xf_X(x)\\,\\text{d} x\n    \\\\\n        &=\n    {\\int_{-\\infty}^a\n    x\\cdot0\\,\\text{d} x}\n    +\n    \\int_{a}^b\n    x\\frac{1}{b-a}\\,\\text{d} x\n    +\n    {\\int_{b}^\\infty\n    x\\cdot0\\,\\text{d} x}\n    \\\\\n    &=\n    0+\\frac{1}{b-a}\\int_a^b x\\,\\text{d} x+0\n    \\\\\n    &=\n    \\frac{1}{b-a}\\left[\\frac{1}{2}x^2\\right]_a^b\n    \\\\\n    &=\n    \\frac{1}{b-a}\\left[\\frac{1}{2}b^2-\\frac{1}{2}a^2\\right]\n    \\\\\n        &=\n    \\frac{1}{2(b-a)}\\left[b^2-a^2\\right]\n    \\\\\n        &=\n    \\frac{1}{2{(b-a)}}{(b-a)}(b+a)\n    \\\\\n    &=\\frac{b+a}{2}.\n\\end{align*}\n\\]\nThat’s the proper derivation, but without the math, we could have reasoned our way to this answer by noting that the range is bounded, so the mean is guaranteed to exist, and the distribution is symmetric, so the mean matches the point of symmetry."
-  },
-  {
-    "objectID": "distributions/discrete-geometric.html",
-    "href": "distributions/discrete-geometric.html",
-    "title": "Geometric distribution",
-    "section": "",
-    "text": "The geometric distribution is based on a (possibly infinite) sequence of independent and identically distributed binary trials, each with probability of success \\(p\\). There are two versions:",
+    "text": "The binomial distribution is our model for the total number of successes in \\(n\\) independent binary trials, each with identical probability of success \\(p\\in[0,\\,1]\\).",
     "crumbs": [
       "Distribution Families",
-      "Geometric"
+      "Binomial"
     ]
   },
   {
-    "objectID": "distributions/discrete-geometric.html#basic-properties",
-    "href": "distributions/discrete-geometric.html#basic-properties",
-    "title": "Geometric distribution",
+    "objectID": "distributions/discrete-binomial.html#basic-properties",
+    "href": "distributions/discrete-binomial.html#basic-properties",
+    "title": "Binomial distribution",
     "section": "Basic properties",
-    "text": "Basic properties\nFor the first version of the distribution that we saw in lecture, the properties are:\n\n\nNotation\n\\(X\\sim\\text{Geom}(p)\\)\n\n\nRange\n\\(\\{1,\\,2,\\,3,\\,4,\\,...\\}\\)\n\n\nParameter space\n\\(p\\in[0,\\,1]\\)\n\n\nPMF\n\\(P(X=k)=(1-p)^{k-1}p\\)\n\n\nExpectation\n\\(1/p\\)\n\n\nVariance\n\\(\\frac{1-p}{p^2}\\)",
+    "text": "Basic properties\n\n\nNotation\n\\(X\\sim\\text{Binom}(n,\\,p)\\)\n\n\nRange\n\\(\\{0,\\,1,\\,2,\\,...,\\,n-1,\\,n\\}\\)\n\n\nParameter space\n\\(p\\in[0,\\,1]\\)\n\n\nPMF\n\\(P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}\\)\n\n\nExpectation\n\\(np\\)\n\n\nVariance\n\\(np(1-p)\\)",
     "crumbs": [
       "Distribution Families",
-      "Geometric"
+      "Binomial"
     ]
   },
   {
-    "objectID": "distributions/discrete-geometric.html#r-commands",
-    "href": "distributions/discrete-geometric.html#r-commands",
-    "title": "Geometric distribution",
+    "objectID": "distributions/discrete-binomial.html#r-commands",
+    "href": "distributions/discrete-binomial.html#r-commands",
+    "title": "Binomial distribution",
     "section": "\nR commands",
-    "text": "R commands\nFor the second version of the distribution, R provides:\n\ndgeom(x, prob) # PMF: P(X = x)\npgeom(q, prob) # CDF: P(X &lt;= q)\nqgeom(p, prob) # quantile function (inverse CDF)\nrgeom(n, prob) # random numbers",
+    "text": "R commands\nHere is the documentation for the suite of commands that let you work with the binomial distribution in R:\n\ndbinom(x, size, prob) # PMF: P(X = x)\npbinom(q, size, prob) # CDF: P(X &lt;= q)\nqbinom(p, size, prob) # quantile function (inverse CDF)\nrbinom(n, size, prob) # random numbers",
     "crumbs": [
       "Distribution Families",
-      "Geometric"
+      "Binomial"
     ]
   },
   {
-    "objectID": "distributions/discrete-geometric.html#play-around",
-    "href": "distributions/discrete-geometric.html#play-around",
-    "title": "Geometric distribution",
+    "objectID": "distributions/discrete-binomial.html#play-around",
+    "href": "distributions/discrete-binomial.html#play-around",
+    "title": "Binomial distribution",
     "section": "Play around!",
-    "text": "Play around!\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 500\n\nlibrary(shiny)\n\ndiscrete_pmf &lt;- function(x, p, xlim = c(min(x) - 1, max(x) + 1), label = \"\", add_mean = FALSE){\n  plot(x, p,\n       pch = 19,\n       cex = 0.5,\n       xlab = \"\",\n       ylab = \"\",\n       main = \"\",\n       ylim = c(0, 0.4),\n       yaxs = \"i\",\n       yaxt = \"n\",\n       xlim = xlim,\n       xaxt = \"n\",\n       bty = \"n\"\n  )\n  segments(x,\n           rep(0, length(x) + 1),\n           x1 = x,\n           y1 = p,\n           lwd = 3\n  )\n  axis(1, at = floor(xlim[1]):ceiling(xlim[2]), cex.axis = 1)\n  axis(2, at = seq(0, 1, length.out = 11), las = 1, cex.axis = 1.5)\n  legend(\"topright\", label, bty = \"n\", cex = 3)\n  if(add_mean == TRUE){\n    mtext(\"E(X)\", side = 1, at = sum(x * p), col = \"red\", line = 2)\n  }\n}\n\ndiscrete_cdf &lt;- function(x, p, xlim = c(min(x) - 1, max(x) + 1), label = \"\"){\n  closeddot = cumsum(p)\n  opencircle = c(0, closeddot[1:length(x)-1])\n  plot(x, closeddot, pch = 19, cex = 0.5,\n       ylim = c(0, 1),\n       ylab = \"\", main = \"\", xlab = \"\",\n       yaxt = \"n\",\n       xlim = xlim,\n       xaxt = \"n\",\n       #yaxs = \"i\", \n       bty = \"n\")\n  points(x, opencircle, cex = 0.5)\n  segments(c(xlim[1], x), c(0, closeddot), c(x, xlim[2]), c(0, closeddot), lwd = 1)\n  axis(1, at = floor(xlim[1]):ceiling(xlim[2]), cex.axis = 1)\n  axis(2, at = seq(0, 1, length.out = 11), las = 1, cex.axis = 1.5)\n  legend(\"bottomright\", label, bty = \"n\", cex = 3)\n}\n\n# Define UI for application that draws a histogram\nui &lt;- fluidPage(\n  \n  # Application title\n  titlePanel(\"Geometric distribution CDF and PMF\"),\n  \n  # Sidebar with a slider input for number of bins \n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"p\",\n                  \"Probability of success (p):\",\n                  min = 0,\n                  max = 1,\n                  value = 0.5,\n                  step = 0.01)\n    ),\n    \n    # Show a plot of the generated distribution\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n# Define server logic required to draw a histogram\nserver &lt;- function(input, output) {\n  \n  output$distPlot &lt;- renderPlot({\n    \n    p &lt;- input$p\n    n &lt;- 30\n\n    par(mfrow = c(2, 1), mar = c(4, 4, 2, 2))\n    \n    discrete_cdf(1:n, dgeom(0:(n-1), p))\n    plot(1:n, dgeom(0:(n-1), p), type = \"h\",\n         #ylim = c(0, 1),\n        yaxs = \"i\",\n       yaxt = \"n\",\n       ylab = \"\",\n       xlim = c(0, n + 1),\n       xlab = \"\",\n       xaxt = \"n\",\n       bty = \"n\")\n    axis(1, at = 0:(n+1), cex.axis = 1)\n    axis(2, at = seq(0, 1, length.out = 11), las = 1, cex.axis = 1.5)\n    mtext(\"E(X)\", side = 1, at = 1 / p, col = \"red\", line = 2)\n  })\n}\n\n# Run the application \nshinyApp(ui = ui, server = server)",
+    "text": "Play around!\nNotice that, for all values of \\(p\\in(0,\\,1)\\), the shape of the PMF becomes more like the bell curve as \\(n\\) grows:\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 500\n\nlibrary(shiny)\n\ndiscrete_pmf &lt;- function(x, p, xlim = c(min(x) - 1, max(x) + 1), label = \"\", add_mean = FALSE){\n  plot(x, p,\n       pch = 19,\n       cex = 1,\n       xlab = \"\",\n       ylab = \"\",\n       main = \"\",\n       ylim = c(0, 1.05 * max(p)),\n       yaxs = \"i\",\n       yaxt = \"n\",\n       xlim = xlim,\n       xaxt = \"n\",\n       bty = \"n\"\n  )\n  segments(x,\n           rep(0, length(x) + 1),\n           x1 = x,\n           y1 = p,\n           lwd = 3\n  )\n  axis(1, at = floor(xlim[1]):ceiling(xlim[2]), cex.axis = 1)\n  axis(2, at = seq(0, 1, length.out = 11), las = 1, cex.axis = 1.5)\n  legend(\"topright\", label, bty = \"n\", cex = 3)\n  if(add_mean == TRUE){\n    mtext(\"E(X)\", side = 1, at = sum(x * p), col = \"red\", line = 2)\n  }\n}\n\ndiscrete_cdf &lt;- function(x, p, xlim = c(min(x) - 1, max(x) + 1), label = \"\"){\n  closeddot = cumsum(p)\n  opencircle = c(0, closeddot[1:length(x)-1])\n  plot(x, closeddot, pch = 19, cex = 1,\n       ylim = c(0, 1),\n       ylab = \"\", main = \"\", xlab = \"\",\n       yaxt = \"n\",\n       xlim = xlim,\n       xaxt = \"n\",\n       #yaxs = \"i\", \n       bty = \"n\")\n  points(x, opencircle, cex = 1)\n  segments(c(xlim[1], x), c(0, closeddot), c(x, xlim[2]), c(0, closeddot), lwd = 1)\n  axis(1, at = floor(xlim[1]):ceiling(xlim[2]), cex.axis = 1)\n  axis(2, at = seq(0, 1, length.out = 11), las = 1, cex.axis = 1.5)\n  legend(\"bottomright\", label, bty = \"n\", cex = 3)\n}\n\n# Define UI for application that draws a histogram\nui &lt;- fluidPage(\n  \n  # Application title\n  titlePanel(\"Binomial distribution CDF and PMF\"),\n  \n  # Sidebar with a slider input for number of bins \n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"p\",\n                  \"Probability of success (p):\",\n                  min = 0,\n                  max = 1,\n                  value = 0.5,\n                  step = 0.01),\n      sliderInput(\"n\",\n                  \"Number of trials (n):\",\n                  min = 1,\n                  max = 100,\n                  value = 5,\n                  step = 1)\n    ),\n    \n    # Show a plot of the generated distribution\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n# Define server logic required to draw a histogram\nserver &lt;- function(input, output) {\n  \n  output$distPlot &lt;- renderPlot({\n    \n    p &lt;- input$p\n    n &lt;- input$n\n\n    par(mfrow = c(2, 1), mar = c(4, 4, 2, 2))\n    \n    discrete_cdf(0:n, dbinom(0:n, n, p))\n    discrete_pmf(0:n, dbinom(0:n, n, p), add_mean = TRUE)\n    \n  })\n}\n\n# Run the application \nshinyApp(ui = ui, server = server)",
     "crumbs": [
       "Distribution Families",
-      "Geometric"
+      "Binomial"
     ]
   },
   {
