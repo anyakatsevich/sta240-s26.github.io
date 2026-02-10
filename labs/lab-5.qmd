@@ -1,6 +1,6 @@
 ---
 title: "Lab 5"
-subtitle: Due Thursday October 2 at 11:59 PM
+subtitle: Due Thursday February 19 at 11:59 PM
 format: html
 draft: false
 editor: 
@@ -78,6 +78,7 @@ Given this setup, define a new random variable $X$ that counts the total number 
 
 Use `R` to compute the probability that I get at least one match that day.
 
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 
@@ -89,11 +90,12 @@ match_prob
 ```
 
 :::
+-->
 
 ## Task 4
 
 Use `R` to plot the PMF of $X$.
-
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 
@@ -104,6 +106,7 @@ plot(0:n, dbinom(0:n, n, like_prob),
 ```
 
 :::
+-->
 
 ## Task 5
 
@@ -111,6 +114,7 @@ Let's say that every day, I wake up, pour the coffee, do some lil' granny stretc
 
 What is the distribution of $Y$? Use `R` to plot its PMF.
 
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 
@@ -121,11 +125,13 @@ plot(1:26, dgeom(0:25, match_prob), type = "h", ylab = "P(Y = k)", xlab = "k")
 ```
 
 :::
+-->
 
 ## Task 6
 
 Let's say I first downloaded the app on a Sunday. Use `R` to compute the probability that I get a match in the first week.
 
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 
@@ -134,8 +140,8 @@ We want the probability that one of the first 7 trials is a success. So $P(Y\leq
 ```{r}
 pgeom(7 - 1, match_prob)
 ```
-
 :::
+-->
 
 ## Task 7 (optional)
 
@@ -143,6 +149,7 @@ When you post your profile on a dating app, everyone in your area can see and sw
 
 For an ordinary person, perhaps $Z\sim\text{Poisson}(5)$. Use `R` to compute the probability that such a person beats their average for the day.
 
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 
@@ -152,11 +159,13 @@ We want $P(Z>5)=1-P(Y\leq 5)$:
 1 - ppois(5, lambda = 5)
 ```
 :::
+-->
 
 ## Task 8 (optional)
 
 Use `R` to plot the PMF of $Z$.
 
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 
@@ -165,5 +174,6 @@ plot(0:25, dpois(0:25, 5), type = "h", ylab = "P(Z = k)", xlab = "k")
 ```
 
 :::
+-->
 
 
