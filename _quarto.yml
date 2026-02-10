@@ -11,7 +11,9 @@ project:
   - problems/exam-midterm-1.qmd
   - apps/disease-testing.qmd
   - lab-notes/**.pdf
-  - distributions/**.qmd
+  - distributions/discrete-binomial.qmd
+  - distributions/discrete-geometric.qmd
+  - distributions/discrete-poisson.qmd
   - labs/lab-1.qmd
   - labs/lab-2.qmd
   - labs/lab-3.qmd
