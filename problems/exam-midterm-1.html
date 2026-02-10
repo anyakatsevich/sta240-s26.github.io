@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>if-else statements and logical conditions – STA 240 Spring 2026</title>
+
+
+<title>Midterm 1 Study Guide – STA 240 Spring 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,42 +20,8 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
+
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -60,8 +29,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../explainers/loops.html" rel="next">
-<link href="../explainers/sample.html" rel="prev">
+<link href="../labs/lab-5.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -72,7 +40,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-d640c705e8c17715bca3574aa719063f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d0086a85466981861881e17a07507999.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-d0086a85466981861881e17a07507999.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -99,29 +68,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<meta property="og:title" content="if-else statements and logical conditions – STA 240 Spring 2026">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Midterm 1 Study Guide – STA 240 Spring 2026">
 <meta property="og:description" content="Homepage for STA 240 Probability for Statistical Inference">
 <meta property="og:site_name" content="STA 240 Spring 2026">
 </head>
+
 <body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../explainers/setup.html">R Helpers</a></li><li class="breadcrumb-item"><a href="../explainers/if-else.html">if-else and logic</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problems/exam-midterm-1.html">Exam Study Guides</a></li><li class="breadcrumb-item"><a href="../problems/exam-midterm-1.html">Midterm 1</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none"><img src="../img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none"></a>
+      <img src="../img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="quarto-navigation-tool px-1" aria-label="RStudio Containers"><i class="bi bi-code-square"></i></a>
     <a href="https://go.canvas.duke.edu/" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-megaphone"></i></a>
@@ -136,7 +145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Syllabus</span></a>
@@ -144,8 +153,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../syllabus/syllabus_overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
@@ -188,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -197,8 +206,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../math/greeks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Greek alphabet</span></a>
@@ -235,17 +244,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">R Helpers</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../explainers/setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
@@ -295,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../explainers/if-else.html" class="sidebar-item-text sidebar-link active">
+  <a href="../explainers/if-else.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">if-else and logic</span></a>
   </div>
 </li>
@@ -342,7 +351,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
@@ -351,8 +360,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../distributions/discrete-binomial.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Binomial</span></a>
@@ -371,7 +380,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
@@ -380,8 +389,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset-0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Set 0</span></a>
@@ -412,7 +421,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
@@ -421,8 +430,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../labs/lab-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 1</span></a>
@@ -453,38 +462,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Exam Study Guides</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../problems/exam-midterm-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../problems/exam-midterm-1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Midterm 1</span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#logical-conditions" id="toc-logical-conditions" class="nav-link active" data-scroll-target="#logical-conditions">Logical conditions</a></li>
-  </ul></nav>
+  <li><a href="#probability-spaces-axioms-and-rules" id="toc-probability-spaces-axioms-and-rules" class="nav-link active" data-scroll-target="#probability-spaces-axioms-and-rules">Probability spaces (axioms and rules)</a>
+  <ul class="collapse">
+  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1">Problem 1</a></li>
+  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2</a></li>
+  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3">Problem 3</a></li>
+  <li><a href="#problem-4" id="toc-problem-4" class="nav-link" data-scroll-target="#problem-4">Problem 4</a></li>
+  <li><a href="#want-more-review" id="toc-want-more-review" class="nav-link" data-scroll-target="#want-more-review">Want more review?</a></li>
+  </ul></li>
+  <li><a href="#counting" id="toc-counting" class="nav-link" data-scroll-target="#counting">Counting</a>
+  <ul class="collapse">
+  <li><a href="#problem-5" id="toc-problem-5" class="nav-link" data-scroll-target="#problem-5">Problem 5</a></li>
+  <li><a href="#problem-6" id="toc-problem-6" class="nav-link" data-scroll-target="#problem-6">Problem 6</a></li>
+  <li><a href="#problem-7" id="toc-problem-7" class="nav-link" data-scroll-target="#problem-7">Problem 7</a></li>
+  <li><a href="#want-more-review-1" id="toc-want-more-review-1" class="nav-link" data-scroll-target="#want-more-review-1">Want more review?</a></li>
+  </ul></li>
+  <li><a href="#conditional-probability-and-independence" id="toc-conditional-probability-and-independence" class="nav-link" data-scroll-target="#conditional-probability-and-independence">Conditional probability and independence</a>
+  <ul class="collapse">
+  <li><a href="#problem-8" id="toc-problem-8" class="nav-link" data-scroll-target="#problem-8">Problem 8</a></li>
+  <li><a href="#problem-9" id="toc-problem-9" class="nav-link" data-scroll-target="#problem-9">Problem 9</a></li>
+  <li><a href="#problem-10" id="toc-problem-10" class="nav-link" data-scroll-target="#problem-10">Problem 10</a></li>
+  <li><a href="#want-more-review-2" id="toc-want-more-review-2" class="nav-link" data-scroll-target="#want-more-review-2">Want more review?</a></li>
+  </ul></li>
+  <li><a href="#discrete-random-variables" id="toc-discrete-random-variables" class="nav-link" data-scroll-target="#discrete-random-variables">Discrete random variables</a>
+  <ul class="collapse">
+  <li><a href="#problem-11" id="toc-problem-11" class="nav-link" data-scroll-target="#problem-11">Problem 11</a></li>
+  <li><a href="#problem-12" id="toc-problem-12" class="nav-link" data-scroll-target="#problem-12">Problem 12</a></li>
+  <li><a href="#want-more-review-3" id="toc-want-more-review-3" class="nav-link" data-scroll-target="#want-more-review-3">Want more review?</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../explainers/setup.html">R Helpers</a></li><li class="breadcrumb-item"><a href="../explainers/if-else.html">if-else and logic</a></li></ol></nav><div class="quarto-title">
-<h1 class="title">if-else statements and logical conditions</h1>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problems/exam-midterm-1.html">Exam Study Guides</a></li><li class="breadcrumb-item"><a href="../problems/exam-midterm-1.html">Midterm 1</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Midterm 1 Study Guide</h1>
 </div>
 
 
@@ -498,150 +540,206 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>Sometimes we want our code to make a decision: do one thing if a condition is true, and something else if it’s false. In R, the tool for this is <code>if ... else</code>. The pattern looks like this:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="va">condition</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">do_something</span></span>
-<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>  <span class="va">do_something_else</span></span>
-<span><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</header>
+
+
+<p>Midterm Exam 1 will take place on <strong>Wednesday February 18</strong> during lecture. The problems will cover the following topics from Lectures 1-10:</p>
+<ol type="1">
+<li>probability spaces (axioms and rules)</li>
+<li>counting</li>
+<li>conditional probability and independence</li>
+<li>discrete random variables</li>
+</ol>
+<p>Below are new practice problems for each of these areas, as well as guidance about what course materials to refer to if you want more review on a particular topic.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>Suppose we roll a six-sided die:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">roll</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="va">roll</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-<p>We might want to check whether the outcome is “big” (4, 5, or 6) or “small” (1, 2, or 3). Here’s how we can use if else to do that:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="va">roll</span> <span class="op">&gt;=</span> <span class="fl">4</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">result</span> <span class="op">&lt;-</span> <span class="st">"Big"</span></span>
-<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>  <span class="va">result</span> <span class="op">&lt;-</span> <span class="st">"Small"</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="va">result</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Small"</code></pre>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Give your cheat sheet some TLC!
 </div>
 </div>
-<p>Let’s unpack:</p>
+<div class="callout-body-container callout-body">
+<p>You are allowed two resources on the exam:</p>
 <ul>
-<li>First, <code>sample(1:6, size = 1)</code> chooses a random number from 1 to 6;</li>
-<li>Then the if else checks: if the roll is 4 or higher, we call it “Big.” Otherwise, we call it “Small.”</li>
+<li>a “dumb” calculator (no wi-fi). You will not need it, but if you want it as a security blanket, be my guest;</li>
+<li>both sides of one 8.5” x 11” sheet of notes, prepared by you and you alone. You can create it however you wish: handwritten, on a computer, etc.</li>
 </ul>
-<p>This is how you can make simple decisions in R code.</p>
-<section id="logical-conditions" class="level1"><h1>Logical conditions</h1>
-<p>In the condition of <code>if</code>, you can use logical comparisons. Here are the most common ones:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 35%">
-<col style="width: 32%">
-<col style="width: 32%">
-</colgroup>
-<thead><tr class="header">
-<th>Operator</th>
-<th>Meaning</th>
-<th>Example</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td><code>==</code></td>
-<td>equal to</td>
-<td>
-<code>x == 3</code> is TRUE if x is 3</td>
-</tr>
-<tr class="even">
-<td><code>!=</code></td>
-<td>not equal to</td>
-<td>
-<code>x != 3</code> is TRUE if x is not 3</td>
-</tr>
-<tr class="odd">
-<td><code>&lt;</code></td>
-<td>less than</td>
-<td>
-<code>x &lt; 5</code> is TRUE if x is less than 5</td>
-</tr>
-<tr class="even">
-<td><code>&lt;=</code></td>
-<td>less than or equal</td>
-<td><code>x &lt;= 5</code></td>
-</tr>
-<tr class="odd">
-<td><code>&gt;</code></td>
-<td>greater than</td>
-<td><code>x &gt; 10</code></td>
-</tr>
-<tr class="even">
-<td><code>&gt;=</code></td>
-<td>greater than or equal</td>
-<td><code>x &gt;= 10</code></td>
-</tr>
-<tr class="odd">
-<td><code>&amp;</code></td>
-<td>AND (both conditions true)</td>
-<td><code>x &gt; 0 &amp; x &lt; 5</code></td>
-</tr>
-<tr class="even">
-<td><code>|</code></td>
-<td>OR (at least one true)</td>
-<td><code>x &lt; 0 | x &gt; 10</code></td>
-</tr>
-<tr class="odd">
-<td><code>!</code></td>
-<td>NOT (negates a condition)</td>
-<td><code>!(x == 3)</code></td>
-</tr>
-<tr class="even">
-<td><code>%in%</code></td>
-<td>element of a vector</td>
-<td>
-<code>x %in% c(1,2,3)</code> is TRUE if x is 1, 2, or 3</td>
-</tr>
-</tbody>
-</table>
-<p>Here they are in action:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">4</span></span>
-<span><span class="va">x</span> <span class="op">&gt;</span> <span class="fl">3</span>       </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;</span> <span class="fl">3</span>       </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&gt;=</span> <span class="fl">3</span> <span class="op">&amp;</span> <span class="va">x</span> <span class="op">&lt;=</span> <span class="fl">5</span>   </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;</span> <span class="fl">3</span> <span class="op">|</span> <span class="va">x</span> <span class="op">&gt;</span> <span class="fl">5</span>     </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="op">!</span><span class="op">(</span><span class="va">x</span> <span class="op">==</span> <span class="fl">4</span><span class="op">)</span>   </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
+<p>Do not skimp on the cheat sheet! Students in past semesters have neglected their cheat sheets to their detriment. Get an early start, and give it some elbow grease.</p>
 </div>
 </div>
-<p>Here is how these might be deployed in the context of if-else:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="va">x</span> <span class="op">&gt;</span> <span class="fl">0</span> <span class="op">&amp;</span> <span class="va">x</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%%</a></span> <span class="fl">2</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">result</span> <span class="op">&lt;-</span> <span class="st">"Positive even"</span></span>
-<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>  <span class="va">result</span> <span class="op">&lt;-</span> <span class="st">"Other"</span></span>
-<span><span class="op">}</span></span>
-<span><span class="va">result</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Positive even"</code></pre>
-</div>
-</div>
+<section id="probability-spaces-axioms-and-rules" class="level1">
+<h1>Probability spaces (axioms and rules)</h1>
+<section id="problem-1" class="level2">
+<h2 class="anchored" data-anchor-id="problem-1">Problem 1</h2>
+<p>Out of the students in a class, 60% are geniuses, 70% love chocolate, and 40% fall into both categories. Determine the probability that a randomly selected student is neither a genius nor a chocolate lover.</p>
+</section>
+<section id="problem-2" class="level2">
+<h2 class="anchored" data-anchor-id="problem-2">Problem 2</h2>
+<p>Suppose that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are mutually exclusive events for which <span class="math inline">\(P(A) = 0.3\)</span> and <span class="math inline">\(P(B) = 0.5\)</span>. What is the probability that…</p>
+<ol type="a">
+<li>either <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span> occurs?</li>
+<li><span class="math inline">\(A\)</span> occurs but <span class="math inline">\(B\)</span> does not?</li>
+<li>both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> occur?</li>
+<li>Are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> independent? Why or why not?</li>
+</ol>
+</section>
+<section id="problem-3" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3">Problem 3</h2>
+<p>Let <span class="math inline">\(S\)</span> be a sample space, let <span class="math inline">\(A,\, B\subseteq S\)</span> be events, and define a new set</p>
+<p><span class="math display">\[
+A-B = \{x\in S:x\in A\text{ and }x\notin B\}.
+\]</span></p>
+<ol type="a">
+<li>Draw a well-labeled picture of <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(S\)</span>, and the set <span class="math inline">\(A-B\)</span>;</li>
+<li>Write down an equivalent expression for <span class="math inline">\(A-B\)</span> that only makes use of our three basic operations: union, intersection, and complement;</li>
+<li>Prove that <span class="math inline">\(P(A-B)=P(A)-P(A\cap B)\)</span>.</li>
+</ol>
+</section>
+<section id="problem-4" class="level2">
+<h2 class="anchored" data-anchor-id="problem-4">Problem 4</h2>
+<p>Let <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span> be three arbitrary events, and let <span class="math inline">\(D\)</span> denote the event that “exactly one of these three events occurs.”</p>
+<ol type="a">
+<li>Draw a cartoon of <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, and <span class="math inline">\(D\)</span>;</li>
+<li>Use the three basic set operations (union, intersection, and complement) to express <span class="math inline">\(D\)</span> in terms of <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span>;</li>
+<li>Show that</li>
+</ol>
+<p><span class="math display">\[
+P(D)=P(A) + P(B) + P(C) - 2P(A \cap B) - 2P(A \cap C) - 2P(B \cap C) + 3P(A \cap B \cap C).
+\]</span></p>
+</section>
+<section id="want-more-review" class="level2">
+<h2 class="anchored" data-anchor-id="want-more-review">Want more review?</h2>
+<ul>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture3.pdf">Lecture notes</a> on axioms and rules;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-1.html">Problem Set 1</a>: problems 4 - 8;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html">Problem Set 2</a>: problems 1 - 2;</li>
+</ul>
+</section>
+</section>
+<section id="counting" class="level1">
+<h1>Counting</h1>
+<section id="problem-5" class="level2">
+<h2 class="anchored" data-anchor-id="problem-5">Problem 5</h2>
+<p>Suppose you are dealt six cards from a well-shuffled, standard deck of 52.</p>
+<ol type="a">
+<li>What is the probability of getting 3 of one rank and 3 of another?</li>
+<li>What is the probability of getting 4 of one rank and 2 of another?</li>
+<li>What is the probability of getting 3 aces and 3 of another rank?</li>
+<li>What is the probability of getting 4 of one rank and 2 aces?</li>
+<li>What is the probability that all 6 cards are in the same suit?</li>
+<li>What is the probability that all 6 cards are consecutive (ie a hand with 3 hearts, 4 spades, 5 spades, 6 clubs, 7 hearts, and the 8 diamonds)? Assume that the ace can only be the high card;</li>
+<li>What is the answer to the previous question if we allow the ace to be either high or low?</li>
+<li>What is the probability of receiving the ace, king, queen, jack, 10 and 9 all in hearts?</li>
+</ol>
+</section>
+<section id="problem-6" class="level2">
+<h2 class="anchored" data-anchor-id="problem-6">Problem 6</h2>
+<p>Congratulations! You and two of your friends are now proud owners of brand-new library cards. In order to use your new cards, all you and your friends need to do is create four-digit PINs, with numbers <span class="math inline">\(0\)</span> - <span class="math inline">\(9\)</span> available (in theory) at each position. Predictably, all of you have different ideas of what an acceptable PIN is (odd or even, leading zeros or not, etc.).</p>
+<ol type="a">
+<li>You are fairly chill about what you want in a PIN – all you want is an even PIN, and you’re totally fine if it starts with a zero. How many possible PINs fit your preference?</li>
+<li>One of your friends is a bit more persnickety – they want a PIN divisible by <span class="math inline">\(5\)</span>, and they cannot stand PINs starting with a zero. How many possible PINs fit this friend’s preferences?</li>
+<li>Your other friend has some more…particular preferences – they have an affinity for the number <span class="math inline">\(16\)</span> and thus want the digits <span class="math inline">\(1\)</span> and <span class="math inline">\(6\)</span> to appear in that exact order at some point in the PIN. Further, they also despise PINs starting with a zero. How many possible PINs fit this friend’s preferences?</li>
+</ol>
+</section>
+<section id="problem-7" class="level2">
+<h2 class="anchored" data-anchor-id="problem-7">Problem 7</h2>
+<p>The United States Senate contains two senators – one senior and one junior – from each of the <span class="math inline">\(50\)</span> states.</p>
+<ol type="a">
+<li>If a committee of eight senators is selected, what is the probability that it will contain at least one of the two senators from a certain specified state?</li>
+<li>If a committee of twenty senators is selected, what is the probability it will contain <span class="math inline">\(15\)</span> junior senators and <span class="math inline">\(5\)</span> senior senators?</li>
+<li>What is the probability that a group of <span class="math inline">\(50\)</span> senators selected at random will contain one senator from each state?</li>
+</ol>
+</section>
+<section id="want-more-review-1" class="level2">
+<h2 class="anchored" data-anchor-id="want-more-review-1">Want more review?</h2>
+<ul>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture4and5-counting.pdf">Lecture notes</a> on counting theory, with worked examples;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-2.html">Lab 2</a> worked examples;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-1.html">Problem Set 1</a>: problems 9 - 10;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html">Problem Set 2</a>: problems 3 - 7;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-3.html">Problem Set 3</a>: problems 1 - 2;</li>
+<li>Odd-numbered exercises in DeGroot &amp; Schervish Chapters 1.6 - 1.8, 1.12.</li>
+</ul>
+</section>
+</section>
+<section id="conditional-probability-and-independence" class="level1">
+<h1>Conditional probability and independence</h1>
+<section id="problem-8" class="level2">
+<h2 class="anchored" data-anchor-id="problem-8">Problem 8</h2>
+<p>In a standard deck of <span class="math inline">\(52\)</span> cards, 3 (Jack, Queen, and King) of the 13 ranks are collectively known as the “face cards” of the deck. Recall that a standard deck of <span class="math inline">\(52\)</span> cards also has <span class="math inline">\(4\)</span> suits (Hearts, Diamonds, Clubs, and Spades).</p>
+<p>Suppose you deal out two cards from the deck. What is the probability that they are both face cards given that they are both hearts?</p>
+</section>
+<section id="problem-9" class="level2">
+<h2 class="anchored" data-anchor-id="problem-9">Problem 9</h2>
+<p>An urn contains 5 white and 10 black balls. Four tickets labeled 1, 2, 3, and 4 reside in a box. A ticket is drawn at random from the box, and that number of balls is randomly chosen from the urn, without replacement.</p>
+<ol type="a">
+<li>What is the probability that all of the balls drawn are white?</li>
+<li>If we learn that all balls drawn from the urn are white, what is the conditional probability that the #3 ticket was drawn?</li>
+</ol>
+</section>
+<section id="problem-10" class="level2">
+<h2 class="anchored" data-anchor-id="problem-10">Problem 10</h2>
+<ol type="a">
+<li><p>Let <span class="math inline">\(S\)</span> be the set of all permutations of <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span>, together with the triples <span class="math inline">\(aaa\)</span>, <span class="math inline">\(bbb\)</span>, and <span class="math inline">\(ccc\)</span>. Imagine we draw an outcome randomly from this set. Define the event <span class="math inline">\(A_k=\{\text{the kth spot is occupied by the letter a}\}\)</span> for <span class="math inline">\(k=1,\,2,\,3\)</span>. Compute the probabilities <span class="math inline">\(P(A_k)\)</span>, <span class="math inline">\(P(A_i\cap A_j)\)</span>, <span class="math inline">\(P(A_1\cap A_2\cap A_3)\)</span>, and comment on the independence of the three of events;</p></li>
+<li><p>Imagine we roll two fair, six-sided die. Compute <span class="math inline">\(P(A)\)</span>, <span class="math inline">\(P(B)\)</span>, <span class="math inline">\(P(C)\)</span>, <span class="math inline">\(P(A\cap B)\)</span>, <span class="math inline">\(P(A\cap C)\)</span>, <span class="math inline">\(P(B\cap C)\)</span>, and <span class="math inline">\(P(A\cap B\cap C)\)</span> for the following three events and comment on their independence:</p></li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+A&amp;=\text{first die is 1, 2, 3}\\
+B&amp;=\text{first die is 3, 4, 5}\\
+C&amp;=\text{the sum of the two rolls is 9}.
+\end{aligned}
+\]</span></p>
+</section>
+<section id="want-more-review-2" class="level2">
+<h2 class="anchored" data-anchor-id="want-more-review-2">Want more review?</h2>
+<ul>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture6.pdf">Lecture notes</a> with worked examples;
+<ul>
+<li>This lil’ <a href="https://anyakatsevich.github.io/sta240-s26.github.io/apps/disease-testing.html">app</a> on disease testing;</li>
+</ul></li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html">Problem Set 2</a>: problems 9 - 10;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-3.html">Problem Set 3</a>: problems 3 - 7;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-4.html">Problem Set 4</a>: problems 1 - 2;</li>
+<li>Odd-numbered exercises in DeGroot &amp; Schervish Chapter 2.</li>
+</ul>
+</section>
+</section>
+<section id="discrete-random-variables" class="level1">
+<h1>Discrete random variables</h1>
+<section id="problem-11" class="level2">
+<h2 class="anchored" data-anchor-id="problem-11">Problem 11</h2>
+<p>Signore Fibonacci has created a a balanced, six-sided die whose faces are labeled, naturally, 1, 2, 3, 5, 8, 13. He gives a pair to Enzo, who rolls them repeatedly, eager to get double 13s. Let <span class="math inline">\(X\)</span> be the number of times he has to roll the pair of dice in order to see double 13s for the first time.</p>
+<ol type="a">
+<li>What is the pmf of <span class="math inline">\(X\)</span>?</li>
+<li>What is the expected value of <span class="math inline">\(X\)</span>?</li>
+<li>Find a closed-form expression for <span class="math inline">\(P(X\geq m)\)</span>.</li>
+</ol>
+</section>
+<section id="problem-12" class="level2">
+<h2 class="anchored" data-anchor-id="problem-12">Problem 12</h2>
+<p>Let <span class="math inline">\(D \sim \text{Geometric}(p)\)</span>, and fix positive integers <span class="math inline">\(n\)</span> and <span class="math inline">\(k\)</span>. What is <span class="math inline">\(P(D = n + k \,|\, D &gt; k)\)</span>? Does this look familiar?</p>
+</section>
+<section id="want-more-review-3" class="level2">
+<h2 class="anchored" data-anchor-id="want-more-review-3">Want more review?</h2>
+<ul>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-05-random-variables.pdf">Lecture notes</a> introducing random variables;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture9.pdf">Lecture notes</a> on special families of discrete random variables;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture10-init.pdf">Lecture notes</a> on expected value;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-5.html">Lab 5</a> exercises;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html">Problem Set 2</a>: problem 6;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-3.html">Problem Set 3</a>: problems 8 - 9;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-4.html">Problem Set 4</a>: problems 3 - 9.</li>
+</ul>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -1040,19 +1138,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../explainers/sample.html" class="pagination-link" aria-label="sample">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">sample</span>
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../labs/lab-5.html" class="pagination-link" aria-label="Lab 5">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 5</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../explainers/loops.html" class="pagination-link" aria-label="for loops">
-        <span class="nav-page-text">for loops</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2026 John Zito and Anya Katsevich</p>
 </div>   
@@ -1064,6 +1162,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>
