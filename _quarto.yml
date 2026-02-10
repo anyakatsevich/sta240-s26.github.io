@@ -8,6 +8,7 @@ project:
   - problems/pset-2.qmd
   - problems/pset-3.qmd
   - problems/pset-4.qmd
+  - problems/exam-midterm-1.qmd
   - lab-notes/**.pdf
   - distributions/**.qmd
   - labs/lab-1.qmd
