@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>Getting started – STA 240 Spring 2026</title>
+<title>Lab 5 – STA 240 Spring 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,8 +17,42 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
-
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -29,8 +60,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../explainers/hello-rstudio.html" rel="next">
-<link href="../math/series.html" rel="prev">
+<link href="../labs/lab-4.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -41,8 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-d640c705e8c17715bca3574aa719063f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d0086a85466981861881e17a07507999.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-d0086a85466981861881e17a07507999.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -68,41 +97,58 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<meta property="og:title" content="Getting started – STA 240 Spring 2026">
-<meta property="og:description" content="Homepage for STA 240 Probability for Statistical Inference">
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+<meta property="og:title" content="Lab 5 – STA 240 Spring 2026">
+<meta property="og:description" content="Due Thursday February 19 at 11:59 PM">
+<meta property="og:image" content="https://anyakatsevich.github.io/sta240-s26.github.io/labs/images/qualities.png">
 <meta property="og:site_name" content="STA 240 Spring 2026">
+<meta property="og:image:height" content="1447">
+<meta property="og:image:width" content="2880">
 </head>
-
 <body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../explainers/setup.html">R Helpers</a></li><li class="breadcrumb-item"><a href="../explainers/setup.html">Getting started</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-5.html">Lab 5</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
-      </a>
+      <img src="../img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none"><img src="../img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="quarto-navigation-tool px-1" aria-label="RStudio Containers"><i class="bi bi-code-square"></i></a>
     <a href="https://go.canvas.duke.edu/" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-megaphone"></i></a>
@@ -117,7 +163,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Syllabus</span></a>
@@ -125,8 +171,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../syllabus/syllabus_overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
@@ -169,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -178,8 +224,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../math/greeks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Greek alphabet</span></a>
@@ -216,19 +262,19 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">R Helpers</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../explainers/setup.html" class="sidebar-item-text sidebar-link active">
+  <a href="../explainers/setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
   </div>
 </li>
@@ -323,7 +369,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
@@ -332,8 +378,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../distributions/discrete-binomial.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Binomial</span></a>
@@ -352,7 +398,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
@@ -361,8 +407,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset-0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Set 0</span></a>
@@ -393,17 +439,17 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Labs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../labs/lab-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 1</span></a>
@@ -429,33 +475,34 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/lab-5.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/lab-5.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Lab 5</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#option-1-reserve-a-container" id="toc-option-1-reserve-a-container" class="nav-link active" data-scroll-target="#option-1-reserve-a-container">Option 1: reserve a container</a></li>
-  <li><a href="#option-2-download-it-yourself" id="toc-option-2-download-it-yourself" class="nav-link" data-scroll-target="#option-2-download-it-yourself">Option 2: download it yourself</a></li>
-  </ul>
-</nav>
+<li><a href="#task-1" id="toc-task-1" class="nav-link active" data-scroll-target="#task-1">Task 1</a></li>
+  <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2">Task 2</a></li>
+  <li><a href="#task-3" id="toc-task-3" class="nav-link" data-scroll-target="#task-3">Task 3</a></li>
+  <li><a href="#task-4" id="toc-task-4" class="nav-link" data-scroll-target="#task-4">Task 4</a></li>
+  <li><a href="#task-5" id="toc-task-5" class="nav-link" data-scroll-target="#task-5">Task 5</a></li>
+  <li><a href="#task-6" id="toc-task-6" class="nav-link" data-scroll-target="#task-6">Task 6</a></li>
+  <li><a href="#task-7-optional" id="toc-task-7-optional" class="nav-link" data-scroll-target="#task-7-optional">Task 7 (optional)</a></li>
+  <li><a href="#task-8-optional" id="toc-task-8-optional" class="nav-link" data-scroll-target="#task-8-optional">Task 8 (optional)</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../explainers/setup.html">R Helpers</a></li><li class="breadcrumb-item"><a href="../explainers/setup.html">Getting started</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Getting started</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-5.html">Lab 5</a></li></ol></nav><div class="quarto-title">
+<h1 class="title">Lab 5</h1>
+<p class="subtitle lead">Due Thursday February 19 at 11:59 PM</p>
 </div>
 
 
@@ -469,34 +516,263 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header>
+</header><p>Dating apps are horrific. Hopefully young people in college do not feel the need to use them. But for us decrepit old hags that were foolish enough to defer adulthood to the autumn of their thirties, they can feel unavoidable. So how do these work? Whelp, I make a profile, someone else on the app reviews it for no more than three seconds, and if I meet enough of their criteria, they swipe right (<em>like</em> my profile). If I fail to meet their criteria, they swipe left. If we both like each other’s profiles, it’s a match. God help us.</p>
+<p>Let’s model this. When the other person reviews my profile, they are deciding if I possess qualities they value. What might those qualities be? Charm, humor, wealth, height, education, hygiene, style, a deep and abiding appreciation for the films of Luis Buñuel, etc. <a href="#fig-qualities" class="quarto-xref">Figure&nbsp;1</a> imagines that the set of potentially desirable qualities are balls in the proverbial urn. For the purposes of discussion, let’s say there are a total of one hundred qualities a person could potentially value (100 balls in the jar). Every human has a list of 8 that they care most about. Everyone’s different, so we will model a given person’s preferences as a random selection (without replacement!) of 8 balls from this jar of 100.</p>
+<p>So, given a person’s preferences, will they like my profile? Well, let’s say that I possess exactly <strong>three</strong> of the one hundred desirable qualities. I won’t tell you what those three are, but suffice it to say, we have yet to list them in <a href="#fig-qualities" class="quarto-xref">Figure&nbsp;1</a>. We will treat my three qualities as three red balls in the jar, and the remaining 97 are black. Next, let <span class="math inline">\(A\)</span> be the event that at least <em>two</em> of my qualities are among the eight that a person values. If this happens, then they will swipe right on my profile.</p>
+<div id="fig-qualities" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-qualities-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/qualities.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qualities-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The silly model imagines that a given person has eight qualities that they value most in a romantic partner, which are randomly drawn from a set of 100 desirable qualities.
+</figcaption></figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Today’s goals
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The main skills you will practice today are plotting PMFs and computing probabilities in our special families of discrete probability distributions. You may find these new explainers helpful:</p>
+<ul>
+<li>
+<a href="https://anyakatsevich.github.io/sta240-s26.github.io/explainers/plot.html">Plotting points</a>;</li>
+<li>
+<a href="https://anyakatsevich.github.io/sta240-s26.github.io/explainers/probabilities.html">Computing probabilities</a>;</li>
+<li>
+<a href="https://anyakatsevich.github.io/sta240-s26.github.io/distributions/discrete-binomial.html">Binomial distribution summary</a>;</li>
+<li>
+<a href="https://anyakatsevich.github.io/sta240-s26.github.io/distributions/discrete-geometric.html">Geometric distribution summary</a>;</li>
+<li>
+<a href="https://anyakatsevich.github.io/sta240-s26.github.io/distributions/discrete-poisson.html">Poisson distribution summary</a>;</li>
+</ul>
+</div>
+</div>
+<section id="task-1" class="level2"><h2 class="anchored" data-anchor-id="task-1">Task 1</h2>
+<p>Imagine a random person on the app is presented with my profile. They will either like my profile and swipe right (1) or they won’t like it and they will swipe left (0). Define an indicator random variable <span class="math inline">\(I\)</span> for this event:</p>
+<p><span class="math display">\[
+I =\begin{cases}
+    0  &amp; \text{if $A^c$ happens} \\
+    1  &amp; \text{if $A$ happens}. \\
+\end{cases}
+\]</span></p>
+<p>What is the probability that a random person on the app swipes right on my profile? In other words, what is <span class="math inline">\(P(I=1)\)</span>?</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\begin{aligned}
+    P(I=1)=P(A)&amp;=1-P(A^c)\\
+    &amp;=1-P(\text{they value none or only one of my qualities})\\
+    &amp;=1-P(\text{none})-P(\text{only one})\\
+    &amp;=1-\frac{\binom{97}{8}}{\binom{100}{8}}-\frac{\binom{3}{1}\binom{97}{7}}{\binom{100}{8}}\\
+    &amp;\approx 1 - 0.777 - 0.207\\
+    &amp;=0.016.
+\end{aligned}
+\]</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">like_prob</span> <span class="op">&lt;-</span> <span class="fl">1</span> <span class="op">-</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Special.html">choose</a></span><span class="op">(</span><span class="fl">97</span>, <span class="fl">8</span><span class="op">)</span> <span class="op">+</span> <span class="fl">3</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Special.html">choose</a></span><span class="op">(</span><span class="fl">97</span>, <span class="fl">7</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/Special.html">choose</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">8</span><span class="op">)</span></span>
+<span><span class="va">like_prob</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.01627706</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="task-2" class="level2"><h2 class="anchored" data-anchor-id="task-2">Task 2</h2>
+<p>Task 1 gives the probability that one person likes my profile, but as we all know, dating apps are a numbers game. One strategy is to go on there, indiscriminately swipe right on everyone until you run out of people in your area, wait for the matches to roll in, and then filter through only those folks that have already expressed interest in you. The dating app creators know this is a possibility though, and so they cap the number of right swipes you can send in a 24 hour period (unless you buy a premium subscription). Let’s say that number is <span class="math inline">\(n=25\)</span>, as I believe it is on Bumble. So on a given day, I send 25 likes out into the world. How many of those <span class="math inline">\(n=25\)</span> people will like me back, resulting in a match? Introduce a binary random variable <span class="math inline">\(I_i\)</span> indicating whether or not person <span class="math inline">\(i=1,\,2,\, ...,\,25\)</span> likes my profile. Assume that these are all <strong>identically distributed</strong> as in Task 1, and assume that these are <strong>independent</strong>. We have yet to formally define this, but in context it means that the swiping decisions among these 25 people are not affecting one another. So none of them are sitting next to each other discussing my profile, for example.</p>
+<p>Given this setup, define a new random variable <span class="math inline">\(X\)</span> that counts the total number of matches I get. How is <span class="math inline">\(X\)</span> related to the <span class="math inline">\(I_i\)</span>? What is the distribution of <span class="math inline">\(X\)</span>? What is <span class="math inline">\(E(X)\)</span>, the number of matches I expect to receive that day?</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>
+<span class="math inline">\(X\sim\text{Binom}(25, 0.016)\)</span>;</li>
+<li>
+<span class="math inline">\(X=\sum_{i=1}^{25}I_i\)</span>;</li>
+<li>
+<span class="math inline">\(E(X) \approx 25\times0.016=0.4\)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</section><section id="task-3" class="level2"><h2 class="anchored" data-anchor-id="task-3">Task 3</h2>
+<p>Use <code>R</code> to compute the probability that I get at least one match that day.</p>
+<!--
+::: {.callout-warning collapse="true"}
+## Solution
+
+We want $P(X\geq 1)=1-P(X=0)$:
 
 
-<section id="option-1-reserve-a-container" class="level2">
-<h2 class="anchored" data-anchor-id="option-1-reserve-a-container">Option 1: reserve a container</h2>
-<p>The path of least resistance to using <code>R</code> in this class is to reserve a <em>container</em> from the <a href="https://cmgr.oit.duke.edu/containers">Duke Container Manager</a>. It’s hosted in the cloud, and it has all of the software you will ever need for this class.</p>
-<ol type="1">
-<li><p>Go here: <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a>. You may have to log in with your NetID at some point;</p></li>
-<li><p>(The first time you do this, you look for STA240 under “Reservations available” on the righthand side, and click “reserve STA240”. After you do that once, STA240 will appear under “My reservations” on the lefthand side forever more)</p></li>
-<li><p>Click STA240 under “My reservations”;</p></li>
-<li><p>Login;</p></li>
-<li><p>Start. It may take a while, but then RStudio should launch in your browser.</p></li>
-</ol>
-</section>
-<section id="option-2-download-it-yourself" class="level2">
-<h2 class="anchored" data-anchor-id="option-2-download-it-yourself">Option 2: download it yourself</h2>
-<p>Of course, you won’t have containers after you graduate, so maybe it’s a good idea to hike up your big girl pants and actually install something. It’s pretty easy:</p>
-<ol type="1">
-<li>Download <code>R</code>: <a href="https://cran.r-project.org" class="uri">https://cran.r-project.org</a></li>
-<li>Download <code>RStudio</code>: <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></li>
-<li>(optional) Install <code>tinytex</code>: <a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a></li>
-</ol>
+::: {.cell}
+
+```{.r .cell-code}
+match_prob <- 1 - dbinom(0, 25, like_prob)
+match_prob
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 0.3365319
+```
 
 
-</section>
+:::
+:::
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+
+:::
+-->
+</section><section id="task-4" class="level2"><h2 class="anchored" data-anchor-id="task-4">Task 4</h2>
+<p>Use <code>R</code> to plot the PMF of <span class="math inline">\(X\)</span>. <!--
+::: {.callout-warning collapse="true"}
+## Solution
+
+
+::: {.cell}
+
+```{.r .cell-code}
+n <- 25
+plot(0:n, dbinom(0:n, n, like_prob), 
+     type = "h", ylab = "P(X = k)", xlab = "k")
+```
+
+::: {.cell-output-display}
+![](lab-5_files/figure-html/unnamed-chunk-3-1.png){width=672}
+:::
+:::
+
+
+:::
+--></p>
+</section><section id="task-5" class="level2"><h2 class="anchored" data-anchor-id="task-5">Task 5</h2>
+<p>Let’s say that every day, I wake up, pour the coffee, do some lil’ granny stretches so that I don’t break a hip, and then swipe on the app until I’ve sent out my 25 likes for the day. Then I wait to see if any matches roll in. I do this day after day after day. Let <span class="math inline">\(Y\)</span> be the number of days I have to wait through until I get at least one match.</p>
+<p>What is the distribution of <span class="math inline">\(Y\)</span>? Use <code>R</code> to plot its PMF.</p>
+<!--
+::: {.callout-warning collapse="true"}
+## Solution
+
+$Y\sim\text{Geom}(0.3365)$.
+
+
+::: {.cell}
+
+```{.r .cell-code}
+plot(1:26, dgeom(0:25, match_prob), type = "h", ylab = "P(Y = k)", xlab = "k")
+```
+
+::: {.cell-output-display}
+![](lab-5_files/figure-html/unnamed-chunk-4-1.png){width=672}
+:::
+:::
+
+
+:::
+-->
+</section><section id="task-6" class="level2"><h2 class="anchored" data-anchor-id="task-6">Task 6</h2>
+<p>Let’s say I first downloaded the app on a Sunday. Use <code>R</code> to compute the probability that I get a match in the first week.</p>
+<!--
+::: {.callout-warning collapse="true"}
+## Solution
+
+We want the probability that one of the first 7 trials is a success. So $P(Y\leq 7)$:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+pgeom(7 - 1, match_prob)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 0.9434099
+```
+
+
+:::
+:::
+
+:::
+-->
+</section><section id="task-7-optional" class="level2"><h2 class="anchored" data-anchor-id="task-7-optional">Task 7 (optional)</h2>
+<p>When you post your profile on a dating app, everyone in your area can see and swipe on it. If someone swipes right on you, the app will usually alert you to the fact that this happened, but they will charge you for the privilege of seeing who exactly it is. So let <span class="math inline">\(Z\)</span> be the number of “likes” you receive in a given twenty-four hour period. We could model this using the Poisson distribution and say that <span class="math inline">\(Z\sim \text{Poisson}(\lambda)\)</span>. If we wish to model the likes received by some disgraced undesirable like James Corden, we might pick <span class="math inline">\(Z\sim \text{Poisson}(0.01)\)</span>, which has <span class="math inline">\(E(Z)=0.01\)</span>. Suffice it to say, not a tremendous number of likes rolling in for that guy, on average. If we wish to model the likes received by Taylor Swift, we might pick <span class="math inline">\(Z\sim\text{Poisson}(20,000,000)\)</span>. You get the idea.</p>
+<p>For an ordinary person, perhaps <span class="math inline">\(Z\sim\text{Poisson}(5)\)</span>. Use <code>R</code> to compute the probability that such a person beats their average for the day.</p>
+<!--
+::: {.callout-warning collapse="true"}
+## Solution
+
+We want $P(Z>5)=1-P(Y\leq 5)$:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+1 - ppois(5, lambda = 5)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 0.3840393
+```
+
+
+:::
+:::
+
+:::
+-->
+</section><section id="task-8-optional" class="level2"><h2 class="anchored" data-anchor-id="task-8-optional">Task 8 (optional)</h2>
+<p>Use <code>R</code> to plot the PMF of <span class="math inline">\(Z\)</span>.</p>
+<!--
+::: {.callout-warning collapse="true"}
+## Solution
+
+
+::: {.cell}
+
+```{.r .cell-code}
+plot(0:25, dpois(0:25, 5), type = "h", ylab = "P(Z = k)", xlab = "k")
+```
+
+::: {.cell-output-display}
+![](lab-5_files/figure-html/unnamed-chunk-7-1.png){width=672}
+:::
+:::
+
+
+:::
+-->
+
+
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -895,22 +1171,16 @@ ul.task-list li input[type="checkbox"] {
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../math/series.html" class="pagination-link" aria-label="Infinite series">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Infinite series</span>
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="../labs/lab-4.html" class="pagination-link" aria-label="Lab 4">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 4</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../explainers/hello-rstudio.html" class="pagination-link" aria-label="The lay of the land">
-        <span class="nav-page-text">The lay of the land</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2026 John Zito and Anya Katsevich</p>
 </div>   
@@ -922,8 +1192,6 @@ ul.task-list li input[type="checkbox"] {
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>
