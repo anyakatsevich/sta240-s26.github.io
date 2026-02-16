@@ -6,26 +6,25 @@ editor:
 draft: false
 ---
 
-Midterm Exam 1 will take place on **Wednesday February 18** during lecture. The problems will cover the following topics from Lectures 1-10:
+Midterm Exam 1 will take place on **Wednesday February 18** during lecture. You are allowed both sides of one 8.5" x 11" hand-written sheet of notes, prepared by you and you alone.
+
+::: callout-important
+## Give your cheat sheet some TLC!
+
+Do not skimp on the cheat sheet! Students in past semesters have neglected their cheat sheets to their detriment. Get an early start, and give it some elbow grease.
+
+:::
+
+The problems on the exam will cover the following topics from Lectures 1-10:
 
 1. probability spaces (axioms and rules)
 2. counting
 3. conditional probability and independence
 4. discrete random variables
 
+
+
 Below are new practice problems for each of these areas, as well as guidance about what course materials to refer to if you want more review on a particular topic.
-
-::: callout-important
-## Give your cheat sheet some TLC!
-
-You are allowed two resources on the exam:
-
-- a "dumb" calculator (no wi-fi). You will not need it, but if you want it as a security blanket, be my guest;
-- both sides of one 8.5" x 11" sheet of notes, prepared by you and you alone. You can create it however you wish: handwritten, on a computer, etc.
-
-Do not skimp on the cheat sheet! Students in past semesters have neglected their cheat sheets to their detriment. Get an early start, and give it some elbow grease.
-
-:::
 
 # Probability spaces (axioms and rules)
 
