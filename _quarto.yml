@@ -8,12 +8,17 @@ project:
   - problems/pset-2.qmd
   - problems/pset-3.qmd
   - problems/pset-4.qmd
+  - problems/exam-midterm-1.qmd
+  - apps/disease-testing.qmd
   - lab-notes/**.pdf
-  - distributions/**.qmd
+  - distributions/discrete-binomial.qmd
+  - distributions/discrete-geometric.qmd
+  - distributions/discrete-poisson.qmd
   - labs/lab-1.qmd
   - labs/lab-2.qmd
   - labs/lab-3.qmd
   - labs/lab-4.qmd
+  - labs/lab-5.qmd
   - explainers/**.qmd
   - math/**.qmd
 
@@ -25,10 +30,13 @@ project:
     - readings/matthews-2025-significance.pdf
     - readings/meng-2023-nejsds.pdf
     - readings/detsky-gutekunst-kopac-2025-significance.pdf
+    - explainers/Pset2-Problem2-solutions.pdf
     - lecture-notes/lecture3.pdf
     - lecture-notes/lecture6.pdf
     - lecture-notes/lecture7.pdf
     - lecture-notes/lecture10.pdf
+    - lecture-notes/lecture9.pdf
+    - lecture-notes/lecture10-init.pdf
     - lecture-notes/lecture4and5-counting.pdf
     - lecture-notes/sta240-notes-00-set-theory.pdf
     - lecture-notes/sta240-notes-01-probability-spaces.pdf
@@ -199,8 +207,8 @@ website:
              text: Lab 3
            - href: labs/lab-4.qmd
              text: Lab 4
-          # - href: labs/lab-5.qmd
-          #   text: Lab 5
+           - href: labs/lab-5.qmd
+             text: Lab 5
           # - href: labs/lab-6.qmd
           #   text: Lab 6
           # - href: labs/lab-7.qmd
@@ -213,10 +221,10 @@ website:
           #   text: Lab 10
           # - href: labs/lab-11.qmd
           #   text: Lab 11
-     # - section: "Exam Study Guides"
-     #   contents:
-     #     - href: problems/exam-midterm-1.qmd
-     #       text: Midterm 1
+      - section: "Exam Study Guides"
+        contents:
+           - href: problems/exam-midterm-1.qmd
+             text: Midterm 1
      #     - href: problems/exam-midterm-2.qmd
      #       text: Midterm 2
      #     - href: problems/exam-final.qmd

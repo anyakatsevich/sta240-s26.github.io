@@ -6,31 +6,27 @@ editor:
 draft: false
 ---
 
-Midterm Exam 1 will take place on **Thursday October 9** during your lab section. There will be 7 problems, and they will break down as follows:
-
-0. (an undisclosed check on your visual intuition)
-1. rules
-1. counting
-1. counting
-1. conditional probability
-1. conditional probability
-1. discrete random variables
-
-Below are new practice problems for each of these areas, as well as guidance about what course materials to refer to if you want more review on a particular topic.
+Midterm Exam 1 will take place on **Wednesday February 18** during lecture. You are allowed both sides of one 8.5" x 11" hand-written sheet of notes, prepared by you and you alone.
 
 ::: callout-important
 ## Give your cheat sheet some TLC!
-
-You are allowed two resources on the exam:
-
-- a "dumb" calculator (no wi-fi). You will not need it, but if you want it as a security blanket, be my guest;
-- both sides of one 8.5" x 11" sheet of notes, prepared by you and you alone. You can create it however you wish: handwritten, on a computer, etc.
 
 Do not skimp on the cheat sheet! Students in past semesters have neglected their cheat sheets to their detriment. Get an early start, and give it some elbow grease.
 
 :::
 
-# Probability spaces
+The problems on the exam will cover the following topics from Lectures 1-10:
+
+1. probability spaces (axioms and rules)
+2. counting
+3. conditional probability and independence
+4. discrete random variables
+
+
+
+Below are new practice problems for each of these areas, as well as guidance about what course materials to refer to if you want more review on a particular topic.
+
+# Probability spaces (axioms and rules)
 
 ## Problem 1
 
@@ -50,9 +46,9 @@ Do not skimp on the cheat sheet! Students in past semesters have neglected their
 
 ## Want more review?
 
-- [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-01-probability-spaces.pdf) on axioms and rules;
+- [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture3.pdf) on axioms and rules;
 - [Problem Set 1](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-1.html): problems 4 - 8;
-- [Problem Set 2](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html): problems 2 - 3;
+- [Problem Set 2](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html): problems 1 - 2;
 
 # Counting
 
@@ -70,15 +66,14 @@ Do not skimp on the cheat sheet! Students in past semesters have neglected their
 
 ## Want more review?
 
-- [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-02-counting-theory.pdf) on counting theory;
-- [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-03-counting-examples.pdf) with birthday problem and other worked examples;
+- [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture4and5-counting.pdf) on counting theory, with worked examples;
 - [Lab 2](https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-2.html) worked examples;
 - [Problem Set 1](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-1.html): problems 9 - 10;
-- [Problem Set 2](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html): problems 4 - 8;
-- [Problem Set 3](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-3.html): problems 2 - 3;
+- [Problem Set 2](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html): problems 3 - 7;
+- [Problem Set 3](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-3.html): problems 1 - 2;
 - Odd-numbered exercises in DeGroot & Schervish Chapters 1.6 - 1.8, 1.12.
 
-# Conditional probability 
+# Conditional probability and independence
 
 ## Problem 8
 
@@ -94,11 +89,11 @@ Do not skimp on the cheat sheet! Students in past semesters have neglected their
 
 ## Want more review?
 
-- [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-04-conditional-probability.pdf) with worked examples;
-    - The lil' [app](https://anyakatsevich.github.io/sta240-s26.github.io/apps/disease-testing.html) on disease testing;
+- [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture6.pdf) with worked examples;
+- This lil' [app](https://anyakatsevich.github.io/sta240-s26.github.io/apps/disease-testing.html) on disease testing;
 - [Problem Set 2](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html): problems 9 - 10;
-- [Problem Set 3](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-3.html): problems 4 - 8;
-- [Problem Set 4](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-4.html): problems 2 - 3;
+- [Problem Set 3](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-3.html): problems 3 - 7;
+- [Problem Set 4](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-4.html): problems 1 - 2;
 - Odd-numbered exercises in DeGroot & Schervish Chapter 2.
 
 # Discrete random variables
@@ -114,10 +109,10 @@ Do not skimp on the cheat sheet! Students in past semesters have neglected their
 ## Want more review?
 
 - [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-05-random-variables.pdf) introducing random variables;
-- [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-06-discrete-families.pdf) on special families of discrete random variables;
-- [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-07-expectation.pdf) on expected value;
+- [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture9.pdf) on special families of discrete random variables;
+- [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture10-init.pdf) on expected value;
 - [Lab 5](https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-5.html) exercises;
-- [Problem Set 2](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html): problem 7;
-- [Problem Set 3](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-3.html): problems 9 - 10;
-- [Problem Set 4](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-4.html): problems 4 - 10.
+- [Problem Set 2](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html): problem 6;
+- [Problem Set 3](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-3.html): problems 8 - 9;
+- [Problem Set 4](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-4.html): problems 3 - 9.
 
