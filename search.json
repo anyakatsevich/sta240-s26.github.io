@@ -546,6 +546,83 @@
     ]
   },
   {
+    "objectID": "distributions/continuous-normal.html",
+    "href": "distributions/continuous-normal.html",
+    "title": "Normal distribution",
+    "section": "",
+    "text": "I usually have a little blurb up here describing how the distribution arises or when you might use it, but the normal distribution is so central to probability and statistics that words fail. It shows up everywhere.",
+    "crumbs": [
+      "Distribution Families",
+      "Normal"
+    ]
+  },
+  {
+    "objectID": "distributions/continuous-normal.html#basic-properties",
+    "href": "distributions/continuous-normal.html#basic-properties",
+    "title": "Normal distribution",
+    "section": "Basic properties",
+    "text": "Basic properties\n\n\n\n\n\n\n\nNotation\n\\(X\\sim\\text{N}(\\mu,\\,\\sigma^2)\\)\n\n\nRange\n\\(\\mathbb{R}=(-\\infty,\\,\\infty)\\)\n\n\nParameter space\n\\(\\begin{matrix}-\\infty&lt;\\mu&lt;\\infty\\\\\\sigma^2&gt;0\\end{matrix}\\)\n\n\nPDF\n\\(f(x)=\\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\exp\\left(-\\frac{1}{2}\\frac{(x-\\mu)^2}{\\sigma^2}\\right)\\)\n\n\nCDF\n\\(F(x)=\\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\int_{-\\infty}^x\\exp\\left(-\\frac{1}{2}\\frac{(t-\\mu)^2}{\\sigma^2}\\right)\\,\\text{d}t\\)\n\n\nMGF\n\n\\(M(t) = \\exp\\left(\\mu t+\\frac{\\sigma^2}{2}t^2\\right)\\), \\(t\\in\\mathbb{R}\\)\n\n\n\nExpectation\n\\(\\mu\\)\n\n\nVariance\n\\(\\sigma^2\\)\n\n\n\nFun facts:\n\nThis is also known as the Gaussian distribution;\nN(0, 1) is called the standard normal;\nThe density of the normal is the familiar bell curve;\nWe do not have a closed-form for the CDF. We can approximate it arbitrarily well in a computer, but we can’t actually simplify the integral and get a neat formula. Bummer!",
+    "crumbs": [
+      "Distribution Families",
+      "Normal"
+    ]
+  },
+  {
+    "objectID": "distributions/continuous-normal.html#r-commands",
+    "href": "distributions/continuous-normal.html#r-commands",
+    "title": "Normal distribution",
+    "section": "\nR commands",
+    "text": "R commands\nHere is the documentation for the suite of commands that let you work with the normal distribution in R:\n\ndnorm(x, mean = 0, sd = 1) # PDF\npnorm(q, mean = 0, sd = 1) # CDF: F(q) = P(X &lt;= q)\nqnorm(p, mean = 0, sd = 1) # quantile function (inverse CDF)\nrnorm(n, mean = 0, sd = 1) # random numbers\n\n\n\n\n\n\n\nImportantThe commands take the standard deviation, not the variance!\n\n\n\nYou will get burned by this at least once. I guarantee it. But please take note. If you want to compute \\(P(X\\leq -2.4)\\) for \\(X\\sim\\text{N}(4, 9)\\), you call pnorm(-2.4, 4, 3), because \\(\\text{sd}(X)=\\sqrt{\\text{var}(X)}=3\\).",
+    "crumbs": [
+      "Distribution Families",
+      "Normal"
+    ]
+  },
+  {
+    "objectID": "distributions/continuous-normal.html#play-around",
+    "href": "distributions/continuous-normal.html#play-around",
+    "title": "Normal distribution",
+    "section": "Play around!",
+    "text": "Play around!\nAs we have seen, the parameters \\(\\mu\\) and \\(\\sigma\\) have multiple interpretations. From a probabilistic point-of-view, they are the mean \\(\\mu=E(X)\\) and the standard deviation \\(\\sigma=\\sqrt{\\text{var}(X)}\\). From a purely geometric point-of-view, they control the shape of the density curve. \\(\\mu\\) is the location of the peak, and \\(\\sigma\\) controls how far the inflection points are from \\(\\mu\\). You worked that out on Problem Set 0.\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 700\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  titlePanel(\"Normal distribution CDF and PDF\"),\n  \n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"mu\", \"Mean (μ):\", \n                  min = -5, max = 5, value = 0, step = 0.1),\n      sliderInput(\"sigma\", \"Standard Deviation (σ):\", \n                  min = 0.5, max = 3, value = 1, step = 0.1)\n    ),\n    \n    mainPanel(\n      plotOutput(\"distPlot\", height = \"600px\")\n    )\n  )\n)\n\nserver &lt;- function(input, output) {\n  output$distPlot &lt;- renderPlot({\n    mu &lt;- input$mu\n    sigma &lt;- input$sigma\n    \n    # Fixed x range\n    x &lt;- seq(-10, 10, length.out = 1000)\n    \n    # Compute values\n    pdf_vals &lt;- dnorm(x, mean = mu, sd = sigma)\n    cdf_vals &lt;- pnorm(x, mean = mu, sd = sigma)\n    \n    # Inflection points at mu ± sigma\n    inflect_left &lt;- mu - sigma\n    inflect_right &lt;- mu + sigma\n    \n    # Fixed y limits\n    pdf_ylim &lt;- c(0, 0.8)\n    \n    par(mfrow = c(2, 1), mar = c(4, 4, 2, 1))\n    \n    # --- CDF Plot ---\n    plot(x, cdf_vals, type = \"l\", lwd = 2, col = \"blue\",\n         xlim = c(-10, 10), ylim = c(0, 1),\n         main = \"Cumulative Distribution Function (CDF)\",\n         xlab = \"\", ylab = \"F(x)\")\n    abline(h = c(0, 1), col = \"gray80\", lty = 2)\n    abline(v = mu, col = \"gray60\", lty = 3)\n    \n    # --- PDF Plot ---\n    plot(x, pdf_vals, type = \"l\", lwd = 2, col = \"darkred\",\n         xlim = c(-10, 10), ylim = pdf_ylim,\n         main = \"Probability Density Function (PDF)\",\n         xlab = \"x\", ylab = \"f(x)\")\n    \n    # Vertical lines at mean and inflection points\n    abline(v = mu, col = \"gray60\", lty = 3)\n    abline(v = c(inflect_left, inflect_right), col = \"gray70\", lty = 2)\n    \n    # Arrows showing sigma distance\n    y_arrow &lt;- 0.05\n    arrows(mu, y_arrow, inflect_right, y_arrow, code = 3, angle = 10, length = 0.1)\n    arrows(mu, y_arrow, inflect_left, y_arrow, code = 3, angle = 10, length = 0.1)\n    \n    # Label σ between mean and inflection points\n    text(mu + sigma / 2, y_arrow + 0.03, expression(sigma), cex = 1.1)\n    text(mu - sigma / 2, y_arrow + 0.03, expression(sigma), cex = 1.1)\n    \n    # Label μ in the margin below the x-axis\n    mtext(expression(mu), side = 1, line = 2.2, at = mu, cex = 1.2)\n  })\n}\n\nshinyApp(ui = ui, server = server)",
+    "crumbs": [
+      "Distribution Families",
+      "Normal"
+    ]
+  },
+  {
+    "objectID": "distributions/discrete-hypergeometric.html",
+    "href": "distributions/discrete-hypergeometric.html",
+    "title": "Hypergeometric distribution",
+    "section": "",
+    "text": "Imagine we have a finite population containing \\(m\\) “success” cases and \\(n\\) “failure” cases, for a total population size of \\(m+n\\). If we sample \\(k\\) cases from the population without replacement, then a hypergeometric random variable counts the number of sampled cases that are a success.\nYou first met this distribution on Problem Set 4 when studying contested elections.",
+    "crumbs": [
+      "Distribution Families",
+      "Hypergeometric"
+    ]
+  },
+  {
+    "objectID": "distributions/discrete-hypergeometric.html#basic-properties",
+    "href": "distributions/discrete-hypergeometric.html#basic-properties",
+    "title": "Hypergeometric distribution",
+    "section": "Basic properties",
+    "text": "Basic properties\n\n\nNotation\n\\(X\\sim\\text{HG}(m, n, k)\\)\n\n\nRange\n\\(\\{0,\\,1,\\,2,\\,3,\\,...,\\,k-1,\\,k\\}\\)\n\n\nPMF\n\\(P(X = x) = \\binom{m}{x} \\binom{n}{k-x}/\\binom{m+n}{k}\\)\n\n\nExpectation\n\\(km/(m+n)\\)",
+    "crumbs": [
+      "Distribution Families",
+      "Hypergeometric"
+    ]
+  },
+  {
+    "objectID": "distributions/discrete-hypergeometric.html#r-commands",
+    "href": "distributions/discrete-hypergeometric.html#r-commands",
+    "title": "Hypergeometric distribution",
+    "section": "\nR commands",
+    "text": "R commands\nHere is the documentation for the suite of commands that let you work with the hypergeometric distribution in R:\n\ndhyper(x, m, n, k)     # PMF: P(X = x)\nphyper(q, m, n, k)     # CDF: P(X &lt;= q)\nqhyper(p, m, n, k)     # quantile function (inverse CDF)\nrhyper(ndraw, m, n, k) # random numbers",
+    "crumbs": [
+      "Distribution Families",
+      "Hypergeometric"
+    ]
+  },
+  {
     "objectID": "distributions/discrete-geometric.html",
     "href": "distributions/discrete-geometric.html",
     "title": "Geometric distribution",
@@ -1870,6 +1947,116 @@
     "crumbs": [
       "Distribution Families",
       "Poisson"
+    ]
+  },
+  {
+    "objectID": "distributions/continuous-uniform.html",
+    "href": "distributions/continuous-uniform.html",
+    "title": "Continuous uniform distribution",
+    "section": "",
+    "text": "If \\(X\\) is a continuous random quantity that is “equally likely” to take on any value in a bounded interval \\([a,\\, b]\\), then we can model it with the continuous uniform distribution.",
+    "crumbs": [
+      "Distribution Families",
+      "Continuous uniform"
+    ]
+  },
+  {
+    "objectID": "distributions/continuous-uniform.html#basic-properties",
+    "href": "distributions/continuous-uniform.html#basic-properties",
+    "title": "Continuous uniform distribution",
+    "section": "Basic properties",
+    "text": "Basic properties\n\n\n\n\n\n\n\nNotation\n\\(X\\sim\\text{Unif}(a,\\,b)\\)\n\n\nRange\n\\([a,\\,b]\\)\n\n\nParameter space\n\\(-\\infty &lt; a &lt; b &lt; \\infty\\)\n\n\nPDF\n\\(f(x)=\\begin{cases}\\frac{1}{b-a} & a\\leq x\\leq b\\\\0&\\text{else}\\end{cases}\\)\n\n\nCDF\n\\(F(x)=\\begin{cases}0 & x &lt; a\\\\\\frac{x-a}{b-a} & a\\leq x\\leq b\\\\1&b&lt;x\\end{cases}\\)\n\n\nExpectation\n\\(\\frac{a+b}{2}\\)\n\n\nVariance\n\\((b-a)^2/12\\)\n\n\n\nFun facts:\n\nUnif(0, 1) is called the standard uniform distribution.",
+    "crumbs": [
+      "Distribution Families",
+      "Continuous uniform"
+    ]
+  },
+  {
+    "objectID": "distributions/continuous-uniform.html#r-commands",
+    "href": "distributions/continuous-uniform.html#r-commands",
+    "title": "Continuous uniform distribution",
+    "section": "\nR commands",
+    "text": "R commands\nHere is the documentation for the suite of commands that let you work with the normal distribution in R:\n\ndunif(x, min, max) # PDF\npunif(q, min, max) # CDF: P(X &lt;= q)\nqunif(p, min, max) # quantile function\nrunif(n, min, max) # random numbers",
+    "crumbs": [
+      "Distribution Families",
+      "Continuous uniform"
+    ]
+  },
+  {
+    "objectID": "distributions/continuous-uniform.html#play-around",
+    "href": "distributions/continuous-uniform.html#play-around",
+    "title": "Continuous uniform distribution",
+    "section": "Play around!",
+    "text": "Play around!\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 600\n#| fig-asp: 1\n\nlibrary(shiny)\n\n# Define UI for application that draws a histogram\nui &lt;- fluidPage(\n  \n  # Application title\n  titlePanel(\"Uniform distribution CDF and PDF\"),\n  \n  # Sidebar with a slider input for number of bins \n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"a\",\n                  \"Lower bound (a):\",\n                  min = 0,\n                  max = 2,\n                  value = 1,\n                  step = 0.1),\n      sliderInput(\"b\",\n                  \"Upper bound (b):\",\n                  min = 3,\n                  max = 5,\n                  value = 4,\n                  step = 0.1)\n    ),\n    \n    # Show a plot of the generated distribution\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n# Define server logic required to draw a histogram\nserver &lt;- function(input, output) {\n  \n  output$distPlot &lt;- renderPlot({\n    \n    a &lt;- input$a\n    b &lt;- input$b\n\n    par(mfrow = c(2, 1), mar = c(4, 4, 2, 2))\n    \n    curve(punif(x, min = a, max = b), from = -1, to = 6, n = 1000,\n          ylab = \"\", col = \"red\", xlim = c(0, 5))\n    curve(0*x, from = -1, to = a, n = 1000, \n          ylim = c(0, 1), ylab = \"\", col = \"red\", xlim = c(0, 5))\n    curve(dunif(x, min = a, max = b), from = a, to = b, n = 1000, \n          ylim = c(0, 1), ylab = \"\", col = \"red\", add = TRUE)\n    curve(0*x, from = b, to = 6, n = 1000, \n          ylim = c(0, 1), ylab = \"\", col = \"red\", add = TRUE)\n  })\n}\n\n# Run the application \nshinyApp(ui = ui, server = server)",
+    "crumbs": [
+      "Distribution Families",
+      "Continuous uniform"
+    ]
+  },
+  {
+    "objectID": "distributions/continuous-uniform.html#derivations",
+    "href": "distributions/continuous-uniform.html#derivations",
+    "title": "Continuous uniform distribution",
+    "section": "Derivations",
+    "text": "Derivations\n\n\n\n\n\n\nNoteThe pdf integrates to 1\n\n\n\n\n\n\\[\n\\begin{aligned}\n    \\int_{-\\infty}^\\infty f_X(x)\\,\\text{d} x\n    &=\n    \\int_{-\\infty}^a f_X(x)\\,\\text{d} x\n    +\n    \\int_{a}^b f_X(x)\\,\\text{d} x\n    +\n    \\int_{b}^\\infty f_X(x)\\,\\text{d} x\n    \\\\\n    &=\n    {\\int_{-\\infty}^a 0\\,\\text{d} x}\n    +\n    \\int_{a}^b \\frac{1}{b-a}\\,\\text{d} x\n    +\n    {\\int_{b}^\\infty 0\\,\\text{d} x}\n    \\\\\n    &=\n    \\frac{1}{b-a}\\int_a^b1\\,\\text{d} x\n    \\\\\n    &=\n    \\frac{1}{b-a}\n    [x]_a^b\n    \\\\\n    &=\n    \\frac{1}{b-a}(b-a)\n    \\\\\n    &=\n    1\n    .\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\n\nTipThe CDF\n\n\n\n\n\nThe cdf is \\(F_X(x)=P(X\\leq x)=\\int_{-\\infty}^x f_X(t)\\,\\text{d} t\\). If \\(x&lt; a\\), then\n\\[\nF_X(x)=\\int_{-\\infty}^xf_X(t)\\,\\text{d} t=\\int_{-\\infty}^x0\\,\\text{d} t=0.\n\\]\nIf \\(a\\leq x\\leq b\\), then\n\\[\n\\begin{aligned}\n    F_X(x)\n    &=\n    \\int_{-\\infty}^xf_X(t)\\,\\text{d} t\n    \\\\\n    &=\n    \\int_{-\\infty}^af_X(t)\\,\\text{d} t\n    +\n    \\int_{a}^xf_X(t)\\,\\text{d} t\n    \\\\\n    &=\n    {\\int_{-\\infty}^a0\\,\\text{d} t}\n    +\n    \\int_{a}^x\\frac{1}{b-a}\\,\\text{d} t\n    \\\\\n    &=\n    \\frac{1}{b-a}[t]_a^x\n    \\\\\n    &=\n    \\frac{x-a}{b-a}\n    .\n\\end{aligned}\n\\]\nIf \\(b &lt; x\\), then\n\\[\n\\begin{aligned}\n    F_X(x)\n    &=\n    \\int_{-\\infty}^xf_X(t)\\,\\text{d} t\n    \\\\\n    &=\n    \\int_{-\\infty}^af_X(t)\\,\\text{d} t\n    +\n    \\int_{a}^bf_X(t)\\,\\text{d} t\n    +\n    \\int_{b}^xf_X(t)\\,\\text{d} t\n    \\\\\n        &=\n    {\\int_{-\\infty}^a0\\,\\text{d} t}\n    +\n    \\int_{a}^b\\frac{1}{b-a}\\,\\text{d} t\n    +\n    {\\int_{b}^x0\\,\\text{d} t}\n    \\\\\n    &=1.\n\\end{aligned}\n\\]\nSo the cdf of \\(X\\sim\\text{Unif}(a,\\, b)\\) is\n\\[\n    F_X(x)\n    =\n    \\begin{cases}\n        0 & x&lt;a \\\\\n        \\frac{x-a}{b-a} & a\\leq x\\leq b \\\\\n        1 & b&lt;x.\n    \\end{cases}\n\\]\n\n\n\n\n\n\n\n\n\nNoteThe mean\n\n\n\n\n\nThe expected value is the midpoint of the interval:\n\\[\n\\begin{align*}\n    E(X)\n    &=\n    \\int_{-\\infty}^\\infty\n    xf_X(x)\\,\\text{d} x\n    \\\\\n    &=\n    \\int_{-\\infty}^a\n    xf_X(x)\\,\\text{d} x\n    +\n    \\int_{a}^b\n    xf_X(x)\\,\\text{d} x\n    +\n    \\int_{b}^\\infty\n    xf_X(x)\\,\\text{d} x\n    \\\\\n        &=\n    {\\int_{-\\infty}^a\n    x\\cdot0\\,\\text{d} x}\n    +\n    \\int_{a}^b\n    x\\frac{1}{b-a}\\,\\text{d} x\n    +\n    {\\int_{b}^\\infty\n    x\\cdot0\\,\\text{d} x}\n    \\\\\n    &=\n    0+\\frac{1}{b-a}\\int_a^b x\\,\\text{d} x+0\n    \\\\\n    &=\n    \\frac{1}{b-a}\\left[\\frac{1}{2}x^2\\right]_a^b\n    \\\\\n    &=\n    \\frac{1}{b-a}\\left[\\frac{1}{2}b^2-\\frac{1}{2}a^2\\right]\n    \\\\\n        &=\n    \\frac{1}{2(b-a)}\\left[b^2-a^2\\right]\n    \\\\\n        &=\n    \\frac{1}{2{(b-a)}}{(b-a)}(b+a)\n    \\\\\n    &=\\frac{b+a}{2}.\n\\end{align*}\n\\]\nThat’s the proper derivation, but without the math, we could have reasoned our way to this answer by noting that the range is bounded, so the mean is guaranteed to exist, and the distribution is symmetric, so the mean matches the point of symmetry.",
+    "crumbs": [
+      "Distribution Families",
+      "Continuous uniform"
+    ]
+  },
+  {
+    "objectID": "distributions/continuous-gamma.html",
+    "href": "distributions/continuous-gamma.html",
+    "title": "Gamma distribution",
+    "section": "",
+    "text": "The gamma distribution is a common choice for modeling continuous quantities that are non-negative: dollar amounts, waiting times, etc. It is governed by two positive parameters: the shape \\(\\alpha&gt;0\\) and the rate \\(\\beta&gt;0\\). Don’t worry about interpreting what those words mean. They’re just labels.",
+    "crumbs": [
+      "Distribution Families",
+      "Gamma"
+    ]
+  },
+  {
+    "objectID": "distributions/continuous-gamma.html#basic-properties",
+    "href": "distributions/continuous-gamma.html#basic-properties",
+    "title": "Gamma distribution",
+    "section": "Basic properties",
+    "text": "Basic properties\nThe gamma distribution gets its name because it is related to the so-called gamma function, which appears in the normalizing constant:\n\\[\n\\Gamma(\\alpha) = \\int_0^\\infty x^{\\alpha-1}e^{-x}\\,\\text{d}x.\n\\]\nWe have a lil’ math explainer where you can read more about it.\n\n\n\n\n\n\n\nNotation\n\\(X\\sim\\text{Gamma}(\\alpha,\\,\\beta)\\)\n\n\nRange\n\\([0,\\,\\infty)\\)\n\n\nParameter space\n\\(\\alpha,\\,\\beta&gt;0\\)\n\n\nPDF\n\\(f(x)=\\begin{cases}\\frac{\\beta^\\alpha}{\\Gamma(\\alpha)}x^{\\alpha-1}e^{-\\beta x} &x\\geq 0\\\\0 & x&lt;0.\\end{cases}\\)\n\n\nMGF\n\n\\(M(t)=\\left(\\frac{\\beta}{\\beta-t}\\right)^\\alpha\\), \\(t&lt;\\beta\\)\n\n\n\nExpectation\n\\(\\alpha/\\beta\\)\n\n\nVariance\n\\(\\alpha/\\beta^2\\)",
+    "crumbs": [
+      "Distribution Families",
+      "Gamma"
+    ]
+  },
+  {
+    "objectID": "distributions/continuous-gamma.html#special-cases",
+    "href": "distributions/continuous-gamma.html#special-cases",
+    "title": "Gamma distribution",
+    "section": "Special cases",
+    "text": "Special cases\nParticular special cases of the gamma distribution get special nicknames:\n\nIf \\(X\\sim\\text{Gamma}(1,\\,\\beta)\\), then \\(X\\) has the exponential distribution, denoted \\(X\\sim\\text{Exp}(\\beta)\\) This special case is nice because we get closed-form expressions for the CDF and the quantile function:\n\n\\[\n\\begin{aligned}\nf(x)&=\\beta e^{-\\beta x}\\\\\nF(x)&=1-e^{-\\beta x}\\\\\nF^{-1}(p)&=-\\frac{\\ln(1-p)}{\\beta}.\n\\end{aligned}\n\\]\n\nIf \\(X\\sim\\text{Gamma}(\\nu/2,\\, 1/2)\\), then \\(X\\) has the chi-squared distribution, denoted \\(X\\sim\\chi^2_\\nu\\). In this context we call the parameter \\(\\nu&gt;0\\) the degrees of freedom of the chi-squared distribution.\nIf \\(X\\sim\\text{Gamma}(k,\\,\\beta)\\) for some integer \\(k\\), then \\(X\\) has the Erlang distribution, denoted \\(X\\sim\\text{Erlang}(k,\\, \\beta)\\)",
+    "crumbs": [
+      "Distribution Families",
+      "Gamma"
+    ]
+  },
+  {
+    "objectID": "distributions/continuous-gamma.html#r-commands",
+    "href": "distributions/continuous-gamma.html#r-commands",
+    "title": "Gamma distribution",
+    "section": "\nR commands",
+    "text": "R commands\nHere is the documentation for the suite of commands that let you work with the gamma distribution in R:\n\ndgamma(x, shape, rate = 1) # PDF\npgamma(q, shape, rate = 1) # CDF: P(X &lt;= q)\nqgamma(p, shape, rate = 1) # quantile function (inverse CDF)\nrgamma(n, shape, rate = 1) # random numbers",
+    "crumbs": [
+      "Distribution Families",
+      "Gamma"
+    ]
+  },
+  {
+    "objectID": "distributions/continuous-gamma.html#play-around",
+    "href": "distributions/continuous-gamma.html#play-around",
+    "title": "Gamma distribution",
+    "section": "Play around!",
+    "text": "Play around!\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 700\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  titlePanel(\"Gamma distribution CDF and PDF\"),\n  \n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"alpha\", \"Shape (α):\",\n                  min = 0.5, max = 5, value = 2, step = 0.1),\n      sliderInput(\"beta\", \"Rate (β):\",\n                  min = 0.2, max = 2, value = 0.5, step = 0.05),\n      hr(),\n      verbatimTextOutput(\"moments\")\n    ),\n    \n    mainPanel(\n      plotOutput(\"gammaPlot\", height = \"600px\")\n    )\n  )\n)\n\nserver &lt;- function(input, output) {\n  output$moments &lt;- renderText({\n    alpha &lt;- input$alpha\n    beta  &lt;- input$beta\n    mu &lt;- alpha / beta\n    sd &lt;- sqrt(alpha) / beta\n    paste0(\"E(X) = \", round(mu, 3),\n           \"\\nsd(X) = \", round(sd, 3))\n  })\n  \n  output$gammaPlot &lt;- renderPlot({\n    alpha &lt;- input$alpha\n    beta  &lt;- input$beta\n    \n    # Fixed plotting range\n    x_min &lt;- -2\n    x_max &lt;- 25\n    x &lt;- seq(x_min, x_max, length.out = 2000)\n    \n    # PDF and CDF\n    pdf_vals &lt;- ifelse(x &gt;= 0, dgamma(x, shape = alpha, rate = beta), 0)\n    cdf_vals &lt;- ifelse(x &gt;= 0, pgamma(x, shape = alpha, rate = beta), 0)\n    \n    mu &lt;- alpha / beta\n    \n    # Fixed y-limits\n    pdf_ylim &lt;- c(0, 0.8)\n    cdf_ylim &lt;- c(0, 1)\n    \n    par(mfrow = c(2, 1), mar = c(4, 4, 2, 1))\n    \n    # --- CDF ---\n    plot(x, cdf_vals, type = \"l\", lwd = 2, col = \"blue\",\n         xlim = c(x_min, x_max), ylim = cdf_ylim,\n         main = \"Cumulative Distribution Function (CDF)\",\n         xlab = \"\", ylab = \"F(x)\")\n    abline(h = c(0, 1), col = \"gray80\", lty = 2)\n    #abline(v = mu, col = \"gray60\", lty = 3)\n    \n    # --- PDF ---\n    plot(x, pdf_vals, type = \"l\", lwd = 2, col = \"darkred\",\n         xlim = c(x_min, x_max), ylim = pdf_ylim,\n         main = \"Probability Density Function (PDF)\",\n         xlab = \"x\", ylab = \"f(x)\")\n    #abline(v = mu, col = \"gray60\", lty = 3)\n    \n    # Label E(X) with mtext along x-axis\n    if (mu &gt;= x_min && mu &lt;= x_max) {\n      mtext(\"E(X)\",\n            side = 1, line = 2.2, at = mu, cex = 1.0)\n    }\n  })\n}\n\nshinyApp(ui = ui, server = server)",
+    "crumbs": [
+      "Distribution Families",
+      "Gamma"
     ]
   },
   {

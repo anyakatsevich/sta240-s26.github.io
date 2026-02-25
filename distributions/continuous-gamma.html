@@ -60,6 +60,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../problems/pset-0.html" rel="next">
+<link href="../distributions/continuous-normal.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -138,7 +140,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Gamma distribution</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../distributions/discrete-binomial.html">Distribution Families</a></li><li class="breadcrumb-item"><a href="../distributions/continuous-gamma.html">Gamma</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -373,13 +375,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Distribution Families</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../distributions/discrete-binomial.html" class="sidebar-item-text sidebar-link">
@@ -394,8 +396,32 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../distributions/discrete-hypergeometric.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hypergeometric</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../distributions/discrete-poisson.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Poisson</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../distributions/continuous-uniform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Continuous uniform</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../distributions/continuous-normal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Normal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../distributions/continuous-gamma.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Gamma</span></a>
   </div>
 </li>
       </ul>
@@ -474,6 +500,29 @@ window.Quarto = {
  <span class="menu-text">Lab 4</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Exam Study Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/exam-midterm-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Midterm 1</span></a>
+  </div>
+</li>
       </ul>
 </li>
     </ul>
@@ -488,11 +537,10 @@ window.Quarto = {
   <li><a href="#special-cases" id="toc-special-cases" class="nav-link" data-scroll-target="#special-cases">Special cases</a></li>
   <li><a href="#r-commands" id="toc-r-commands" class="nav-link" data-scroll-target="#r-commands"><code>R</code> commands</a></li>
   <li><a href="#play-around" id="toc-play-around" class="nav-link" data-scroll-target="#play-around">Play around!</a></li>
-  <li><a href="#derivations" id="toc-derivations" class="nav-link" data-scroll-target="#derivations">Derivations</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../distributions/discrete-binomial.html">Distribution Families</a></li><li class="breadcrumb-item"><a href="../distributions/continuous-gamma.html">Gamma</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">Gamma distribution</h1>
 </div>
 
@@ -660,83 +708,72 @@ server &lt;- function(input, output) {
 shinyApp(ui = ui, server = server)
 
 </a></code></pre>
-</section><section id="derivations" class="level2"><h2 class="anchored" data-anchor-id="derivations">Derivations</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>CDF, quantile function, and median of Gamma(1, <span class="math inline">\(\beta\)</span>)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(X\sim\text{Exp}(\beta)\)</span>, and recall that this means <span class="math inline">\(X\sim\text{Gamma}(\alpha=1,\, \beta)\)</span>. So the pdf is <span class="math inline">\(f_X(x)=\beta\exp(-\beta x)\)</span> for <span class="math inline">\(x&gt;0\)</span>, and the cdf is</p>
-<p><span class="math display">\[
+<!--## Derivations
+
+::: {.callout-tip collapse="true"}
+## CDF, quantile function, and median of Gamma(1, $\beta$)
+
+Let $X\sim\text{Exp}(\beta)$, and recall that this means $X\sim\text{Gamma}(\alpha=1,\, \beta)$. So the pdf is $f_X(x)=\beta\exp(-\beta x)$ for $x>0$, and the cdf is 
+
+$$
 \begin{aligned}
 F_X(x)
-&amp;=
+&=
 \int_0^x\beta e^{-\beta t}\,\text{d} t
 =
 [
 -e^{\beta t}
 ]_0^x
 =
-1-e^{-\beta x},\quad x&gt;0.
+1-e^{-\beta x},\quad x>0.
 \end{aligned}
-\]</span></p>
-<p>For some <span class="math inline">\(y\in(0,\, 1)\)</span>, we see that</p>
-<p><span class="math display">\[
+$$
+
+For some $y\in(0,\, 1)$, we see that
+
+$$
 \begin{align*}
-y&amp;=1-e^{-\beta x}\\
-e^{-y}&amp;=1-y\\
--\beta x&amp;=\ln(1-y)\\
-x&amp;=\frac{-\ln(1-y)}{\beta},
+y&=1-e^{-\beta x}\\
+e^{-y}&=1-y\\
+-\beta x&=\ln(1-y)\\
+x&=\frac{-\ln(1-y)}{\beta},
 \end{align*}
-\]</span></p>
-<p>and so the quantile function is</p>
-<p><span class="math display">\[
+$$
+
+and so the quantile function is 
+
+$$
 F_X^{-1}(y)=-\frac{\ln(1-y)}{\beta},
-\]</span></p>
-<p>and the median of the exponential distribution is</p>
-<p><span class="math display">\[
+$$
+
+and the median of the exponential distribution is 
+
+$$
 F_X^{-1}(0.5)=-\frac{\ln(1-0.5)}{\beta}=-\frac{\ln(0.5)}{\beta}=\frac{\ln 2}{\beta}.
-\]</span></p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Moment-generating function
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>This is classic “massage and squint.” Let <span class="math inline">\(t\in(-\infty,\,\beta)\)</span>. Then</p>
-<p><span class="math display">\[
+$$
+
+:::
+
+::: {.callout-note collapse="true"}
+## Moment-generating function
+This is classic "massage and squint." Let $t\in(-\infty,\,\beta)$. Then
+
+$$
       \begin{align*}
-          M_X(t)&amp;=E\left(e^{tX}\right)\\
-          &amp;=\int_0^\infty e^{tx}\frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x}\,\text{d} x &amp;&amp; \text{LOTUS}\\
-          &amp;=\frac{\beta^\alpha}{\Gamma(\alpha)}\int_0^\infty x^{\alpha-1}e^{tx}e^{-\beta x}\,\text{d} x &amp;&amp; \text{pull out constant}\\
-          &amp;=\frac{\beta^\alpha}{\Gamma(\alpha)}\int_0^\infty x^{\alpha-1}e^{tx-\beta x}\,\text{d} x&amp;&amp; \text{combine base-e terms}\\
-`         &amp;=\frac{\beta^\alpha}{\Gamma(\alpha)}\int_0^\infty x^{\alpha-1}e^{(t-\beta) x}\,\text{d} x&amp;&amp; \text{factor out }x\\
-`         &amp;=\frac{\beta^\alpha}{\Gamma(\alpha)}\int_0^\infty x^{\alpha-1}e^{-(\beta-t) x}\,\text{d} x&amp;&amp; \text{factor out -1}\\
-          &amp;=\frac{\beta^\alpha}{\Gamma(\alpha)}\int_0^\infty \underbrace{x^{\alpha-1}e^{-(\beta-t)x}}_{\text{kernel of Gamma}(\alpha,\,\beta-t)}\,\text{d} x &amp;&amp; \text{recognize}\\
-          &amp;=\frac{\beta^\alpha}{{\Gamma(\alpha)}}\frac{{\Gamma(\alpha)}}{(\beta-t)^\alpha}\\
-          &amp;=\left(\frac{\beta}{\beta-t}\right)^\alpha.
+          M_X(t)&=E\left(e^{tX}\right)\\
+          &=\int_0^\infty e^{tx}\frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x}\,\text{d} x && \text{LOTUS}\\
+          &=\frac{\beta^\alpha}{\Gamma(\alpha)}\int_0^\infty x^{\alpha-1}e^{tx}e^{-\beta x}\,\text{d} x && \text{pull out constant}\\
+          &=\frac{\beta^\alpha}{\Gamma(\alpha)}\int_0^\infty x^{\alpha-1}e^{tx-\beta x}\,\text{d} x&& \text{combine base-e terms}\\
+`         &=\frac{\beta^\alpha}{\Gamma(\alpha)}\int_0^\infty x^{\alpha-1}e^{(t-\beta) x}\,\text{d} x&& \text{factor out }x\\
+`         &=\frac{\beta^\alpha}{\Gamma(\alpha)}\int_0^\infty x^{\alpha-1}e^{-(\beta-t) x}\,\text{d} x&& \text{factor out -1}\\
+          &=\frac{\beta^\alpha}{\Gamma(\alpha)}\int_0^\infty \underbrace{x^{\alpha-1}e^{-(\beta-t)x}}_{\text{kernel of Gamma}(\alpha,\,\beta-t)}\,\text{d} x && \text{recognize}\\
+          &=\frac{\beta^\alpha}{{\Gamma(\alpha)}}\frac{{\Gamma(\alpha)}}{(\beta-t)^\alpha}\\
+          &=\left(\frac{\beta}{\beta-t}\right)^\alpha.
       \end{align*}
-\]</span></p>
-<p>In order to invoke the gamma density kernel, we require that <span class="math inline">\(t&lt;\beta\)</span> so that the rate parameter of the implied gamma is positive.</p>
-</div>
-</div>
-</div>
+$$
+
+In order to invoke the gamma density kernel, we require that $t<\beta$ so that the rate parameter of the implied gamma is positive.
+:::-->
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
@@ -1138,7 +1175,17 @@ F_X^{-1}(0.5)=-\frac{\ln(1-0.5)}{\beta}=-\frac{\ln(0.5)}{\beta}=\frac{\ln 2}{\be
       }
     }
   });
-  </script>
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="../distributions/continuous-normal.html" class="pagination-link" aria-label="Normal">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Normal</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../problems/pset-0.html" class="pagination-link" aria-label="Problem Set 0">
+        <span class="nav-page-text">Problem Set 0</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
