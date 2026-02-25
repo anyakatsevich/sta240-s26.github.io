@@ -385,7 +385,7 @@
     "href": "labs/lab-5.html#task-3",
     "title": "Lab 5",
     "section": "Task 3",
-    "text": "Task 3\nUse R to compute the probability that I get at least one match that day.",
+    "text": "Task 3\nUse R to compute the probability that I get at least one match that day.\n\n\n\n\n\n\nWarningSolution\n\n\n\n\n\nWe want \\(P(X\\geq 1)=1-P(X=0)\\):\n\nmatch_prob &lt;- 1 - dbinom(0, 25, like_prob)\nmatch_prob\n\n[1] 0.3365319",
     "crumbs": [
       "Labs",
       "Lab 5"
@@ -396,7 +396,7 @@
     "href": "labs/lab-5.html#task-4",
     "title": "Lab 5",
     "section": "Task 4",
-    "text": "Task 4\nUse R to plot the PMF of \\(X\\).",
+    "text": "Task 4\nUse R to plot the PMF of \\(X\\).\n\n\n\n\n\n\nWarningSolution\n\n\n\n\n\n\nn &lt;- 25\nplot(0:n, dbinom(0:n, n, like_prob), \n     type = \"h\", ylab = \"P(X = k)\", xlab = \"k\")",
     "crumbs": [
       "Labs",
       "Lab 5"
@@ -407,7 +407,7 @@
     "href": "labs/lab-5.html#task-5",
     "title": "Lab 5",
     "section": "Task 5",
-    "text": "Task 5\nLet’s say that every day, I wake up, pour the coffee, do some lil’ granny stretches so that I don’t break a hip, and then swipe on the app until I’ve sent out my 25 likes for the day. Then I wait to see if any matches roll in. I do this day after day after day. Let \\(Y\\) be the number of days I have to wait through until I get at least one match.\nWhat is the distribution of \\(Y\\)? Use R to plot its PMF.",
+    "text": "Task 5\nLet’s say that every day, I wake up, pour the coffee, do some lil’ granny stretches so that I don’t break a hip, and then swipe on the app until I’ve sent out my 25 likes for the day. Then I wait to see if any matches roll in. I do this day after day after day. Let \\(Y\\) be the number of days I have to wait through until I get at least one match.\nWhat is the distribution of \\(Y\\)? Use R to plot its PMF.\n\n\n\n\n\n\nWarningSolution\n\n\n\n\n\n\\(Y\\sim\\text{Geom}(0.3365)\\).\n\nplot(1:26, dgeom(0:25, match_prob), type = \"h\", ylab = \"P(Y = k)\", xlab = \"k\")",
     "crumbs": [
       "Labs",
       "Lab 5"
@@ -418,7 +418,7 @@
     "href": "labs/lab-5.html#task-6",
     "title": "Lab 5",
     "section": "Task 6",
-    "text": "Task 6\nLet’s say I first downloaded the app on a Sunday. Use R to compute the probability that I get a match in the first week.",
+    "text": "Task 6\nLet’s say I first downloaded the app on a Sunday. Use R to compute the probability that I get a match in the first week.\n\n\n\n\n\n\nWarningSolution\n\n\n\n\n\nWe want the probability that one of the first 7 trials is a success. So \\(P(Y\\leq 7)\\):\n\npgeom(7 - 1, match_prob)\n\n[1] 0.9434099",
     "crumbs": [
       "Labs",
       "Lab 5"
@@ -429,7 +429,7 @@
     "href": "labs/lab-5.html#task-7-optional",
     "title": "Lab 5",
     "section": "Task 7 (optional)",
-    "text": "Task 7 (optional)\nWhen you post your profile on a dating app, everyone in your area can see and swipe on it. If someone swipes right on you, the app will usually alert you to the fact that this happened, but they will charge you for the privilege of seeing who exactly it is. So let \\(Z\\) be the number of “likes” you receive in a given twenty-four hour period. We could model this using the Poisson distribution and say that \\(Z\\sim \\text{Poisson}(\\lambda)\\). If we wish to model the likes received by some disgraced undesirable like James Corden, we might pick \\(Z\\sim \\text{Poisson}(0.01)\\), which has \\(E(Z)=0.01\\). Suffice it to say, not a tremendous number of likes rolling in for that guy, on average. If we wish to model the likes received by Taylor Swift, we might pick \\(Z\\sim\\text{Poisson}(20,000,000)\\). You get the idea.\nFor an ordinary person, perhaps \\(Z\\sim\\text{Poisson}(5)\\). Use R to compute the probability that such a person beats their average for the day.",
+    "text": "Task 7 (optional)\nWhen you post your profile on a dating app, everyone in your area can see and swipe on it. If someone swipes right on you, the app will usually alert you to the fact that this happened, but they will charge you for the privilege of seeing who exactly it is. So let \\(Z\\) be the number of “likes” you receive in a given twenty-four hour period. We could model this using the Poisson distribution and say that \\(Z\\sim \\text{Poisson}(\\lambda)\\). If we wish to model the likes received by some disgraced undesirable like James Corden, we might pick \\(Z\\sim \\text{Poisson}(0.01)\\), which has \\(E(Z)=0.01\\). Suffice it to say, not a tremendous number of likes rolling in for that guy, on average. If we wish to model the likes received by Taylor Swift, we might pick \\(Z\\sim\\text{Poisson}(20,000,000)\\). You get the idea.\nFor an ordinary person, perhaps \\(Z\\sim\\text{Poisson}(5)\\). Use R to compute the probability that such a person beats their average for the day.\n\n\n\n\n\n\nWarningSolution\n\n\n\n\n\nWe want \\(P(Z&gt;5)=1-P(Y\\leq 5)\\):\n\n1 - ppois(5, lambda = 5)\n\n[1] 0.3840393",
     "crumbs": [
       "Labs",
       "Lab 5"
@@ -440,7 +440,7 @@
     "href": "labs/lab-5.html#task-8-optional",
     "title": "Lab 5",
     "section": "Task 8 (optional)",
-    "text": "Task 8 (optional)\nUse R to plot the PMF of \\(Z\\).",
+    "text": "Task 8 (optional)\nUse R to plot the PMF of \\(Z\\).\n\n\n\n\n\n\nWarningSolution\n\n\n\n\n\n\nplot(0:25, dpois(0:25, 5), type = \"h\", ylab = \"P(Z = k)\", xlab = \"k\")",
     "crumbs": [
       "Labs",
       "Lab 5"

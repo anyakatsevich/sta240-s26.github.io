@@ -669,155 +669,160 @@ I =\begin{cases}
 </div>
 </section><section id="task-3" class="level2"><h2 class="anchored" data-anchor-id="task-3">Task 3</h2>
 <p>Use <code>R</code> to compute the probability that I get at least one match that day.</p>
-<!--
-::: {.callout-warning collapse="true"}
-## Solution
-
-We want $P(X\geq 1)=1-P(X=0)$:
-
-
-::: {.cell}
-
-```{.r .cell-code}
-match_prob <- 1 - dbinom(0, 25, like_prob)
-match_prob
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 0.3365319
-```
-
-
-:::
-:::
-
-
-:::
--->
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We want <span class="math inline">\(P(X\geq 1)=1-P(X=0)\)</span>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">match_prob</span> <span class="op">&lt;-</span> <span class="fl">1</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">dbinom</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">25</span>, <span class="va">like_prob</span><span class="op">)</span></span>
+<span><span class="va">match_prob</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3365319</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section><section id="task-4" class="level2"><h2 class="anchored" data-anchor-id="task-4">Task 4</h2>
-<p>Use <code>R</code> to plot the PMF of <span class="math inline">\(X\)</span>. <!--
-::: {.callout-warning collapse="true"}
-## Solution
-
-
-::: {.cell}
-
-```{.r .cell-code}
-n <- 25
-plot(0:n, dbinom(0:n, n, like_prob), 
-     type = "h", ylab = "P(X = k)", xlab = "k")
-```
-
-::: {.cell-output-display}
-![](lab-5_files/figure-html/unnamed-chunk-3-1.png){width=672}
-:::
-:::
-
-
-:::
---></p>
+<p>Use <code>R</code> to plot the PMF of <span class="math inline">\(X\)</span>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">25</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="va">n</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">dbinom</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="va">n</span>, <span class="va">n</span>, <span class="va">like_prob</span><span class="op">)</span>, </span>
+<span>     type <span class="op">=</span> <span class="st">"h"</span>, ylab <span class="op">=</span> <span class="st">"P(X = k)"</span>, xlab <span class="op">=</span> <span class="st">"k"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="lab-5_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section><section id="task-5" class="level2"><h2 class="anchored" data-anchor-id="task-5">Task 5</h2>
 <p>Let’s say that every day, I wake up, pour the coffee, do some lil’ granny stretches so that I don’t break a hip, and then swipe on the app until I’ve sent out my 25 likes for the day. Then I wait to see if any matches roll in. I do this day after day after day. Let <span class="math inline">\(Y\)</span> be the number of days I have to wait through until I get at least one match.</p>
 <p>What is the distribution of <span class="math inline">\(Y\)</span>? Use <code>R</code> to plot its PMF.</p>
-<!--
-::: {.callout-warning collapse="true"}
-## Solution
-
-$Y\sim\text{Geom}(0.3365)$.
-
-
-::: {.cell}
-
-```{.r .cell-code}
-plot(1:26, dgeom(0:25, match_prob), type = "h", ylab = "P(Y = k)", xlab = "k")
-```
-
-::: {.cell-output-display}
-![](lab-5_files/figure-html/unnamed-chunk-4-1.png){width=672}
-:::
-:::
-
-
-:::
--->
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(Y\sim\text{Geom}(0.3365)\)</span>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">26</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Geometric.html">dgeom</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">25</span>, <span class="va">match_prob</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"h"</span>, ylab <span class="op">=</span> <span class="st">"P(Y = k)"</span>, xlab <span class="op">=</span> <span class="st">"k"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="lab-5_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section><section id="task-6" class="level2"><h2 class="anchored" data-anchor-id="task-6">Task 6</h2>
 <p>Let’s say I first downloaded the app on a Sunday. Use <code>R</code> to compute the probability that I get a match in the first week.</p>
-<!--
-::: {.callout-warning collapse="true"}
-## Solution
-
-We want the probability that one of the first 7 trials is a success. So $P(Y\leq 7)$:
-
-
-::: {.cell}
-
-```{.r .cell-code}
-pgeom(7 - 1, match_prob)
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 0.9434099
-```
-
-
-:::
-:::
-
-:::
--->
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We want the probability that one of the first 7 trials is a success. So <span class="math inline">\(P(Y\leq 7)\)</span>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Geometric.html">pgeom</a></span><span class="op">(</span><span class="fl">7</span> <span class="op">-</span> <span class="fl">1</span>, <span class="va">match_prob</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9434099</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section><section id="task-7-optional" class="level2"><h2 class="anchored" data-anchor-id="task-7-optional">Task 7 (optional)</h2>
 <p>When you post your profile on a dating app, everyone in your area can see and swipe on it. If someone swipes right on you, the app will usually alert you to the fact that this happened, but they will charge you for the privilege of seeing who exactly it is. So let <span class="math inline">\(Z\)</span> be the number of “likes” you receive in a given twenty-four hour period. We could model this using the Poisson distribution and say that <span class="math inline">\(Z\sim \text{Poisson}(\lambda)\)</span>. If we wish to model the likes received by some disgraced undesirable like James Corden, we might pick <span class="math inline">\(Z\sim \text{Poisson}(0.01)\)</span>, which has <span class="math inline">\(E(Z)=0.01\)</span>. Suffice it to say, not a tremendous number of likes rolling in for that guy, on average. If we wish to model the likes received by Taylor Swift, we might pick <span class="math inline">\(Z\sim\text{Poisson}(20,000,000)\)</span>. You get the idea.</p>
 <p>For an ordinary person, perhaps <span class="math inline">\(Z\sim\text{Poisson}(5)\)</span>. Use <code>R</code> to compute the probability that such a person beats their average for the day.</p>
-<!--
-::: {.callout-warning collapse="true"}
-## Solution
-
-We want $P(Z>5)=1-P(Y\leq 5)$:
-
-
-::: {.cell}
-
-```{.r .cell-code}
-1 - ppois(5, lambda = 5)
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 0.3840393
-```
-
-
-:::
-:::
-
-:::
--->
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We want <span class="math inline">\(P(Z&gt;5)=1-P(Y\leq 5)\)</span>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Poisson.html">ppois</a></span><span class="op">(</span><span class="fl">5</span>, lambda <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3840393</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section><section id="task-8-optional" class="level2"><h2 class="anchored" data-anchor-id="task-8-optional">Task 8 (optional)</h2>
 <p>Use <code>R</code> to plot the PMF of <span class="math inline">\(Z\)</span>.</p>
-<!--
-::: {.callout-warning collapse="true"}
-## Solution
-
-
-::: {.cell}
-
-```{.r .cell-code}
-plot(0:25, dpois(0:25, 5), type = "h", ylab = "P(Z = k)", xlab = "k")
-```
-
-::: {.cell-output-display}
-![](lab-5_files/figure-html/unnamed-chunk-7-1.png){width=672}
-:::
-:::
-
-
-:::
--->
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">25</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Poisson.html">dpois</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">25</span>, <span class="fl">5</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"h"</span>, ylab <span class="op">=</span> <span class="st">"P(Z = k)"</span>, xlab <span class="op">=</span> <span class="st">"k"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="lab-5_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
