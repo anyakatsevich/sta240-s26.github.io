@@ -146,7 +146,7 @@ shinyApp(ui = ui, server = server)
 
 ```
 
-## Derivations
+<!--## Derivations
 
 ::: {.callout-tip collapse="true"}
 ## CDF, quantile function, and median of Gamma(1, $\beta$)
@@ -211,5 +211,5 @@ $$
 $$
 
 In order to invoke the gamma density kernel, we require that $t<\beta$ so that the rate parameter of the implied gamma is positive.
-:::
+:::-->
 

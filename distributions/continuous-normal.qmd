@@ -130,7 +130,7 @@ shinyApp(ui = ui, server = server)
 
 ```
 
-## Derivations
+<!--## Derivations
 
 ::: {.callout-note collapse="true"}
 ## Moment-generating function of N(0, 1)
@@ -152,4 +152,4 @@ $$
 
 This works for any $t\in\mathbb{R}$.
 
-:::
+:::-->

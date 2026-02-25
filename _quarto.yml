@@ -14,6 +14,11 @@ project:
   - distributions/discrete-binomial.qmd
   - distributions/discrete-geometric.qmd
   - distributions/discrete-poisson.qmd
+  - distributions/discrete-hypergeometric.qmd
+  - distributions/continuous-uniform.qmd
+  - distributions/continuous-normal.qmd
+  - distributions/continuous-gamma.qmd
+
   - labs/lab-1.qmd
   - labs/lab-2.qmd
   - labs/lab-3.qmd
@@ -166,16 +171,16 @@ website:
             text: Binomial
           - href: distributions/discrete-geometric.qmd
             text: Geometric
-      #     - href: distributions/discrete-hypergeometric.qmd
-      #       text: Hypergeometric
+          - href: distributions/discrete-hypergeometric.qmd
+            text: Hypergeometric
           - href: distributions/discrete-poisson.qmd
             text: Poisson
-      #     - href: distributions/continuous-uniform.qmd
-      #       text: Continuous uniform
-      #     - href: distributions/continuous-normal.qmd
-      #       text: Normal
-      #     - href: distributions/continuous-gamma.qmd
-      #       text: Gamma
+          - href: distributions/continuous-uniform.qmd
+            text: Continuous uniform
+          - href: distributions/continuous-normal.qmd
+            text: Normal
+          - href: distributions/continuous-gamma.qmd
+            text: Gamma
       #     - href: distributions/continuous-inverse-gamma.qmd
       #       text: Inverse gamma
       #     - href: distributions/continuous-beta.qmd
