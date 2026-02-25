@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -29,16 +29,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../labs/lab-1.html" rel="next">
+<link href="../problems/pset-4.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d640c705e8c17715bca3574aa719063f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-24b5e6359d046001481a7c94baaab5c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d0086a85466981861881e17a07507999.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -81,7 +84,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -98,7 +101,7 @@ window.Quarto = {
 </script>
 
 <meta property="og:title" content="Problem Set 5 – STA 240 Spring 2026">
-<meta property="og:description" content="Due Monday October 27 at 3PM">
+<meta property="og:description" content="Due Sunday March 22 at 11:59PM">
 <meta property="og:site_name" content="STA 240 Spring 2026">
 </head>
 
@@ -111,7 +114,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Problem Set 5</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problems/pset-0.html">Problem Sets</a></li><li class="breadcrumb-item"><a href="../problems/pset-5.html">Problem Set 5</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -126,13 +129,14 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="quarto-navigation-tool px-1" aria-label="RStudio Containers"><i class="bi bi-code-square"></i></a>
     <a href="https://go.canvas.duke.edu/" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-megaphone"></i></a>
-    <a href="https://edstem.org/us/courses/80868/discussion" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-people"></i></a>
-    <a href="https://www.gradescope.com/courses/1071176" title="Gradescope" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-file-arrow-up"></i></a>
+    <a href="https://edstem.org/us/courses/89558/discussion" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-people"></i></a>
+    <a href="https://www.gradescope.com/courses/1195780" title="Gradescope" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-file-arrow-up"></i></a>
 </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -240,24 +244,12 @@ window.Quarto = {
  <span class="menu-text">Infinite series</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../math/gamma-function.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Gamma function</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../math/massage-and-squint.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Massage and squint</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text"><code>R</code> Helpers</span></a>
+ <span class="menu-text">R Helpers</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -308,7 +300,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../explainers/sample.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><code>sample</code></span></a>
+ <span class="menu-text">sample</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -412,40 +404,112 @@ window.Quarto = {
  <span class="menu-text">Gamma</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../distributions/continuous-inverse-gamma.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Inverse gamma</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../distributions/continuous-beta.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beta</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Problem Sets</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset-0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Set 0</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-5.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Problem Set 5</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Labs</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Labs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Exam Study Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/exam-midterm-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Midterm 1</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -461,13 +525,12 @@ window.Quarto = {
   <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1">Problem 1</a></li>
   <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2</a></li>
   <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3">Problem 3</a></li>
-  <li><a href="#problem-4" id="toc-problem-4" class="nav-link" data-scroll-target="#problem-4">Problem 4</a></li>
+  <li><a href="#problem4" id="toc-problem4" class="nav-link" data-scroll-target="#problem4">Problem4</a></li>
   <li><a href="#problem-5" id="toc-problem-5" class="nav-link" data-scroll-target="#problem-5">Problem 5</a></li>
   <li><a href="#problem-6" id="toc-problem-6" class="nav-link" data-scroll-target="#problem-6">Problem 6</a></li>
   <li><a href="#problem-7" id="toc-problem-7" class="nav-link" data-scroll-target="#problem-7">Problem 7</a></li>
   <li><a href="#problem-8" id="toc-problem-8" class="nav-link" data-scroll-target="#problem-8">Problem 8</a></li>
   <li><a href="#problem-9" id="toc-problem-9" class="nav-link" data-scroll-target="#problem-9">Problem 9</a></li>
-  <li><a href="#problem-10" id="toc-problem-10" class="nav-link" data-scroll-target="#problem-10">Problem 10</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
   </ul>
 </nav>
@@ -475,10 +538,10 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problems/pset-0.html">Problem Sets</a></li><li class="breadcrumb-item"><a href="../problems/pset-5.html">Problem Set 5</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Problem Set 5</h1>
-<p class="subtitle lead">Due Monday October 27 at 3PM</p>
+<p class="subtitle lead">Due Sunday March 22 at 11:59PM</p>
 </div>
 
 
@@ -499,14 +562,14 @@ window.Quarto = {
 <section id="problem-0" class="level2">
 <h2 class="anchored" data-anchor-id="problem-0">Problem 0</h2>
 <p>Recommend some music for us to listen to while we grade this.</p>
+<!--## Problem 1
+
+From now to the end of the course, we will use all of the tools of single-variable calculus. You got a preview of this on [Problem Set 0](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-0.html), and our course page also includes some math refreshers ([derivatives](https://anyakatsevich.github.io/sta240-s26.github.io/math/differentiation.html), [integrals](https://anyakatsevich.github.io/sta240-s26.github.io/math/integration.html), etc). Please review these.
+
+What areas of calculus are you the least comfortable with at the moment? How do you think the course materials could be improved to better prepare you for this aspect of the course?-->
 </section>
 <section id="problem-1" class="level2">
 <h2 class="anchored" data-anchor-id="problem-1">Problem 1</h2>
-<p>From now to the end of the course, we will use all of the tools of single-variable calculus. You got a preview of this on <a href="https://sta240-f25.github.io/problems/pset-0.html">Problem Set 0</a>, and our course page also includes some math refreshers (<a href="https://sta240-f25.github.io/math/differentiation.html">derivatives</a>, <a href="https://sta240-f25.github.io/math/integration.html">integrals</a>, etc). Please review these.</p>
-<p>What areas of calculus are you the least comfortable with at the moment? How do you think the course materials could be improved to better prepare you for this aspect of the course?</p>
-</section>
-<section id="problem-2" class="level2">
-<h2 class="anchored" data-anchor-id="problem-2">Problem 2</h2>
 <p>Consider this function:</p>
 <p><span class="math display">\[
 F(x) = \begin{cases}
@@ -516,8 +579,8 @@ F(x) = \begin{cases}
 \]</span></p>
 <p>Assume <span class="math inline">\(g(x)\)</span> is continuous. I want <span class="math inline">\(F(x)\)</span> to be a continuous function, and I want <span class="math inline">\(F(x)\)</span> to be a valid cumulative distribution function (CDF). What properties must <span class="math inline">\(g(x)\)</span> satisfy in order to make that happen? Give three examples of <span class="math inline">\(g\)</span> that have these properties.</p>
 </section>
-<section id="problem-3" class="level2">
-<h2 class="anchored" data-anchor-id="problem-3">Problem 3</h2>
+<section id="problem-2" class="level2">
+<h2 class="anchored" data-anchor-id="problem-2">Problem 2</h2>
 <p>An absolutely continuous random variable <span class="math inline">\(X\)</span> has pdf</p>
 <p><span class="math display">\[
 f(x)=\begin{cases}
@@ -534,36 +597,36 @@ f(x)=\begin{cases}
 <li>Compute <span class="math inline">\(\text{var}(X)\)</span>.</li>
 </ol>
 </section>
-<section id="problem-4" class="level2">
-<h2 class="anchored" data-anchor-id="problem-4">Problem 4</h2>
+<section id="problem-3" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3">Problem 3</h2>
 <p>Recall the gamma function</p>
 <p><span class="math display">\[
 \Gamma(x)=\int_0^\infty y^{x-1}e^{-y}\,\text{d}y.
 \]</span></p>
 <p>Show that <span class="math inline">\(\Gamma\left(\frac{1}{2}\right)=\sqrt{\pi}\)</span>.</p>
 </section>
-<section id="problem-5" class="level2">
-<h2 class="anchored" data-anchor-id="problem-5">Problem 5</h2>
+<section id="problem4" class="level2">
+<h2 class="anchored" data-anchor-id="problem4">Problem4</h2>
 <p>A point is chosen at random on a line segment of length <span class="math inline">\(L\)</span>. Interpret this statement, and find the probability that the ratio of the shorter to the longer segment is less than <span class="math inline">\(\frac{1}{4}\)</span>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hint
+<span class="screen-reader-only">Tip</span>Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>It might help to read about the <a href="https://sta240-f25.github.io/distributions/continuous-uniform.html">continuous uniform distribution</a>.</p>
+<p>It might help to read about the <a href="https://anyakatsevich.github.io/sta240-s26.github.io/distributions/continuous-uniform.html">continuous uniform distribution</a>.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="problem-6" class="level2">
-<h2 class="anchored" data-anchor-id="problem-6">Problem 6</h2>
+<section id="problem-5" class="level2">
+<h2 class="anchored" data-anchor-id="problem-5">Problem 5</h2>
 <p>Here is the cdf of an absolutely continuous random variable <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[
 F(x)
@@ -586,7 +649,7 @@ F(x)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hint
+<span class="screen-reader-only">Warning</span>Hint
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -594,8 +657,8 @@ Hint
 </div>
 </div>
 </section>
-<section id="problem-7" class="level2">
-<h2 class="anchored" data-anchor-id="problem-7">Problem 7</h2>
+<section id="problem-6" class="level2">
+<h2 class="anchored" data-anchor-id="problem-6">Problem 6</h2>
 <p>One of the technical themes of our course is “how do I compute an expected value without wanting to vomit?” We will have many tools in our tool belt for getting this done, and you must become fluent in knowing what to use when. Below are two nifty facts that might come in handy one day.</p>
 <p>Let <span class="math inline">\(X\)</span> be an absolutely continuous random variable with pdf <span class="math inline">\(f\)</span> and cdf <span class="math inline">\(F\)</span>.</p>
 <ol type="a">
@@ -611,12 +674,12 @@ E(X)=\int_0^1F^{-1}(x)\,\text{d} x.
 E(X)=\int_0^\infty P(X&gt;x)\,\text{d} x.
 \]</span></p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hint
+<span class="screen-reader-only">Tip</span>Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -627,8 +690,8 @@ Hint
 </div>
 </div>
 </section>
-<section id="problem-8" class="level2">
-<h2 class="anchored" data-anchor-id="problem-8">Problem 8</h2>
+<section id="problem-7" class="level2">
+<h2 class="anchored" data-anchor-id="problem-7">Problem 7</h2>
 <p>Let <span class="math inline">\(X\)</span> be any absolutely continuous random variable with pdf <span class="math inline">\(f\)</span> and cdf <span class="math inline">\(F\)</span>, and assume that <span class="math inline">\(E[(X-a)^2]\)</span> and <span class="math inline">\(E\left[|X-a|\right]\)</span> are finite for all <span class="math inline">\(a\in \mathbb{R}\)</span>.</p>
 <ol type="a">
 <li>Compute and interpret</li>
@@ -643,15 +706,15 @@ a_0=\underset{a\in\mathbb{R}}{\arg\min}\,E[(X-a)^2].
 b_0=\underset{b\in\mathbb{R}}{\arg\min}\,E\left[|X-b|\right].
 \]</span></p>
 </section>
-<section id="problem-9" class="level2">
-<h2 class="anchored" data-anchor-id="problem-9">Problem 9</h2>
+<section id="problem-8" class="level2">
+<h2 class="anchored" data-anchor-id="problem-8">Problem 8</h2>
 <ol type="a">
 <li>Compute the moment generating function of the geometric distribution. For what values of <span class="math inline">\(t\)</span> is it defined?</li>
 <li>Use the mgf to compute the mean and variance of the geometric distribution.</li>
 </ol>
 </section>
-<section id="problem-10" class="level2">
-<h2 class="anchored" data-anchor-id="problem-10">Problem 10</h2>
+<section id="problem-9" class="level2">
+<h2 class="anchored" data-anchor-id="problem-9">Problem 9</h2>
 <p>Consider <span class="math inline">\(X\sim\textrm{Gamma}(\alpha,\,\beta)\)</span>.</p>
 <ol type="a">
 <li>Find <span class="math inline">\(M_X(t)=E[e^{tX}]\)</span>, the moment generating function of <span class="math inline">\(X\)</span>. For what values of <span class="math inline">\(t\)</span> is it defined?</li>
@@ -662,11 +725,11 @@ b_0=\underset{b\in\mathbb{R}}{\arg\min}\,E\left[|X-b|\right].
 </section>
 <section id="submission" class="level2">
 <h2 class="anchored" data-anchor-id="submission">Submission</h2>
-<p>You are free to compose your solutions for this problem set however you wish (scan or photograph written work, handwriting capture on a tablet device, LaTeX, Quarto, whatever) as long as the final product is a single PDF file. You must upload this to <a href="https://www.gradescope.com/courses/1071176">Gradescope</a> and mark the pages associated with each problem.</p>
+<p>You are free to compose your solutions for this problem set however you wish (scan or photograph written work, handwriting capture on a tablet device, LaTeX, Quarto, whatever) as long as the final product is a single PDF file. You must upload this to <a href="https://www.gradescope.com/courses/1195780">Gradescope</a> and mark the pages associated with each problem.</p>
 <p>Do not forget to include the following:</p>
 <ul>
-<li>For each problem, please <a href="https://sta240-f25.github.io/syllabus/syllabus_policies.html#collaboration">acknowledge your collaborators</a>;</li>
-<li>If a problem required you to code something, please include both the code and the output. “Including the code” can be as crude as a screenshot, but you might also use <a href="https://sta240-f25.github.io/explainers/quarto.html">Quarto</a> to get a nice lil’ pdf that you can merge with the rest of your submission.</li>
+<li>For each problem, please <a href="https://anyakatsevich.github.io/sta240-s26.github.io/syllabus/syllabus_policies.html#collaboration">acknowledge your collaborators</a>;</li>
+<li>If a problem required you to code something, please include both the code and the output. “Including the code” can be as crude as a screenshot, but you might also use <a href="https://anyakatsevich.github.io/sta240-s26.github.io/explainers/quarto.html">Quarto</a> to get a pdf that you can merge with the rest of your submission.</li>
 </ul>
 
 
@@ -724,13 +787,14 @@ b_0=\underset{b\in\mathbb{R}}{\arg\min}\,E\left[|X-b|\right].
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1072,11 +1136,23 @@ b_0=\underset{b\in\mathbb{R}}{\arg\min}\,E\left[|X-b|\right].
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../problems/pset-4.html" class="pagination-link" aria-label="Problem Set 4">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Problem Set 4</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../labs/lab-1.html" class="pagination-link" aria-label="Lab 1">
+        <span class="nav-page-text">Lab 1</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© Copyright 2025 John Zito</p>
+<p>© Copyright 2026 John Zito and Anya Katsevich</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
