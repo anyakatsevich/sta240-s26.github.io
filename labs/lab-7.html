@@ -643,7 +643,7 @@ F'_Y(y)&amp;=\frac{\text{d}}{\text{d} y}F_Z\left(\sqrt{y}\right) - \frac{\text{d
 &amp;=F_Z'\left(\sqrt{y}\right)\frac{\text{d}}{\text{d}y}\left[\sqrt{y}\right] - F_Z'\left(\sqrt{y}\right)\frac{\text{d}}{\text{d}y}\left[-\sqrt{y}\right]\\
 &amp;=f_Z\left(\sqrt{y}\right)\frac{1}{2\sqrt{y}} - f_{Z}\left(-\sqrt{y}\right)\left(-\frac{1}{2\sqrt{y}}\right)\\
 &amp;=\frac{1}{2\sqrt{y}}\left(f_{Z}\left(\sqrt{y}\right) + f_{Z}\left(-\sqrt{y}\right)\right)\\
-&amp;=\frac{1}{2\sqrt{y}}\left(f_{Z}\left(\sqrt{y}\right) + f_{Z}\left(\sqrt{y}\right)\right)&amp;&amp;\text{(normal pdf is even function)}\\
+&amp;=\frac{1}{2\sqrt{y}}\left(f_{Z}\left(\sqrt{y}\right) + f_{Z}\left(\sqrt{y}\right)\right)&amp;&amp;\text{(standard normal pdf is even function)}\\
 &amp;=\frac{1}{2\sqrt{y}}\left(2 \cdot f_{Z}\left(\sqrt{y}\right)\right)\\
 &amp;=\frac{1}{\sqrt{y}}f_{Z}\left(\sqrt{y}\right)\\
 &amp;=\frac{1}{\sqrt{y}}\frac{1}{\sqrt{2\pi}}e^{-\left(\sqrt{y}\right)^{2}/2}\\
@@ -687,6 +687,71 @@ f_{Y}(y)&amp;=\frac{1}{\sqrt{2\pi}}y^{-1/2}e^{-y/2}\\
 <li>What are the range and pdf of <span class="math inline">\(Y=\ln X\)</span>?</li>
 <li>Simulate <code>n = 5000</code> draws of <span class="math inline">\(Y\)</span>. Plot a histogram, and add a line plot of the density you derived in part b. They should match!</li>
 </ol>
+<!--
+::: {.callout-warning collapse="true"}
+## Solution
+
+To begin, we know that $\text{Range}(X)=[0,\,\infty)$ and 
+
+$$
+\begin{aligned}
+F_X(x)&=1-e^{-x},&&x\geq0\\
+f_X(x) &= e^{-x}, &&x\geq0.
+\end{aligned}
+$$
+
+One of our [math helpers](https://anyakatsevich.github.io/sta240-s26.github.io/math/logexp.html) displays the graph of the natural log and its inverse, the exponential. Consulting these, we note a few things:
+
+- the natural log takes in strictly positive numbers and spits out both positive *and* negative numbers;
+- both the natural log and the exponential are strictly increasing. In other words, they are *order-preserving*.
+
+The first property implies that $\text{Range}(Y)=\mathbb{R}$. So fix arbitrary $y\in \mathbb{R}$. The cdf of $Y$ is 
+
+$$
+\begin{aligned}
+F_Y(y)&=P(Y\leq y)\\
+&=P(\ln X\leq y)\\
+&=P(e^{\ln X}\leq e^y)\\
+&=P\left(X\leq e^y\right)\\
+&=F_X\left(e^y\right)\\
+&=1-e^{-e^y}.
+\end{aligned}
+$$
+
+Since the exponential function is order-preserving, we didn't have to chage the inequality when we applied it to both sides. To get the pdf, take a derivative (using the chain rule!):
+
+$$
+f_Y(y)=F_Y'(y)=\frac{\text{d}}{\text{d} y}\left(1-e^{-e^y}\right)=0-(-e^y)e^{-e^y}=e^{y-e^y},\quad y\in\mathbb{R}.
+$$
+
+If we compare this density to the histogram from a simulation, they agree:
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+set.seed(20)
+X <- rgamma(5000, shape = 1, rate = 1)
+Y <- log(X)
+hist(Y, breaks = "Scott", freq = FALSE)
+curve(exp(x - exp(x)), from = min(Y), to = max(Y), n = 1000, 
+      col = "red", lwd = 3, add = TRUE)
+```
+
+::: {.cell-output-display}
+![](lab-7_files/figure-html/unnamed-chunk-2-1.png){fig-align='center' width=672}
+:::
+:::
+
+
+Phew!
+:::
+--></section><section id="task-2" class="level1"><h1>Task 2</h1>
+<p>Consider <span class="math inline">\(X\sim\text{Unif}(-\pi/2,\,\pi/2)\)</span>.</p>
+<ol type="a">
+<li>What are the range and pdf of <span class="math inline">\(Y=\tan X\)</span>?</li>
+<li>Simulate <code>n = 5000</code> draws of <span class="math inline">\(Y\)</span>. Plot a histogram, and add a line plot of the density you derived in part b. Can you get them to match?</li>
+</ol>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -698,70 +763,6 @@ f_{Y}(y)&amp;=\frac{1}{\sqrt{2\pi}}y^{-1/2}e^{-y/2}\\
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>To begin, we know that <span class="math inline">\(\text{Range}(X)=[0,\,\infty)\)</span> and</p>
-<p><span class="math display">\[
-\begin{aligned}
-F_X(x)&amp;=1-e^{-x},&amp;&amp;x\geq0\\
-f_X(x) &amp;= e^{-x}, &amp;&amp;x\geq0.
-\end{aligned}
-\]</span></p>
-<p>One of our <a href="https://anyakatsevich.github.io/sta240-s26.github.io/math/logexp.html">math helpers</a> displays the graph of the natural log and its inverse, the exponential. Consulting these, we note a few things:</p>
-<ul>
-<li>the natural log takes in strictly positive numbers and spits out both positive <em>and</em> negative numbers;</li>
-<li>both the natural log and the exponential are strictly increasing. In other words, they are <em>order-preserving</em>.</li>
-</ul>
-<p>The first property implies that <span class="math inline">\(\text{Range}(Y)=\mathbb{R}\)</span>. So fix arbitrary <span class="math inline">\(y\in \mathbb{R}\)</span>. The cdf of <span class="math inline">\(Y\)</span> is</p>
-<p><span class="math display">\[
-\begin{aligned}
-F_Y(y)&amp;=P(Y\leq y)\\
-&amp;=P(\ln X\leq y)\\
-&amp;=P(e^{\ln X}\leq e^y)\\
-&amp;=P\left(X\leq e^y\right)\\
-&amp;=F_X\left(e^y\right)\\
-&amp;=1-e^{-e^y}.
-\end{aligned}
-\]</span></p>
-<p>Since the exponential function is order-preserving, we didn’t have to chage the inequality when we applied it to both sides. To get the pdf, take a derivative (using the chain rule!):</p>
-<p><span class="math display">\[
-f_Y(y)=F_Y'(y)=\frac{\text{d}}{\text{d} y}\left(1-e^{-e^y}\right)=0-(-e^y)e^{-e^y}=e^{y-e^y},\quad y\in\mathbb{R}.
-\]</span></p>
-<p>If we compare this density to the histogram from a simulation, they agree:</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">20</span><span class="op">)</span></span>
-<span><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/GammaDist.html">rgamma</a></span><span class="op">(</span><span class="fl">5000</span>, shape <span class="op">=</span> <span class="fl">1</span>, rate <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="va">Y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">Y</span>, breaks <span class="op">=</span> <span class="st">"Scott"</span>, freq <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">x</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>, from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span>, to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">1000</span>, </span>
-<span>      col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">3</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="lab-7_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Phew!</p>
-</div>
-</div>
-</div>
-</section><section id="task-2" class="level1"><h1>Task 2</h1>
-<p>Consider <span class="math inline">\(X\sim\text{Unif}(-\pi/2,\,\pi/2)\)</span>.</p>
-<ol type="a">
-<li>What are the range and pdf of <span class="math inline">\(Y=\tan X\)</span>?</li>
-<li>Simulate <code>n = 5000</code> draws of <span class="math inline">\(Y\)</span>. Plot a histogram, and add a line plot of the density you derived in part b. Can you get them to match?</li>
-</ol>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>By construction, <span class="math inline">\(\text{Range}(X)=(-\pi/2,\,\pi/2)\)</span>. You can read more about the continuous uniform <a href="https://anyakatsevich.github.io/sta240-s26.github.io/distributions/continuous-uniform.html">here</a>, and we see see that the cdf is</p>
 <p><span class="math display">\[
@@ -811,7 +812,7 @@ F'_Y(y)
 \]</span></p>
 <p>Rest assured that we did the math right, but you’d have a hard time verifying it with a simulation:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">20</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">20</span><span class="op">)</span></span>
 <span><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">5000</span>, <span class="op">-</span><span class="va">pi</span> <span class="op">/</span> <span class="fl">2</span>, <span class="va">pi</span> <span class="op">/</span> <span class="fl">2</span><span class="op">)</span></span>
 <span><span class="va">Y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Trig.html">tan</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">Y</span>, breaks <span class="op">=</span> <span class="st">"Scott"</span>, freq <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -824,7 +825,7 @@ F'_Y(y)
 </div>
 <p>Here is the graph of the density we derived, and for reference I added the pdf of the standard normal distribution (bell curve):</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, from <span class="op">=</span> <span class="op">-</span><span class="fl">7</span>, to <span class="op">=</span> <span class="fl">7</span>, n <span class="op">=</span> <span class="fl">1000</span>, ylab <span class="op">=</span> <span class="st">""</span>, bty <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></span>
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, from <span class="op">=</span> <span class="op">-</span><span class="fl">7</span>, to <span class="op">=</span> <span class="fl">7</span>, n <span class="op">=</span> <span class="fl">1000</span>, ylab <span class="op">=</span> <span class="st">""</span>, bty <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Cauchy.html">dcauchy</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, from <span class="op">=</span> <span class="op">-</span><span class="fl">7</span>, to <span class="op">=</span> <span class="fl">7</span>, n <span class="op">=</span> <span class="fl">1000</span>, add <span class="op">=</span> <span class="cn">TRUE</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html">legend</a></span><span class="op">(</span><span class="st">"topright"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"N(0, 1) density"</span>, <span class="st">"Cauchy density"</span><span class="op">)</span>, bty <span class="op">=</span> <span class="st">"n"</span>,</span>
 <span>       lty <span class="op">=</span> <span class="fl">1</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"black"</span>, <span class="st">"red"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -846,66 +847,67 @@ F'_Y(y)
 <li>What are the range and pdf of <span class="math inline">\(Y=e^X\)</span>?</li>
 <li>Simulate <code>n = 5000</code> draws of <span class="math inline">\(Y\)</span>. Plot a histogram, and add a line plot of the density you derived in part b. They should match!</li>
 </ol>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>We know that <span class="math inline">\(\text{Range}(X)=\mathbb{R}\)</span> and that</p>
-<p><span class="math display">\[
+<!--
+::: {.callout-warning collapse="true"}
+## Solution
+We know that $\text{Range}(X)=\mathbb{R}$ and that 
+
+$$
 \begin{aligned}
-f_X(x)&amp;=\frac{1}{\sqrt{2\pi}}e^{-x^2/2},&amp;&amp;x\in\mathbb{R}\\
-F_X(x)&amp;=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^xe^{-t^2/2}\,\text{d}t,&amp;&amp;x\in\mathbb{R}.
+f_X(x)&=\frac{1}{\sqrt{2\pi}}e^{-x^2/2},&&x\in\mathbb{R}\\
+F_X(x)&=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^xe^{-t^2/2}\,\text{d}t,&&x\in\mathbb{R}.
 \end{aligned}
-\]</span></p>
-<p>Newsflash: the cdf of the normal distribution is unknown. We can approximate it arbitrarily well using numerical methods, but we don’t actually have a clean formula for it. The integral above is simply intractable.</p>
-<p>Anyway, the transformations involved here are again the <a href="https://anyakatsevich.github.io/sta240-s26.github.io/math/logexp.html">exponential and the natural log</a>, which we already saw in Task 1. Both are strictly-increasing. The exponential takes any real number and maps it to something <em>strictly positive</em>, so we see then that <span class="math inline">\(\text{Range}(Y)=(0,\,\infty)\)</span>. Fixing <span class="math inline">\(y&gt;0\)</span>, we compute:</p>
-<p><span class="math display">\[
+$$
+
+Newsflash: the cdf of the normal distribution is unknown. We can approximate it arbitrarily well using numerical methods, but we don't actually have a clean formula for it. The integral above is simply intractable.
+
+Anyway, the transformations involved here are again the [exponential and the natural log](https://anyakatsevich.github.io/sta240-s26.github.io/math/logexp.html), which we already saw in Task 1. Both are strictly-increasing. The exponential takes any real number and maps it to something *strictly positive*, so we see then that $\text{Range}(Y)=(0,\,\infty)$. Fixing $y>0$, we compute:
+
+$$
   \begin{align*}
-      F_Y(y)&amp;=P(Y\leq y)\\
-      &amp;=P(e^X\leq y)\\
-      &amp;=P\left(X\leq \ln y\right)\\
-      &amp;=F_X\left(\ln y\right).
+      F_Y(y)&=P(Y\leq y)\\
+      &=P(e^X\leq y)\\
+      &=P\left(X\leq \ln y\right)\\
+      &=F_X\left(\ln y\right).
   \end{align*}
-\]</span></p>
-<p>As such, the pdf is:</p>
-<p><span class="math display">\[
+$$
+
+As such, the pdf is:
+
+$$
 \begin{aligned}
 f_Y(y)
 =
-F'_Y(y)&amp;=\frac{\text{d}}{\text{d} y}F_X(\ln y)\\
-&amp;=F_X'(\ln y)\frac{\text{d}}{\text{d}y}\ln y\\
-&amp;=f_X(\ln y)\frac{1}{y}\\
-&amp;=\frac{1}{\sqrt{2\pi}}e^{-(\ln y)^2/2}\frac{1}{y},&amp;&amp;y&gt;0.
+F'_Y(y)&=\frac{\text{d}}{\text{d} y}F_X(\ln y)\\
+&=F_X'(\ln y)\frac{\text{d}}{\text{d}y}\ln y\\
+&=f_X(\ln y)\frac{1}{y}\\
+&=\frac{1}{\sqrt{2\pi}}e^{-(\ln y)^2/2}\frac{1}{y},&&y>0.
 \end{aligned}
-\]</span></p>
-<p>This matches with a simulation:</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">20</span><span class="op">)</span></span>
-<span><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">5000</span><span class="op">)</span></span>
-<span><span class="va">Y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">Y</span>, breaks <span class="op">=</span> <span class="st">"Scott"</span>, freq <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="va">x</span>, from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span>, to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">1000</span>, </span>
-<span>      col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">3</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="lab-7_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>The distribution we derived here is an example of the <a href="https://en.wikipedia.org/wiki/Log-normal_distribution">log-normal distribution</a>.</p>
-</div>
-</div>
-</div>
-</section><section id="interlude" class="level1"><h1>Interlude</h1>
+$$
+
+This matches with a simulation:
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+set.seed(20)
+X <- rnorm(5000)
+Y <- exp(X)
+hist(Y, breaks = "Scott", freq = FALSE)
+curve(dnorm(log(x)) / x, from = min(Y), to = max(Y), n = 1000, 
+      col = "red", lwd = 3, add = TRUE)
+```
+
+::: {.cell-output-display}
+![](lab-7_files/figure-html/unnamed-chunk-6-1.png){fig-align='center' width=672}
+:::
+:::
+
+
+The distribution we derived here is an example of the [log-normal distribution](https://en.wikipedia.org/wiki/Log-normal_distribution).
+:::
+--></section><section id="interlude" class="level1"><h1>Interlude</h1>
 <p>Given <span class="math inline">\(X\sim f_X\)</span>, we want the density of <span class="math inline">\(Y=g(X)\)</span>. In the three examples, you followed the same basic steps:</p>
 <ul>
 <li>write the generic cdf of <span class="math inline">\(Y\)</span>: <span class="math inline">\(F_Y(y)=P(Y\leq y)=P(g(X)\leq y)\)</span>;</li>
@@ -919,7 +921,7 @@ f_Y(y)=f_X\left(g^{-1}(y)\right)
     \left|\frac{\text{d}}{\text{d} y}g^{-1}(y)\right|,\quad y\in\text{Range}(Y).
 \]</span></p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -928,7 +930,7 @@ f_Y(y)=f_X\left(g^{-1}(y)\right)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Assume…</p>
 <ul>
@@ -1030,49 +1032,65 @@ f_Y(y)=f_X\left(g^{-1}(y)\right)
 <li>In the special case where <span class="math inline">\(X\sim\text{N}(0,\,1)\)</span>, what are <span class="math inline">\(E(Y)\)</span>, <span class="math inline">\(\text{var}(Y)\)</span>, and the density of <span class="math inline">\(Y\)</span>? There’s no need to re-derive anything here. Just plug what you know about N(0, 1) into the formulas from parts a, b, and c.</li>
 </ol>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Solution
+<span class="screen-reader-only">Warning</span>Sanity check
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We know from lecture that <span class="math inline">\(E(Y)=E(aX+b)=aE(X)+b\)</span> and <span class="math inline">\(\text{var}(Y)=\text{var}(aX+b)=a^2\text{var}(X)\)</span>.</p>
-<p>If <span class="math inline">\(g(x)=ax+b\)</span> is the linear transformation, then the inverse transformation and its derivative are</p>
-<p><span class="math display">\[
+<p>When you do part (d), you should see that <strong>a linear transformation of a normal IS ITSELF normal.</strong> (Note: This is not true for every distribution family.)</p>
+</div>
+</div>
+<!--
+::: {.callout-warning collapse="true"}
+## Solution
+We know from lecture that $E(Y)=E(aX+b)=aE(X)+b$ and $\text{var}(Y)=\text{var}(aX+b)=a^2\text{var}(X)$. 
+
+If $g(x)=ax+b$ is the linear transformation, then the inverse transformation and its derivative are
+
+$$
 \begin{align*}
-        g^{-1}(y)&amp;=\frac{y-b}{a}\\
-        \frac{\text{d}}{\text{d} y}g^{-1}(y)&amp;=\frac{1}{a},
+        g^{-1}(y)&=\frac{y-b}{a}\\
+        \frac{\text{d}}{\text{d} y}g^{-1}(y)&=\frac{1}{a},
     \end{align*}
-\]</span></p>
-<p>and the change-of-variables formula gives:</p>
-<p><span class="math display">\[
+$$
+
+and the change-of-variables formula gives:
+
+$$
 f_Y(y)=f_X\left(\frac{y-b}{a}\right)\frac{1}{|a|}.
-\]</span></p>
-<p>If <span class="math inline">\(X\sim\text{N}(0,\,1)\)</span>, then we know from lecture that <span class="math inline">\(E(X)=0\)</span>, <span class="math inline">\(\text{var}(X)=1\)</span>, and</p>
-<p><span class="math display">\[
+$$
+
+If $X\sim\text{N}(0,\,1)$, then we know from lecture that $E(X)=0$, $\text{var}(X)=1$, and 
+
+$$
 f_X(x)=\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{1}{2}x^2\right),\quad x\in\mathbb{R}.
-\]</span></p>
-<p>A new random variable <span class="math inline">\(Y=aX+b\)</span> has</p>
-<p><span class="math display">\[
+$$
+
+A new random variable $Y=aX+b$ has 
+
+$$
 E(Y)=aE(X)+b=a\cdot 0+b=b,
-\]</span></p>
-<p>and</p>
-<p><span class="math display">\[
+$$
+
+and 
+
+$$
 \text{var}(Y)=a^2\text{var}(X)=a^2\cdot 1=a^2,
-\]</span></p>
-<p>and</p>
-<p><span class="math display">\[
+$$
+
+and
+
+$$
 f_Y(y)=\frac{1}{|a|}\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{1}{2}\left(\frac{x-b}{a}\right)^2\right)=\frac{1}{\sqrt{2\pi a^2}}\exp\left(-\frac{1}{2}\frac{\left(x-b\right)^2}{a^2}\right).
-\]</span></p>
-<p>So <span class="math inline">\(Y\sim \text{N}(b,\, a^2)\)</span>. That’s where the general normal comes from: you apply a linear transformation to the standard normal.</p>
-</div>
-</div>
-</div>
+$$
+
+So $Y\sim \text{N}(b,\, a^2)$. That's where the general normal comes from: you apply a linear transformation to the standard normal.
+:::
+-->
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
