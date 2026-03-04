@@ -66,7 +66,7 @@ F'_Y(y)&=\frac{\text{d}}{\text{d} y}F_Z\left(\sqrt{y}\right) - \frac{\text{d}}{\
 &=F_Z'\left(\sqrt{y}\right)\frac{\text{d}}{\text{d}y}\left[\sqrt{y}\right] - F_Z'\left(\sqrt{y}\right)\frac{\text{d}}{\text{d}y}\left[-\sqrt{y}\right]\\
 &=f_Z\left(\sqrt{y}\right)\frac{1}{2\sqrt{y}} - f_{Z}\left(-\sqrt{y}\right)\left(-\frac{1}{2\sqrt{y}}\right)\\
 &=\frac{1}{2\sqrt{y}}\left(f_{Z}\left(\sqrt{y}\right) + f_{Z}\left(-\sqrt{y}\right)\right)\\
-&=\frac{1}{2\sqrt{y}}\left(f_{Z}\left(\sqrt{y}\right) + f_{Z}\left(\sqrt{y}\right)\right)&&\text{(normal pdf is even function)}\\
+&=\frac{1}{2\sqrt{y}}\left(f_{Z}\left(\sqrt{y}\right) + f_{Z}\left(\sqrt{y}\right)\right)&&\text{(standard normal pdf is even function)}\\
 &=\frac{1}{2\sqrt{y}}\left(2 \cdot f_{Z}\left(\sqrt{y}\right)\right)\\
 &=\frac{1}{\sqrt{y}}f_{Z}\left(\sqrt{y}\right)\\
 &=\frac{1}{\sqrt{y}}\frac{1}{\sqrt{2\pi}}e^{-\left(\sqrt{y}\right)^{2}/2}\\
@@ -114,6 +114,7 @@ Consider $X\sim \text{Gamma}(1,\,1)$. This is the same as saying $X\sim\text{Exp
 a.  What are the range and pdf of $Y=\ln X$?
 b.  Simulate `n = 5000` draws of $Y$. Plot a histogram, and add a line plot of the density you derived in part b. They should match!
 
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 
@@ -164,6 +165,7 @@ curve(exp(x - exp(x)), from = min(Y), to = max(Y), n = 1000,
 
 Phew!
 :::
+-->
 
 # Task 2
 
@@ -267,6 +269,7 @@ Consider $X\sim \text{N}(0,\,1)$.
 a.  What are the range and pdf of $Y=e^X$?
 b.  Simulate `n = 5000` draws of $Y$. Plot a histogram, and add a line plot of the density you derived in part b. They should match!
 
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 We know that $\text{Range}(X)=\mathbb{R}$ and that 
@@ -318,6 +321,7 @@ curve(dnorm(log(x)) / x, from = min(Y), to = max(Y), n = 1000,
 
 The distribution we derived here is an example of the [log-normal distribution](https://en.wikipedia.org/wiki/Log-normal_distribution).
 :::
+-->
 
 # Interlude
 
@@ -450,6 +454,13 @@ b.  What is $\text{var}(Y)$?
 c.  Use the change-of-variables formula to find the density of $Y$?
 d.  In the special case where $X\sim\text{N}(0,\,1)$, what are $E(Y)$, $\text{var}(Y)$, and the density of $Y$? There's no need to re-derive anything here. Just plug what you know about N(0, 1) into the formulas from parts a, b, and c.
 
+::: {.callout-warning}
+## Sanity check
+
+When you do part (d), you should see that **a linear transformation of a normal IS ITSELF normal.** (Note: This is not true for every distribution family.)
+:::
+
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 We know from lecture that $E(Y)=E(aX+b)=aE(X)+b$ and $\text{var}(Y)=\text{var}(aX+b)=a^2\text{var}(X)$. 
@@ -495,5 +506,5 @@ $$
 
 So $Y\sim \text{N}(b,\, a^2)$. That's where the general normal comes from: you apply a linear transformation to the standard normal.
 :::
-
+-->
 
