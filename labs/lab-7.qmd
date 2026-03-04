@@ -1,6 +1,6 @@
 ---
 title: "Lab 7"
-subtitle: Due Thursday October 23 at 11:59 PM
+subtitle: Due Thursday March 5 at 11:59 PM
 format: html
 draft: false
 editor: 
@@ -19,6 +19,92 @@ In all that follows, $X$ is continuous with pdf $f_X$ and cdf $F_X$. The goal in
 3. Differentiate it to get the pdf: $f_Y(y)=F'_Y(y)$.
 
 This is the so-called "cdf method."
+:::
+
+# Task 0 (watch the TA)
+
+If $Z \sim \text{N}(0, 1)$, what is the pdf of $Y = Z^{2}$? Turns out it's a member of the [gamma](https://anyakatsevich.github.io/sta240-s26.github.io/distributions/continuous-gamma.html) family! See below for the derivation.
+
+::: {.callout-warning collapse="true"}
+## Derivation
+We know that $\text{Range}(Z)=\mathbb{R}$ and that 
+
+$$
+\begin{aligned}
+f_Z(z)&=\frac{1}{\sqrt{2\pi}}e^{-z^2/2},&&z\in\mathbb{R}\\
+F_Z(z)&=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^ze^{-t^2/2}\,\text{d}t,&&z\in\mathbb{R}.
+\end{aligned}
+$$
+
+Newsflash: the cdf of the normal distribution is unknown. We can approximate it arbitrarily well using numerical methods, but we don't actually have a clean formula for it. The integral above is simply intractable.
+
+The transformations involved here are the quadratic and (principal) square root functions. Note the following:
+
+- neither the quadratic nor the square root can be applied to negative numbers
+- when applied to nonnegative numbers, both the quadratic and square root give nonnegative numbers back
+- when applied to nonnegative numbers, both functions are *strictly-increasing* or *order-preserving*
+- the quadratic function is even (i.e., $x^{2} = (-x)^{2}$)
+
+All of these facts will help us in this derivation. First, we know that the quadratic function is *nonnegative*, so we see then that $\text{Range}(Y)=[0,\,\infty)$. Fixing $y\geq 0$, we compute:
+
+$$
+  \begin{align*}
+      F_Y(y)&=P(Y\leq y)\\
+      &=P(Z^2\leq y)\\
+      &=P\left(-\sqrt{y}\leq Z\leq \sqrt{y}\right)\\
+      &=F_Z\left(\sqrt{y}\right) - F_Z\left(-\sqrt{y}\right).
+  \end{align*}
+$$
+
+As such, the pdf is:
+
+$$
+\begin{aligned}
+f_Y(y)
+=
+F'_Y(y)&=\frac{\text{d}}{\text{d} y}F_Z\left(\sqrt{y}\right) - \frac{\text{d}}{\text{d} y}F_Z\left(-\sqrt{y}\right)\\
+&=F_Z'\left(\sqrt{y}\right)\frac{\text{d}}{\text{d}y}\left[\sqrt{y}\right] - F_Z'\left(\sqrt{y}\right)\frac{\text{d}}{\text{d}y}\left[-\sqrt{y}\right]\\
+&=f_Z\left(\sqrt{y}\right)\frac{1}{2\sqrt{y}} - f_{Z}\left(-\sqrt{y}\right)\left(-\frac{1}{2\sqrt{y}}\right)\\
+&=\frac{1}{2\sqrt{y}}\left(f_{Z}\left(\sqrt{y}\right) + f_{Z}\left(-\sqrt{y}\right)\right)\\
+&=\frac{1}{2\sqrt{y}}\left(f_{Z}\left(\sqrt{y}\right) + f_{Z}\left(\sqrt{y}\right)\right)&&\text{(normal pdf is even function)}\\
+&=\frac{1}{2\sqrt{y}}\left(2 \cdot f_{Z}\left(\sqrt{y}\right)\right)\\
+&=\frac{1}{\sqrt{y}}f_{Z}\left(\sqrt{y}\right)\\
+&=\frac{1}{\sqrt{y}}\frac{1}{\sqrt{2\pi}}e^{-\left(\sqrt{y}\right)^{2}/2}\\
+&=\frac{1}{\sqrt{2\pi}}y^{-1/2}e^{-y/2},&&y\geq 0.
+\end{aligned}
+$$
+
+At first blush, this may not look particularly gamma-ish. However, using a variant of "massaging and squinting," we can reveal the gamma. 
+
+Recall that, for a $Y \sim \text{Gamma}(\alpha, \beta)$ random variable, the pdf is of the form 
+$$
+f_{Y}(y) = \frac{\beta^{\alpha}}{\Gamma(\alpha)}y^{\alpha - 1}e^{-\beta y}, \quad y \geq 0.
+$$
+Our massaging and squinting will involve rewriting (1) the exponent of $y$ and (2) the normalizing constant $\frac{\beta^{\alpha}}{\Gamma(\alpha)}$. Using a [result that you will prove](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-5.html#problem-3) in problem set 5, we then have the following:
+
+$$
+\begin{aligned}
+f_{Y}(y)&=\frac{1}{\sqrt{2\pi}}y^{-1/2}e^{-y/2}\\
+&=\frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{\pi}}y^{1/2 - 1}e^{-y/2}\\
+&=\left(\frac{1}{2}\right)^{1/2} \cdot \frac{1}{\Gamma\left(\frac{1}{2}\right)}y^{1/2 - 1}e^{-y/2}\\
+&=\frac{(1/2)^{1/2}}{\Gamma\left(\frac{1}{2}\right)}y^{1/2 - 1}e^{-y/2},&&y \geq 0.
+\end{aligned}
+$$
+So, $Y \sim \text{Gamma}\left(\frac{1}{2}, \frac{1}{2}\right)$.
+
+This matches with a simulation:
+
+```{r}
+#| fig-align: center
+set.seed(20)
+Z <- rnorm(5000)
+Y <- Z^2
+hist(Y, breaks = "Scott", freq = FALSE)
+curve(dgamma(x, shape = 0.5, rate = 0.5), from = min(Y), to = max(Y), n = 1000, 
+      col = "red", lwd = 3, add = TRUE)
+```
+
+In particular, the distribution we derived here is a member of a *subfamily* of the gamma distribution family known as the [chi-squared distribution](https://en.wikipedia.org/wiki/Chi-squared_distribution).
 :::
 
 # Task 1
