@@ -27,7 +27,7 @@ hist(x, breaks = "Scott", freq = FALSE,
 The `hist` command has many arguments, and you can read [the documentation](https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/hist.html) for more detail. Apart from the cosmetic stuff controlling the labeling and the color, there are three main arguments to think about:
 
 - the first argument is obviously the vector of numbers whose distribution you want to visualize;
-- `breaks` determines the size of the bins (ie how many bars the histogram has). You can play around with different options, but I always set `breaks = "Scott"` because [David Scott](https://profiles.rice.edu/faculty/david-scott) was one of my professors in graduate school and [he knows his shit](https://en.wikipedia.org/wiki/Scott%27s_rule). So we pour one out for David and set `breaks = "Scott"`;
+- `breaks` determines the size of the bins (ie how many bars the histogram has). You can play around with different options, but I always set `breaks = "Scott"` because [David Scott](https://profiles.rice.edu/faculty/david-scott) was one of JZ's professors in graduate school and, to paraphrase JZ, [he knows his stuff](https://en.wikipedia.org/wiki/Scott%27s_rule). So we pour one out for David and set `breaks = "Scott"`;
 - if you set `freq = TRUE`, the height of the bars will correspond to the *count* of how many values fall into the bin. `freq = FALSE` renormalizes the bar heights so that the area under the histogram is literally one, and the histogram can be directly compared with a density, which we will often do.
 
 ```{r}
