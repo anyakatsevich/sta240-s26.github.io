@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Lab 8 – STA 240 Spring 2026</title>
 <style>
@@ -60,16 +60,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../problems/exam-midterm-1.html" rel="next">
+<link href="../labs/lab-7.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d640c705e8c17715bca3574aa719063f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-24b5e6359d046001481a7c94baaab5c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-d0086a85466981861881e17a07507999.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -106,7 +109,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -122,8 +125,8 @@ window.Quarto = {
 };
 </script>
 <meta property="og:title" content="Lab 8 – STA 240 Spring 2026">
-<meta property="og:description" content="Due Thursday October 30 at 11:59 PM">
-<meta property="og:image" content="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-8_files/figure-html/unnamed-chunk-1-1.png">
+<meta property="og:description" content="Due Thursday March 19 at 11:59 PM">
+<meta property="og:image" content="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-8_files/figure-html/unnamed-chunk-3-1.png">
 <meta property="og:site_name" content="STA 240 Spring 2026">
 <meta property="og:image:height" content="960">
 <meta property="og:image:width" content="1344">
@@ -135,7 +138,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 8</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-8.html">Lab 8</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -146,12 +149,12 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+      <img src="../img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none"><img src="../img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="quarto-navigation-tool px-1" aria-label="RStudio Containers"><i class="bi bi-code-square"></i></a>
     <a href="https://go.canvas.duke.edu/" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-megaphone"></i></a>
-    <a href="https://edstem.org/us/courses/80868/discussion" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-people"></i></a>
-    <a href="https://www.gradescope.com/courses/1071176" title="Gradescope" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-file-arrow-up"></i></a>
+    <a href="https://edstem.org/us/courses/89558/discussion" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-people"></i></a>
+    <a href="https://www.gradescope.com/courses/1195780" title="Gradescope" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-file-arrow-up"></i></a>
 </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -259,24 +262,12 @@ window.Quarto = {
  <span class="menu-text">Infinite series</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../math/gamma-function.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Gamma function</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../math/massage-and-squint.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Massage and squint</span></a>
-  </div>
-</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text"><code>R</code> Helpers</span></a>
+ <span class="menu-text">R Helpers</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -327,7 +318,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../explainers/sample.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><code>sample</code></span></a>
+ <span class="menu-text">sample</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -431,18 +422,6 @@ window.Quarto = {
  <span class="menu-text">Gamma</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../distributions/continuous-inverse-gamma.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Inverse gamma</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../distributions/continuous-beta.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beta</span></a>
-  </div>
-</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -460,12 +439,114 @@ window.Quarto = {
  <span class="menu-text">Problem Set 0</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 5</span></a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Labs</span></span>
-  </li>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Labs</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-8.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lab 8</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Exam Study Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/exam-midterm-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Midterm 1</span></a>
+  </div>
+</li>
+      </ul>
+</li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
@@ -475,17 +556,17 @@ window.Quarto = {
    
   <ul>
 <li><a href="#task-0" id="toc-task-0" class="nav-link active" data-scroll-target="#task-0">Task 0</a></li>
-  <li><a href="#task-1" id="toc-task-1" class="nav-link" data-scroll-target="#task-1">Task 1</a></li>
-  <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2">Task 2</a></li>
-  <li><a href="#task-3" id="toc-task-3" class="nav-link" data-scroll-target="#task-3">Task 3</a></li>
-  <li><a href="#task-4" id="toc-task-4" class="nav-link" data-scroll-target="#task-4">Task 4</a></li>
+  <li><a href="#task-1-you-do-it" id="toc-task-1-you-do-it" class="nav-link" data-scroll-target="#task-1-you-do-it">Task 1 (you do it)</a></li>
+  <li><a href="#task-2-you-do-it" id="toc-task-2-you-do-it" class="nav-link" data-scroll-target="#task-2-you-do-it">Task 2 (you do it)</a></li>
+  <li><a href="#task-3-we-do-it" id="toc-task-3-we-do-it" class="nav-link" data-scroll-target="#task-3-we-do-it">Task 3 (we do it)</a></li>
+  <li><a href="#task-4-we-do-it" id="toc-task-4-we-do-it" class="nav-link" data-scroll-target="#task-4-we-do-it">Task 4 (we do it)</a></li>
   <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-8.html">Lab 8</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">Lab 8</h1>
-<p class="subtitle lead">Due Thursday October 30 at 11:59 PM</p>
+<p class="subtitle lead">Due Thursday March 19 at 11:59 PM</p>
 </div>
 
 
@@ -500,7 +581,7 @@ window.Quarto = {
 
 
 </header><p>When we call <code>rnorm</code> or <code>rgamma</code> or <code>rpois</code> to generate random numbers from one of our special distributions, what is the computer actually doing? How do we program a computer to generate random numbers that behave according to some pre-defined distribution?</p>
-<p>At the end of the day, all simulation methods revolve around a simple principle: “simulate from the standard uniform and then apply a <a href="https://sta240-f25.github.io/labs/lab-7.html">transformation</a>.” We statisticians take from granted that the computer scientists have devised good methods for generating random numbers from Unif(0, 1). The <a href="https://en.wikipedia.org/wiki/Mersenne_Twister"><em>Mersenne Twister</em></a> is a popular algorithm. Given that we can generate random numbers from the standard uniform, we need to figure out how to transform them into a batch of new random numbers that follow the distribution we want: normal, gamma, Cauchy, whatever.</p>
+<p>At the end of the day, all simulation methods revolve around a simple principle: “simulate from the standard uniform and then apply a <a href="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-7.html">transformation</a>.” We statisticians take from granted that the computer scientists have devised good methods for generating random numbers from Unif(0, 1). The <a href="https://en.wikipedia.org/wiki/Mersenne_Twister"><em>Mersenne Twister</em></a> is a popular algorithm. Given that we can generate random numbers from the standard uniform, we need to figure out how to transform them into a batch of new random numbers that follow the distribution we want: normal, gamma, Cauchy, whatever.</p>
 <section id="task-0" class="level1"><h1>Task 0</h1>
 <p>The following theorem is a proof of concept that “simulate Unif(0, 1) and transform” is sufficient, at least in theory, to simulate any distribution we can think of:</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -509,7 +590,7 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem: inverse transform sampling
+<span class="screen-reader-only">Note</span>Theorem: inverse transform sampling
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -517,12 +598,12 @@ Theorem: inverse transform sampling
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">Tip</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -560,7 +641,7 @@ Proof
 </div>
 </div>
 <p>Now, in order to actually implement the algorithm, we need to be able to compute the inverse cdf <span class="math inline">\(F^{-1}\)</span>. In some cases, this may not be possible, and we must use a different transformation to actually get the job done. But the principle stands. Dig down deep enough into any simulation algorithm, and it’s just simulating uniforms and messing with them.</p>
-</section><section id="task-1" class="level1"><h1>Task 1</h1>
+</section><section id="task-1-you-do-it" class="level1"><h1>Task 1 (you do it)</h1>
 <p>Consider a random variable <span class="math inline">\(X\)</span> with this density:</p>
 <p><span class="math display">\[
 f(x) = \frac{e^{-x}}{(1+e^{-x})^2},\quad x\in\mathbb{R}.
@@ -570,83 +651,83 @@ f(x) = \frac{e^{-x}}{(1+e^{-x})^2},\quad x\in\mathbb{R}.
 <li>Compute the inverse cdf;</li>
 <li>Use inverse transform sampling to generate <code>n = 5000</code> random numbers from this distribution. Plot a histogram of the random numbers, and overlay a line plot of the original density function we gave you. If you did everything correctly, the histogram and the density should agree.</li>
 </ol>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>This is the standard logistic distribution. The CDF is</p>
-<p><span class="math display">\[
+<!--
+::: {.callout-warning collapse="true"}
+## Solution
+
+This is the standard logistic distribution. The CDF is
+
+$$
 \begin{aligned}
 F(x)
-&amp;=
+&=
 \int_{-\infty}^x
 f(t)
 dt
 \\
-&amp;=
+&=
 \int_{-\infty}^x
 \frac{e^{-t}}{(1+e^{-t})^2}
 dt
 \\
-&amp;=
+&=
 \int_{\infty}^{e^{-x}}
 \frac{-du}{(1+u)^2}
-&amp;&amp;\begin{matrix}u=e^{-t}\\ du = -e^{-t}dt\end{matrix}
+&&\begin{matrix}u=e^{-t}\\ du = -e^{-t}dt\end{matrix}
 \\
-&amp;=
+&=
 \int_{e^{-x}}^{\infty}
 \frac{du}{(1+u)^2}
 \\
-&amp;=
+&=
 \left[-\frac{1}{1+t}\right]_{e^{-x}}^\infty
 \\
-&amp;=
+&=
 0 - \left(-\frac{1}{1+e^{-x}}\right)
 \\
-&amp;=
-\frac{1}{1+e^{-x}},&amp;&amp;x\in\mathbb{R}.
+&=
+\frac{1}{1+e^{-x}},&&x\in\mathbb{R}.
 \end{aligned}
-\]</span></p>
-<p>Inverting it gives</p>
-<p><span class="math display">\[
+$$
+
+Inverting it gives 
+
+$$
 \begin{aligned}
-u &amp;= \frac{1}{1+e^{-x}}\\
-1+e^{-x} &amp;= \frac{1}{u}\\
-e^{-x} &amp; = \frac{1}{u} - 1\\
--x &amp;= \ln\left(\frac{1}{u} - 1\right)\\
-x &amp;= -\ln\left(\frac{1}{u} - 1\right).
+u &= \frac{1}{1+e^{-x}}\\
+1+e^{-x} &= \frac{1}{u}\\
+e^{-x} & = \frac{1}{u} - 1\\
+-x &= \ln\left(\frac{1}{u} - 1\right)\\
+x &= -\ln\left(\frac{1}{u} - 1\right).
 \end{aligned}
-\]</span></p>
-<p>So the inverse CDF is</p>
-<p><span class="math display">\[
-F^{-1}(u)=-\ln\left(\frac{1}{u}-1\right),\quad 0&lt;u&lt;1.
-\]</span></p>
-<div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">152638</span><span class="op">)</span></span>
-<span><span class="va">U</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">5000</span><span class="op">)</span></span>
-<span><span class="va">X</span> <span class="op">&lt;-</span> <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span> <span class="op">/</span> <span class="va">U</span><span class="op">)</span> <span class="op">-</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">X</span>, breaks <span class="op">=</span> <span class="st">"Scott"</span>, freq <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="op">-</span><span class="va">x</span><span class="op">)</span> <span class="op">/</span> <span class="op">(</span><span class="fl">1</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="op">-</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span>, from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span>, to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">1000</span>, </span>
-<span>      col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="lab-8_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="task-2" class="level1"><h1>Task 2</h1>
+$$
+
+So the inverse CDF is 
+
+$$
+F^{-1}(u)=-\ln\left(\frac{1}{u}-1\right),\quad 0<u<1.
+$$
+
+
+::: {.cell}
+
+```{.r .cell-code}
+set.seed(152638)
+U <- runif(5000)
+X <- -log((1 / U) - 1)
+hist(X, breaks = "Scott", freq = FALSE)
+curve(exp(-x) / (1 + exp(-x))^2, from = min(X), to = max(X), n = 1000, 
+      col = "red", lwd = 2, add = TRUE)
+```
+
+::: {.cell-output-display}
+![](lab-8_files/figure-html/unnamed-chunk-1-1.png){width=672}
+:::
+:::
+
+
+:::
+--></section><section id="task-2-you-do-it" class="level1"><h1>Task 2 (you do it)</h1>
 <p>Consider a random variable <span class="math inline">\(X\)</span> with this density:</p>
 <p><span class="math display">\[
 f(x) = xe^{-\frac{1}{2}x^2},\quad x\geq 0.
@@ -656,84 +737,84 @@ f(x) = xe^{-\frac{1}{2}x^2},\quad x\geq 0.
 <li>Compute the inverse cdf;</li>
 <li>Use inverse transform sampling to generate <code>n = 5000</code> random numbers from this distribution. Plot a histogram of the random numbers, and overlay a line plot of the original density function we gave you. If you did everything correctly, the histogram and the density should agree.</li>
 </ol>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>This is the Rayleigh distribution.</p>
-<p><span class="math display">\[
+<!--
+::: {.callout-warning collapse="true"}
+## Solution
+
+This is the Rayleigh distribution.
+
+$$
 \begin{aligned}
 F(x)
-&amp;=
+&=
 \int_{-\infty}^x
 f(t)
 dt
 \\
-&amp;=
+&=
 \int_{0}^x
 te^{-\frac{1}{2}t^2}
 dt
 \\
-&amp;=
+&=
 \int_{0}^{-x^2/2}
 -e^u\,du
-&amp;&amp;
+&&
 \begin{matrix}
 u=-t^2/2\\
 du=-t\,dt
 \end{matrix}
 \\
-&amp;=
+&=
 \int_{-x^2/2}^0
 e^u\,du
 \\
-&amp;=
+&=
 [e^u]_{-x^2/2}^0
 \\
-&amp;=
-1-e^{-x^2/2},&amp;&amp;x\geq 0.
+&=
+1-e^{-x^2/2},&&x\geq 0.
 \end{aligned}
-\]</span></p>
-<p>Invert it:</p>
-<p><span class="math display">\[
+$$
+
+Invert it:
+
+$$
 \begin{aligned}
-u &amp;= 1-e^{-x^2/2}\\
-e^{-x^2/2} &amp;= 1 - u\\
--x^2/2&amp;=\ln(1-u)\\
-x^2&amp;=-2\ln(1-u)\\
-x&amp;=\sqrt{-2\ln(1-u)}
+u &= 1-e^{-x^2/2}\\
+e^{-x^2/2} &= 1 - u\\
+-x^2/2&=\ln(1-u)\\
+x^2&=-2\ln(1-u)\\
+x&=\sqrt{-2\ln(1-u)}
 \end{aligned}
-\]</span></p>
-<p>So</p>
-<p><span class="math display">\[
-F^{-1}(u)=\sqrt{-2\ln(1-u)}, \quad 0&lt;u&lt;1.
-\]</span></p>
-<div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">152638</span><span class="op">)</span></span>
-<span><span class="va">U</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">5000</span><span class="op">)</span></span>
-<span><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">U</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">X</span>, breaks <span class="op">=</span> <span class="st">"Scott"</span>, freq <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="va">x</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> <span class="va">x</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span>, from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span>, to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">1000</span>, </span>
-<span>      col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="lab-8_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="task-3" class="level1"><h1>Task 3</h1>
+$$
+
+So 
+
+$$
+F^{-1}(u)=\sqrt{-2\ln(1-u)}, \quad 0<u<1.
+$$
+
+
+::: {.cell}
+
+```{.r .cell-code}
+set.seed(152638)
+U <- runif(5000)
+X <- sqrt(-2*log(1-U))
+hist(X, breaks = "Scott", freq = FALSE)
+curve(x * exp(-0.5 * x^2), from = min(X), to = max(X), n = 1000, 
+      col = "red", lwd = 2, add = TRUE)
+```
+
+::: {.cell-output-display}
+![](lab-8_files/figure-html/unnamed-chunk-2-1.png){width=672}
+:::
+:::
+
+
+:::
+--></section><section id="task-3-we-do-it" class="level1"><h1>Task 3 (we do it)</h1>
 <p>Consider a random variable <span class="math inline">\(X\)</span> with this density:</p>
 <p><span class="math display">\[
 f(x) = e^{-(x+e^{-x})},\quad x\in\mathbb{R}.
@@ -744,16 +825,16 @@ f(x) = e^{-(x+e^{-x})},\quad x\in\mathbb{R}.
 <li>Use inverse transform sampling to generate <code>n = 5000</code> random numbers from this distribution. Plot a histogram of the random numbers, and overlay a line plot of the original density function we gave you. If you did everything correctly, the histogram and the density should agree.</li>
 </ol>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Warning</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>This is the standard Gumbel distribution.</p>
 <p><span class="math display">\[
@@ -807,12 +888,12 @@ u &amp;= e^{-e^{-x}}\\
 F^{-1}(u)=-\ln(-\ln u),\quad 0&lt;u&lt;1.
 \]</span></p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">152638</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">152638</span><span class="op">)</span></span>
 <span><span class="va">U</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">5000</span><span class="op">)</span></span>
 <span><span class="va">X</span> <span class="op">&lt;-</span> <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">U</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">X</span>, breaks <span class="op">=</span> <span class="st">"Scott"</span>, freq <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="op">-</span><span class="va">x</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="op">-</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>, from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span>, to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">1000</span>, </span>
-<span>      col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>      col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="lab-8_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
@@ -823,7 +904,7 @@ F^{-1}(u)=-\ln(-\ln u),\quad 0&lt;u&lt;1.
 </div>
 </div>
 </div>
-</section><section id="task-4" class="level1"><h1>Task 4</h1>
+</section><section id="task-4-we-do-it" class="level1"><h1>Task 4 (we do it)</h1>
 <p>Consider a random variable <span class="math inline">\(X\)</span> with this density:</p>
 <p><span class="math display">\[
 f(x) = \frac{1}{2}e^{-|x|},\quad x\in\mathbb{R}.
@@ -834,16 +915,16 @@ f(x) = \frac{1}{2}e^{-|x|},\quad x\in\mathbb{R}.
 <li>Use inverse transform sampling to generate <code>n = 5000</code> random numbers from this distribution. Plot a histogram of the random numbers, and overlay a line plot of the original density function we gave you. If you did everything correctly, the histogram and the density should agree.</li>
 </ol>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Warning</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>This is the standard Laplace distribution. For <span class="math inline">\(x&lt;0\)</span>,</p>
 <p><span class="math display">\[
@@ -906,16 +987,16 @@ F(x)
 <p>If you invert that darn thing, you get:</p>
 <p><span class="math display">\[
 \begin{aligned}
-F^{-1}(u)=\text{sign}(u-0.5)\ln(1-2|u-0.5|),\quad 0&lt;u&lt;1.
+F^{-1}(u)=\text{sign}(0.5 - u)\ln(1-2|u-0.5|),\quad 0&lt;u&lt;1.
 \end{aligned}
 \]</span></p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">152638</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">152638</span><span class="op">)</span></span>
 <span><span class="va">U</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">5000</span><span class="op">)</span></span>
-<span><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sign.html">sign</a></span><span class="op">(</span><span class="va">U</span> <span class="op">-</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="fl">2</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">U</span> <span class="op">-</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sign.html">sign</a></span><span class="op">(</span><span class="fl">0.5</span> <span class="op">-</span> <span class="va">U</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="fl">2</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">U</span> <span class="op">-</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">X</span>, breaks <span class="op">=</span> <span class="st">"Scott"</span>, freq <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="fl">0.5</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>, from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span>, to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">1000</span>, </span>
-<span>      col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>      col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="lab-8_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
@@ -985,13 +1066,14 @@ F^{-1}(u)=\text{sign}(u-0.5)\ln(1-2|u-0.5|),\quad 0&lt;u&lt;1.
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1332,11 +1414,21 @@ F^{-1}(u)=\text{sign}(u-0.5)\ln(1-2|u-0.5|),\quad 0&lt;u&lt;1.
       }
     }
   });
-  </script>
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="../labs/lab-7.html" class="pagination-link" aria-label="Lab 7">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 7</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../problems/exam-midterm-1.html" class="pagination-link" aria-label="Midterm 1">
+        <span class="nav-page-text">Midterm 1</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
-<p>© Copyright 2025 John Zito</p>
+<p>© Copyright 2026 John Zito and Anya Katsevich</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
