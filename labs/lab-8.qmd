@@ -1,6 +1,6 @@
 ---
 title: "Lab 8"
-subtitle: Due Thursday October 30 at 11:59 PM
+subtitle: Due Thursday March 19 at 11:59 PM
 format: html
 draft: false
 editor: 
@@ -60,7 +60,7 @@ So, the cdf of $X$ is literally just $F$.
 
 Now, in order to actually implement the algorithm, we need to be able to compute the inverse cdf $F^{-1}$. In some cases, this may not be possible, and we must use a different transformation to actually get the job done. But the principle stands. Dig down deep enough into any simulation algorithm, and it's just simulating uniforms and messing with them.
 
-# Task 1
+# Task 1 (you do it)
 
 Consider a random variable $X$ with this density:
 
@@ -72,6 +72,7 @@ a. Compute the cdf;
 a. Compute the inverse cdf;
 a. Use inverse transform sampling to generate `n = 5000` random numbers from this distribution. Plot a histogram of the random numbers, and overlay a line plot of the original density function we gave you. If you did everything correctly, the histogram and the density should agree.
 
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 
@@ -138,8 +139,9 @@ curve(exp(-x) / (1 + exp(-x))^2, from = min(X), to = max(X), n = 1000,
 ```
 
 :::
+-->
 
-# Task 2
+# Task 2 (you do it)
 
 Consider a random variable $X$ with this density:
 
@@ -151,6 +153,7 @@ a. Compute the cdf;
 a. Compute the inverse cdf;
 a. Use inverse transform sampling to generate `n = 5000` random numbers from this distribution. Plot a histogram of the random numbers, and overlay a line plot of the original density function we gave you. If you did everything correctly, the histogram and the density should agree.
 
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 
@@ -218,8 +221,9 @@ curve(x * exp(-0.5 * x^2), from = min(X), to = max(X), n = 1000,
 ```
 
 :::
+-->
 
-# Task 3
+# Task 3 (we do it)
 
 Consider a random variable $X$ with this density:
 
@@ -303,7 +307,7 @@ curve(exp(-x-exp(-x)), from = min(X), to = max(X), n = 1000,
 :::
 
 
-# Task 4
+# Task 4 (we do it)
 
 Consider a random variable $X$ with this density:
 
@@ -386,14 +390,14 @@ If you invert that darn thing, you get:
 
 $$
 \begin{aligned}
-F^{-1}(u)=\text{sign}(u-0.5)\ln(1-2|u-0.5|),\quad 0<u<1.
+F^{-1}(u)=\text{sign}(0.5 - u)\ln(1-2|u-0.5|),\quad 0<u<1.
 \end{aligned}
 $$
 
 ```{r}
 set.seed(152638)
 U <- runif(5000)
-X <- sign(U - 0.5) * log(1 - 2 * abs(U - 0.5))
+X <- sign(0.5 - U) * log(1 - 2 * abs(U - 0.5))
 hist(X, breaks = "Scott", freq = FALSE)
 curve(0.5 * exp(-abs(x)), from = min(X), to = max(X), n = 1000, 
       col = "red", lwd = 2, add = TRUE)
