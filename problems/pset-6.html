@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Problem Set 6 – STA 240 Spring 2026</title>
 <style>
@@ -25,16 +25,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../labs/lab-1.html" rel="next">
+<link href="../problems/pset-5.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d640c705e8c17715bca3574aa719063f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-24b5e6359d046001481a7c94baaab5c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-d0086a85466981861881e17a07507999.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -71,7 +74,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -87,7 +90,7 @@ window.Quarto = {
 };
 </script>
 <meta property="og:title" content="Problem Set 6 – STA 240 Spring 2026">
-<meta property="og:description" content="Due Sunday November 9 at 5PM">
+<meta property="og:description" content="Due Sunday March 29 at 11:59PM">
 <meta property="og:image" content="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-6_files/figure-html/unnamed-chunk-1-1.png">
 <meta property="og:site_name" content="STA 240 Spring 2026">
 <meta property="og:image:height" content="537">
@@ -100,7 +103,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Problem Set 6</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problems/pset-0.html">Problem Sets</a></li><li class="breadcrumb-item"><a href="../problems/pset-6.html">Problem Set 6</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -111,12 +114,12 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+      <img src="../img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none"><img src="../img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="quarto-navigation-tool px-1" aria-label="RStudio Containers"><i class="bi bi-code-square"></i></a>
     <a href="https://go.canvas.duke.edu/" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-megaphone"></i></a>
-    <a href="https://edstem.org/us/courses/80868/discussion" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-people"></i></a>
-    <a href="https://www.gradescope.com/courses/1071176" title="Gradescope" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-file-arrow-up"></i></a>
+    <a href="https://edstem.org/us/courses/89558/discussion" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-people"></i></a>
+    <a href="https://www.gradescope.com/courses/1195780" title="Gradescope" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-file-arrow-up"></i></a>
 </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -241,7 +244,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text"><code>R</code> Helpers</span></a>
+ <span class="menu-text">R Helpers</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -292,7 +295,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../explainers/sample.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><code>sample</code></span></a>
+ <span class="menu-text">sample</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -396,41 +399,137 @@ window.Quarto = {
  <span class="menu-text">Gamma</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../distributions/continuous-inverse-gamma.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Inverse gamma</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../distributions/continuous-beta.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beta</span></a>
-  </div>
-</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Problem Sets</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset-0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Set 0</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-6.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Problem Set 6</span></a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Labs</span></span>
-  </li>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Labs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 8</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Exam Study Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/exam-midterm-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Midterm 1</span></a>
+  </div>
+</li>
+      </ul>
+</li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
@@ -454,9 +553,9 @@ window.Quarto = {
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problems/pset-0.html">Problem Sets</a></li><li class="breadcrumb-item"><a href="../problems/pset-6.html">Problem Set 6</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">Problem Set 6</h1>
-<p class="subtitle lead">Due Sunday November 9 at 5PM</p>
+<p class="subtitle lead">Due Sunday March 29 at 11:59PM</p>
 </div>
 
 
@@ -500,11 +599,11 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>On <a href="https://sta240-f25.github.io/problems/pset-5.html#problem-7">Problem Set 5</a> you met some cute alternatives for computing expected values, and they may be helpful here.</p>
+<p>On <a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-5.html#problem-7">Problem Set 5</a> you met some cute alternatives for computing expected values, and they may be helpful here.</p>
 </div>
 </div>
 </section><section id="problem-2" class="level2"><h2 class="anchored" data-anchor-id="problem-2">Problem 2</h2>
-<p>Quantum mechanics has a reputation for being an intimidating branch of theoretical physics, and JZ certainly doesn’t understand a ding dong thing about it. Even so, because we have studied some basic probability theory, the <em>mathematics</em> of quantum mechanics is more accessible than you might guess. Behold:</p>
+<p>Quantum mechanics has a reputation for being an intimidating branch of theoretical physics. Even so, because we have studied some basic probability theory, the <em>mathematics</em> of quantum mechanics is more accessible than you might guess. Behold:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GqBJiOM5tm8?si=3w-vs1KJ9x36_RTk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
 <p>Imagine a single particle at the (sub)atomic level<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. A particle’s <strong>quantum state</strong> encodes information about all of its measurable properties, such as position, momentum, spin, and energy. In quantum mechanics, measuring these properties is fundamentally probabilistic. Before measurement, the particle doesn’t have a single, definite position or momentum; it has only probabilities for the possible outcomes. The quantum state of a particle is fully characterized by its <strong>wave function</strong>, and the squared magnitude of the wave function is a probability density that describes the distribution of the particle’s position, or momentum, or whatever else you wish to study. Let’s explore this in a very simple example.</p>
@@ -576,7 +675,7 @@ e^{-|x|},\quad x\in\mathbb{R}.
 <li>What is the mean?</li>
 <li>What is the variance?</li>
 </ol></section><section id="problem-6" class="level2"><h2 class="anchored" data-anchor-id="problem-6">Problem 6</h2>
-<p>On <a href="https://sta240-f25.github.io/labs/lab-7.html">Lab 7</a>, we learned how to derive the distribution of a transformation. This is an important technical skill that crops up often in mathematical probability, so let’s get our reps in:</p>
+<p>On <a href="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-7.html">Lab 7</a>, we learned how to derive the distribution of a transformation. This is an important technical skill that crops up often in mathematical probability, so let’s get our reps in:</p>
 <ol type="a">
 <li>Let <span class="math inline">\(X\sim\text{Unif}(0,\,1)\)</span>, and find the range and density of <span class="math inline">\(Y=e^X\)</span>;</li>
 <li>Let <span class="math inline">\(X\sim\textrm{Unif}(0,\,1)\)</span>, and find the range and density of <span class="math inline">\(Y=\sqrt{X}\)</span>;</li>
@@ -628,7 +727,7 @@ f_{XY}(x,\, y)=\frac{1}{\pi},\quad x^2+y^2\leq 1.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-New distribution!
+<span class="screen-reader-only">Tip</span>New distribution!
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -653,11 +752,11 @@ f_Y(y)=\frac{\Gamma\left(\frac{d_1}{2}+\frac{d_2}{2}\right)}{\Gamma\left(\frac{d
 \]</span></p>
 <p>This means that <span class="math inline">\(Y\)</span> has the <strong><em>F</em>-distribution</strong>.</p>
 </section><section id="submission" class="level2"><h2 class="anchored" data-anchor-id="submission">Submission</h2>
-<p>You are free to compose your solutions for this problem set however you wish (scan or photograph written work, handwriting capture on a tablet device, LaTeX, Quarto, whatever) as long as the final product is a single PDF file. You must upload this to <a href="https://www.gradescope.com/courses/1071176">Gradescope</a> and mark the pages associated with each problem.</p>
+<p>You are free to compose your solutions for this problem set however you wish (scan or photograph written work, handwriting capture on a tablet device, LaTeX, Quarto, whatever) as long as the final product is a single PDF file. You must upload this to <a href="https://www.gradescope.com/courses/1195780">Gradescope</a> and mark the pages associated with each problem.</p>
 <p>Do not forget to include the following:</p>
 <ul>
-<li>For each problem, please <a href="https://sta240-f25.github.io/syllabus/syllabus_policies.html#collaboration">acknowledge your collaborators</a>;</li>
-<li>If a problem required you to code something, please include both the code and the output. “Including the code” can be as crude as a screenshot, but you might also use <a href="https://sta240-f25.github.io/explainers/quarto.html">Quarto</a> to get a nice lil’ pdf that you can merge with the rest of your submission.</li>
+<li>For each problem, please <a href="https://anyakatsevich.github.io/sta240-s26.github.io/syllabus/syllabus_policies.html#collaboration">acknowledge your collaborators</a>;</li>
+<li>If a problem required you to code something, please include both the code and the output. “Including the code” can be as crude as a screenshot, but you might also use <a href="https://anyakatsevich.github.io/sta240-s26.github.io/explainers/quarto.html">Quarto</a> to get a pdf that you can merge with the rest of your submission.</li>
 </ul>
 
 
@@ -715,13 +814,14 @@ f_Y(y)=\frac{\Gamma\left(\frac{d_1}{2}+\frac{d_2}{2}\right)}{\Gamma\left(\frac{d
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1062,11 +1162,21 @@ f_Y(y)=\frac{\Gamma\left(\frac{d_1}{2}+\frac{d_2}{2}\right)}{\Gamma\left(\frac{d
       }
     }
   });
-  </script>
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="../problems/pset-5.html" class="pagination-link" aria-label="Problem Set 5">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Problem Set 5</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../labs/lab-1.html" class="pagination-link" aria-label="Lab 1">
+        <span class="nav-page-text">Lab 1</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
-<p>© Copyright 2025 John Zito</p>
+<p>© Copyright 2026 John Zito and Anya Katsevich</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
