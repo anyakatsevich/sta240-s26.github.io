@@ -1,4 +1,4 @@
-Quantum mechanics has a reputation for being an intimidating branch of theoretical physics, and JZ certainly doesn't understand a ding dong thing about it. Even so, because we have studied some basic probability theory, the *mathematics* of quantum mechanics is more accessible than you might guess. Behold:
+Quantum mechanics has a reputation for being an intimidating branch of theoretical physics. Even so, because we have studied some basic probability theory, the *mathematics* of quantum mechanics is more accessible than you might guess. Behold:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GqBJiOM5tm8?si=3w-vs1KJ9x36_RTk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

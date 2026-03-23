@@ -9,6 +9,7 @@ project:
   - problems/pset-3.qmd
   - problems/pset-4.qmd
   - problems/pset-5.qmd
+  - problems/pset-6.qmd
   - problems/exam-midterm-1.qmd
   - apps/disease-testing.qmd
   - lab-notes/**.pdf
@@ -134,10 +135,10 @@ website:
             text: Limits and continuity
           - href: math/series.qmd
             text: Infinite series
-          # - href: math/gamma-function.qmd
-          #   text: Gamma function
-          # - href: math/massage-and-squint.qmd
-          #   text: Massage and squint
+          - href: math/gamma-function.qmd
+            text: Gamma function
+          - href: math/massage-and-squint.qmd
+            text: Massage and squint
       - section: "R Helpers"
         contents:
           - href: explainers/setup.qmd
@@ -206,8 +207,8 @@ website:
             text: Problem Set 4
           - href: problems/pset-5.qmd
             text: Problem Set 5
-          # - href: problems/pset-6.qmd
-          #   text: Problem Set 6
+          - href: problems/pset-6.qmd
+            text: Problem Set 6
           # - href: problems/pset-7.qmd
           #   text: Problem Set 7
       - section: "Labs"

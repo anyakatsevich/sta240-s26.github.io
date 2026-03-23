@@ -1,6 +1,6 @@
 ---
 title: "Problem Set 6"
-subtitle: Due Sunday November 9 at 5PM
+subtitle: Due Sunday March 29 at 11:59PM
 draft: false
 editor: 
   mode: source
