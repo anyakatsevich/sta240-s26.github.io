@@ -6,28 +6,24 @@ editor:
 draft: false
 ---
 
-Midterm Exam 2 will take place on **Thursday November 13** during your lab section. There will be 6 problems, and they will break down as follows:
-
-0. (an undisclosed check on your visual intuition)
-1. Discrete random variables
-1. Continuous random variables
-1. The moment-generating function
-1. Transformations
-1. Joint distributions
-
-Below are practice problems for each of these areas, as well as guidance about what course materials to refer to if you want more review on a particular topic.
+Midterm Exam 2 will take place on **Wednesday April 1** during lecture. You are allowed both sides of one 8.5" x 11" hand-written sheet of notes, prepared by you and you alone.
 
 ::: callout-important
 ## Give your cheat sheet some TLC!
 
-You are allowed two resources on the exam:
-
-- a "dumb" calculator (no wi-fi). You will not need it, but if you want it as a security blanket, be my guest;
-- both sides of one 8.5" x 11" sheet of notes, prepared by you and you alone. You can create it however you wish: handwritten, on a computer, etc.
-
 Do not skimp on the cheat sheet! Students in past semesters have neglected their cheat sheets to their detriment. Get an early start, and give it some elbow grease.
 
 :::
+
+The problems on the exam will cover the following topics, which span Lectures 8-19:
+
+1. Discrete random variables
+2. Continuous random variables
+3. The moment-generating function
+4. Transformations
+5. Joint distributions
+
+Below are practice problems for each of these areas, as well as guidance about what course materials to refer to if you want more review on a particular topic.
 
 ::: callout-tip 
 ## What special distribution families should I know?
@@ -47,12 +43,12 @@ Do not skimp on the cheat sheet! Students in past semesters have neglected their
 ## Want more review?
 
 - [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-05-random-variables.pdf) introducing random variables;
-- [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-06-discrete-families.pdf) on special families of discrete random variables;
-- [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-07-expectation.pdf) on expected value;
+- [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture9.pdf) on special families of discrete random variables;
+- [Lecture notes](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture10.pdf) on expected value;
 - [Lab 5](https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-5.html) exercises;
-- [Problem Set 2](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html): problem 7;
-- [Problem Set 3](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-3.html): problems 9 - 10;
-- [Problem Set 4](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-4.html): problems 4 - 10.
+- [Problem Set 2](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html): problem 6;
+- [Problem Set 3](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-3.html): problems 8 - 9;
+- [Problem Set 4](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-4.html): problems 3 - 9.
 
 # Continuous random variables
 
@@ -66,9 +62,9 @@ Do not skimp on the cheat sheet! Students in past semesters have neglected their
 
 ## Want more review?
 
-- Examples from [lecture](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-10-absolutely-continuous.pdf);
+- Examples from [lecture](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture12-13.pdf);
 - [Lab 8](https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-8.html);
-- [Problem Set 5](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-5.html): problems 2 - 8;
+- [Problem Set 5](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-5.html): problems 1 - 7;
 - [Problem Set 6](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-6.html): problems 1 - 2;
 - Odd-numbered exercises in DeGroot & Schervish Chapters 3.2, 5.6, 5.7.
 
@@ -84,9 +80,9 @@ Do not skimp on the cheat sheet! Students in past semesters have neglected their
 
 ## Want more review?
 
-- worked examples from [lecture](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-11-moments.pdf); 
-- new theorems and examples from [lecture](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-14-sums-and-averages.pdf) about updating MGFs under linear transformations;
-- [Problem Set 5](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-5.html): problems 9 - 10;
+- worked examples from [lecture](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture16.pdf); 
+- new theorems and examples from [lecture](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sums-and-averages.pdf) about updating MGFs under linear transformations;
+- [Problem Set 5](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-5.html): problems 8 - 9;
 - [Problem Set 6](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-6.html): problems 3 - 5.
 - Odd-numbered exercises in DeGroot & Schervish Chapter 4.4.
 
@@ -114,8 +110,7 @@ Do not skimp on the cheat sheet! Students in past semesters have neglected their
 
 ## Want more review?
 
-- jointly discrete examples from [lecture](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-12-joint-discrete.pdf);
-- jointly contnuous examples from [lecture](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-13-joint-continuous.pdf);
-- mixed Poisson-gamma example from [Lab 9](https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-9.html);
+- jointly discrete examples from [lecture](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture17.pdf);
+- jointly continuous examples from [lecture](https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/joint-continuous.pdf);
 - [Problem Set 6](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-6.html): problems 7 - 10;
 - Odd-numbered exercises in DeGroot & Schervish Chapters 3.4 - 3.6.
