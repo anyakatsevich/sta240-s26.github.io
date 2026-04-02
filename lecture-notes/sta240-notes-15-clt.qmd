@@ -188,9 +188,9 @@ We denote this $Y_n\overset{d}{\to}Y$. Here's a cartoon:
 
 :::
 
-In addition to the examples above, you have already seen several examples of this style of convergence.
+In addition to the examples above, you also saw an example of this style of convergence on the last problem set.
 
-
+<!--- 
 ::: callout-warning
 ## Example: Student's $t$ distribution
 
@@ -260,7 +260,7 @@ shinyApp(ui = ui, server = server)
 
 ```
 
-:::
+::: -->
 
 ::: callout-warning
 ## Example: position of a particle (PSET 6 #2)
@@ -433,32 +433,8 @@ In other words, $Z_n$ is a linear combination of iid random variables, and we ca
 
 $$
 \begin{aligned}
-M_{Z_n}(t)
-&=
-E(e^{tZ_n})
-\\
-&=
-E\left(e^{t\sum\limits_{i=1}^n\frac{1}{\sqrt{n}}X_i}\right)
-\\
-&=
-E\left(e^{\sum\limits_{i=1}^n\frac{t}{\sqrt{n}}X_i}\right)
-\\
-&=
-E\left(\prod_{i=1}^ne^{\frac{t}{\sqrt{n}}X_i}\right)
-&&e^{a+b}=e^ae^b
-\\
-&=
-\prod_{i=1}^nE\left(e^{\frac{t}{\sqrt{n}}X_i}\right) && \text{independence}
-\\
-&=
-\prod_{i=1}^nM_{X_i}(t/\sqrt{n})
-\\
-&=
-\prod_{i=1}^nM(t/\sqrt{n}) && \text{identically distributed}
-\\
-&=
-[M(t/\sqrt{n})]^n
-.
+M_{Z_n}(t)=\prod_{i=1}^nM_{X_i}(t/\sqrt{n})=\prod_{i=1}^nM(t/\sqrt{n}) =
+[M(t/\sqrt{n})]^n.
 \end{aligned}
 $$
 
@@ -478,9 +454,9 @@ To do that, we need to haul out L'Hôpital's rule a few times. But first, a few 
 
 $$
 \begin{aligned}
-M(0)&=E\left(e^{0\cdot X_1}\right)=E(e^0)=E(1)=1 && \text{always true}\\
-M'(0)&=E(X_1)=0 && \text{assumption from above}\\
-M''(0)&=E(X_1^2)=\text{var}(X_1)+E(X_1)^2=1+0=1 && \text{assumption from above}.
+M(0)&=\mathbb E\left[e^{0\cdot X_1}\right]=1 && \text{always true}\\
+M'(0)&=\mathbb E[X_1]=0 && \text{assumption from above}\\
+M''(0)&=\mathbb E[X_1^2]=\text{var}(X_1)+\mathbb E[X_1]^2=1+0=1 && \text{assumption from above}.
 \end{aligned}
 $$
 

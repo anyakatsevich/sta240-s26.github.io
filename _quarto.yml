@@ -230,8 +230,8 @@ website:
              text: Lab 7
            - href: labs/lab-8.qmd
              text: Lab 8
-          # - href: labs/lab-9.qmd
-          #   text: Lab 9
+           - href: labs/lab-9.qmd
+             text: Lab 9
           # - href: labs/lab-10.qmd
           #   text: Lab 10
           # - href: labs/lab-11.qmd
