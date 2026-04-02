@@ -29,6 +29,7 @@ project:
   - labs/lab-6.qmd
   - labs/lab-7.qmd
   - labs/lab-8.qmd
+  - labs/lab-9.qmd
   - explainers/**.qmd
   - math/**.qmd
 
