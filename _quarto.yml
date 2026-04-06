@@ -30,6 +30,7 @@ project:
   - labs/lab-7.qmd
   - labs/lab-8.qmd
   - labs/lab-9.qmd
+  - lecture-notes/sta240-notes-15-clt.qmd
   - explainers/**.qmd
   - math/**.qmd
 

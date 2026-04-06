@@ -1,6 +1,8 @@
 ---
 title: "Central limit theorem"
-format: html
+format:
+  html:
+    embed-resources: false
 filters:
   - shinylive
 ---
@@ -532,7 +534,7 @@ Done!
 
 The limit we took to finish the proof is basically the same limit you took on [Problem Set 0 problem 6](https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-0.html#problem-6). Just take $x=n$ and $f=\ln M$.
 :::
-
+<!--
 # Berry-Esseen theorem
 
 The practical upshot of the CLT is that it gives us permission to use the normal distribution to approximate stuff that, strictly speaking, is *not* exactly normally distributed, but nevertheless might be close enough if $n$ is sufficiently large. But what does "sufficiently large" mean? $n=40$? $n=10^{80}$? If I have to wait until $n$ is insanely huge before the CLT starts to "kick in," then this result is not actually very useful.
@@ -651,7 +653,7 @@ $E\left[\left|\frac{X_1-\mu}{\sigma}\right|^3\right]$ is the third, absolute sta
 :::
 
 Qualitatively, this theorem says that CLT convergence happens on the order of $1/\sqrt{n}$. Quantitatively, the precise rate depends on how skewed the underlying $P$ is, as measured by the third moment. We know the limiting distribution of N(0, 1) is symmetric, so if we start out with a distribution that is already symmetric, the convergence is faster. If we start out with something skewed, the theorem takes longer to get going. If you revisit the app at the very top of the page and play around with parameter values that gives a highly skewed $P$ (Bernoulli with $p$ very close to 0 or 1, for example), you see this.
-
+-->
 
 ::: callout-important
 ## Reality check
