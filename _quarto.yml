@@ -10,6 +10,7 @@ project:
   - problems/pset-4.qmd
   - problems/pset-5.qmd
   - problems/pset-6.qmd
+  - problems/pset-7.qmd
   - problems/exam-midterm-1.qmd
   - problems/exam-midterm-2.qmd
   - apps/disease-testing.qmd
@@ -213,8 +214,8 @@ website:
             text: Problem Set 5
           - href: problems/pset-6.qmd
             text: Problem Set 6
-          # - href: problems/pset-7.qmd
-          #   text: Problem Set 7
+          - href: problems/pset-7.qmd
+            text: Problem Set 7
       - section: "Labs"
         contents:
            - href: labs/lab-1.qmd

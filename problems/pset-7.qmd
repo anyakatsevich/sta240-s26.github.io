@@ -1,15 +1,15 @@
 ---
 title: "Problem Set 7"
-subtitle: Due Monday December 8 at 5PM
+subtitle: Due Saturday April 25th at 11:59PM
 draft: false
 editor: 
   mode: source
 ---
-
+<!--
 ::: callout-note
 ## Final exam prep
 The final exam includes one problem on maximum likelihood estimation, and you can expect it to look similar to Problems 3 and 4 below. The final exam closes with one problem on Bayesian statistics, and you can expect it to look similar to Problems 5 and 6 below. 
-:::
+:::-->
 
 ## Problem 0
 
