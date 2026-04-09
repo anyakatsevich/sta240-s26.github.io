@@ -54,6 +54,12 @@ $$
 Since $\frac{\text{d}^{2}\ell}{\text{d}\theta^{2}} = -n < 0$, we know that $\hat{\theta}_{n} = \bar{X}_{n}$ is the *maximum* likelihood estimator. 
 :::
 
+::: callout-tip
+## Fun fact
+
+For *any* known variance $\sigma^{2} > 0$, the MLE of the mean for iid $\text{N}\left(\theta, \sigma^{2}\right)$ data is $\hat{\theta}_{n} = \bar{X}_{n}$. Try that out for yourself!
+:::
+
 # Task 1 (you do it)
 
 We now pivot to our distribution of choice for this lab. If a non-negative random variable $X$ has the *Rayleigh distribution* with parameter $\theta>0$, then its CDF is 
