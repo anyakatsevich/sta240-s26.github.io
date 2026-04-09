@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Lab 10 – STA 240 Spring 2026</title>
 <style>
@@ -60,16 +60,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../problems/exam-midterm-1.html" rel="next">
+<link href="../labs/lab-9.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d640c705e8c17715bca3574aa719063f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-24b5e6359d046001481a7c94baaab5c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-d0086a85466981861881e17a07507999.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -106,7 +109,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -122,11 +125,8 @@ window.Quarto = {
 };
 </script>
 <meta property="og:title" content="Lab 10 – STA 240 Spring 2026">
-<meta property="og:description" content="Due Thursday November 20 at 11:59 PM">
-<meta property="og:image" content="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-10_files/figure-html/unnamed-chunk-1-1.png">
+<meta property="og:description" content="Due Thursday April 9 at 11:59 PM">
 <meta property="og:site_name" content="STA 240 Spring 2026">
-<meta property="og:image:height" content="960">
-<meta property="og:image:width" content="1344">
 </head>
 <body class="nav-sidebar docked quarto-light">
 
@@ -135,7 +135,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 10</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-10.html">Lab 10</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -146,12 +146,12 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+      <img src="../img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none"><img src="../img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="quarto-navigation-tool px-1" aria-label="RStudio Containers"><i class="bi bi-code-square"></i></a>
     <a href="https://go.canvas.duke.edu/" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-megaphone"></i></a>
-    <a href="https://edstem.org/us/courses/80868/discussion" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-people"></i></a>
-    <a href="https://www.gradescope.com/courses/1071176" title="Gradescope" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-file-arrow-up"></i></a>
+    <a href="https://edstem.org/us/courses/89558/discussion" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-people"></i></a>
+    <a href="https://www.gradescope.com/courses/1195780" title="Gradescope" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-file-arrow-up"></i></a>
 </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -276,7 +276,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text"><code>R</code> Helpers</span></a>
+ <span class="menu-text">R Helpers</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -327,7 +327,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../explainers/sample.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><code>sample</code></span></a>
+ <span class="menu-text">sample</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -431,18 +431,6 @@ window.Quarto = {
  <span class="menu-text">Gamma</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../distributions/continuous-inverse-gamma.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Inverse gamma</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../distributions/continuous-beta.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beta</span></a>
-  </div>
-</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -460,12 +448,144 @@ window.Quarto = {
  <span class="menu-text">Problem Set 0</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 7</span></a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Labs</span></span>
-  </li>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Labs</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 9</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-10.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lab 10</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Exam Study Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/exam-midterm-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Midterm 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/exam-midterm-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Midterm 2</span></a>
+  </div>
+</li>
+      </ul>
+</li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
@@ -474,18 +594,19 @@ window.Quarto = {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#task-1" id="toc-task-1" class="nav-link active" data-scroll-target="#task-1">Task 1</a></li>
-  <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2">Task 2</a></li>
-  <li><a href="#task-3" id="toc-task-3" class="nav-link" data-scroll-target="#task-3">Task 3</a></li>
-  <li><a href="#task-4" id="toc-task-4" class="nav-link" data-scroll-target="#task-4">Task 4</a></li>
-  <li><a href="#task-5" id="toc-task-5" class="nav-link" data-scroll-target="#task-5">Task 5</a></li>
-  <li><a href="#task-6" id="toc-task-6" class="nav-link" data-scroll-target="#task-6">Task 6</a></li>
+<li><a href="#task-0-the-ta-does-it" id="toc-task-0-the-ta-does-it" class="nav-link active" data-scroll-target="#task-0-the-ta-does-it">Task 0 (the TA does it)</a></li>
+  <li><a href="#task-1-you-do-it" id="toc-task-1-you-do-it" class="nav-link" data-scroll-target="#task-1-you-do-it">Task 1 (you do it)</a></li>
+  <li><a href="#task-2-we-do-it" id="toc-task-2-we-do-it" class="nav-link" data-scroll-target="#task-2-we-do-it">Task 2 (we do it)</a></li>
+  <li><a href="#task-3-we-do-it" id="toc-task-3-we-do-it" class="nav-link" data-scroll-target="#task-3-we-do-it">Task 3 (we do it)</a></li>
+  <li><a href="#task-4-we-do-it" id="toc-task-4-we-do-it" class="nav-link" data-scroll-target="#task-4-we-do-it">Task 4 (we do it)</a></li>
+  <li><a href="#task-5-you-do-it" id="toc-task-5-you-do-it" class="nav-link" data-scroll-target="#task-5-you-do-it">Task 5 (you do it)</a></li>
+  <li><a href="#task-6-you-do-it" id="toc-task-6-you-do-it" class="nav-link" data-scroll-target="#task-6-you-do-it">Task 6 (you do it)</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-10.html">Lab 10</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">Lab 10</h1>
-<p class="subtitle lead">Due Thursday November 20 at 11:59 PM</p>
+<p class="subtitle lead">Due Thursday April 9 at 11:59 PM</p>
 </div>
 
 
@@ -499,62 +620,95 @@ window.Quarto = {
   
 
 
-</header><p>This lab provides extra practice with the kind of maximum likehood problem that you will encounter on the last problem set and the final exam.</p>
-<section id="task-1" class="level1"><h1>Task 1</h1>
-<p>If a non-negative random variable <span class="math inline">\(X\)</span> has the <em>Rayleigh distribution</em> with parameter <span class="math inline">\(\theta&gt;0\)</span>, then its CDF is</p>
+</header><p>This lab provides extra practice with the kind of maximum likelihood problem that you will encounter on the last problem set and the final exam.</p>
+<section id="task-0-the-ta-does-it" class="level1"><h1>Task 0 (the TA does it)</h1>
+<p>Let’s see a worked example first. Imagine we observe data</p>
 <p><span class="math display">\[
-F(x;\,\theta)=1-\exp\left(-\frac{x^2}{2\theta}\right)\quad x\geq 0,
+X_1,\,X_2,\,...,\,X_n\overset{\text{iid}}{\sim}\text{N}(\theta, 1),
 \]</span></p>
-<p>and we say <span class="math inline">\(X\sim\text{Rayleigh}(\theta)\)</span>. What is the PDF in this parametric family?</p>
+<p>where the true value of the mean <span class="math inline">\(\theta&gt;0\)</span> is unknown. We will use the method of maximum likelihood to propose an estimator for <span class="math inline">\(\theta\)</span>. Spoiler alert: In this case, it’s the sample mean <span class="math inline">\(\bar{X}_{n}\)</span>! See below for the derivation.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Warning</span>Derivation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p>We consider data</p>
 <p><span class="math display">\[
+X_1,\,X_2,\,...,\,X_n\overset{\text{iid}}{\sim}\text{N}(\theta, 1).
+\]</span> Recall that the associated density is given by <span class="math display">\[f(x;\ \theta) = \frac{1}{\sqrt{2\pi}}e^{-\frac{(x - \theta)^{2}}{2}}, \quad x \in \mathbb{R}.\]</span> So, the joint likelihood function is given by <span class="math display">\[
+\begin{aligned}
+L\left(\theta;\ X_{1:n}\right) &amp; = \prod_{i = 1}^{n}{f\left(X_{i};\ \theta\right)} \\ &amp; = \prod_{i = 1}^{n}{\frac{1}{\sqrt{2\pi}}e^{-\frac{\left(X_{i} - \theta\right)^{2}}{2}}} \\ &amp; = (2\pi)^{-\frac{n}{2}}\prod_{i = 1}^{n}{e^{-\frac{\left(X_{i} - \theta\right)^{2}}{2}}} \\ &amp; = (2\pi)^{-\frac{n}{2}}e^{-\frac{1}{2}\sum_{i = 1}^{n}{\left(X_{i} - \theta\right)^{2}}}.
+\end{aligned}
+\]</span> The log-likelihood is then given by <span class="math display">\[
+\begin{aligned}
+\ell\left(\theta;\ X_{1:n}\right) &amp; = \ln L\left(\theta; \ X_{1:n}\right) \\ &amp; = \ln\left[(2\pi)^{-\frac{n}{2}}e^{-\frac{1}{2}\sum_{i = 1}^{n}{\left(X_{i} - \theta\right)^{2}}}\right] \\ &amp; = \ln\left[(2\pi)^{-\frac{n}{2}}\right] + \ln\left[e^{-\frac{1}{2}\sum_{i = 1}^{n}{\left(X_{i} - \theta\right)^{2}}}\right] \\ &amp; = -\frac{n}{2}\ln(2\pi) - \frac{1}{2}\sum_{i = 1}^{n}{\left(X_{i} - \theta\right)^{2}}.
+\end{aligned}
+\]</span> We want to find <span class="math display">\[\hat{\theta}_{n} = \underset{\theta}{\arg\max}{\ L\left(\theta;\ X_{1:n}\right)} = \underset{\theta}{\arg\max}{\ \ell\left(\theta;\ X_{1:n}\right)}.\]</span> We optimize by taking the derivative with respect to <span class="math inline">\(\theta\)</span>, setting it equal to zero, and solving: <span class="math display">\[
+\begin{aligned}
+\frac{\text{d}\ell}{\text{d}\theta} &amp; = \frac{\text{d}}{\text{d}\theta}\left[-\frac{n}{2}\ln(2\pi) - \frac{1}{2}\sum_{i = 1}^{n}{\left(X_{i} - \theta\right)^{2}}\right] \\ &amp; = -\frac{1}{2}\sum_{i = 1}^{n}{\frac{\text{d}}{\text{d}\theta}\left[\left(X_{i} - \theta\right)^{2}\right]} \\ &amp; = -\frac{1}{2}\sum_{i = 1}^{n}{-2\left(X_{i} - \theta\right)} \\ &amp; = \sum_{i = 1}^{n}{X_{i}} - n\theta \\ \Rightarrow 0 &amp; = \sum_{i = 1}^{n}{X_{i}} - n\hat{\theta}_{n} \\ \Rightarrow n\hat{\theta}_{n} &amp; = \sum_{i = 1}^{n}{X_{i}} \\ \Rightarrow \hat{\theta}_{n} &amp; = \frac{1}{n}\sum_{i = 1}^{n}{X_{i}} \\ \Rightarrow \hat{\theta}_{n} &amp; = \bar{X}_{n}.
+\end{aligned}
+\]</span> For the sake of completeness, we can check the second derivative to verify that this is, in fact, a maximum: <span class="math display">\[
+\begin{aligned}
+\frac{\text{d}^{2}\ell}{\text{d}\theta^{2}} &amp; = \frac{\text{d}}{\text{d}\theta}\left[\frac{\text{d}\ell}{\text{d}\theta}\right] \\ &amp; = \frac{\text{d}}{\text{d}\theta}\left[\sum_{i = 1}^{n}{X_{i}} - n\theta\right] \\ &amp; = -n.
+\end{aligned}
+\]</span> Since <span class="math inline">\(\frac{\text{d}^{2}\ell}{\text{d}\theta^{2}} = -n &lt; 0\)</span>, we know that <span class="math inline">\(\hat{\theta}_{n} = \bar{X}_{n}\)</span> is the <em>maximum</em> likelihood estimator.</p>
+</div>
+</div>
+</div>
+</section><section id="task-1-you-do-it" class="level1"><h1>Task 1 (you do it)</h1>
+<p>We now pivot to our distribution of choice for this lab. If a non-negative random variable <span class="math inline">\(X\)</span> has the <em>Rayleigh distribution</em> with parameter <span class="math inline">\(\theta&gt;0\)</span>, then its CDF is</p>
+<p><span class="math display">\[
+F(x;\,\theta)=1-\exp\left(-\frac{x^2}{2\theta}\right)\quad x\geq 0,
+\]</span></p>
+<p>and we say <span class="math inline">\(X\sim\text{Rayleigh}(\theta)\)</span>. What is the PDF in this parametric family?</p>
+<!--
+::: {.callout-warning collapse="true"}
+## Solution
+
+$$
 \begin{aligned}
 f(x;\,\theta)
-&amp;=
+&=
 F'(x;\,\theta)
 \\
-&amp;=
+&=
 \frac{\text{d}}{\text{d}x}
 \left[
 1-\exp\left(-\frac{x^2}{2\theta}\right)
 \right]
 \\
-&amp;=
+&=
 0-\frac{-x}{\theta}
 \exp\left(-\frac{x^2}{2\theta}\right)
 \\
-&amp;=
+&=
 \frac{x}{\theta}
-\exp\left(-\frac{x^2}{2\theta}\right),&amp;&amp;x\geq 0.
+\exp\left(-\frac{x^2}{2\theta}\right),&&x\geq 0.
 \end{aligned}
-\]</span></p>
-</div>
-</div>
-</div>
-</section><section id="task-2" class="level1"><h1>Task 2</h1>
+$$
+
+:::
+-->
+</section><section id="task-2-we-do-it" class="level1"><h1>Task 2 (we do it)</h1>
 <p>Imagine we observe data</p>
 <p><span class="math display">\[
 X_1,\,X_2,\,...,\,X_n\overset{\text{iid}}{\sim}\text{Rayleigh}(\theta),
 \]</span></p>
 <p>where the true value of the parameter <span class="math inline">\(\theta&gt;0\)</span> is unknown. Use the method of maximum likelihood to propose an estimator for <span class="math inline">\(\theta\)</span>.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Warning</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -630,21 +784,21 @@ f(X_i;\,\theta)
 </div>
 </div>
 </div>
-</section><section id="task-3" class="level1"><h1>Task 3</h1>
+</section><section id="task-3-we-do-it" class="level1"><h1>Task 3 (we do it)</h1>
 <p>Your estimator in the previous part is a random variable that inherits its randomness from the <span class="math inline">\(X_i\)</span>. Derive the full <em>sampling distribution</em> of your estimator.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Warning</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>For these problems, I work “from the inside out.” What’s the distribution of <span class="math inline">\(X_i\)</span>? What’s the distribution of <span class="math inline">\(X_i^2\)</span>? What’s the distribution when you add those up? What’s the distribution when you scale the sum by <span class="math inline">\(1/2n\)</span>? To answer those questions, you need tools like the <a href="https://sta240-f25.github.io/labs/lab-7.html">change-of-variables formulas</a> and our <a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-14-sums-and-averages.pdf">MGF updating rules for linear combinations</a>.</p>
+<p>For these problems, I work “from the inside out.” What’s the distribution of <span class="math inline">\(X_i\)</span>? What’s the distribution of <span class="math inline">\(X_i^2\)</span>? What’s the distribution when you add those up? What’s the distribution when you scale the sum by <span class="math inline">\(1/2n\)</span>? To answer those questions, you need tools like the <a href="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-7.html">change-of-variables formulas</a> and our <a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-14-sums-and-averages.pdf">MGF updating rules for linear combinations</a>.</p>
 <p>We already know that <span class="math inline">\(X_1\sim\text{Rayleigh}(\theta)\)</span>, so we derive the distribution of <span class="math inline">\(Y_1=g(X_1)=X_1^2\)</span> using change of variables. Since <span class="math inline">\(\text{Range}(X_1)=(0,\,\infty)\)</span>, the transformation is strictly increasing, so we apply the change of variables formula:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -685,22 +839,22 @@ X_i^2\overset{\text{iid}}{\sim}\text{Gamma}(1,\,1/2\theta)
 &amp;\implies
 \frac{1}{2n}\sum\limits_{i=1}^nX_i^2\sim\text{Gamma}(n,\,n/\theta).
 \end{aligned}
-\]</span> The last implication follows from <a href="https://sta240-f25.github.io/problems/pset-5.html#problem-10">Problem Set 5 #10d</a>. So, the full sampling distribution of the estimator is</p>
+\]</span> The last implication follows from <a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-5.html#problem-10">Problem Set 5 #10d</a>. So, the full sampling distribution of the estimator is</p>
 <p><span class="math display">\[
 \hat{\theta}_n\sim \text{Gamma}(n,\,n/\theta).
 \]</span></p>
 </div>
 </div>
 </div>
-</section><section id="task-4" class="level1"><h1>Task 4</h1>
+</section><section id="task-4-we-do-it" class="level1"><h1>Task 4 (we do it)</h1>
 <p>Now that you know the sampling distribution of the estimator, compute its mean squared error (MSE) using the bias-variance decomposition. Is the estimator unbiased? Is it consistent?</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Warning</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -717,66 +871,62 @@ E(\hat{\theta}_n)&amp;=\frac{n}{n/\theta}=\theta\\
 </div>
 </div>
 </div>
-</section><section id="task-5" class="level1"><h1>Task 5</h1>
+</section><section id="task-5-you-do-it" class="level1"><h1>Task 5 (you do it)</h1>
 <p>Compute the quantile function of the Rayleigh distribution and use it to generate 100 draws from the distribution that has <span class="math inline">\(\theta=4\)</span>.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The quantile function is the inverse cdf, so we solve:</p>
-<p><span class="math display">\[
+<!--
+::: {.callout-warning collapse="true"}
+## Solution
+The quantile function is the inverse cdf, so we solve:
+
+$$
 \begin{aligned}
 y
-&amp;=
+&=
 1-\exp\left(-\frac{x^2}{2\theta}\right)
 \\
 \exp\left(-\frac{x^2}{2\theta}\right)
-&amp;=
+&=
 1-y
 \\
 -\frac{x^2}{2\theta}
-&amp;=
+&=
 \ln(1-y)
 \\
 x^2
-&amp;=
+&=
 -2\theta\ln(1-y)
 \\
 x
-&amp;=
+&=
 \sqrt{-2\theta\ln(1-y)}
 .
 \end{aligned}
-\]</span></p>
-<p>So <span class="math inline">\(F^{-1}(y;\,\theta)=\sqrt{-2\theta\ln(1-y)}\)</span>. As such, we can implement an inverse transform sampler to simulate from the distribution:</p>
-<div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">2345</span><span class="op">)</span></span>
-<span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
-<span><span class="va">theta</span> <span class="op">&lt;-</span> <span class="fl">4</span></span>
-<span><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span> <span class="op">*</span> <span class="va">theta</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">X</span>, breaks <span class="op">=</span> <span class="st">"Scott"</span>, freq <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="op">-</span><span class="va">x</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="op">(</span><span class="fl">2</span><span class="op">*</span><span class="va">theta</span><span class="op">)</span><span class="op">)</span> <span class="op">*</span> <span class="va">x</span> <span class="op">/</span> <span class="va">theta</span>, </span>
-<span>      from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">1000</span>, col <span class="op">=</span> <span class="st">"red"</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="lab-10_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="task-6" class="level1"><h1>Task 6</h1>
-<p>Write a for loop that simulates the sampling distribution for your estimator. Here is a schematic of what you are doing:</p>
+$$
+
+So $F^{-1}(y;\,\theta)=\sqrt{-2\theta\ln(1-y)}$. As such, we can implement an inverse transform sampler to simulate from the distribution:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+set.seed(2345)
+n <- 100
+theta <- 4
+X <- sqrt(-2 * theta * log(1 - runif(n)))
+hist(X, breaks = "Scott", freq = FALSE)
+curve(exp(-x^2/(2*theta)) * x / theta, 
+      from = 0, to = max(X), n = 1000, col = "red", add = TRUE)
+```
+
+::: {.cell-output-display}
+![](lab-10_files/figure-html/unnamed-chunk-1-1.png){width=672}
+:::
+:::
+
+:::
+-->
+</section><section id="task-6-you-do-it" class="level1"><h1>Task 6 (you do it)</h1>
+<p>Write a for loop that simulates the sampling distribution for your estimator. Let <span class="math inline">\(\theta_{0} = 4\)</span>. Here is a schematic of what you are doing:</p>
 <p><span class="math display">\[
 \begin{matrix}
 \text{0. True parameter value} &amp;&amp;&amp; \theta_0 &amp;&amp; \\
@@ -797,13 +947,14 @@ x
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Template
+<span class="screen-reader-only">Tip</span>Template
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Here is some template code you can fill in:</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">true_theta</span> <span class="op">&lt;-</span> <span class="fl">3.14</span>      <span class="co"># true value of parameter</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
+<span><span class="va">true_theta</span> <span class="op">&lt;-</span> <span class="fl">4</span>      <span class="co"># true value of parameter</span></span>
 <span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">25</span>                 <span class="co"># sample size</span></span>
 <span><span class="va">M</span> <span class="op">&lt;-</span> <span class="fl">2500</span>               <span class="co"># how many repetitions</span></span>
 <span><span class="va">estimates</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">numeric</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span> <span class="co"># preallocate storage for the sample of estimates</span></span>
@@ -815,48 +966,41 @@ Template
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="co"># Step 4: plot histogram of estimates</span></span>
-<span><span class="co"># Step 5: add density curve of exact sampling distribution</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co"># Step 5: add density curve of exact sampling distribution</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
-<span><span class="va">true_theta</span> <span class="op">&lt;-</span> <span class="fl">3.14</span>      <span class="co"># true value of parameter</span></span>
-<span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">25</span>                 <span class="co"># sample size</span></span>
-<span><span class="va">M</span> <span class="op">&lt;-</span> <span class="fl">2500</span>               <span class="co"># how many repetitions</span></span>
-<span><span class="va">estimates</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">numeric</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span> <span class="co"># preallocate storage for the sample of estimates</span></span>
-<span></span>
-<span><span class="kw">for</span><span class="op">(</span><span class="va">m</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">M</span><span class="op">)</span><span class="op">{</span></span>
-<span>  <span class="va">X</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span> <span class="op">*</span> <span class="va">true_theta</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span>  <span class="va">estimates</span><span class="op">[</span><span class="va">m</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">X</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">/</span> <span class="op">(</span><span class="fl">2</span><span class="op">*</span><span class="va">n</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">estimates</span>, breaks <span class="op">=</span> <span class="st">"Scott"</span>, freq <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/curve.html">curve</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/GammaDist.html">dgamma</a></span><span class="op">(</span><span class="va">x</span>, shape <span class="op">=</span> <span class="va">n</span>, rate <span class="op">=</span> <span class="va">n</span> <span class="op">/</span> <span class="va">true_theta</span><span class="op">)</span>, </span>
-<span>      from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">estimates</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">1000</span>, col <span class="op">=</span> <span class="st">"red"</span>, </span>
-<span>      lwd <span class="op">=</span> <span class="fl">2</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="lab-10_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!--
+::: {.callout-warning collapse="true"}
+## Solution
+
+::: {.cell}
+
+```{.r .cell-code}
+set.seed(123)
+true_theta <- 4      # true value of parameter
+n <- 25                 # sample size
+M <- 2500               # how many repetitions
+estimates <- numeric(M) # preallocate storage for the sample of estimates
+
+for(m in 1:M){
+  X <- sqrt(-2 * true_theta * log(1 - runif(n)))
+  estimates[m] <- sum(X^2) / (2*n)
+}
+
+hist(estimates, breaks = "Scott", freq = FALSE)
+curve(dgamma(x, shape = n, rate = n / true_theta), 
+      from = 0, to = max(estimates), n = 1000, col = "red", 
+      lwd = 2, add = TRUE)
+```
+
+::: {.cell-output-display}
+![](lab-10_files/figure-html/unnamed-chunk-3-1.png){width=672}
+:::
+:::
+
+:::
+-->
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
@@ -910,13 +1054,14 @@ Solution
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1257,11 +1402,21 @@ Solution
       }
     }
   });
-  </script>
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="../labs/lab-9.html" class="pagination-link" aria-label="Lab 9">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 9</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../problems/exam-midterm-1.html" class="pagination-link" aria-label="Midterm 1">
+        <span class="nav-page-text">Midterm 1</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
-<p>© Copyright 2025 John Zito</p>
+<p>© Copyright 2026 John Zito and Anya Katsevich</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
