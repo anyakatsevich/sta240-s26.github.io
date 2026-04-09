@@ -56,6 +56,7 @@ project:
     - lecture-notes/lecture17.pdf
     - lecture-notes/lecture14.pdf
     - lecture-notes/lecture9.pdf
+    - lecture-notes/what-is-stats-part1.pdf
     - lecture-notes/what-is-stats-part2.pdf
     - lecture-notes/lecture10-init.pdf
     - lecture-notes/lecture4and5-counting.pdf
@@ -238,8 +239,8 @@ website:
              text: Lab 8
            - href: labs/lab-9.qmd
              text: Lab 9
-          # - href: labs/lab-10.qmd
-          #   text: Lab 10
+           - href: labs/lab-10.qmd
+             text: Lab 10
           # - href: labs/lab-11.qmd
           #   text: Lab 11
       - section: "Exam Study Guides"
