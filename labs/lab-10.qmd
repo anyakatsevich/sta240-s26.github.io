@@ -1,17 +1,62 @@
 ---
 title: "Lab 10"
-subtitle: Due Thursday November 20 at 11:59 PM
+subtitle: Due Thursday April 9 at 11:59 PM
 format: html
 draft: false
 editor: 
   mode: source
 ---
 
-This lab provides extra practice with the kind of maximum likehood problem that you will encounter on the last problem set and the final exam.
+This lab provides extra practice with the kind of maximum likelihood problem that you will encounter on the last problem set and the final exam.
 
-# Task 1
+# Task 0 (the TA does it)
 
-If a non-negative random variable $X$ has the *Rayleigh distribution* with parameter $\theta>0$, then its CDF is 
+Let's see a worked example first. Imagine we observe data 
+
+$$
+X_1,\,X_2,\,...,\,X_n\overset{\text{iid}}{\sim}\text{N}(\theta, 1),
+$$
+
+where the true value of the mean $\theta>0$ is unknown. We will use the method of maximum likelihood to propose an estimator for $\theta$. Spoiler alert: In this case, it's the sample mean $\bar{X}_{n}$! See below for the derivation.
+
+::: {.callout-warning collapse="true"}
+## Derivation
+
+We consider data 
+
+$$
+X_1,\,X_2,\,...,\,X_n\overset{\text{iid}}{\sim}\text{N}(\theta, 1).
+$$
+Recall that the associated density is given by $$f(x;\ \theta) = \frac{1}{\sqrt{2\pi}}e^{-\frac{(x - \theta)^{2}}{2}}, \quad x \in \mathbb{R}.$$ So, the joint likelihood function is given by
+$$
+\begin{aligned}
+L\left(\theta;\ X_{1:n}\right) & = \prod_{i = 1}^{n}{f\left(X_{i};\ \theta\right)} \\ & = \prod_{i = 1}^{n}{\frac{1}{\sqrt{2\pi}}e^{-\frac{\left(X_{i} - \theta\right)^{2}}{2}}} \\ & = (2\pi)^{-\frac{n}{2}}\prod_{i = 1}^{n}{e^{-\frac{\left(X_{i} - \theta\right)^{2}}{2}}} \\ & = (2\pi)^{-\frac{n}{2}}e^{-\frac{1}{2}\sum_{i = 1}^{n}{\left(X_{i} - \theta\right)^{2}}}.
+\end{aligned}
+$$
+The log-likelihood is then given by
+$$
+\begin{aligned}
+\ell\left(\theta;\ X_{1:n}\right) & = \ln L\left(\theta; \ X_{1:n}\right) \\ & = \ln\left[(2\pi)^{-\frac{n}{2}}e^{-\frac{1}{2}\sum_{i = 1}^{n}{\left(X_{i} - \theta\right)^{2}}}\right] \\ & = \ln\left[(2\pi)^{-\frac{n}{2}}\right] + \ln\left[e^{-\frac{1}{2}\sum_{i = 1}^{n}{\left(X_{i} - \theta\right)^{2}}}\right] \\ & = -\frac{n}{2}\ln(2\pi) - \frac{1}{2}\sum_{i = 1}^{n}{\left(X_{i} - \theta\right)^{2}}.
+\end{aligned}
+$$
+We want to find $$\hat{\theta}_{n} = \underset{\theta}{\arg\max}{\ L\left(\theta;\ X_{1:n}\right)} = \underset{\theta}{\arg\max}{\ \ell\left(\theta;\ X_{1:n}\right)}.$$ We optimize by taking the derivative with respect to $\theta$, setting it equal to zero, and solving:
+$$
+\begin{aligned}
+\frac{\text{d}\ell}{\text{d}\theta} & = \frac{\text{d}}{\text{d}\theta}\left[-\frac{n}{2}\ln(2\pi) - \frac{1}{2}\sum_{i = 1}^{n}{\left(X_{i} - \theta\right)^{2}}\right] \\ & = -\frac{1}{2}\sum_{i = 1}^{n}{\frac{\text{d}}{\text{d}\theta}\left[\left(X_{i} - \theta\right)^{2}\right]} \\ & = -\frac{1}{2}\sum_{i = 1}^{n}{-2\left(X_{i} - \theta\right)} \\ & = \sum_{i = 1}^{n}{X_{i}} - n\theta \\ \Rightarrow 0 & = \sum_{i = 1}^{n}{X_{i}} - n\hat{\theta}_{n} \\ \Rightarrow n\hat{\theta}_{n} & = \sum_{i = 1}^{n}{X_{i}} \\ \Rightarrow \hat{\theta}_{n} & = \frac{1}{n}\sum_{i = 1}^{n}{X_{i}} \\ \Rightarrow \hat{\theta}_{n} & = \bar{X}_{n}.
+\end{aligned}
+$$
+For the sake of completeness, we can check the second derivative to verify that this is, in fact, a maximum:
+$$
+\begin{aligned}
+\frac{\text{d}^{2}\ell}{\text{d}\theta^{2}} & = \frac{\text{d}}{\text{d}\theta}\left[\frac{\text{d}\ell}{\text{d}\theta}\right] \\ & = \frac{\text{d}}{\text{d}\theta}\left[\sum_{i = 1}^{n}{X_{i}} - n\theta\right] \\ & = -n.
+\end{aligned}
+$$
+Since $\frac{\text{d}^{2}\ell}{\text{d}\theta^{2}} = -n < 0$, we know that $\hat{\theta}_{n} = \bar{X}_{n}$ is the *maximum* likelihood estimator. 
+:::
+
+# Task 1 (you do it)
+
+We now pivot to our distribution of choice for this lab. If a non-negative random variable $X$ has the *Rayleigh distribution* with parameter $\theta>0$, then its CDF is 
 
 $$
 F(x;\,\theta)=1-\exp\left(-\frac{x^2}{2\theta}\right)\quad x\geq 0,
@@ -19,6 +64,7 @@ $$
 
 and we say $X\sim\text{Rayleigh}(\theta)$. What is the PDF in this parametric family?
 
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 
@@ -45,8 +91,9 @@ F'(x;\,\theta)
 $$
 
 :::
+-->
 
-# Task 2
+# Task 2 (we do it)
 
 Imagine we observe data 
 
@@ -135,7 +182,7 @@ $$
 
 :::
 
-# Task 3
+# Task 3 (we do it)
 
 Your estimator in the previous part is a random variable that inherits its randomness from the $X_i$. Derive the full *sampling distribution* of your estimator.
 
@@ -195,7 +242,7 @@ $$
 
 :::
 
-# Task 4
+# Task 4 (we do it)
 
 Now that you know the sampling distribution of the estimator, compute its mean squared error (MSE) using the bias-variance decomposition. Is the estimator unbiased? Is it consistent?
 
@@ -213,10 +260,11 @@ $$
 Since $E(\hat{\theta}_n)=\theta$, the bias of the estimator is zero, and so the mean-squared-error is simply $\text{var}(\hat{\theta}_n)=\theta^2/n$. As $n\to\infty$, this goes to zero. As such, the estimator is unbiased and consistent.
 :::
 
-# Task 5
+# Task 5 (you do it)
 
 Compute the quantile function of the Rayleigh distribution and use it to generate 100 draws from the distribution that has $\theta=4$.
 
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 The quantile function is the inverse cdf, so we solve:
@@ -258,10 +306,11 @@ curve(exp(-x^2/(2*theta)) * x / theta,
       from = 0, to = max(X), n = 1000, col = "red", add = TRUE)
 ```
 :::
+-->
 
-# Task 6
+# Task 6 (you do it)
 
-Write a for loop that simulates the sampling distribution for your estimator. Here is a schematic of what you are doing:
+Write a for loop that simulates the sampling distribution for your estimator. Let $\theta_{0} = 4$. Here is a schematic of what you are doing:
 
 $$
 \begin{matrix}
@@ -286,8 +335,8 @@ Here is some template code you can fill in:
 
 ```{r}
 #| eval: false
-
-true_theta <- 3.14      # true value of parameter
+set.seed(123)
+true_theta <- 4      # true value of parameter
 n <- 25                 # sample size
 M <- 2500               # how many repetitions
 estimates <- numeric(M) # preallocate storage for the sample of estimates
@@ -305,11 +354,12 @@ for(m in 1:M){
 
 :::
 
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 ```{r}
 set.seed(123)
-true_theta <- 3.14      # true value of parameter
+true_theta <- 4      # true value of parameter
 n <- 25                 # sample size
 M <- 2500               # how many repetitions
 estimates <- numeric(M) # preallocate storage for the sample of estimates
@@ -325,3 +375,4 @@ curve(dgamma(x, shape = n, rate = n / true_theta),
       lwd = 2, add = TRUE)
 ```
 :::
+-->
