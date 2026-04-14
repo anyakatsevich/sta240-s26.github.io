@@ -758,7 +758,7 @@
     "href": "distributions/continuous-beta.html",
     "title": "Beta distribution",
     "section": "",
-    "text": "The beta distribution plays many roles in probability and statistics. One of them is as the conjugate prior for the Bernoulli and geometric distributions. These distributions have one parameter \\(p\\), the probability of success for some binary trial. You can pick a particular beta distribution to represent your beliefs about where the unknown \\(p\\) is likely to lie.",
+    "text": "You first saw the beta distribution in Problem Set 6 #9. The beta distribution plays many roles in probability and statistics. One of them is as the conjugate prior for the Bernoulli and geometric distributions. These distributions have one parameter \\(p\\), the probability of success for some binary trial. You can pick a particular beta distribution to represent your beliefs about where the unknown \\(p\\) is likely to lie.",
     "crumbs": [
       "Distribution Families",
       "Beta"
