@@ -15,13 +15,7 @@ project:
   - problems/exam-midterm-2.qmd
   - apps/disease-testing.qmd
   - lab-notes/**.pdf
-  - distributions/discrete-binomial.qmd
-  - distributions/discrete-geometric.qmd
-  - distributions/discrete-poisson.qmd
-  - distributions/discrete-hypergeometric.qmd
-  - distributions/continuous-uniform.qmd
-  - distributions/continuous-normal.qmd
-  - distributions/continuous-gamma.qmd
+  - distributions/**.qmd
   - labs/lab-1.qmd
   - labs/lab-2.qmd
   - labs/lab-3.qmd
@@ -198,10 +192,10 @@ website:
             text: Normal
           - href: distributions/continuous-gamma.qmd
             text: Gamma
-      #     - href: distributions/continuous-inverse-gamma.qmd
-      #       text: Inverse gamma
-      #     - href: distributions/continuous-beta.qmd
-      #       text: Beta
+          - href: distributions/continuous-inverse-gamma.qmd
+            text: Inverse gamma
+          - href: distributions/continuous-beta.qmd
+            text: Beta
       - section: "Problem Sets"
         contents:
           - href: problems/pset-0.qmd
