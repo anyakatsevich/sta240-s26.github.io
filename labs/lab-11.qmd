@@ -1,5 +1,6 @@
 ---
 title: "Lab 11"
+subtitle: Due Thursday April 16 at 11:59 PM
 format: html
 filters:
   - shinylive
@@ -30,10 +31,11 @@ $$
 
 That's our model for the claims data. The rate parameter $\theta>0$ is unknown, and we want to use the data to learn what it is. Note that this model may or may not be a good choice, and entire books have been written on model building and model selection and model diagnostics and model criticism. If you keep studying statistics, you'll learn about all that, but this class is about one thing and one thing only: can you do the math or not? So we will just take the model as given and use it as an opportunity to test our technical skills.
 
-# Task 0
+# Task 0 (you do it)
 
 Compute the likelihood function and the log-likelihood function for the Poisson distribution. You will need both in what follows.
 
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 The likelihood function is 
@@ -74,11 +76,13 @@ e^{-n\theta}\theta^{\sum_{i=1}^nX_i}\prod_{i=1}^n\frac{1}{X_i!}
 $$
 
 :::
+-->
 
-# Task 1
+# Task 1 (you do it)
 
 Compute the maximum likelihood estimator for $\theta>0$ in the Poisson distribution.
 
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 $$
@@ -94,11 +98,13 @@ $$
 \end{aligned}
 $$
 :::
+-->
 
-# Task 2
+# Task 2 (you do it)
 
 Compute the mean, bias, variance, and MSE of the estimator and comment on its statistical properties.
 
+<!--
 ::: {.callout-warning collapse="true"}
 ## Solution
 This is the average of iid random variables, so we know that
@@ -112,8 +118,9 @@ $$
 
 As such, the estimator is unbiased, the MSE is equal to the variance, and this goes to zero as $n\to\infty$, so the estimator is consistent.
 :::
+-->
 
-# Task 3
+# Task 3 (we do it)
 
 The rate parameter $\theta>0$ is a positive real number, so if we want to perform a Bayesian analysis, we need a continuous probability distribution on positive reals. The gamma family is a convenient choice for this, so consider the Bayesian model:
 
@@ -162,7 +169,9 @@ $$
 :::
 
 
-# Task 4
+# Task 4 (we do it)
+
+Let $a, b \in \mathbb{R}$. A **convex combination** (or **weighted average**) of $a$ and $b$ is a linear combination of the form $$w \cdot a + (1 - w) \cdot b,$$ where $w \geq 0$. Necessarily, then, the weights $w$ and $(1 - w)$ sum to $1$.
 
 Based on your answer from the previous task, show that the posterior mean is a convex combination of the prior mean and the maximum likelihood estimator that you derived earlier.
 
@@ -194,7 +203,7 @@ E(\theta\mid x_{1:n})
 $$
 :::
 
-# Task 5
+# Task 5 (we do it)
 
 Ignoring that we ever did a Bayesian analysis, treat the posterior mean formula from the previous task as a new *classical* estimator for $\theta$. It's just a function of the data at the end of the day. 
 
@@ -253,7 +262,7 @@ As $n\to\infty$, $w_n\to 1$, so both terms go to zero, and the estimator is cons
 
 :::
 
-# Task 6
+# Task 6 (optional)
 
 Are there circumstances under which this new estimator would be better (in the sense of lower MSE) than the pure MLE?
 
