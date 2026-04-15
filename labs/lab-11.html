@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -29,16 +29,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../problems/exam-midterm-1.html" rel="next">
+<link href="../labs/lab-10.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d640c705e8c17715bca3574aa719063f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-24b5e6359d046001481a7c94baaab5c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d0086a85466981861881e17a07507999.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <meta name="shinylive:serviceworker_dir" content="..">
 <script src="../site_libs/quarto-contrib/shinylive-0.9.1/shinylive/load-shinylive-sw.js" type="module"></script>
 <script src="../site_libs/quarto-contrib/shinylive-0.9.1/shinylive/run-python-blocks.js" type="module"></script>
@@ -86,7 +89,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -103,7 +106,7 @@ window.Quarto = {
 </script>
 
 <meta property="og:title" content="Lab 11 – STA 240 Spring 2026">
-<meta property="og:description" content="Homepage for STA 240 Probability for Statistical Inference">
+<meta property="og:description" content="Due Thursday April 16 at 11:59 PM">
 <meta property="og:site_name" content="STA 240 Spring 2026">
 </head>
 
@@ -116,7 +119,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 11</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-11.html">Lab 11</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -131,13 +134,14 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="quarto-navigation-tool px-1" aria-label="RStudio Containers"><i class="bi bi-code-square"></i></a>
     <a href="https://go.canvas.duke.edu/" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-megaphone"></i></a>
-    <a href="https://edstem.org/us/courses/80868/discussion" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-people"></i></a>
-    <a href="https://www.gradescope.com/courses/1071176" title="Gradescope" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-file-arrow-up"></i></a>
+    <a href="https://edstem.org/us/courses/89558/discussion" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-people"></i></a>
+    <a href="https://www.gradescope.com/courses/1195780" title="Gradescope" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-file-arrow-up"></i></a>
 </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -262,7 +266,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text"><code>R</code> Helpers</span></a>
+ <span class="menu-text">R Helpers</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -313,7 +317,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../explainers/sample.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><code>sample</code></span></a>
+ <span class="menu-text">sample</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -446,11 +450,149 @@ window.Quarto = {
  <span class="menu-text">Problem Set 0</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 7</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Labs</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Labs</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 9</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-11.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lab 11</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Exam Study Guides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/exam-midterm-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Midterm 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/exam-midterm-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Midterm 2</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -462,13 +604,13 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#task-0" id="toc-task-0" class="nav-link active" data-scroll-target="#task-0">Task 0</a></li>
-  <li><a href="#task-1" id="toc-task-1" class="nav-link" data-scroll-target="#task-1">Task 1</a></li>
-  <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2">Task 2</a></li>
-  <li><a href="#task-3" id="toc-task-3" class="nav-link" data-scroll-target="#task-3">Task 3</a></li>
-  <li><a href="#task-4" id="toc-task-4" class="nav-link" data-scroll-target="#task-4">Task 4</a></li>
-  <li><a href="#task-5" id="toc-task-5" class="nav-link" data-scroll-target="#task-5">Task 5</a></li>
-  <li><a href="#task-6" id="toc-task-6" class="nav-link" data-scroll-target="#task-6">Task 6</a></li>
+  <li><a href="#task-0-you-do-it" id="toc-task-0-you-do-it" class="nav-link active" data-scroll-target="#task-0-you-do-it">Task 0 (you do it)</a></li>
+  <li><a href="#task-1-you-do-it" id="toc-task-1-you-do-it" class="nav-link" data-scroll-target="#task-1-you-do-it">Task 1 (you do it)</a></li>
+  <li><a href="#task-2-you-do-it" id="toc-task-2-you-do-it" class="nav-link" data-scroll-target="#task-2-you-do-it">Task 2 (you do it)</a></li>
+  <li><a href="#task-3-we-do-it" id="toc-task-3-we-do-it" class="nav-link" data-scroll-target="#task-3-we-do-it">Task 3 (we do it)</a></li>
+  <li><a href="#task-4-we-do-it" id="toc-task-4-we-do-it" class="nav-link" data-scroll-target="#task-4-we-do-it">Task 4 (we do it)</a></li>
+  <li><a href="#task-5-we-do-it" id="toc-task-5-we-do-it" class="nav-link" data-scroll-target="#task-5-we-do-it">Task 5 (we do it)</a></li>
+  <li><a href="#task-6-optional" id="toc-task-6-optional" class="nav-link" data-scroll-target="#task-6-optional">Task 6 (optional)</a></li>
   <li><a href="#play-around" id="toc-play-around" class="nav-link" data-scroll-target="#play-around">Play around!</a></li>
   </ul>
 </nav>
@@ -476,9 +618,10 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-1.html">Labs</a></li><li class="breadcrumb-item"><a href="../labs/lab-11.html">Lab 11</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Lab 11</h1>
+<p class="subtitle lead">Due Thursday April 16 at 11:59 PM</p>
 </div>
 
 
@@ -546,118 +689,94 @@ window.Quarto = {
 X_1,\,X_2,\,...,\,X_n\overset{\text{iid}}{\sim}\text{Poisson}(\theta).
 \]</span></p>
 <p>That’s our model for the claims data. The rate parameter <span class="math inline">\(\theta&gt;0\)</span> is unknown, and we want to use the data to learn what it is. Note that this model may or may not be a good choice, and entire books have been written on model building and model selection and model diagnostics and model criticism. If you keep studying statistics, you’ll learn about all that, but this class is about one thing and one thing only: can you do the math or not? So we will just take the model as given and use it as an opportunity to test our technical skills.</p>
-<section id="task-0" class="level1">
-<h1>Task 0</h1>
+<section id="task-0-you-do-it" class="level1">
+<h1>Task 0 (you do it)</h1>
 <p>Compute the likelihood function and the log-likelihood function for the Poisson distribution. You will need both in what follows.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The likelihood function is</p>
-<p><span class="math display">\[
+<!--
+::: {.callout-warning collapse="true"}
+## Solution
+The likelihood function is 
+
+$$
 \begin{aligned}
 L(\theta\mid X_{1:n})
-&amp;=
+&=
 \prod_{i=1}^nf(X_i\mid \theta)
 \\
-&amp;=
+&=
 \prod_{i=1}^ne^{-\theta}\frac{\theta^{X_i}}{X_i!}
 \\
-&amp;=
+&=
 \left(\prod_{i=1}^ne^{-\theta}\right)\left(\prod_{i=1}^n\theta^{X_i}\right)\prod_{i=1}^n\frac{1}{X_i!}
 \\
-&amp;=
+&=
 e^{-n\theta}\theta^{\sum_{i=1}^nX_i}\prod_{i=1}^n\frac{1}{X_i!}.
 \end{aligned}
-\]</span></p>
-<p>The log-likelihood function is</p>
-<p><span class="math display">\[
+$$
+
+The log-likelihood function is 
+
+$$
 \begin{aligned}
 \ell(\theta\mid X_{1:n})
-&amp;=
+&=
 \ln L(\theta\mid X_{1:n})
 \\
-&amp;=
+&=
 \ln\left(
 e^{-n\theta}\theta^{\sum_{i=1}^nX_i}\prod_{i=1}^n\frac{1}{X_i!}
 \right)
 \\
-&amp;=
+&=
 -n\theta+\left(\sum_{i=1}^nX_i\right)\ln\theta+\sum\limits_{i=1}^n\ln(1/X_i!).
 \end{aligned}
-\]</span></p>
-</div>
-</div>
-</div>
+$$
+
+:::
+-->
 </section>
-<section id="task-1" class="level1">
-<h1>Task 1</h1>
+<section id="task-1-you-do-it" class="level1">
+<h1>Task 1 (you do it)</h1>
 <p>Compute the maximum likelihood estimator for <span class="math inline">\(\theta&gt;0\)</span> in the Poisson distribution.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><span class="math display">\[
+<!--
+::: {.callout-warning collapse="true"}
+## Solution
+$$
 \begin{aligned}
-\ell'(\theta\mid X_{1:n})=-n+\frac{\sum_{i=1}^nX_i}{\theta}&amp;=0
+\ell'(\theta\mid X_{1:n})=-n+\frac{\sum_{i=1}^nX_i}{\theta}&=0
 \\
-\frac{\sum_{i=1}^nX_i}{\theta}&amp;=n
+\frac{\sum_{i=1}^nX_i}{\theta}&=n
 \\
-\frac{\sum_{i=1}^nX_i}{n}&amp;=\theta
+\frac{\sum_{i=1}^nX_i}{n}&=\theta
 \\
 \\
-\implies\quad\hat{\theta}_n&amp;=\bar{X}_n
+\implies\quad\hat{\theta}_n&=\bar{X}_n
 \end{aligned}
-\]</span></p>
-</div>
-</div>
-</div>
+$$
+:::
+-->
 </section>
-<section id="task-2" class="level1">
-<h1>Task 2</h1>
+<section id="task-2-you-do-it" class="level1">
+<h1>Task 2 (you do it)</h1>
 <p>Compute the mean, bias, variance, and MSE of the estimator and comment on its statistical properties.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>This is the average of iid random variables, so we know that</p>
-<p><span class="math display">\[
+<!--
+::: {.callout-warning collapse="true"}
+## Solution
+This is the average of iid random variables, so we know that
+
+$$
 \begin{aligned}
-E(\hat{\theta}_n)&amp;=E(X_1)=\theta\\
-\text{var}(\hat{\theta}_n)&amp;=\frac{\text{var}(X_1)}{n}=\frac{\theta}{n}.
+E(\hat{\theta}_n)&=E(X_1)=\theta\\
+\text{var}(\hat{\theta}_n)&=\frac{\text{var}(X_1)}{n}=\frac{\theta}{n}.
 \end{aligned}
-\]</span></p>
-<p>As such, the estimator is unbiased, the MSE is equal to the variance, and this goes to zero as <span class="math inline">\(n\to\infty\)</span>, so the estimator is consistent.</p>
-</div>
-</div>
-</div>
+$$
+
+As such, the estimator is unbiased, the MSE is equal to the variance, and this goes to zero as $n\to\infty$, so the estimator is consistent.
+:::
+-->
 </section>
-<section id="task-3" class="level1">
-<h1>Task 3</h1>
+<section id="task-3-we-do-it" class="level1">
+<h1>Task 3 (we do it)</h1>
 <p>The rate parameter <span class="math inline">\(\theta&gt;0\)</span> is a positive real number, so if we want to perform a Bayesian analysis, we need a continuous probability distribution on positive reals. The gamma family is a convenient choice for this, so consider the Bayesian model:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -668,16 +787,16 @@ X_1,\,X_2,\,...,\,X_n\mid\theta&amp;\overset{\text{iid}}{\sim}\text{Poisson}(\th
 \]</span></p>
 <p>Derive the posterior distribution.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Warning</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The posterior kernel is recognizeable:</p>
 <p><span class="math display">\[
@@ -709,20 +828,21 @@ b_n&amp;=b_0+n.
 </div>
 </div>
 </section>
-<section id="task-4" class="level1">
-<h1>Task 4</h1>
+<section id="task-4-we-do-it" class="level1">
+<h1>Task 4 (we do it)</h1>
+<p>Let <span class="math inline">\(a, b \in \mathbb{R}\)</span>. A <strong>convex combination</strong> (or <strong>weighted average</strong>) of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is a linear combination of the form <span class="math display">\[w \cdot a + (1 - w) \cdot b,\]</span> where <span class="math inline">\(w \geq 0\)</span>. Necessarily, then, the weights <span class="math inline">\(w\)</span> and <span class="math inline">\((1 - w)\)</span> sum to <span class="math inline">\(1\)</span>.</p>
 <p>Based on your answer from the previous task, show that the posterior mean is a convex combination of the prior mean and the maximum likelihood estimator that you derived earlier.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Warning</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The posterior mean is</p>
 <p><span class="math display">\[
@@ -751,21 +871,21 @@ E(\theta\mid x_{1:n})
 </div>
 </div>
 </section>
-<section id="task-5" class="level1">
-<h1>Task 5</h1>
+<section id="task-5-we-do-it" class="level1">
+<h1>Task 5 (we do it)</h1>
 <p>Ignoring that we ever did a Bayesian analysis, treat the posterior mean formula from the previous task as a new <em>classical</em> estimator for <span class="math inline">\(\theta\)</span>. It’s just a function of the data at the end of the day.</p>
 <p>What are the mean, bias, variance, and MSE of the posterior mean?</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Warning</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Our new estimator is</p>
 <p><span class="math display">\[
@@ -810,20 +930,20 @@ E(\tilde{\theta}_n)-\theta&amp;=(1-w_n)g+w_n\theta-\theta\\
 </div>
 </div>
 </section>
-<section id="task-6" class="level1">
-<h1>Task 6</h1>
+<section id="task-6-optional" class="level1">
+<h1>Task 6 (optional)</h1>
 <p>Are there circumstances under which this new estimator would be better (in the sense of lower MSE) than the pure MLE?</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Warning</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If we set <span class="math inline">\(w_n=1\)</span>, the estimator is back to pure MLE, which has an MSE of <span class="math inline">\(\theta/n\)</span>. It is possible to pick <span class="math inline">\(w_n\)</span> such that the biased estimator has even lower MSE. Behold</p>
 <p><span class="math display">\[
@@ -1026,13 +1146,14 @@ shinyApp(ui, server)
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1374,11 +1495,23 @@ shinyApp(ui, server)
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../labs/lab-10.html" class="pagination-link" aria-label="Lab 10">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 10</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../problems/exam-midterm-1.html" class="pagination-link" aria-label="Midterm 1">
+        <span class="nav-page-text">Midterm 1</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© Copyright 2025 John Zito</p>
+<p>© Copyright 2026 John Zito and Anya Katsevich</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
