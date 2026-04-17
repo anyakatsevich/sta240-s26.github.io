@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -29,16 +29,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../problems/exam-midterm-2.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d640c705e8c17715bca3574aa719063f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-24b5e6359d046001481a7c94baaab5c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d0086a85466981861881e17a07507999.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -81,7 +83,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -111,7 +113,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Final Exam Study Guide</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problems/exam-midterm-1.html">Exam Study Guides</a></li><li class="breadcrumb-item"><a href="../problems/exam-final.html">Final</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -126,13 +128,14 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../img/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../img/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio Containers" class="quarto-navigation-tool px-1" aria-label="RStudio Containers"><i class="bi bi-code-square"></i></a>
     <a href="https://go.canvas.duke.edu/" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-megaphone"></i></a>
-    <a href="https://edstem.org/us/courses/80868/discussion" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-people"></i></a>
-    <a href="https://www.gradescope.com/courses/1071176" title="Gradescope" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-file-arrow-up"></i></a>
+    <a href="https://edstem.org/us/courses/89558/discussion" title="Ed Discussion" class="quarto-navigation-tool px-1" aria-label="Ed Discussion"><i class="bi bi-people"></i></a>
+    <a href="https://www.gradescope.com/courses/1195780" title="Gradescope" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-file-arrow-up"></i></a>
 </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -257,7 +260,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text"><code>R</code> Helpers</span></a>
+ <span class="menu-text">R Helpers</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -308,7 +311,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../explainers/sample.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><code>sample</code></span></a>
+ <span class="menu-text">sample</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -441,11 +444,155 @@ window.Quarto = {
  <span class="menu-text">Problem Set 0</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 7</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Labs</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Labs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 9</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 11</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Exam Study Guides</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/exam-midterm-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Midterm 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/exam-midterm-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Midterm 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/exam-final.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Final</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -481,7 +628,7 @@ window.Quarto = {
   <li><a href="#problem-8" id="toc-problem-8" class="nav-link" data-scroll-target="#problem-8">Problem 8</a></li>
   <li><a href="#want-more-review-3" id="toc-want-more-review-3" class="nav-link" data-scroll-target="#want-more-review-3">Want more review?</a></li>
   </ul></li>
-  <li><a href="#absolutely-continuous-random-variables" id="toc-absolutely-continuous-random-variables" class="nav-link" data-scroll-target="#absolutely-continuous-random-variables">5. Absolutely continuous random variables</a>
+  <li><a href="#continuous-random-variables" id="toc-continuous-random-variables" class="nav-link" data-scroll-target="#continuous-random-variables">5. Continuous random variables</a>
   <ul class="collapse">
   <li><a href="#problem-9" id="toc-problem-9" class="nav-link" data-scroll-target="#problem-9">Problem 9</a></li>
   <li><a href="#problem-10" id="toc-problem-10" class="nav-link" data-scroll-target="#problem-10">Problem 10</a></li>
@@ -509,13 +656,14 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#problem-17" id="toc-problem-17" class="nav-link" data-scroll-target="#problem-17">Problem 17</a></li>
   <li><a href="#problem-18" id="toc-problem-18" class="nav-link" data-scroll-target="#problem-18">Problem 18</a></li>
+  <li><a href="#problem-19" id="toc-problem-19" class="nav-link" data-scroll-target="#problem-19">Problem 19</a></li>
   <li><a href="#want-more-review-8" id="toc-want-more-review-8" class="nav-link" data-scroll-target="#want-more-review-8">Want more review?</a></li>
   </ul></li>
   <li><a href="#bayesian-inference" id="toc-bayesian-inference" class="nav-link" data-scroll-target="#bayesian-inference">10. Bayesian inference</a>
   <ul class="collapse">
-  <li><a href="#problem-19" id="toc-problem-19" class="nav-link" data-scroll-target="#problem-19">Problem 19</a></li>
   <li><a href="#problem-20" id="toc-problem-20" class="nav-link" data-scroll-target="#problem-20">Problem 20</a></li>
   <li><a href="#problem-21" id="toc-problem-21" class="nav-link" data-scroll-target="#problem-21">Problem 21</a></li>
+  <li><a href="#problem-22" id="toc-problem-22" class="nav-link" data-scroll-target="#problem-22">Problem 22</a></li>
   <li><a href="#want-more-review-9" id="toc-want-more-review-9" class="nav-link" data-scroll-target="#want-more-review-9">Want more review?</a></li>
   </ul></li>
   </ul>
@@ -524,7 +672,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problems/exam-midterm-1.html">Exam Study Guides</a></li><li class="breadcrumb-item"><a href="../problems/exam-final.html">Final</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Final Exam Study Guide</h1>
 </div>
@@ -543,28 +691,42 @@ window.Quarto = {
 </header>
 
 
-<p>Our final exam is <strong>Friday December 12 from 9:00 AM to 12:00 PM</strong>. There will be 11 problems, and they will break down as follows:</p>
-<ol start="0" type="1">
-<li>(an undisclosed check on your visual intuition)</li>
+<p>Our final exam is <strong>Monday April 27 from 9:00 AM to 12:00 PM</strong>. You are allowed both sides of <strong>two</strong> 8.5” x 11” hand-written sheets of notes, prepared by you and you alone.The exam will cover the following topics:</p>
+<ol type="1">
 <li>Probability spaces and rules</li>
-<li>Counting (ugh!)</li>
+<li>Counting</li>
 <li>Conditional probability and independence</li>
 <li>Discrete random variables</li>
-<li>Absolutely continuous random variables</li>
+<li>Continuous random variables</li>
 <li>The moment-generating function</li>
 <li>Transformations of random variables</li>
 <li>Joint distributions</li>
 <li>Maximum likelihood estimation</li>
 <li>Bayesian inference</li>
 </ol>
-<p>Problems 0 - 8 will be similar to the midterms. Since you’ve had more time to live with this material, I reserve the right to include problems that might stretch you a bit. For Problems 9 and 10, I assure you there will be no surprises. You can expect problems that are exactly like the examples you’ve seen in lecture, lab, Problem Set 7, and this study guide. The distributions may be different, and the details might change, but the format and the steps are the same. If you work every practice problem from scratch on your own and then study the solutions carefully, you are ready.</p>
+<p>There will be approximately 1 problem per topic. The problems on topics 1-8 will be similar to the midterms. Since you’ve had more time to live with this material, I reserve the right to include problems that might stretch you a bit. For the MLE and Bayesian problems, I assure you there will be no surprises. You can expect problems that are exactly like the examples you’ve seen in lecture, lab, Problem Set 7, and this study guide. The distributions may be different, and the details might change, but the format and the steps are the same. If you work every practice problem from scratch on your own and then study the solutions carefully, you are ready.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What special distribution families should I know?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://anyakatsevich.github.io/sta240-s26.github.io/distributions/discrete-binomial.html">Binomial</a>, <a href="https://anyakatsevich.github.io/sta240-s26.github.io/distributions/discrete-geometric.html">geometric</a>, <a href="https://anyakatsevich.github.io/sta240-s26.github.io/distributions/discrete-poisson.html">Poisson</a>, <a href="https://anyakatsevich.github.io/sta240-s26.github.io/distributions/continuous-uniform.html">continuous uniform</a>, <a href="https://anyakatsevich.github.io/sta240-s26.github.io/distributions/continuous-normal.html">normal</a>, <a href="https://anyakatsevich.github.io/sta240-s26.github.io/distributions/continuous-gamma.html">gamma</a> (and its special cases like exponential), <a href="https://anyakatsevich.github.io/sta240-s26.github.io/distributions/continuous-beta.html">beta</a>.</p>
+<p>Anything else will be introduced from scratch within the exam as if you had never seen it before.</p>
+<p>NOTE: the distribution helpers are the authoritative resource for pdf/pmf/cdf formulas. Other Internet sources may lead you astray because some of the distribution families have alternative parameterizations, e.g.&nbsp;<span class="math inline">\(\frac{1}{\beta}e^{-\frac{x}{\beta}}\)</span> for Exp<span class="math inline">\((\beta)\)</span> (which is NOT the way we define it).</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Reminder
+<span class="screen-reader-only">Note</span>Reminder
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -587,10 +749,10 @@ P\left(\bigcap_{i=1}^n A_i\right)\geq \sum\limits_{i=1}^nP(A_i)-n+1.
 <section id="want-more-review" class="level2">
 <h2 class="anchored" data-anchor-id="want-more-review">Want more review?</h2>
 <ul>
-<li><a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-01-probability-spaces.pdf">Lecture notes</a> on axioms and rules;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-1.html">Problem Set 1</a>: problems 4 - 8;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-2.html">Problem Set 2</a>: problems 2 - 3;</li>
-<li><a href="https://sta240-f25.github.io/problems/exam-midterm-1.html#probability-spaces">Midterm 1 Study Guide</a>: problems 1 - 4;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture3.pdf">Lecture notes</a> on axioms and rules;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-1.html">Problem Set 1</a>: problems 4 - 8;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html">Problem Set 2</a>: problems 1 - 2;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/exam-midterm-1.html#probability-spaces">Midterm 1 Study Guide</a>: problems 1 - 4;</li>
 <li>Midterm 1: problem 1.</li>
 </ul>
 </section>
@@ -606,7 +768,7 @@ P\left(\bigcap_{i=1}^n A_i\right)\geq \sum\limits_{i=1}^nP(A_i)-n+1.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Still confused about ordered versus unordered sampling?
+<span class="screen-reader-only">Tip</span>Still confused about ordered versus unordered sampling?
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -630,14 +792,13 @@ Still confused about ordered versus unordered sampling?
 <section id="want-more-review-1" class="level2">
 <h2 class="anchored" data-anchor-id="want-more-review-1">Want more review?</h2>
 <ul>
-<li><a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-02-counting-theory.pdf">Lecture notes</a> on counting theory;</li>
-<li><a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-03-counting-examples.pdf">Lecture notes</a> with birthday problem and other worked examples;</li>
-<li><a href="https://sta240-f25.github.io/labs/lab-2.html">Lab 2</a> worked examples;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-1.html">Problem Set 1</a>: problems 9 - 10;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-2.html">Problem Set 2</a>: problems 4 - 8;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-3.html">Problem Set 3</a>: problems 2 - 3;</li>
-<li><a href="https://sta240-f25.github.io/problems/exam-midterm-1.html#counting">Midterm 1 Study Guide</a>: problems 5 - 7;</li>
-<li>Midterm 1: problems 2 - 3;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture4and5-counting.pdf">Lecture notes</a> counting theory, birthday problem, and other worked examples;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-2.html">Lab 2</a> worked examples;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-1.html">Problem Set 1</a>: problems 9 - 10;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html">Problem Set 2</a>: problems 3 - 7;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-3.html">Problem Set 3</a>: problems 1 - 2;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/exam-midterm-1.html#counting">Midterm 1 Study Guide</a>: problems 5 - 7;</li>
+<li>Midterm 1: problems 2,5;</li>
 <li>Odd-numbered exercises in DeGroot &amp; Schervish Chapters 1.6 - 1.8, 1.12.</li>
 </ul>
 </section>
@@ -655,15 +816,13 @@ Still confused about ordered versus unordered sampling?
 <section id="want-more-review-2" class="level2">
 <h2 class="anchored" data-anchor-id="want-more-review-2">Want more review?</h2>
 <ul>
-<li><a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-04-conditional-probability.pdf">Lecture notes</a> with worked examples;
-<ul>
-<li>The lil’ <a href="https://sta240-f25.github.io/apps/disease-testing.html">app</a> on disease testing;</li>
-</ul></li>
-<li><a href="https://sta240-f25.github.io/problems/pset-2.html">Problem Set 2</a>: problems 9 - 10;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-3.html">Problem Set 3</a>: problems 4 - 8;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-4.html">Problem Set 4</a>: problems 2 - 3;</li>
-<li><a href="https://sta240-f25.github.io/problems/exam-midterm-1.html#conditional-probability">Midterm 1 Study Guide</a>: problems 8 - 10;</li>
-<li>Midterm 1: problems 3 - 5;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture6.pdf">Lecture notes</a> with worked examples;</li>
+<li>The lil’ <a href="https://anyakatsevich.github.io/sta240-s26.github.io/apps/disease-testing.html">app</a> on disease testing;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html">Problem Set 2</a>: problems 8 - 9;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-3.html">Problem Set 3</a>: problems 3 - 7;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-4.html">Problem Set 4</a>: problems 1 - 2;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/exam-midterm-1.html#conditional-probability">Midterm 1 Study Guide</a>: problems 8 - 10;</li>
+<li>Midterm 1: problem 3;</li>
 <li>Odd-numbered exercises in DeGroot &amp; Schervish Chapter 2.</li>
 </ul>
 </section>
@@ -694,22 +853,23 @@ hhh\quad ttt\quad hh\quad ttt\quad hhhhh\quad t\quad h\quad tt\quad hhhh.
 <section id="want-more-review-3" class="level2">
 <h2 class="anchored" data-anchor-id="want-more-review-3">Want more review?</h2>
 <ul>
-<li><a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-05-random-variables.pdf">Lecture notes</a> introducing random variables;</li>
-<li><a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-06-discrete-families.pdf">Lecture notes</a> on special families of discrete random variables;</li>
-<li><a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-07-expectation.pdf">Lecture notes</a> on expected value;</li>
-<li><a href="https://sta240-f25.github.io/labs/lab-5.html">Lab 5</a> exercises;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-2.html">Problem Set 2</a>: problem 7;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-3.html">Problem Set 3</a>: problems 9 - 10;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-4.html">Problem Set 4</a>: problems 4 - 10;</li>
-<li><a href="https://sta240-f25.github.io/problems/exam-midterm-1.html#discrete-random-variables">Midterm 1 Study Guide</a>: problems 11 - 12;</li>
-<li><a href="https://sta240-f25.github.io/problems/exam-midterm-2.html#discrete-random-variables">Midterm 2 Study Guide</a>: problems 1 - 2;</li>
-<li>Midterm 1: problem 6;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-05-random-variables.pdf">Lecture notes</a> introducing random variables;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture9.pdf">Lecture notes</a> on special families of discrete random variables;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture10.pdf">Lecture notes</a> on expected value;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-08-variance.pdf">Lecture notes</a> on variance;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-5.html">Lab 5</a> exercises;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-2.html">Problem Set 2</a>: problem 6;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-3.html">Problem Set 3</a>: problems 8 - 9;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-4.html">Problem Set 4</a>: problems 3 - 9;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/exam-midterm-1.html#discrete-random-variables">Midterm 1 Study Guide</a>: problems 11 - 12;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/exam-midterm-2.html#discrete-random-variables">Midterm 2 Study Guide</a>: problems 1 - 2;</li>
+<li>Midterm 1: problems 4 and 5;</li>
 <li>Midterm 2: problem 2.</li>
 </ul>
 </section>
 </section>
-<section id="absolutely-continuous-random-variables" class="level1">
-<h1>5. Absolutely continuous random variables</h1>
+<section id="continuous-random-variables" class="level1">
+<h1>5. Continuous random variables</h1>
 <section id="problem-9" class="level2">
 <h2 class="anchored" data-anchor-id="problem-9">Problem 9</h2>
 <p>Imagine <span class="math inline">\(X\)</span> has this cdf:</p>
@@ -738,12 +898,12 @@ e^{1-e^x+x},\quad x\geq 0.
 <section id="want-more-review-4" class="level2">
 <h2 class="anchored" data-anchor-id="want-more-review-4">Want more review?</h2>
 <ul>
-<li>Examples from <a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-10-absolutely-continuous.pdf">lecture</a>;</li>
-<li><a href="https://sta240-f25.github.io/labs/lab-8.html">Lab 8</a>;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-5.html">Problem Set 5</a>: problems 2 - 8;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-6.html">Problem Set 6</a>: problems 1 - 2;</li>
-<li><a href="https://sta240-f25.github.io/problems/exam-midterm-2.html#continuous-random-variables">Midterm 2 Study Guide</a>: problems 3 - 4;</li>
-<li>Midterm 2: problem 1;</li>
+<li>Examples from <a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture12-13.pdf">lecture</a>;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture14.pdf">Lecture 14</a> on normal and gamma;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-8.html">Lab 8</a>;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-5.html">Problem Set 5</a>: problems 1 - 7;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-6.html">Problem Set 6</a>: problems 1 - 2;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/exam-midterm-2.html#continuous-random-variables">Midterm 2 Study Guide</a>: problems 3 - 4;</li>
 <li>Odd-numbered exercises in DeGroot &amp; Schervish Chapters 3.2, 5.6, 5.7.</li>
 </ul>
 </section>
@@ -783,12 +943,12 @@ S&amp;=\sum\limits_{i=1}^NX_i.
 <section id="want-more-review-5" class="level2">
 <h2 class="anchored" data-anchor-id="want-more-review-5">Want more review?</h2>
 <ul>
-<li>worked examples from <a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-11-moments.pdf">lecture</a>;</li>
-<li>new theorems and examples from <a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-14-sums-and-averages.pdf">lecture</a> about updating MGFs under linear transformations;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-5.html">Problem Set 5</a>: problems 9 - 10;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-6.html">Problem Set 6</a>: problems 3 - 5;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-7.html">Problem Set 7</a>: problems 1 - 2;</li>
-<li><a href="https://sta240-f25.github.io/problems/exam-midterm-2.html#moment-generating-function">Midterm 2 Study Guide</a>: problems 11 - 12;</li>
+<li>worked examples from <a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture15.pdf">lecture 15</a> and <a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture16.pdf">lecture 16</a>;</li>
+<li>new theorems and examples from <a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sums-and-averages.pdf">lecture</a> about updating MGFs under linear transformations;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-5.html">Problem Set 5</a>: problems 8 - 9;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-6.html">Problem Set 6</a>: problems 3 - 5;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-7.html">Problem Set 7</a>: problems 1 - 2;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/exam-midterm-2.html#moment-generating-function">Midterm 2 Study Guide</a>: problems 11 - 12;</li>
 <li>Midterm 2: problem 2;</li>
 <li>Odd-numbered exercises in DeGroot &amp; Schervish Chapter 4.4.</li>
 </ul>
@@ -819,9 +979,9 @@ f(x)=k\frac{x^{k-1}}{\theta}\exp\left(-\frac{x^k}{\theta}\right),\quad x&gt;0.
 <section id="want-more-review-6" class="level2">
 <h2 class="anchored" data-anchor-id="want-more-review-6">Want more review?</h2>
 <ul>
-<li><a href="https://sta240-f25.github.io/labs/lab-7.html">Lab 7</a>;</li>
-<li>Problem Set 6: <a href="https://sta240-f25.github.io/problems/pset-6.html#problem-6">problem 6</a>;</li>
-<li>Midterm 2 Study Guide: <a href="https://sta240-f25.github.io/problems/exam-midterm-2.html#problem-7">problem 7</a>;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-7.html">Lab 7</a>;</li>
+<li>Problem Set 6: <a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-6.html#problem-6">problem 6</a>;</li>
+<li>Midterm 2 Study Guide: <a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/exam-midterm-2.html#problem-7">problem 7</a>;</li>
 <li>Midterm 2: problem 3;</li>
 <li>Read DeGroot &amp; Schervish Chapter 3.8 and do the odd-numbered exercises.</li>
 </ul>
@@ -870,11 +1030,11 @@ Z\mid Q=q&amp;\sim\text{GF}(k, 1/q).
 <section id="want-more-review-7" class="level2">
 <h2 class="anchored" data-anchor-id="want-more-review-7">Want more review?</h2>
 <ul>
-<li>jointly discrete examples from <a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-12-joint-discrete.pdf">lecture</a>;</li>
-<li>jointly contnuous examples from <a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-13-joint-continuous.pdf">lecture</a>;</li>
-<li>mixed Poisson-gamma example from <a href="https://sta240-f25.github.io/labs/lab-9.html">Lab 9</a>;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-6.html">Problem Set 6</a>: problems 7 - 10;</li>
-<li><a href="https://sta240-f25.github.io/problems/exam-midterm-2.html#joint-distributions">Midterm 2 Study Guide</a>: problems 8 - 9;</li>
+<li>jointly discrete examples from <a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/lecture17.pdf">lecture</a>;</li>
+<li>jointly contnuous examples from <a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/joint-continuous.pdf">lecture</a>;</li>
+<li>mixed Poisson-gamma example from <a href="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-9.html">Lab 9</a>;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-6.html">Problem Set 6</a>: problems 7 - 10;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/exam-midterm-2.html#joint-distributions">Midterm 2 Study Guide</a>: problems 8 - 9;</li>
 <li>Midterm 2: problem 4;</li>
 <li>Odd-numbered exercises in DeGroot &amp; Schervish Chapters 3.4 - 3.6.</li>
 </ul>
@@ -897,6 +1057,18 @@ X_1,\,X_2,\,...,\,X_n\overset{\text{iid}}{\sim}\text{N}(\theta,\,1).
 </section>
 <section id="problem-18" class="level2">
 <h2 class="anchored" data-anchor-id="problem-18">Problem 18</h2>
+<p>Let <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, …, <span class="math inline">\(X_n\)</span> be iid from some member of the parametric family that you met on <a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-6.html#problem-1">Problem Set 6</a>:</p>
+<p><span class="math display">\[
+f(x\,|\,\theta)=\theta(x+1)^{-(\theta+1)},\quad x&gt;0.
+\]</span></p>
+<ol type="a">
+<li>What is the maximum likelihood estimator of <span class="math inline">\(\theta&gt;0\)</span>?</li>
+<li>What is the sampling distribution of the estimator?</li>
+<li>What is the MSE of the estimator?</li>
+</ol>
+</section>
+<section id="problem-19" class="level2">
+<h2 class="anchored" data-anchor-id="problem-19">Problem 19</h2>
 <p>Consider these data:</p>
 <p><span class="math display">\[
 X_1,\,X_2,\,...,\,X_n\overset{\text{iid}}{\sim}\text{GF}(k,\,\theta).
@@ -912,16 +1084,16 @@ X_1,\,X_2,\,...,\,X_n\overset{\text{iid}}{\sim}\text{GF}(k,\,\theta).
 <section id="want-more-review-8" class="level2">
 <h2 class="anchored" data-anchor-id="want-more-review-8">Want more review?</h2>
 <ul>
-<li><a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-18-mle-examples.html">Lecture examples</a>;</li>
-<li><a href="https://sta240-f25.github.io/labs/lab-10.html">Lab 10</a>;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-7.html">Problem Set 7</a>: problems 3 - 4.</li>
+<li>Examples from <a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-notes-mle-examples.pdf">lecture 23</a> and <a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-mle-intro-bayes.pdf">lecture 24</a>;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-10.html">Lab 10</a>;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-7.html">Problem Set 7</a>: problems 3 - 4.</li>
 </ul>
 </section>
 </section>
 <section id="bayesian-inference" class="level1">
 <h1>10. Bayesian inference</h1>
-<section id="problem-19" class="level2">
-<h2 class="anchored" data-anchor-id="problem-19">Problem 19</h2>
+<section id="problem-20" class="level2">
+<h2 class="anchored" data-anchor-id="problem-20">Problem 20</h2>
 <p>Consider this Bayesian model:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -936,8 +1108,8 @@ X_{1:n}\mid\theta&amp;\overset{\text{iid}}{\sim}\text{N}(\theta,\,1).
 <li>Is it possible for this new estimator to be superior (lower MSE) than the pure MLE?</li>
 </ol>
 </section>
-<section id="problem-20" class="level2">
-<h2 class="anchored" data-anchor-id="problem-20">Problem 20</h2>
+<section id="problem-21" class="level2">
+<h2 class="anchored" data-anchor-id="problem-21">Problem 21</h2>
 <p>Consider this Bayesian model:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -952,9 +1124,9 @@ X_{1:n}\mid\theta&amp;\overset{\text{iid}}{\sim}\text{N}(0,\,\theta).
 <li>Is it possible for this new estimator to be superior (lower MSE) than the pure MLE?</li>
 </ol>
 </section>
-<section id="problem-21" class="level2">
-<h2 class="anchored" data-anchor-id="problem-21">Problem 21</h2>
-<p>Recall this infernal distribution family that you met on <a href="https://sta240-f25.github.io/problems/pset-6.html#problem-1">Problem Set 6</a>, Midterm 2, and again in <a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-18-mle-examples.html#example-midterm-2-strikes-again">lecture</a>:</p>
+<section id="problem-22" class="level2">
+<h2 class="anchored" data-anchor-id="problem-22">Problem 22</h2>
+<p>Let’s consider the same distribution family as in Problem 18:</p>
 <p><span class="math display">\[
 f(x\mid \theta)=\theta(x+1)^{-(\theta+1)},\quad x&gt;0.
 \]</span></p>
@@ -975,9 +1147,9 @@ X_{1:n}\mid\theta&amp;\overset{\text{iid}}{\sim}f(x\mid \theta).
 <section id="want-more-review-9" class="level2">
 <h2 class="anchored" data-anchor-id="want-more-review-9">Want more review?</h2>
 <ul>
-<li><a href="https://sta240-f25.github.io/lecture-notes/sta240-notes-19-bayes.pdf">Lecture examples</a>;</li>
-<li><a href="https://sta240-f25.github.io/labs/lab-11.html">Lab 11</a>;</li>
-<li><a href="https://sta240-f25.github.io/problems/pset-7.html">Problem Set 7</a>: problems 5 - 6.</li>
+<li>Examples from <a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-mle-intro-bayes.pdf">lecture 24</a> and <a href="https://anyakatsevich.github.io/sta240-s26.github.io/lecture-notes/sta240-more-bayes.pdf">lecture 25</a>;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/labs/lab-11.html">Lab 11</a>;</li>
+<li><a href="https://anyakatsevich.github.io/sta240-s26.github.io/problems/pset-7.html">Problem Set 7</a>: problems 5 - 6.</li>
 </ul>
 
 
@@ -1036,13 +1208,14 @@ X_{1:n}\mid\theta&amp;\overset{\text{iid}}{\sim}f(x\mid \theta).
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1384,11 +1557,20 @@ X_{1:n}\mid\theta&amp;\overset{\text{iid}}{\sim}f(x\mid \theta).
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../problems/exam-midterm-2.html" class="pagination-link" aria-label="Midterm 2">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Midterm 2</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© Copyright 2025 John Zito</p>
+<p>© Copyright 2026 John Zito and Anya Katsevich</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
