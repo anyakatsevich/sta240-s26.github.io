@@ -3,7 +3,7 @@ title: "Final Exam Study Guide"
 draft: false
 ---
 
-Our final exam is **Monday April 27 from 9:00 AM to 12:00 PM**. You are allowed both sides of **two** 8.5" x 11" hand-written sheets of notes, prepared by you and you alone.The exam will cover the following topics:
+Our final exam is **Monday, April 27 from 9:00 AM to 12:00 PM**. You are allowed both sides of **two** 8.5" x 11" hand-written sheets of notes, prepared by you and you alone.The exam will cover the following topics:
 
 1.  Probability spaces and rules
 2.  Counting
