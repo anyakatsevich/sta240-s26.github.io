@@ -2631,7 +2631,7 @@
     "href": "problems/exam-final.html",
     "title": "Final Exam Study Guide",
     "section": "",
-    "text": "Our final exam is Monday April 27 from 9:00 AM to 12:00 PM. You are allowed both sides of two 8.5” x 11” hand-written sheets of notes, prepared by you and you alone.The exam will cover the following topics:\nThere will be approximately 1 problem per topic. The problems on topics 1-8 will be similar to the midterms. Since you’ve had more time to live with this material, I reserve the right to include problems that might stretch you a bit. For the MLE and Bayesian problems, I assure you there will be no surprises. You can expect problems that are exactly like the examples you’ve seen in lecture, lab, Problem Set 7, and this study guide. The distributions may be different, and the details might change, but the format and the steps are the same. If you work every practice problem from scratch on your own and then study the solutions carefully, you are ready.",
+    "text": "Our final exam is Monday, April 27 from 9:00 AM to 12:00 PM. You are allowed both sides of two 8.5” x 11” hand-written sheets of notes, prepared by you and you alone.The exam will cover the following topics:\nThere will be approximately 1 problem per topic. The problems on topics 1-8 will be similar to the midterms. Since you’ve had more time to live with this material, I reserve the right to include problems that might stretch you a bit. For the MLE and Bayesian problems, I assure you there will be no surprises. You can expect problems that are exactly like the examples you’ve seen in lecture, lab, Problem Set 7, and this study guide. The distributions may be different, and the details might change, but the format and the steps are the same. If you work every practice problem from scratch on your own and then study the solutions carefully, you are ready.",
     "crumbs": [
       "Exam Study Guides",
       "Final"
@@ -2972,7 +2972,7 @@
     "href": "problems/exam-final.html#problem-22",
     "title": "Final Exam Study Guide",
     "section": "Problem 22",
-    "text": "Problem 22\nLet’s consider the same distribution family as in Problem 18:\n\\[\nf(x\\mid \\theta)=\\theta(x+1)^{-(\\theta+1)},\\quad x&gt;0.\n\\]\nWe’ve done MLE for this, now let’s go Bayes. Consider this model:\n\\[\n\\begin{aligned}\n\\theta&\\sim\\text{Gamma}(a_0,\\,b_0)\\\\\nX_{1:n}\\mid\\theta&\\overset{\\text{iid}}{\\sim}f(x\\mid \\theta).\n\\end{aligned}\n\\]\n\nWhat is the posterior distribution for \\(\\theta\\) conditional on the data?\nDerive the posterior mean and show that it is a convex combination of the prior mean and the MLE;\nThe posterior mean can be thought of as an alternative estimator, in a classical sense. So, what are its mean, variance, bias, and MSE?\nIs it possible for this new estimator to be superior (lower MSE) than the pure MLE?",
+    "text": "Problem 22\nLet’s consider the same distribution family as in Problem 18:\n\\[\nf(x\\mid \\theta)=\\theta(x+1)^{-(\\theta+1)},\\quad x&gt;0.\n\\]\nWe’ve done MLE for this, now let’s go Bayes. Consider this model:\n\\[\n\\begin{aligned}\n\\theta&\\sim\\text{Gamma}(a_0,\\,b_0)\\\\\nX_{1:n}\\mid\\theta&\\overset{\\text{iid}}{\\sim}f(x\\mid \\theta).\n\\end{aligned}\n\\]\n\nWhat is the posterior distribution for \\(\\theta\\) conditional on the data?\nDerive the posterior mean and show that it is a convex combination of the prior mean and the MLE;",
     "crumbs": [
       "Exam Study Guides",
       "Final"
